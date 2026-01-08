@@ -1,7 +1,7 @@
 <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="../../images/microchip_logo_white_red.png">
-	<source media="(prefers-color-scheme: light)" srcset="../../images/microchip_logo_black_red.png">
-    <img alt="Microchip Logo." src="../../images/microchip_logo_black_red.png">
+    <source media="(prefers-color-scheme: dark)" srcset="../../../images/microchip_logo_white_red.png">
+	<source media="(prefers-color-scheme: light)" srcset="../../../images/microchip_logo_black_red.png">
+    <img alt="Microchip Logo." src="../../../images/microchip_logo_black_red.png">
 </picture>
 
 # dsPIC33C PQC ML-DSA (Module-Lattice-Based Digital Signature) Verification
@@ -29,7 +29,7 @@ This MPLAB® X project demonstrates ML-DSA Verify using dilithium wolfCrypt APIs
 
 ### Project Set Up
 
-#### Replacing Stubbed Files with wolfCrypt Source
+#### wolfCrypt Source
 
 The wolfCrypt files in this project use wolfssl v5.8.4-stable release with edits to support the dsPIC33C device.
 
