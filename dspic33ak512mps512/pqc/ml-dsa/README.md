@@ -1,0 +1,70 @@
+<picture>
+    <source media="(prefers-color-scheme: dark)" srcset="../../../images/microchip_logo_white_red.png">
+	<source media="(prefers-color-scheme: light)" srcset="../../../images/microchip_logo_black_red.png">
+    <img alt="Microchip Logo." src="../../../images/microchip_logo_black_red.png">
+</picture>
+
+# dsPIC33A PQC ML-DSA (Module-Lattice-Based Digital Signature) Verification
+
+## Summary
+
+This MPLAB® X project demonstrates ML-DSA Verify using dilithium wolfCrypt APIs to verify an input signature and message.
+
+## Software Used
+
+- MPLAB® X IDE **v6.25** or newer (https://www.microchip.com/MPLABXIDE)
+- MPLAB® XC-DSC Compiler **v3.21** or a newer compiler (https://www.microchip.com/xcdsc)
+
+## Hardware Used
+
+- dsPIC33AK512MPS512 Curiosity GP DIM (https://www.microchip.com/en-us/development-tool/EV80L65A)
+- Curiosity Platform Development Board (https://www.microchip.com/EV74H48A)
+
+## Set Up
+
+### Hardware Set Up
+
+1. Insert the dsPIC33AK512MPS512 DIM into the DIM J1 slot on the Curiosity Platform Development Board.
+2. Connect the board from the J24 USB-C PKoB4 (PICKit™ On-Board 4) to the computer.
+
+    <img src="../../../images/hardware_setup.jpg" height="400" alt="Hardware Setup"/>
+
+### Project Set Up
+
+#### wolfCrypt Source
+
+The wolfCrypt files in this project use wolfssl v5.8.4-stable release
+
+## Running the Demo
+
+### Demo Configuration
+
+The `app_config.h` file is used to configure the project. Due to device memory constraints, use caution when enabling more than one configuration at a time. The following options using Dilithium are available:
+
+- ML_DSA_44 
+- ML_DSA_65
+- ML_DSA_87
+
+### Demo Output
+
+The device will process the configured test vector using the wolfCrypt `wc_MlDsaKey_Verify` API. The test parameters and verification status will be printed to the terminal listening at a baud rate of 115200.
+
+## Input Data Usage
+The test vectors in this demo come from the NIST defined public keys, messages and signature values.
+- These values are raw data inputs with no encoding. 
+
+If another tool is used to generate a signature it may encode the message by default following [FIPS-204](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.204.pdf) (Algorithm 2 Step 10)
+- If this is the case the following wolfcrypt verification api can be used to handle signatures generated with FIPS-204 encoding:
+
+    ```c
+    int wc_dilithium_verify_ctx_msg(
+        const byte* sig, 
+        word32 sigLen,
+        const byte* ctx, // Set to NULL (unless additional encoding is required)
+        word32 ctxLen,   // Set to 0 (or length of the ctx)
+        const byte* msg, 
+        word32 msgLen, 
+        int* res,
+        dilithium_key* key
+    );
+    ```
