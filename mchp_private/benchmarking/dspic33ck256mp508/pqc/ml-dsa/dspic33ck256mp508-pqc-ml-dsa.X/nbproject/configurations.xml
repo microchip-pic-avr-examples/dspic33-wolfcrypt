@@ -110,7 +110,7 @@
         <targetDevice>dsPIC33CK256MP508</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>pkob4hybrid</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XCDSC</languageToolchain>
         <languageToolchainVersion>3.21</languageToolchainVersion>
         <platform>3</platform>
@@ -211,7 +211,7 @@
       </C30-AS>
       <C30-CO>
         <property key="coverage-enable" value=""/>
-        <property key="stack-guidance" value="false"/>
+        <property key="stack-guidance" value="true"/>
       </C30-CO>
       <C30-LD>
         <property key="additional-options-use-response-files" value="false"/>
