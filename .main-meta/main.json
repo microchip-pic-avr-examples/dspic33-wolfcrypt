@@ -16,24 +16,42 @@
          "name":"XCDSC",
          "semverRange":"^3.21"
       },
-      "dfp":{
-         "name":"dsPIC33CK-MP_DFP",
-         "semverRange":">=1.15.423"
-      },
+      "dfp":[
+         {
+            "name":"dsPIC33CK-MP_DFP",
+            "semverRange":">=1.15.423"
+         },
+         {
+            "name":"dsPIC33AK-MP_DFP",
+            "semverRange":">=1.2.135"
+         }
+      ],
 	  "configurator": {
          "name": "MCC",
          "semverRange": ">=5.7.1"
       },
-      "device":{
-         "metaDataVersion":"1.0.0",
-         "category":"com.microchip.portal.contentRef",
-         "content":{
+      "device": [
+         {
             "metaDataVersion":"1.0.0",
-            "category":"com.microchip.device",
-            "name":"dsPIC33Ck256MP508",
-            "versionRange":"*"
+            "category":"com.microchip.portal.contentRef",
+            "content":{
+               "metaDataVersion":"1.0.0",
+               "category":"com.microchip.device",
+               "name":"dsPIC33Ck256MP508",
+               "versionRange":"*"
+            }
+         },
+         {
+            "metaDataVersion":"1.0.0",
+            "category":"com.microchip.portal.contentRef",
+            "content":{
+               "metaDataVersion":"1.0.0",
+               "category":"com.microchip.device",
+               "name":"dsPIC33AK512MPS512",
+               "versionRange":"*"
+            }
          }
-      },
+      ],
       "keywords":[
          "Cryptography"
       ]
