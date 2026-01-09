@@ -20,6 +20,7 @@
 */
 
 #include <stdint.h>
+#include <stddef.h>
 #include "mcc_generated_files/system/system.h"
 #include <wolfssl/wolfcrypt/dilithium.h>
 
