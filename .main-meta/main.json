@@ -7,7 +7,7 @@
       "version":"1.0.0",
       "displayName":"dsPIC33 wolfCrypt Demos",
       "projectName":"dspic33-wolfcrypt",
-      "shortDescription":"These MPLAB® X IDE demo projects showcase wolfCrypt crypto algorithms running on a dsPIC33 devices.",
+      "shortDescription":"These MPLAB® X IDE demo projects showcase wolfCrypt crypto algorithms running on dsPIC33A and dsPIC33C devices.",
       "ide":{
          "name":"MPLABX",
          "semverRange":">=6.25"
@@ -37,7 +37,7 @@
             "content":{
                "metaDataVersion":"1.0.0",
                "category":"com.microchip.device",
-               "name":"dsPIC33Ck256MP508",
+               "name":"dsPIC33CK256MP508",
                "versionRange":"*"
             }
          },
@@ -53,7 +53,9 @@
          }
       ],
       "keywords":[
-         "Cryptography"
+         "Cryptography",
+         "ML-DSA",
+         "PQC"
       ]
    }
 }
