@@ -58,7 +58,7 @@
                    displayName="Important Files"
                    projectFiles="true">
       <itemPath>Makefile</itemPath>
-      <itemPath>ml-dsa.mc3</itemPath>
+      <itemPath>dspic33ck256mp508-pqc-ml-dsa.mc3</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -937,7 +937,7 @@
         <property key="periphComp5.gte" value="gt"/>
         <property key="periphComp6.gte" value="gt"/>
         <property key="programmerToGoFilePath"
-                  value="C:/Users/C71887/Documents/Wolfcrypt/dspic33c-wolfcrypt/mchp_private/demo/dspic33ck256mp508/ml-dsa/ml-dsa.X/debug/default/ml-dsa_ptg"/>
+                  value="C:/Users/C71887/Documents/Wolfcrypt/dspic33c-wolfcrypt/mchp_private/demo/dspic33ck256mp508/ml-dsa/dspic33ck256mp508-pqc-ml-dsa.X/debug/default/dspic33ck256mp508-pqc-ml-dsa_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
