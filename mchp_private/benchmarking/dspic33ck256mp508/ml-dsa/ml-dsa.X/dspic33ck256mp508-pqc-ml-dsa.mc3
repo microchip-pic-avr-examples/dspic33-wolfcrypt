@@ -1,4 +1,4 @@
-<config configName="default" projectName="dspic33ck256mp508-pqc-ml-dsa" configVersion="1.3" device="dsPIC33CK256MP508" deviceLibraryClass="com.microchip.mcc.melody.Library" coreVersion="5.8.3" spaHostVersion="1.2.0">
+<config configName="default" projectName="ml-dsa" configVersion="1.3" device="dsPIC33CK256MP508" deviceLibraryClass="com.microchip.mcc.melody.Library" coreVersion="5.8.3" spaHostVersion="1.2.0">
    <usedPackages class="java.util.ArrayList">
       <package packageName="@mchp-mcc/pic24-dspic33-clock-sib" version="1.4.4" contentType="MELODY">
          <modules class="java.util.ArrayList"/>

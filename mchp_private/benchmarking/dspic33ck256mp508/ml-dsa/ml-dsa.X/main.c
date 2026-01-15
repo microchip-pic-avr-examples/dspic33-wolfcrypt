@@ -19,28 +19,54 @@
     THIS SOFTWARE.
 */
 
-#include <stdint.h>
-#include "mcc_generated_files/system/system.h"
+#include <stdio.h>
+#include "test_vectors/test_vector.h"
+#include "app_config.h"
 #include <wolfssl/wolfcrypt/dilithium.h>
+#include <wolfssl/wolfcrypt/error-crypt.h>
 
-int main(void)
+dilithium_key key __attribute__((space(prog)));
+
+static void MLDSA_Verify(ML_DSA_SIG_VER_TEST_VECTOR* vector, byte level)
 {
-    SYSTEM_Initialize();
-    
-    wc_dilithium_set_level((dilithium_key*)NULL, WC_ML_DSA_44);
-    
-    wc_MlDsaKey_Verify(
-        (dilithium_key*)NULL,
-        (const byte*)NULL, 
-        (word32)NULL, 
-        (const byte*) NULL,
-        (word32)NULL, 
-        (int*)NULL
-    );
+    int status = 0;
+    int error = WC_FAILURE;
 
-    while(1)
-    {
-    }
-    
-    return 0;
+    wc_MlDsaKey_SetParams(&key, level);
+    wc_MlDsaKey_ImportPubRaw(&key, vector->publicKey, vector->publicKeyLength);  
+
+    error = wc_MlDsaKey_Verify(
+            &key,
+            (const byte*)vector->signature,
+            vector->signatureSize,
+            (const byte*) vector->message,
+            vector->messageSize,
+            &status
+        );
+}
+
+#ifdef MLDSA_44
+extern ML_DSA_SIG_VER_TEST_VECTOR ml_dsa_dilithium_44;
+#endif
+
+#ifdef MLDSA_65
+extern ML_DSA_SIG_VER_TEST_VECTOR ml_dsa_dilithium_65;
+#endif
+
+#ifdef MLDSA_87
+extern ML_DSA_SIG_VER_TEST_VECTOR ml_dsa_dilithium_87;
+#endif
+
+int main(void){
+    #ifdef MLDSA_44
+    MLDSA_Verify(&ml_dsa_dilithium_44, WC_ML_DSA_44);
+    #endif
+
+    #ifdef MLDSA_65
+    MLDSA_Verify(&ml_dsa_dilithium_65, WC_ML_DSA_65);
+    #endif
+
+    #ifdef MLDSA_87
+    MLDSA_Verify(&ml_dsa_dilithium_87, WC_ML_DSA_87);
+    #endif
 }
