@@ -164,8 +164,8 @@ If another tool is used to generate a signature it may encode the message by def
 |Dilithium 87|0.6349|
 
 #### Verification Size
-|ML-DSA type|Message Size (bytes)|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
-|---|---|---|---|---|
-|Dilithium 44|4,553|23,678|58|972|
-|Dilithium 65|7,465|25,899|58|972|
-|Dilithium 87|4,616|25,453|58|972|
+|ML-DSA type|Message Size (bytes)|Signature Size (bytes)|Key Size (bytes)|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
+|---|---|---|---|---|---|
+|Dilithium 44|4,553|2,420|1,312|23,678|58|972|
+|Dilithium 65|7,465|3,309|1,952|25,899|58|972|
+|Dilithium 87|4,616|4,627|2,592|25,453|58|972|
