@@ -30,9 +30,9 @@ extern "C" {
 
 #ifdef MLDSA_SIGNATURE_VERIFICATION
 
-//    #define MLDSA_44
+    #define MLDSA_44
 //    #define MLDSA_65
-    #define MLDSA_87
+//    #define MLDSA_87
 
 #endif
 
