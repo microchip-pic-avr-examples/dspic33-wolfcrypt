@@ -68,3 +68,19 @@ If another tool is used to generate a signature it may encode the message by def
         dilithium_key* key
     );
     ```
+
+### Benchmarking for ML-DSA Verification
+
+#### Verification Time
+|ML-DSA type |Verfication time (Seconds)|
+|------------|------|
+|Dilithium 44|0.0278|
+|Dilithium 65|0.0469|
+|Dilithium 87|0.0708|
+
+#### Verification Size
+|ML-DSA type|Message Size (bytes)|Signature Size (bytes)|Key Size (bytes)|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
+|---|---|---|---|---|---|
+|Dilithium 44|4,553|2,420|1,312|36,520|56|1,188|
+|Dilithium 65|7,465|3,309|1,952|40,964|56|1,188|
+|Dilithium 87|4,616|4,627|2,592|40,068|56|1,188|
