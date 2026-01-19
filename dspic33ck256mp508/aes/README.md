@@ -59,7 +59,7 @@ This MPLAB® X project demonstrates AES processing by using wolfCrypt APIs on a 
 ### Project Set Up
 
 #### Replacing Stubbed Files with wolfCrypt Source
-The wolfCrypt files in this project are stubbed and should be replaced with the source provided on the wolfSSL [GitHub](https://github.com/wolfSSL/wolfssl/tree/v5.8.2-stable). This README expects v5.8.2 to be used. The cloned repo can be renamed to `wolfssl` and copied into the crypto folder thus replacing the stubbed files. Each stubbed wolfCrypt file also contains a direct web link to itself within the GitHub repo.
+The wolfCrypt files in this project are stubbed and should be replaced with the source provided on the wolfSSL [GitHub](https://github.com/wolfSSL/wolfssl/tree/v5.8.4-stable). This README expects v5.8.4 to be used. The cloned repo can be renamed to `wolfssl` and copied into the crypto folder thus replacing the stubbed files. Each stubbed wolfCrypt file also contains a direct web link to itself within the GitHub repo.
 
 * Source files can be found in the `<wolfSSL GitHub Repo>\wolfcrypt\src` directory.
 * Header files can be found in the `<wolfSSL GitHub Repo>\wolfssl\wolfcrypt` directory.
@@ -126,7 +126,3 @@ The device will process the configured test vector using the following APIs:
 ##### Decrypt
 
 <img src="../../images/aes_cbc_decrypt_output.jpg" height="800" alt="AES CBC Decrypt Output"/>
-
-## Licensing
-
-This project is for evaluation purposes only. The project is governed under an End User License Agreement (EULA) with wolfSSL. More information can be found within the included `WolfSSL_EULicense_Microchip.md` file.
