@@ -64,6 +64,7 @@
                    projectFiles="true">
       <itemPath>Makefile</itemPath>
       <itemPath>dspic33ck256mp508-aes-stub.mc3</itemPath>
+      <itemPath>dspic33ck256mp508-aes.mc3</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

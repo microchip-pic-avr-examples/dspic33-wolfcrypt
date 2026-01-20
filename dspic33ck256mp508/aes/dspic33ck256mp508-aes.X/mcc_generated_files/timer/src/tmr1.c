@@ -9,13 +9,13 @@
  *
  * @skipline @version   Firmware Driver Version 1.6.1
  *
- * @skipline @version   PLIB Version 1.5.4
+ * @skipline @version   PLIB Version 1.5.7
  *
  * @skipline  Device : dsPIC33CK256MP508
 */
 
 /*
-© [2025] Microchip Technology Inc. and its subsidiaries.
+© [2026] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -71,11 +71,11 @@ const struct TIMER_INTERFACE Timer1 = {
 void TMR1_Initialize (void)
 {
     //TCS External; TSYNC disabled; TCKPS 1:1; TGATE disabled; TECS FCY; PRWIP Write complete; TMWIP Write complete; TMWDIS disabled; TSIDL disabled; TON disabled; 
-    T1CON = 0x102;
+    T1CON = 0x102U;
     //TMR 0x0; 
-    TMR1 = 0x0;
+    TMR1 = 0x0U;
     //Period 0.001 ms; Frequency 100,000,000 Hz; PR 99; 
-    PR1 = 0x63;
+    PR1 = 0x63U;
     
     TMR1_TimeoutCallbackRegister(&TMR1_TimeoutCallback);
 
@@ -86,9 +86,9 @@ void TMR1_Deinitialize (void)
 {
     TMR1_Stop();
     
-    T1CON = 0x0;
-    TMR1 = 0x0;
-    PR1 = 0xFFFF;
+    T1CON = 0x0U;
+    TMR1 = 0x0U;
+    PR1 = 0xFFFFU;
 }
 
 void TMR1_Start( void )
@@ -134,16 +134,26 @@ void __attribute__ ((weak)) TMR1_TimeoutCallback( void )
 
 } 
 
+/* cppcheck-suppress misra-c2012-8.4
+*
+* (Rule 8.4) REQUIRED: A compatible declaration shall be visible when an object or 
+* function with external linkage is defined
+*
+* Reasoning: Interrupt declaration are provided by compiler and are available
+* outside the driver folder
+*/
 void __attribute__ ((interrupt, no_auto_psv)) _T1Interrupt(void)
 {
     (*TMR1_TimeoutHandler)();
     IFS0bits.T1IF = 0;
 }
 
+#if TIMER_PERIODCOUNTSET_API_SUPPORT
 void TMR1_PeriodCountSet(size_t count)
 {
     PR1 = count & MASK_32_BIT_LOW;
 }
+#endif
 
 /**
  End of File
