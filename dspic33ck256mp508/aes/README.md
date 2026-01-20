@@ -25,11 +25,11 @@ This MPLAB® X project demonstrates AES processing by using wolfCrypt APIs on a 
 
 | AES Mode          | Direction                   | RAM (bytes) | Flash (words) |
 | ----              | ---------                   | ----------- | ------------- |
-| ECB               | Encrypt                     | 120         | 9,860         |
-| ECB               | Decrypt                     | 120         | 9,775         |
-| CBC               | Encrypt                     | 120         | 10,446        |
-| CBC               | Decrypt                     | 120         | 10,308        |
-| All Modes Enabled | Encrypt and Decrypt Enabled | 120         | 13,458        |
+| ECB               | Encrypt                     | 124         | 10,245        |
+| ECB               | Decrypt                     | 124         | 10,160        |
+| CBC               | Encrypt                     | 124         | 10,831        |
+| CBC               | Decrypt                     | 124         | 10,693        |
+| All Modes Enabled | Encrypt and Decrypt Enabled | 124         | 13,843        |
 
 ### Performance
 
