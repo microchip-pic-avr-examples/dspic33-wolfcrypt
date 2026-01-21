@@ -31,9 +31,8 @@
 
 void LMS_Verify(LMS_TEST_VECTOR *testVector)
 {
-    int ticksToProcess = 0;
     testVector->lmsKey->state = WC_LMS_STATE_VERIFYONLY;
-    int status = wc_LmsKey_Verify(testVector->lmsKey, testVector->signature, testVector->signatureLen,
+    (void)wc_LmsKey_Verify(testVector->lmsKey, testVector->signature, testVector->signatureLen,
             testVector->message, testVector->messageLen);
 }
 

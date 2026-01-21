@@ -31,15 +31,11 @@ This MPLAB® X project demonstrates LMS processing by using wolfCrypt APIs and t
 
 ### Project Set Up
 
-#### Replacing Stubbed Files with wolfCrypt Source
+#### wolfCrypt Source
 
-The wolfCrypt files in this project are stubbed and should be replaced with the source provided on the wolfSSL [GitHub](https://github.com/wolfSSL/wolfssl/tree/v5.8.2-stable). This README expects v5.8.2 to be used. The cloned repo can be renamed to `wolfssl` and copied into the crypto folder thus replacing the stubbed files. Each stubbed wolfCrypt file also contains a direct web link to itself within the GitHub repo.
+The wolfCrypt files in this project use wolfssl v5.8.4-stable release with edits to support the dsPIC33A device.
 
-* Source files can be found in the `<wolfSSL GitHub Repo>\wolfcrypt\src` directory.
-* Header files can be found in the `<wolfSSL GitHub Repo>\wolfssl\wolfcrypt` directory.
-
-#### Firmware Adjustments
-Three files within the project need to be edited for dsPIC33A CAM support.
+#### Edits that were required for dsPIC33A support
 
 1. `crypto\wolfssl\wolfssl\wolfcrypt\sha256.h`
 
@@ -149,3 +145,17 @@ The input vector signatures are aligned to 4-byte boundaries. This is required t
 ### Demo Output
 
 The device will process the configured test vector using the wolfCrypt `wc_LmsKey_Verify` API. The test parameters and verification status will be printed to the terminal listening at a baud rate of 115200.
+
+## Benchmarking for LMS Verification
+
+### Verification Time
+|Hash|Width|Height|Verfication time (Seconds)|
+|---|---|---|---|
+|SHA-256_192 (N24)|8|25|0.049388|
+|SHA-256 (N32)|8|25|0.057216|
+
+### Verification Size
+|Hash|Width|Height|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
+|---|---|---|---|---|---|
+|SHA-256_192 (N24)|8|25|13,124|292|1660|
+|SHA-256 (N32)|8|25|13,796|292|1660|
