@@ -1,5 +1,5 @@
 /*
-? [2025] Microchip Technology Inc. and its subsidiaries.
+� [2025] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip
     software and any derivatives exclusively with Microchip products.
@@ -19,21 +19,30 @@
     THIS SOFTWARE.
 */
 
-#ifndef APP_CONFIG_H
-#define	APP_CONFIG_H
+#ifndef TEST_VECTOR_H
+#define	TEST_VECTOR_H
 
 #ifdef	__cplusplus
 extern "C" {
 #endif
 
-#define AES_128
-#define AES_192
-#define AES_256
+#include "wolfssl/wolfcrypt/cmac.h"
+#include "wolfssl/wolfcrypt/types.h"
 
-#define AES_CMAC
+typedef struct
+{
+    const char* vectorInformation;
+    int direction;
+    byte* key;
+    word32 keySize;
+    byte* message;
+    word32 messageSize;
+    byte* mac;
+    word32 macSize;
+} MAC_TEST_VECTOR;
 
 #ifdef	__cplusplus
 }
 #endif
 
-#endif	/* APP_CONFIG_H */
+#endif	/* TEST_VECTOR_H */
