@@ -1,7 +1,7 @@
 <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="../../../images/microchip_logo_white_red.png">
-	<source media="(prefers-color-scheme: light)" srcset="../../../images/microchip_logo_black_red.png">
-    <img alt="Microchip Logo." src="../../../images/microchip_logo_black_red.png">
+    <source media="(prefers-color-scheme: dark)" srcset="../../images/microchip_logo_white_red.png">
+	<source media="(prefers-color-scheme: light)" srcset="../../images/microchip_logo_black_red.png">
+    <img alt="Microchip Logo." src="../../images/microchip_logo_black_red.png">
 </picture>
 
 # dsPIC33A PQC ML-DSA (Module-Lattice-Based Digital Signature) Verification
@@ -27,7 +27,7 @@ This MPLAB® X project demonstrates ML-DSA Verify using dilithium wolfCrypt APIs
 1. Insert the dsPIC33AK512MPS512 DIM into the DIM J1 slot on the Curiosity Platform Development Board.
 2. Connect the board from the J24 USB-C PKoB4 (PICKit™ On-Board 4) to the computer.
 
-    <img src="../../../images/hardware_setup.jpg" height="400" alt="Hardware Setup"/>
+    <img src="../../images/hardware_setup.jpg" height="400" alt="Hardware Setup"/>
 
 ### Project Set Up
 
@@ -79,8 +79,8 @@ If another tool is used to generate a signature it may encode the message by def
 |Dilithium 87|0.0708|
 
 #### Verification Size
-|ML-DSA type|Message Size (bytes)|Signature Size (bytes)|Key Size (bytes)|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
-|---|---|---|---|---|---|
+|ML-DSA type|Message Size (bytes)|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
+|---|---|---|---|---|
 |Dilithium 44|4,553|2,420|1,312|36,520|56|1,188|
 |Dilithium 65|7,465|3,309|1,952|40,964|56|1,188|
 |Dilithium 87|4,616|4,627|2,592|40,068|56|1,188|
