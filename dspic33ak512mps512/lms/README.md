@@ -8,12 +8,12 @@
 
 ## Summary
 
-This MPLAB® X project demonstrates LMS processing by using wolfCrypt APIs and the precompiled Crypto Accelerator Module (CAM) library.
+This MPLAB® X project demonstrates LMS signature verification by using wolfCrypt APIs and the precompiled Crypto Accelerator Module (CAM) library.
 
 ## Software Used
 
 - MPLAB® X IDE **v6.25** or newer (https://www.microchip.com/MPLABXIDE)
-- MPLAB® XC-DSC Compiler **v3.21** or a newer compiler (https://www.microchip.com/xcdsc)
+- MPLAB® XC-DSC Compiler **v3.21** (https://www.microchip.com/xcdsc)
 
 ## Hardware Used
 
