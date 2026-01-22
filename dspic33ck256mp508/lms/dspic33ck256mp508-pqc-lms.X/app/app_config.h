@@ -1,0 +1,55 @@
+/*
+� [2025] Microchip Technology Inc. and its subsidiaries.
+
+    Subject to your compliance with these terms, you may use Microchip
+    software and any derivatives exclusively with Microchip products.
+    You are responsible for complying with 3rd party license terms
+    applicable to your use of 3rd party software (including open source
+    software) that may accompany Microchip software. SOFTWARE IS ?AS IS.?
+    NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS
+    SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT,
+    MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT
+    WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
+    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY
+    KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF
+    MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE
+    FORESEEABLE. TO THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP?S
+    TOTAL LIABILITY ON ALL CLAIMS RELATED TO THE SOFTWARE WILL NOT
+    EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR
+    THIS SOFTWARE.
+*/
+
+#ifndef APP_CONFIG_H
+#define	APP_CONFIG_H
+
+#ifdef	__cplusplus
+extern "C" {
+#endif
+
+// NOTE: Due to device memory constraints, only run one hash length at a time.
+ #define LMS_N24
+// #define LMS_N32
+
+#if defined(LMS_N24) || defined(LMS_N32)
+
+    // NOTE: Due to device memory constraints, only run one width group at a time.
+    // #define LMS_WIDTH_1
+    // #define LMS_WIDTH_2
+    // #define LMS_WIDTH_4
+    #define LMS_WIDTH_8
+
+    // NOTE: Due to device memory constraints, use caution when running more than one height group at a time.
+    // #define LMS_HEIGHT_5
+    // #define LMS_HEIGHT_10
+    // #define LMS_HEIGHT_15
+    // #define LMS_HEIGHT_20
+    #define LMS_HEIGHT_25
+
+#endif
+
+#ifdef	__cplusplus
+}
+#endif
+
+#endif	/* APP_CONFIG_H */
+
