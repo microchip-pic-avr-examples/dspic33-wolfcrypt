@@ -13,7 +13,7 @@ This MPLAB® X project demonstrates ML-KEM processing by using wolfCrypt APIs.
 ## Software Used
 
 - MPLAB® X IDE **v6.25** or newer (https://www.microchip.com/MPLABXIDE)
-- MPLAB® XC-DSC Compiler **v3.21** or a newer compiler (https://www.microchip.com/xcdsc)
+- MPLAB® XC-DSC Compiler **v3.21** (https://www.microchip.com/xcdsc)
 
 ## Hardware Used
 
@@ -72,6 +72,6 @@ This project is for evaluation purposes only. The project is governed under an E
 ### Decapsulation Size
 |Hash|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
 |---|---|---|---|---|---|
-|ML-KEM 512|29,016|98|20204|
-|ML-KEM 768|30,488|98|20204|
-|ML-KEM 1024|32,120|98|20204|
+|ML-KEM 512|29,016|98|20,204|
+|ML-KEM 768|30,488|98|20,204|
+|ML-KEM 1024|32,120|98|20,204|
