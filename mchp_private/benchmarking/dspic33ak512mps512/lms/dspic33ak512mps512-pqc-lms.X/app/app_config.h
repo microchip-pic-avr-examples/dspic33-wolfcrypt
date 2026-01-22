@@ -18,54 +18,20 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR
     THIS SOFTWARE.
 */
-#include "mcc_generated_files/system/system.h"
-#include "mcc_generated_files/system/pins.h"
-#include "wolfssl/wolfcrypt/lms.h"
-#include "crypto/test_vectors/test_vector.h"
-#include "app/app_config.h"
 
-void LMS_Verify(LMS_TEST_VECTOR *testVector)
-{
-    testVector->lmsKey->state = WC_LMS_STATE_VERIFYONLY;
-    (void)wc_LmsKey_Verify(testVector->lmsKey, testVector->signature, testVector->signatureLen,
-            testVector->message, testVector->messageLen);
-}
+#ifndef APP_CONFIG_H
+#define	APP_CONFIG_H
 
-#ifdef LMS_N24
-extern LMS_TEST_VECTOR lms_nspk0_sha256_n24_w8_h25_vector;
-static void LMS_N24W8H25Verify(void)
-{
-    // Parameters are hard coded in the vector.
+#ifdef	__cplusplus
+extern "C" {
+#endif
 
-    LMS_Verify((LMS_TEST_VECTOR*) &lms_nspk0_sha256_n24_w8_h25_vector);
+ #define LMS_N24
+ #define LMS_N32
+
+#ifdef	__cplusplus
 }
 #endif
 
-#ifdef LMS_N32
-extern LMS_TEST_VECTOR lms_nspk0_sha256_n32_w8_h25_vector;
-static void LMS_N32W8H25Verify(void)
-{
-    // Parameters are hard coded in the vector.
+#endif	/* APP_CONFIG_H */
 
-    LMS_Verify((LMS_TEST_VECTOR*) &lms_nspk0_sha256_n32_w8_h25_vector);
-}
-#endif
-
-int main(void)
-{
-    SYSTEM_Initialize();
-    
-    #ifdef LMS_N24
-    LMS_N24W8H25Verify();
-    #endif
-
-    #ifdef LMS_N32
-    LMS_N32W8H25Verify();
-    #endif
-
-    while(1)
-    {
-    };
-
-    return 0;
-}

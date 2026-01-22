@@ -22,7 +22,9 @@
 #include <stdint.h>
 #include "wolfssl/wolfcrypt/wc_lms.h"
 #include "test_vectors/test_vector.h"
+#include "app_config.h"
 
+#if defined(LMS_N24)
 static const uint8_t message[] __attribute__((space(prog))) = {
     0x61u, 0x62u, 0x63u, 0x0au
 };
@@ -225,3 +227,5 @@ LMS_TEST_VECTOR lms_nspk0_sha256_n24_w8_h25_vector = {
 };
 
 extern LMS_TEST_VECTOR lms_nspk0_sha256_n24_w8_h25_vector;
+
+#endif

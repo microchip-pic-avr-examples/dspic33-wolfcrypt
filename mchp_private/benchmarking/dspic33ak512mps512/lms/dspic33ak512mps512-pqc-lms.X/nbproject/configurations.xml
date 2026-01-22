@@ -6,6 +6,7 @@
                    projectFiles="true">
       <logicalFolder name="f3" displayName="app" projectFiles="true">
         <itemPath>app/user_settings.h</itemPath>
+        <itemPath>app/app_config.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f4" displayName="crypto" projectFiles="true">
         <logicalFolder name="test_vectors"
