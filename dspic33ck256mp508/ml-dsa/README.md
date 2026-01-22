@@ -27,7 +27,8 @@ This MPLAB® X project demonstrates ML-DSA Verify using dilithium wolfCrypt APIs
 
     <img src="../../../images/hardware_setup_curiosity.jpg" height="400" alt="Hardware Setup"/>
 
-### Project Set Up
+### wolfCrypt Library Set Up
+The configuration of the wolfCrypt library is controlled by macros specified in the `user_settings.h` file. This file enables ECC APIs, sets up 16-bit support, and includes additional configuration options. More information about the options can be found within the `user_settings.h` file.
 
 #### wolfCrypt Source
 
@@ -153,6 +154,10 @@ If another tool is used to generate a signature it may encode the message by def
         dilithium_key* key
     );
     ```
+    
+#### Licensing
+
+This project is for evaluation purposes only. The project is governed under an End User License Agreement (EULA) found at the root folder of dsPIC33-wolfCrypt repo. 
 
 ### Benchmarking for ML-DSA Verification
 
