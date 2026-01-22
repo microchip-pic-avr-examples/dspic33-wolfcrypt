@@ -118,34 +118,3 @@ The following results include usage of ECB, CTR, GCM, XTS, and CMAC APIs. Flash 
 |CBC              |Encrypt            |10,910|404|354|
 |CBC              |Decrypt            |10,771|404|180|
 |All Modes Enabled|Encrypt and Decrypt|13,979|404|166|
-
-## Running the Demo
-
-Open the project in MPLAB® X IDE. Build the project and program the device.
-
-### Demo Configuration
-
-The `app_config.h` file is used to configure the project. The following options are available:
-
-| Algorithm | Direction        | Mode     |
-| --------- | ---------        | ----     |
-| AES-128   | Encrypt, Decrypt | ECB, CBC |
-| AES-192   | Encrypt, Decrypt | ECB, CBC |
-| AES-256   | Encrypt, Decrypt | ECB, CBC |
-
-### Demo Output
-
-The resulting plaintext/ciphertext arrays are compared to expected output. The final status is then printed to the terminal using UART and the following settings:
-
-| Setting           | Value  
-| -------           | -----  |
-| Baudrate          | 115200 |
-| Parity            | None   |
-| Data Size         | 8      |
-| Stop Bits         | 1      |
-| Flow Control Mode | None   |
-
-### Demo Execution
-
-The device will process the configured test vector using the following APIs:
-
