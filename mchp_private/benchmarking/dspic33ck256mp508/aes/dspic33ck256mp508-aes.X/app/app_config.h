@@ -43,6 +43,11 @@ extern "C" {
     #define AES_CBC
 
 #endif
+    
+//Benchmarking Defines
+    
+#define NULL_VECTORS
+#define NORMAL_VECTORS
 
 #ifdef	__cplusplus
 }

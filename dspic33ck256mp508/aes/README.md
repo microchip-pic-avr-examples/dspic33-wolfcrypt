@@ -4,68 +4,120 @@
     <img alt="Microchip Logo." src="../../images/microchip_logo_black_red.png">
 </picture>
 
-# dsPIC33C AES (Advanced Encryption Standard) Example
+# dsPIC33C AES (Advanced Encryption Standard) Example Application
 
-## Summary
+## Description
 
-This MPLAB® X project demonstrates AES processing by using wolfCrypt APIs on a dsPIC33CK256MP508 device.
+This MPLAB® X project demonstrates AES processing by using wolfCrypt APIs on a dsPIC33CK256MP508 device. The following AES algorithms are supported:
+- ECB
+- CBC
 
 ## Software Used 
-- MPLAB® X IDE **v6.25** or newer (https://www.microchip.com/mplabx)
-- MPLAB® XC-DSC Compiler **v3.21** or a newer compiler (https://www.microchip.com/xcdsc)
+- dsPIC33CK-MP_DFP v1.16.457
+- MPLAB® X IDE [v6.25 or newer](https://www.microchip.com/mplab-x-ide)
+- MPLAB® XC-DSC Compiler [v3.30 or newer](https://www.microchip.com/xcdsc)
+- wolfCrypt library [5.8.4](./dspic33ck256mp508-aes.X/crypto/wolfssl/)
 
 ## Hardware Used
 
-- dsPIC33CK Curiosity Development Board (https://www.microchip.com/dm330030)
+- dsPIC33CK Curiosity Development Board ([DM330030](https://www.microchip.com/dm330030))
 - dsPIC33CK256MP508 High-Performance DSC (https://www.microchip.com/dspic33ck256mp508)
-
-## Benchmarking
-
-### Memory Usage
-
-| AES Mode          | Direction                   | RAM (bytes) | Flash (words) |
-| ----              | ---------                   | ----------- | ------------- |
-| ECB               | Encrypt                     | 124         | 10,245        |
-| ECB               | Decrypt                     | 124         | 10,160        |
-| CBC               | Encrypt                     | 124         | 10,831        |
-| CBC               | Decrypt                     | 124         | 10,693        |
-| All Modes Enabled | Encrypt and Decrypt Enabled | 124         | 13,843        |
-
-### Performance
-
-| AES Key Size | AES Mode | Direction | Plaintext/Ciphertext Size (bytes) | Initialization Vector Size (bytes) | Cycles | Time (seconds) |
-| ------------ | -------- | --------- | --------------------------------- | ---------------------------------- | ------ | -------------- |
-| AES-128      | ECB      | Encrypt   | 80                                | N/A                                | 38,600 | 0.000386       |
-| AES-192      | ECB      | Encrypt   | 80                                | N/A                                | 45,500 | 0.000455       |
-| AES-256      | ECB      | Encrypt   | 80                                | N/A                                | 53,900 | 0.000539       |
-| AES-128      | ECB      | Decrypt   | 80                                | N/A                                | 46,400 | 0.000464       |
-| AES-192      | ECB      | Decrypt   | 80                                | N/A                                | 55,100 | 0.000551       |
-| AES-256      | ECB      | Decrypt   | 80                                | N/A                                | 65,500 | 0.000655       |
-| AES-128      | CBC      | Encrypt   | 80                                | 16                                 | 39,300 | 0.000393       |
-| AES-192      | CBC      | Encrypt   | 80                                | 16                                 | 46,500 | 0.000465       |
-| AES-256      | CBC      | Encrypt   | 80                                | 16                                 | 54,900 | 0.000549       |
-| AES-128      | CBC      | Decrypt   | 80                                | 16                                 | 48,400 | 0.000484       |
-| AES-192      | CBC      | Decrypt   | 80                                | 16                                 | 57,200 | 0.000572       |
-| AES-256      | CBC      | Decrypt   | 80                                | 16                                 | 67,400 | 0.000674       |
-
-## Set up
-
-### Hardware Set up
+- 
+## Setting Up The Hardware
 
 1. Connect the board to the computer using a USB cable, connecting to the PICkit™ On-Board (PKOB) programmer/debugger.
 
     <img src="../../images/hardware_setup.jpg" height="400" alt="Hardware Setup"/>
 
-### Project Set Up
+## Running the Application
 
-#### Replacing Stubbed Files with wolfCrypt Source
-The wolfCrypt files in this project are stubbed and should be replaced with the source provided on the wolfSSL [GitHub](https://github.com/wolfSSL/wolfssl/tree/v5.8.4-stable). This README expects v5.8.4 to be used. The cloned repo can be renamed to `wolfssl` and copied into the crypto folder thus replacing the stubbed files. Each stubbed wolfCrypt file also contains a direct web link to itself within the GitHub repo.
+1. Within MPLAB® X IDE, open the dspic33ck256mp508-aes.X application project in dspic33ck256mp508/aes.
+2. Open the app_config.h file found at dspic33ck256mp508/aes/dspic33ck256mp508-aes.X/app. In this file, each key length, algorithm, and direction can be enabled or disabled.
+3. Open the user_settings.h file found at dspic33ck256mp508/aes/dspic33ck256mp508-aes.X/app. The configuration of the wolfCrypt library is controlled by macros specified in this file. This file enables AES APIs, sets up 16-bit support, and includes additional configuration options.
+4. Build and Program the application using MPLAB® X IDE.
+5. The printed information can be found on the serial COM port reading at a speed of 115200.
 
-* Source files can be found in the `<wolfSSL GitHub Repo>\wolfcrypt\src` directory.
-* Header files can be found in the `<wolfSSL GitHub Repo>\wolfssl\wolfcrypt` directory.
+## Application Results
+### AES ECB and CBC Results
+The following information will be printed on the COM port for symmetric AES algorithms:
+1. A header is displayed showing the used AES algorithm, input data length, and direction.
+2. The expected result is printed out. This is the array that the output of the algorithm will be compared against.
+3. The result obtained from the operation is printed out.
+4. Success or Failure is printed out depending on the comparison between the two arrays.
+5. The number of cycles spent running the operation is printed out. This is obtained using the Timer module.
+6. The number of seconds spent running the operation is printed out. This value is obtained from the cycles spent running the operation.
 
-### wolfCrypt Library Set Up
-The configuration of the wolfCrypt library is controlled by macros specified in the `user_settings.h` file. This file enables AES APIs, sets up 16-bit support, and includes additional configuration options. More information about the options can be found within the `user_settings.h` file.
+Example output:
+<img src="./../../images/aes_cbc_decrypt_output.jpg">
+
+## wolfCrypt APIs
+
+### AES-ECB
+
+* `wc_AesInit` - Initializes the AES structure.
+* `wc_AesSetKey` - Further initializes the AES structure with the key information.
+* `wc_AesEcbEncrypt` - Encrypts the given plaintext using ECB mode.
+* `wc_AesEcbDecrypt` - Decrypts the given ciphertext using ECB mode.
+
+### AES-CBC
+
+* `wc_AesInit` - Initializes the AES structure.
+* `wc_AesSetKey` - Further initializes the AES structure with the key and initialization vector information.
+* `wc_AesCbcEncrypt` - Encrypts the given plaintext using CBC mode.
+* `wc_AesCbcDecrypt` - Decrypts the given ciphertext using CBC mode.
+
+## Benchmarking
+
+### Performance
+The following benchmarking results were obtained with the device clock speed set to 200MHz.
+
+#### AES-ECB
+
+|Key Size (bytes)|Plaintext Size (bytes)|Encryption Performance (seconds)|
+|----|----|----|
+|16|80|0.000386|
+|24|80|0.000455|
+|32|80|0.000539|
+
+|Key Size (bytes)|Plaintext Size (bytes)|Decryption Performance (seconds)|
+|----|----|----|
+|16|80|0.000464|
+|24|80|0.000551|
+|32|80|0.000655|
+
+#### AES-CBC
+|Key Size (bytes)|Initialization Vector Size (bytes)|Plaintext Size (bytes)|Encryption Performance (seconds)|
+|----|----|----|----|
+|16|16|80|0.000393|
+|24|16|80|0.000465|
+|32|16|80|0.000549|
+
+|Key Size (bytes)|Initialization Vector Size (bytes)|Ciphertext Size (bytes)|Decryption Performance (seconds)|
+|----|----|----|----|
+|16|16|80|0.000484|
+|24|16|80|0.000572|
+|32|16|80|0.000674|
+
+### Memory Size Benchmarking
+The following results include usage of ECB, CTR, GCM, XTS, and CMAC APIs. Flash size will vary based on size of the stored data inputs used with the library.
+
+#### NULL Vectors
+|AES Mode|Direction|FLASH (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
+|----|----|----|----|----|
+|ECB              |Encrypt            |10,245|44|102|
+|ECB              |Decrypt            |10,160|44|98|
+|CBC              |Encrypt            |10,831|44|354|
+|CBC              |Decrypt            |10,693|44|180|
+|All Modes Enabled|Encrypt and Decrypt|13,843|44|166|
+
+#### Normal Vectors
+|AES Mode|Direction|FLASH (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
+|----|----|----|----|----|
+|ECB              |Encrypt            |10,313|404|102|
+|ECB              |Decrypt            |10,228|404|98|
+|CBC              |Encrypt            |10,910|404|354|
+|CBC              |Decrypt            |10,771|404|180|
+|All Modes Enabled|Encrypt and Decrypt|13,979|404|166|
 
 ## Running the Demo
 
@@ -97,32 +149,3 @@ The resulting plaintext/ciphertext arrays are compared to expected output. The f
 
 The device will process the configured test vector using the following APIs:
 
-#### AES-ECB
-
-* `wc_AesInit` - Initializes the AES structure.
-* `wc_AesSetKey` - Further initializes the AES structure with the key information.
-* `wc_AesEcbEncrypt` - Encrypts the given plaintext using ECB mode.
-* `wc_AesEcbDecrypt` - Decrypts the given ciphertext using ECB mode.
-
-##### Encrypt
-
-<img src="../../images/aes_ecb_encrypt_output.jpg" height="800" alt="AES ECB Encrypt Output"/>
-
-##### Decrypt
-
-<img src="../../images/aes_ecb_decrypt_output.jpg" height="800" alt="AES ECB Decrypt Output"/>
-
-#### AES-CBC
-
-* `wc_AesInit` - Initializes the AES structure.
-* `wc_AesSetKey` - Further initializes the AES structure with the key and initialization vector information.
-* `wc_AesCbcEncrypt` - Encrypts the given plaintext using CBC mode.
-* `wc_AesCbcDecrypt` - Decrypts the given ciphertext using CBC mode.
-
-##### Encrypt
-
-<img src="../../images/aes_cbc_encrypt_output.jpg" height="800" alt="AES CBC Encrypt Output"/>
-
-##### Decrypt
-
-<img src="../../images/aes_cbc_decrypt_output.jpg" height="800" alt="AES CBC Decrypt Output"/>
