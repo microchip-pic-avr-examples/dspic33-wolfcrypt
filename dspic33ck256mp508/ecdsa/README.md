@@ -8,11 +8,11 @@
 
 ## Summary
 
-This MPLAB® X project demonstrates ECDSA processing by using wolfCrypt APIs on a dsPIC33CK256MP508 device.
+This MPLAB® X project demonstrates ECDSA verification by using wolfCrypt APIs on a dsPIC33CK256MP508 device.
 
 ## Software Used 
 - MPLAB® X IDE **v6.25** or newer (https://www.microchip.com/mplabx)
-- MPLAB® XC-DSC Compiler **v3.21** or a newer compiler (https://www.microchip.com/xcdsc)
+- MPLAB® XC-DSC Compiler **v3.21** (https://www.microchip.com/xcdsc)
 
 ## Hardware Used
 
@@ -26,14 +26,6 @@ This MPLAB® X project demonstrates ECDSA processing by using wolfCrypt APIs on 
 1. Connect the board to the computer using a USB cable, connecting to the PICkit™ On-Board (PKOB) programmer/debugger.
 
     <img src="../../images/hardware_setup.jpg" height="400" alt="Hardware Setup"/>
-
-### Project Set Up
-
-#### Replacing Stubbed Files with wolfCrypt Source
-The wolfCrypt files in this project are stubbed and should be replaced with the source provided on the wolfSSL [GitHub](https://github.com/wolfSSL/wolfssl/tree/v5.8.2-stable). This README expects v5.8.2 to be used. The cloned repo can be renamed to `wolfssl` and copied into the crypto folder thus replacing the stubbed files. Each stubbed wolfCrypt file also contains a direct web link to itself within the GitHub repo.
-
-* Source files can be found in the `<wolfSSL GitHub Repo>\wolfcrypt\src` directory.
-* Header files can be found in the `<wolfSSL GitHub Repo>\wolfssl\wolfcrypt` directory.
 
 ### wolfCrypt Library Set Up
 The configuration of the wolfCrypt library is controlled by macros specified in the `user_settings.h` file. This file enables ECC APIs, sets up 16-bit support, and includes additional configuration options. More information about the options can be found within the `user_settings.h` file.
@@ -53,7 +45,7 @@ The `app_config.h` file is used to configure the project. The following options 
 
 ### Demo Output
 
-The resulting verification status is then printed to the terminal using UART and the following settings:
+The resulting verification status is then printed to the terminal using UART with the following settings:
 
 | Setting           | Value  
 | -------           | -----  |
@@ -81,20 +73,20 @@ The NIST test vectors used in this project are found in the following [repo](htt
 
 ## Licensing
 
-This project is for evaluation purposes only. The project is governed under an End User License Agreement (EULA) with wolfSSL. More information can be found within the included `WolfSSL_EULicense_Microchip.md` file.
+This project is for evaluation purposes only. The project is governed under an End User License Agreement (EULA) found at the root folder of dsPIC33-wolfCrypt repo. 
 
-## Benchmarking
+## Benchmarking for ECDSA Verification
 
-### Memory Usage 
-
-|ECC Curve | Flash (bytes) | RAM Static (bytes) | RAM Stack (bytes) |
-| -------- | ------------- | ------------------ | ----------------- |
-| P-256    | 19,635        | 124                |  6,150            |
-| P-384    | 19,675        | 124                |  6,150            |
-
-### Performance
+### Verification Time
 
 | ECC Curve    | Cycles        | Time (seconds) |
 | ------------ | ------------- | -------------- |
 | P256         |   382,190,400 |  3.821904      |
 | P384         | 1,143,803,600 | 11.438036      |
+
+### Verification Size
+
+|ECC Curve | Flash (bytes) | RAM Static (bytes) | RAM Stack (bytes) |
+| -------- | ------------- | ------------------ | ----------------- |
+| P-256    | 19,635        | 124                |  6,150            |
+| P-384    | 19,675        | 124                |  6,150            |
