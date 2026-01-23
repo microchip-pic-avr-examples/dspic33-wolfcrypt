@@ -171,6 +171,6 @@ This project is for evaluation purposes only. The project is governed under an E
 #### Verification Size
 |ML-DSA type|Message Size (bytes)|Signature Size (bytes)|Key Size (bytes)|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
 |---|---|---|---|---|---|
-|Dilithium 44|4,553|2,420|1,312|23,678|58|972|
-|Dilithium 65|7,465|3,309|1,952|25,899|58|972|
-|Dilithium 87|4,616|4,627|2,592|25,453|58|972|
+|Dilithium 44|4,553|2,420|1,312|18,047|58|964|
+|Dilithium 65|7,465|3,309|1,952|20,268|58|964|
+|Dilithium 87|4,616|4,627|2,592|19,822|58|964|
