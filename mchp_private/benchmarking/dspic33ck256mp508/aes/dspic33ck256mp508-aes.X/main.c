@@ -78,73 +78,37 @@ int main(void)
 
     #ifdef AES_ECB
         #ifdef AES_ENCRYPT
-            #ifdef NULL_VECTORS
-                wc_AesInit((Aes*) NULL, NULL, 0);
+            wc_AesInit((Aes*) &aes, NULL, 0);
 
-                wc_AesSetKey((Aes*) NULL, (const byte*) NULL, 0, (const byte*) NULL, AES_ENCRYPTION);
+            wc_AesSetKey((Aes*) &aes, (const byte*) key, sizeof(key), (const byte*) NULL, AES_ENCRYPTION);
 
-                wc_AesEcbEncrypt((Aes*) NULL, (byte*) NULL, (const byte*) NULL, 0);
-            #endif
-            #ifdef NORMAL_VECTORS
-                wc_AesInit((Aes*) &aes, NULL, 0);
-
-                wc_AesSetKey((Aes*) &aes, (const byte*) key, sizeof(key), (const byte*) NULL, AES_ENCRYPTION);
-
-                wc_AesEcbEncrypt((Aes*) &aes, (byte*) &result, (const byte*) plaintext, sizeof(plaintext));
-            #endif
+            wc_AesEcbEncrypt((Aes*) &aes, (byte*) &result, (const byte*) plaintext, sizeof(plaintext));
         #endif
 
         #ifdef AES_DECRYPT
-            #ifdef NULL_VECTORS
-                wc_AesInit((Aes*) NULL, NULL, 0);
+            wc_AesInit((Aes*) &aes, NULL, 0);
 
-                wc_AesSetKey((Aes*) NULL, (const byte*) NULL, 0, (const byte*) NULL, AES_DECRYPTION);
+            wc_AesSetKey((Aes*) &aes, (const byte*) key, sizeof(key), (const byte*) NULL, AES_DECRYPTION);
 
-                wc_AesEcbDecrypt((Aes*) NULL, (byte*) NULL, (const byte*) NULL, 0);
-            #endif
-            #ifdef NORMAL_VECTORS
-                wc_AesInit((Aes*) &aes, NULL, 0);
-
-                wc_AesSetKey((Aes*) &aes, (const byte*) key, sizeof(key), (const byte*) NULL, AES_DECRYPTION);
-
-                wc_AesEcbDecrypt((Aes*) &aes, (byte*) &result, (const byte*) ciphertext, sizeof(ciphertext));
-            #endif
+            wc_AesEcbDecrypt((Aes*) &aes, (byte*) &result, (const byte*) ciphertext, sizeof(ciphertext));
         #endif
     #endif
 
     #ifdef AES_CBC
         #ifdef AES_ENCRYPT
-            #ifdef NULL_VECTORS
-                wc_AesInit((Aes*) NULL, NULL, 0);
+            wc_AesInit((Aes*) &aes, NULL, 0);
 
-                wc_AesSetKey((Aes*) NULL, (const byte*) NULL, 0, (const byte*) NULL, AES_ENCRYPTION);
+            wc_AesSetKey((Aes*) &aes, (const byte*) key, sizeof(key), (const byte*) initializationVector, AES_ENCRYPTION);
 
-                wc_AesCbcEncrypt((Aes*) NULL, (byte*) NULL, (const byte*) NULL, 0);
-            #endif
-            #ifdef NORMAL_VECTORS
-                wc_AesInit((Aes*) &aes, NULL, 0);
-
-                wc_AesSetKey((Aes*) &aes, (const byte*) key, sizeof(key), (const byte*) initializationVector, AES_ENCRYPTION);
-
-                wc_AesCbcEncrypt((Aes*) &aes, (byte*) &result, (const byte*) plaintext, sizeof(plaintext));
-            #endif
+            wc_AesCbcEncrypt((Aes*) &aes, (byte*) &result, (const byte*) plaintext, sizeof(plaintext));
         #endif
 
         #ifdef AES_DECRYPT
-            #ifdef NULL_VECTORS
-                wc_AesInit((Aes*) NULL, NULL, 0);
+            wc_AesInit((Aes*) &aes, NULL, 0);
 
-                wc_AesSetKey((Aes*) NULL, (const byte*) NULL, 0, (const byte*) NULL, AES_DECRYPTION);
+            wc_AesSetKey((Aes*) &aes, (const byte*) key, sizeof(key), (const byte*) initializationVector, AES_DECRYPTION);
 
-                wc_AesCbcDecrypt((Aes*) NULL, (byte*) NULL, (const byte*) NULL, 0);
-            #endif
-            #ifdef NORMAL_VECTORS
-                wc_AesInit((Aes*) &aes, NULL, 0);
-
-                wc_AesSetKey((Aes*) &aes, (const byte*) key, sizeof(key), (const byte*) initializationVector, AES_DECRYPTION);
-
-                wc_AesCbcDecrypt((Aes*) &aes, (byte*) &result, (const byte*) ciphertext, sizeof(ciphertext));
-            #endif
+            wc_AesCbcDecrypt((Aes*) &aes, (byte*) &result, (const byte*) ciphertext, sizeof(ciphertext));
         #endif
     #endif
 
