@@ -101,16 +101,6 @@ The following benchmarking results were obtained with the device clock speed set
 ### Memory Size Benchmarking
 The following results include usage of ECB, CTR, GCM, XTS, and CMAC APIs. Flash size will vary based on size of the stored data inputs used with the library.
 
-#### NULL Vectors
-|AES Mode|Direction|FLASH (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
-|----|----|----|----|----|
-|ECB              |Encrypt            |10,245|44|102|
-|ECB              |Decrypt            |10,160|44|98|
-|CBC              |Encrypt            |10,831|44|354|
-|CBC              |Decrypt            |10,693|44|180|
-|All Modes Enabled|Encrypt and Decrypt|13,843|44|166|
-
-#### Normal Vectors
 |AES Mode|Direction|FLASH (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
 |----|----|----|----|----|
 |ECB              |Encrypt            |10,313|404|102|
