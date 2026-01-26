@@ -13,7 +13,7 @@ mcc_core_version: 5.8.3
 content_manager_version: 6.0.3
 is_mcc_offline: false
 is_using_prerelease_versions: false
-mcc_content_registries: https://registry.npmjs.com
+mcc_content_registries: https://registry.npmjs.org/
 device_library: {library_class: com.microchip.mcc.melody.Library, name: Melody, version: 2.10.1}
 packs: {name: N/A, version: N/A}
 modules:
