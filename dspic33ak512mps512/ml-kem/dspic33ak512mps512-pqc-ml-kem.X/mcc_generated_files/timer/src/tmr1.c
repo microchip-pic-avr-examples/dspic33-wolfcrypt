@@ -7,7 +7,7 @@
  * 
  * @brief     This is the generated driver source file for TMR1 driver
  *
- * @version   PLIB Version 1.0.2
+ * @version   PLIB Version 1.1.1
  *
  * @skipline  Device : dsPIC33AK512MPS512
 */

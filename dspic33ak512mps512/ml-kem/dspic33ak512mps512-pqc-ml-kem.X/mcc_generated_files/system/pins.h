@@ -8,7 +8,7 @@
  * @brief     The Pin Driver directs the operation and function of 
  *            the selected device pins using dsPIC MCUs.
  *
- * @skipline @version   PLIB Version 1.0.2
+ * @skipline @version   PLIB Version 1.0.5
  *
  * @skipline  Device : dsPIC33AK512MPS512
 */
@@ -39,8 +39,21 @@
 // Section: Includes
 #include <xc.h>
 
-// Section: Device Pin Macros
+/**
+ * @ingroup  pinsdriver
+ * @brief    Locks all the Peripheral Remapping registers and cannot be written.
+ * @return   none  
+ */
+#define PINS_PPSLock()           (RPCONbits.IOLOCK = 1)
 
+/**
+ * @ingroup  pinsdriver
+ * @brief    Unlocks all the Peripheral Remapping registers and can be written.
+ * @return   none  
+ */
+#define PINS_PPSUnlock()         (RPCONbits.IOLOCK = 0)
+
+// Section: Device Pin Macros
 /**
  * @ingroup  pinsdriver
  * @brief    Sets the RC8 GPIO Pin which has a custom name of BENCHMARKING_P28 to High
