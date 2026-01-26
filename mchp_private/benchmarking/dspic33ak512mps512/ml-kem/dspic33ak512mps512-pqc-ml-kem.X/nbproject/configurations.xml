@@ -52,6 +52,7 @@
           <itemPath>mcc_generated_files/system/pins.h</itemPath>
           <itemPath>mcc_generated_files/system/reset.h</itemPath>
           <itemPath>mcc_generated_files/system/reset_types.h</itemPath>
+          <itemPath>mcc_generated_files/system/system_types.h</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>

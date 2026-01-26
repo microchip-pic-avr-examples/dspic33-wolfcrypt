@@ -8,11 +8,11 @@
 
 ## Summary
 
-This MPLAB® X project demonstrates ML-KEM processing by using wolfCrypt APIs.
+This MPLAB® X project demonstrates ML-KEM decapsulation processing by using wolfCrypt APIs.
 
 ## Software Used
 
-- MPLAB® X IDE **v6.25** or newer (https://www.microchip.com/MPLABXIDE)
+- MPLAB® X IDE **v6.30** (https://www.microchip.com/mplab-x-ide)
 - MPLAB® XC-DSC Compiler **v3.21** (https://www.microchip.com/xcdsc)
 
 ## Hardware Used
