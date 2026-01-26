@@ -7,13 +7,13 @@
  * 
  * @brief     This is the generated driver source file for TMR1 driver
  *
- * @version   PLIB Version 1.0.2
+ * @version   PLIB Version 1.1.1
  *
  * @skipline  Device : dsPIC33AK512MPS512
 */
 
 /*
-© [2025] Microchip Technology Inc. and its subsidiaries.
+© [2026] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -132,7 +132,7 @@ void __attribute__ ((weak)) TMR1_TimeoutCallback( void )
 * Reasoning: Interrupt declaration are provided by compiler and are available
 * outside the driver folder
 */
-void __attribute__ ((interrupt, no_auto_psv)) _T1Interrupt(void)
+void __attribute__ ( ( interrupt ) ) _T1Interrupt(void)
 {
     (*TMR1_TimeoutHandler)();
     IFS1bits.T1IF = 0;

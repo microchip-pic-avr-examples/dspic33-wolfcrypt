@@ -7,13 +7,13 @@
  *  
  * @brief       This is the generated driver source file for the UART1 driver
  *
- * @skipline @version     PLIB Version 1.0.3
+ * @skipline @version     PLIB Version 1.1.2
  *
  * @skipline    Device : dsPIC33AK512MPS512
 */
 
 /*
-© [2025] Microchip Technology Inc. and its subsidiaries.
+© [2026] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -457,7 +457,7 @@ void __attribute__ ((weak)) UART1_ParityErrorCallback(void)
 
 } 
 
-void __attribute__ ( ( interrupt, no_auto_psv ) ) _U1TXInterrupt(void)
+void __attribute__ ( ( interrupt ) ) _U1TXInterrupt(void)
 {
 
     if(txHead == txTail)
@@ -491,7 +491,7 @@ void __attribute__ ( ( interrupt, no_auto_psv ) ) _U1TXInterrupt(void)
     }
 }
 
-void __attribute__ ( ( interrupt, no_auto_psv ) ) _U1RXInterrupt(void)
+void __attribute__ ( ( interrupt ) ) _U1RXInterrupt(void)
 {
     size_t rxQueueSize;
     uint8_t *rxTailPtr = NULL;
@@ -529,7 +529,7 @@ void __attribute__ ( ( interrupt, no_auto_psv ) ) _U1RXInterrupt(void)
     }
 }
 
-void __attribute__ ( ( interrupt, no_auto_psv ) ) _U1EInterrupt(void)
+void __attribute__ ( ( interrupt ) ) _U1EInterrupt(void)
 {
     if (U1STATbits.ABDOVIF == 1)
     {
@@ -581,7 +581,7 @@ void __attribute__ ( ( interrupt, no_auto_psv ) ) _U1EInterrupt(void)
 }
 
 /* ISR for UART Event Interrupt */
-void __attribute__ ( ( interrupt, no_auto_psv ) ) _U1EVTInterrupt(void)
+void __attribute__ ( ( interrupt ) ) _U1EVTInterrupt(void)
 {
     U1UIRbits.ABDIF = false;
     IFS3bits.U1EVTIF = false;
