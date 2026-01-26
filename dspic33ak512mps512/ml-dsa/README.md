@@ -12,8 +12,8 @@ This MPLAB® X project demonstrates ML-DSA Verify using dilithium wolfCrypt APIs
 
 ## Software Used
 
-- MPLAB® X IDE **v6.25** or newer (https://www.microchip.com/MPLABXIDE)
-- MPLAB® XC-DSC Compiler **v3.21** or a newer compiler (https://www.microchip.com/xcdsc)
+- MPLAB® X IDE **v6.30** (https://www.microchip.com/mplab-x-ide)
+- MPLAB® XC-DSC Compiler **v3.21** (https://www.microchip.com/xcdsc)
 
 ## Hardware Used
 
