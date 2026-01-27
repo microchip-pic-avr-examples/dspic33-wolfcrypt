@@ -82,14 +82,14 @@ void benchmarkingDataPrint(uint32_t microseconds)
     (void) printf("\r\n Seconds spent: %lf", seconds);
 }
 
-void headerInformationPrint(const AES_TEST_VECTOR *testVector)
+void headerInformationPrint(const MAC_TEST_VECTOR *testVector)
 {
     (void) printf(MAG"\r\n\r\n *************************************************************************************");
     (void) printf(CYAN"\r\n *************************** AES TEST - %s **************************", testVector->vectorInformation);
     (void) printf(MAG"\r\n *************************************************************************************"RESET_COLOR);
 }
 
-void resultVerify(int direction, const AES_TEST_VECTOR *testVector, uint8_t *result)
+void resultVerify(int direction, const MAC_TEST_VECTOR *testVector, uint8_t *result)
 {
     const char* description = "";
     bool areArraysEqual = false;
@@ -97,18 +97,18 @@ void resultVerify(int direction, const AES_TEST_VECTOR *testVector, uint8_t *res
     if(direction == AES_ENCRYPTION)
     {
         description = "Encrypt";
-        hexArrayPrint("Expected (ciphertext)", testVector->ciphertext, testVector->ciphertextSize);
-        hexArrayPrint("Result (ciphertext)  ", result, testVector->ciphertextSize);
+        hexArrayPrint("Expected (mac)", testVector->mac, testVector->macSize);
+        hexArrayPrint("Result (mac)  ", result, testVector->macSize);
 
-        areArraysEqual = arrayEqualityCheck(testVector->ciphertext, result, testVector->ciphertextSize);
+        areArraysEqual = arrayEqualityCheck(testVector->mac, result, testVector->macSize);
     }
     else
     {
         description = "Decrypt";
-        hexArrayPrint("Expected (plaintext) ", testVector->plaintext, testVector->plaintextSize);
-        hexArrayPrint("Result (plaintext)   ", result, testVector->plaintextSize);
+        hexArrayPrint("Expected (plaintext) ", testVector->message, testVector->messageSize);
+        hexArrayPrint("Result (plaintext)   ", result, testVector->messageSize);
 
-        areArraysEqual = arrayEqualityCheck(testVector->plaintext, result, testVector->plaintextSize);
+        areArraysEqual = arrayEqualityCheck(testVector->plaintext, result, testVector->messageSize);
     }
 
     if(areArraysEqual)
