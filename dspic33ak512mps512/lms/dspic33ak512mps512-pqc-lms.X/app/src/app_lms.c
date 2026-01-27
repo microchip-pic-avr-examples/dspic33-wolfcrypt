@@ -1,5 +1,5 @@
 /*
-ï¿½ [2025] Microchip Technology Inc. and its subsidiaries.
+© [2026] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip
     software and any derivatives exclusively with Microchip products.
@@ -31,46 +31,11 @@
 #include "test_vectors/test_vector.h"
 #include "wolfssl/wolfcrypt/lms.h"
 
-static void headerInformationPrint(LMS_TEST_VECTOR *testVector)
-{
-    const char* paddingBefore = "";
-    const char* paddingAfter = "";
-
-    if(testVector->lmsKey->params->hash_len == 24)
-    {
-        paddingAfter = (testVector->lmsKey->params->height == 5) ? "******" : "*****";
-    }
-    else
-    {
-        paddingBefore = "**";
-        paddingAfter = (testVector->lmsKey->params->height == 5) ? "********" : "*******";
-    }
-
-    (void) printf(CYAN"\r\n %s***************** LMS TEST - %s ************%s",
-            paddingBefore, testVector->vectorInformation, paddingAfter);
-}
-
-static void parametersPrint(LMS_TEST_VECTOR *testVector)
-{
-    (void) printf("\r\n Parameters:");
-    (void) printf("\r\n Levels: %d", testVector->lmsKey->params->levels);
-    (void) printf("\r\n Height: %d", testVector->lmsKey->params->height);
-    (void) printf("\r\n Width: %d", testVector->lmsKey->params->width);
-    (void) printf("\r\n Ls: %d", testVector->lmsKey->params->ls);
-    (void) printf("\r\n P: %d", testVector->lmsKey->params->p);
-    (void) printf("\r\n LmsType: %d", testVector->lmsKey->params->lmsType);
-    (void) printf("\r\n LmOtsType: %d", testVector->lmsKey->params->lmOtsType);
-    (void) printf("\r\n Signature Length: %d", testVector->lmsKey->params->sig_len);
-    (void) printf("\r\n Hash Length: %d", testVector->lmsKey->params->hash_len);
-}
-
 void LMS_Verify(LMS_TEST_VECTOR *testVector)
 {
     int ticksToProcess = 0;
 
-    (void) printf(MAG"\r\n\r\n *************************************************************************************");
     headerInformationPrint(testVector);
-    (void) printf(MAG"\r\n *************************************************************************************"RESET_COLOR);
 
     parametersPrint(testVector);
 
