@@ -12,8 +12,9 @@ This MPLAB® X project demonstrates LMS signature verification by using wolfCryp
 
 ## Software Used
 
-- MPLAB® X IDE **v6.25** or newer (https://www.microchip.com/MPLABXIDE)
-- MPLAB® XC-DSC Compiler **v3.21** (https://www.microchip.com/xcdsc)
+- dsPIC33AK-MP_DFP v1.2.135
+- MPLAB® X IDE **v6.30** (https://www.microchip.com/mplabx)
+- MPLAB® XC-DSC Compiler **v3.30** (https://www.microchip.com/xcdsc)
 
 ## Hardware Used
 

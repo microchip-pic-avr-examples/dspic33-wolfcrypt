@@ -28,7 +28,8 @@ extern "C" {
 
 #include <stdint.h>
 #include <stdbool.h>
-
+#include "test_vectors/test_vector.h"
+    
 #define RESET_COLOR "\x1B""[0m"
 #define RED "\x1B""[1;31m"
 #define GREEN "\x1B""[1;32m"
@@ -47,6 +48,9 @@ void benchmarkingStart(void);
 
 void benchmarkingEnd(int* ticksToProcess);
 
+void headerInformationPrint(LMS_TEST_VECTOR *testVector);
+
+void parametersPrint(LMS_TEST_VECTOR *testVector);
 #ifdef	__cplusplus
 }
 #endif
