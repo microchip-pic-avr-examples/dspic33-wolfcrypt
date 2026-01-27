@@ -1131,7 +1131,7 @@ static WC_INLINE int Transform_Sha256_Len(wc_Sha256* sha256, const byte* data,
 
 #elif defined(dsPIC33A_CAM_ENABLE)
 
-    /* implemented in wolfcrypt/src/port/Microchip/dsPIC33A/dspic33a_cam_hash.c */
+    /* implemented in wolfcrypt/src/port/microchip/dspic33a/dspic33a_cam_hash.c */
 
 #else
     #define NEED_SOFT_SHA256

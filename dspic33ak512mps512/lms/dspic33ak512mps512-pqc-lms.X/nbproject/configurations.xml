@@ -22,19 +22,19 @@
               <logicalFolder name="f1" displayName="microchip" projectFiles="true">
                 <logicalFolder name="f1" displayName="dspic33a" projectFiles="true">
                   <logicalFolder name="f1" displayName="common_crypto" projectFiles="true">
-                    <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/Microchip/dsPIC33A/common_crypto/crypto_common.h</itemPath>
-                    <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/Microchip/dsPIC33A/common_crypto/crypto_config.h</itemPath>
-                    <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/Microchip/dsPIC33A/common_crypto/crypto_hash.h</itemPath>
-                    <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/Microchip/dsPIC33A/common_crypto/device.h</itemPath>
+                    <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/microchip/dspic33a/common_crypto/crypto_common.h</itemPath>
+                    <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/microchip/dspic33a/common_crypto/crypto_config.h</itemPath>
+                    <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/microchip/dspic33a/common_crypto/crypto_hash.h</itemPath>
+                    <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/microchip/dspic33a/common_crypto/device.h</itemPath>
                   </logicalFolder>
                   <logicalFolder name="f2" displayName="drivers" projectFiles="true">
                     <logicalFolder name="f1" displayName="library" projectFiles="true">
-                      <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/Microchip/dsPIC33A/drivers/library/cam_hash.h</itemPath>
-                      <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/Microchip/dsPIC33A/drivers/library/cam_version.h</itemPath>
+                      <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/microchip/dspic33a/drivers/library/cam_hash.h</itemPath>
+                      <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/microchip/dspic33a/drivers/library/cam_version.h</itemPath>
                     </logicalFolder>
                     <logicalFolder name="f2" displayName="wrapper" projectFiles="true">
-                      <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/Microchip/dsPIC33A/drivers/wrapper/crypto_cam05346_wrapper.h</itemPath>
-                      <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/Microchip/dsPIC33A/drivers/wrapper/crypto_hash_cam05346_wrapper.h</itemPath>
+                      <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/microchip/dspic33a/drivers/wrapper/crypto_cam05346_wrapper.h</itemPath>
+                      <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/microchip/dspic33a/drivers/wrapper/crypto_hash_cam05346_wrapper.h</itemPath>
                     </logicalFolder>
                   </logicalFolder>
                 </logicalFolder>
@@ -179,15 +179,15 @@
               <logicalFolder name="f1" displayName="microchip" projectFiles="true">
                 <logicalFolder name="f1" displayName="dspic33a" projectFiles="true">
                   <logicalFolder name="f1" displayName="common_crypto" projectFiles="true">
-                    <itemPath>crypto/wolfssl/wolfcrypt/src/port/Microchip/dsPIC33A/common_crypto/crypto_hash.c</itemPath>
+                    <itemPath>crypto/wolfssl/wolfcrypt/src/port/microchip/dspic33a/common_crypto/crypto_hash.c</itemPath>
                   </logicalFolder>
                   <logicalFolder name="f2" displayName="drivers" projectFiles="true">
                     <logicalFolder name="f2" displayName="wrapper" projectFiles="true">
-                      <itemPath>crypto/wolfssl/wolfcrypt/src/port/Microchip/dsPIC33A/drivers/wrapper/crypto_cam05346_wrapper.c</itemPath>
-                      <itemPath>crypto/wolfssl/wolfcrypt/src/port/Microchip/dsPIC33A/drivers/wrapper/crypto_hash_cam05346_wrapper.c</itemPath>
+                      <itemPath>crypto/wolfssl/wolfcrypt/src/port/microchip/dspic33a/drivers/wrapper/crypto_cam05346_wrapper.c</itemPath>
+                      <itemPath>crypto/wolfssl/wolfcrypt/src/port/microchip/dspic33a/drivers/wrapper/crypto_hash_cam05346_wrapper.c</itemPath>
                     </logicalFolder>
                   </logicalFolder>
-                  <itemPath>crypto/wolfssl/wolfcrypt/src/port/Microchip/dsPIC33A/dspic33a_cam_hash.c</itemPath>
+                  <itemPath>crypto/wolfssl/wolfcrypt/src/port/microchip/dspic33a/dspic33a_cam_hash.c</itemPath>
                 </logicalFolder>
               </logicalFolder>
             </logicalFolder>
@@ -272,7 +272,7 @@
       <compileType>
         <linkerTool>
           <linkerLibItems>
-            <linkerLibFileItem>crypto/wolfssl/wolfcrypt/src/port/Microchip/dsPIC33A/drivers/library/libcam05346-dspic33a.a</linkerLibFileItem>
+            <linkerLibFileItem>crypto/wolfssl/wolfcrypt/src/port/microchip/dspic33a/drivers/library/libcam05346-dspic33a.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>
