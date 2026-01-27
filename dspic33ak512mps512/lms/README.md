@@ -49,7 +49,7 @@ The wolfCrypt files in this project use wolfssl v5.8.4-stable release with edits
     Line 160: Insert a new `#ifdef` dsPIC33A_CAM_ENABLE check. This will add the include for the Common Crypto hash header file.
     ``` 
     #ifdef dsPIC33A_CAM_ENABLE
-        #include "wolfssl/wolfcrypt/port/Microchip/dsPIC33A/common_crypto/crypto_hash.h"
+        #include "wolfssl/wolfcrypt/port/microchip/dspic33a/common_crypto/crypto_hash.h"
     #endif
     ```
 
@@ -68,7 +68,7 @@ The wolfCrypt files in this project use wolfssl v5.8.4-stable release with edits
     ```
     #elif defined(dsPIC33A_CAM_ENABLE)
 
-        /* implemented in wolfcrypt/src/port/Microchip/dsPIC33A/dspic33a_cam_hash.c */
+        /* implemented in wolfcrypt/src/port/microchip/dspic33a/dspic33a_cam_hash.c */
 
     #else
     ```

@@ -156,7 +156,7 @@ enum {
 #endif
 
 #ifdef dsPIC33A_CAM_ENABLE
-    #include "wolfssl/wolfcrypt/port/Microchip/dsPIC33A/common_crypto/crypto_hash.h"
+    #include "wolfssl/wolfcrypt/port/microchip/dspic33a/common_crypto/crypto_hash.h"
 #endif
 
 /* wc_Sha256 digest */
