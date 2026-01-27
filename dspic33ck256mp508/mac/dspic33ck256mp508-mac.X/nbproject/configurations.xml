@@ -4,6 +4,34 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="app" projectFiles="true">
+        <itemPath>app/app_config.h</itemPath>
+        <itemPath>app/app_utils.h</itemPath>
+        <itemPath>app/user_settings.h</itemPath>
+        <itemPath>app/app_mac_cmac.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="crypto" projectFiles="true">
+        <logicalFolder name="f1" displayName="test_vectors" projectFiles="true">
+          <itemPath>crypto/test_vectors/test_vector.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f2" displayName="wolfssl" projectFiles="true">
+          <logicalFolder name="f1" displayName="wolfcrypt" projectFiles="true">
+            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/cmac.h</itemPath>
+            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/cpuid.h</itemPath>
+            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/error-crypt.h</itemPath>
+            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/libwolfssl_sources.h</itemPath>
+            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/logging.h</itemPath>
+            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/memory.h</itemPath>
+            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/misc.h</itemPath>
+            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/oid_sum.h</itemPath>
+            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/settings.h</itemPath>
+            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/types.h</itemPath>
+            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/visibility.h</itemPath>
+            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/wc_port.h</itemPath>
+            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/aes.h</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+      </logicalFolder>
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
                      projectFiles="true">
@@ -44,6 +72,27 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="app" projectFiles="true">
+        <itemPath>app/src/app_utils.c</itemPath>
+        <itemPath>app/src/app_mac_cmac.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="crypto" projectFiles="true">
+        <logicalFolder name="f1" displayName="test_vectors" projectFiles="true">
+          <itemPath>crypto/test_vectors/cmac/aes_128_cmac_generation.c</itemPath>
+          <itemPath>crypto/test_vectors/cmac/aes_192_cmac_generation.c</itemPath>
+          <itemPath>crypto/test_vectors/cmac/aes_256_cmac_generation.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f2" displayName="wolfssl" projectFiles="true">
+          <logicalFolder name="f1" displayName="wolfcrypt" projectFiles="true">
+            <itemPath>crypto/wolfssl/wolfcrypt/src/cmac.c</itemPath>
+            <itemPath>crypto/wolfssl/wolfcrypt/src/cpuid.c</itemPath>
+            <itemPath>crypto/wolfssl/wolfcrypt/src/logging.c</itemPath>
+            <itemPath>crypto/wolfssl/wolfcrypt/src/misc.c</itemPath>
+            <itemPath>crypto/wolfssl/wolfcrypt/src/wc_port.c</itemPath>
+            <itemPath>crypto/wolfssl/wolfcrypt/src/aes.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+      </logicalFolder>
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
                      projectFiles="true">
@@ -75,6 +124,12 @@
       <itemPath>main.c</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>app</Elem>
+    <Elem>crypto/test_vectors</Elem>
+    <Elem>crypto/wolfssl/wolfssl/wolfcrypt</Elem>
+    <Elem>crypto/wolfssl/wolfcrypt/src</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="default" type="2">
@@ -135,7 +190,8 @@
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="expand-pragma-config" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="crypto;app;mcc_generated_files;crypto/wolfssl"/>
         <property key="isolate-each-function" value="false"/>
         <property key="keep-inline" value="false"/>
         <property key="oXC16gcc-cnsts-mauxflash" value="false"/>
@@ -240,7 +296,7 @@
         <property key="generic-16-bit" value="false"/>
         <property key="legacy-libc" value="true"/>
         <property key="mpreserve-all" value="false"/>
-        <property key="oXC16glb-macros" value=""/>
+        <property key="oXC16glb-macros" value="WOLFSSL_USER_SETTINGS"/>
         <property key="omit-pack-options" value="1"/>
         <property key="output-file-format" value="elf"/>
         <property key="preserve-all" value="false"/>
