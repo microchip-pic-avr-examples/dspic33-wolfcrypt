@@ -56,10 +56,10 @@ inline static void SYSTEM_CORCONInitialize(void)
 
 /**
  * @ingroup   systemdriver
- * @brief     This inline function sets the CPU core control register operating mode 
- *            to a value that is decided by the SYSTEM_CORCON_MODES argument.
+ * @brief     Sets the CPU core control register (CORCON) operating mode 
+ *            according to the SYSTEM_CORCON_MODES argument.
  * @param[in] modeValue - SYSTEM_CORCON_MODES initialization mode specifier
- * @return    none 
+ * @return    none
  */
 inline static void SYSTEM_CORCONModeOperatingSet(SYSTEM_CORCON_MODES modeValue)
 {
@@ -72,10 +72,10 @@ inline static void SYSTEM_CORCONModeOperatingSet(SYSTEM_CORCON_MODES modeValue)
  * @param[in]  value - value that needs to be written to the CPU core control register
  * @return     none 
  */
-inline static void SYSTEM_CORCONRegisterValueSet(uint16_t value)
-{
-    CORCON = value;
-}
+    inline static void SYSTEM_CORCONRegisterValueSet(uint16_t value)
+    {
+        CORCON = value;
+    }
 
 /**
  * @ingroup systemdriver

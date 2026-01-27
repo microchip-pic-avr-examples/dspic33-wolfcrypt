@@ -26,8 +26,8 @@
 extern "C" {
 #endif
 
-// #define LMS_N24
- #define LMS_N32
+ #define LMS_N24
+// #define LMS_N32
 
 
 #ifdef	__cplusplus

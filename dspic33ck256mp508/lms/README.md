@@ -11,8 +11,9 @@
 This MPLAB® X project demonstrates LMS processing by using wolfCrypt APIs and an optimized assembly hash routine.
 
 ## Software Used 
-- MPLAB® X IDE **v6.25** or newer (https://www.microchip.com/mplabx)
-- MPLAB® XC-DSC Compiler **v3.21**(https://www.microchip.com/xcdsc)
+- dsPIC33CK-MP_DFP **1.15.423**
+- MPLAB® X IDE **v6.30** (https://www.microchip.com/mplabx)
+- MPLAB® XC-DSC Compiler **v3.30**(https://www.microchip.com/xcdsc)
 
 ## Hardware Used
 
@@ -89,11 +90,11 @@ The device will process the configured test vector using the wolfCrypt `wc_LmsKe
 ### Verification Time
 |Hash|Width|Height|Verfication time (Seconds)|
 |---|---|---|---|
-|SHA-256_192 (N24)|8|25|0.85494|
-|SHA-256 (N32)|8|25|0.98235|
+|SHA-256_192 (N24)|8|25|0.873507|
+|SHA-256 (N32)|8|25|1.005691|
 
 ### Verification Size
 |Hash|Width|Height|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
 |---|---|---|---|---|---|
-|SHA-256_192 (N24)|8|25|4,695|798|1434|
-|SHA-256 (N32)|8|25|5,031|798|1434|
+|SHA-256_192 (N24)|8|25|4,752|718|1438|
+|SHA-256 (N32)|8|25|5,088|718|1438|
