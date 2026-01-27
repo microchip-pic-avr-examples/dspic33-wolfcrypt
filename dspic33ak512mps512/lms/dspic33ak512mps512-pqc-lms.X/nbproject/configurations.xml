@@ -313,7 +313,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="expand-pragma-config" value="false"/>
         <property key="extra-include-directories"
-                  value="crypto;app;mcc_generated_files;crypto\wolfssl;crypto\wolfssl\wolfssl\wolfcrypt\port\Microchip\dsPIC33A"/>
+                  value="crypto;app;mcc_generated_files;crypto\wolfssl;crypto\wolfssl\wolfssl\wolfcrypt\port\microchip\dspic33a"/>
         <property key="isolate-each-function" value="true"/>
         <property key="keep-inline" value="false"/>
         <property key="oXC16gcc-cnsts-mauxflash" value="false"/>
