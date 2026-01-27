@@ -32,22 +32,11 @@ This MPLAB® X project demonstrates LMS processing by using wolfCrypt APIs and a
 
 #### wolfCrypt Source
 
-The wolfCrypt files in this project use wolfssl v5.8.4-stable release with edits to support the dsPIC33A device.
+The wolfCrypt files in this project use wolfssl v5.8.4-stable release with edits to support the dsPIC33C device.
 
 #### Edits that were required for dsPIC33A support
 
-1. `crypto\wolfssl\wolfcrypt\src\wc_lms_impl.c`
-
-    Line 2328: Cast the 1 literal to be of type word32.
-    ``` 
-    Before:
-    word32 r = (1 << params->height) + q; 
-
-    After:
-    word32 r = ((word32) 1 << params->height) + q; 
-    ```
-
-2. `crypto\wolfssl\wolfcrypt\src\sha256.c`
+1. `crypto\wolfssl\wolfcrypt\src\sha256.c`
 
     Line 1860: Call the dsPIC33C assembly hash routine. 
     ```
