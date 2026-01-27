@@ -1,5 +1,5 @@
 /*
-? [2025] Microchip Technology Inc. and its subsidiaries.
+? [2026] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip
     software and any derivatives exclusively with Microchip products.
@@ -95,7 +95,8 @@ void headerInformationPrint(const ML_KEM_TEST_VECTOR *testVector)
     {
         paddingAfter = "**";
     }
-
+    (void) printf(MAG"\r\n\r\n *************************************************************************************");
     (void) printf(CYAN"\r\n ************** ML-KEM TEST - %s ***************%s",
             testVector->vectorInformation, paddingAfter);
+    (void) printf(MAG"\r\n *************************************************************************************"RESET_COLOR);
 }

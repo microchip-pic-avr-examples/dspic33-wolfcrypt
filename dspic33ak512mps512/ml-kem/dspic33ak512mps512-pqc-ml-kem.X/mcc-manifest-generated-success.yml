@@ -2,18 +2,18 @@
 
 manifest_file_version: 1.0.0
 project: dspic33ak512mps512-pqc-ml-kem
-creation_date: 2026-01-26T14:34:12.447-07:00[America/Phoenix]
+creation_date: 2026-01-27T14:08:05.965-07:00[America/Phoenix]
 operating_system: Windows 11
 mcc_mode: IDE
-mcc_mode_version: v6.25
+mcc_mode_version: v6.30
 device_name: dsPIC33AK512MPS512
-compiler: XCDSC 3.21
-mcc_version: 5.6.3
-mcc_core_version: 5.8.3
-content_manager_version: 6.0.3
+compiler: XCDSC 3.30
+mcc_version: 5.6.4
+mcc_core_version: 5.8.4
+content_manager_version: 6.0.4
 is_mcc_offline: false
 is_using_prerelease_versions: false
-mcc_content_registries: https://registry.npmjs.com
+mcc_content_registries: https://registry.npmjs.org/
 device_library: {library_class: com.microchip.mcc.melody.Library, name: Melody, version: 2.10.1}
 packs: {name: N/A, version: N/A}
 modules:
