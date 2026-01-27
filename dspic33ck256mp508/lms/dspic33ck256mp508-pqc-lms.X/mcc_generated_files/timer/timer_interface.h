@@ -50,7 +50,7 @@
  * @brief    Defines the deprecated SCCPx_Timer_PeriodCountSet or TMRx_PeriodCountSet API. 
  *           Set it to true for backward compatibility. 
 */
-#define TIMER_PERIODCOUNTSET_API_SUPPORT false
+#define  TIMER_PERIODCOUNTSET_API_SUPPORT 0
 
 /**
  @ingroup  timerdriver
