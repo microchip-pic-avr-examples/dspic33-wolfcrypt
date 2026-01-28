@@ -32,6 +32,7 @@ extern "C" {
     #define WOLFSSL_IGNORE_FILE_WARN  // Disable warning regarding inlined misc.c functions
     #define WC_NO_RNG                 // Disable RNG related APIs
     #define WOLFCRYPT_ONLY            // Specify using wolfCrypt APIs only
+    #define WOLFSSL_AES_DIRECT
 
     // wolfCrypt MAC Configuration Options
     #define WOLFSSL_CMAC              // Enable AES CMAC APIs

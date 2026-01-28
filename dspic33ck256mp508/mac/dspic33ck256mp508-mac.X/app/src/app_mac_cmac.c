@@ -60,7 +60,54 @@ static void MAC_CmacGenerate(MAC_TEST_VECTOR *testVector)
     int status = WC_FAILURE;
     
     benchmarkingStart();
+    
+    status = wc_InitCmac((Cmac*) &cmac, testVector->key, testVector->keySize, WC_CMAC_AES, NULL);
+    
+    if (status == 0) {
+        status = wc_CmacUpdate((Cmac*) &cmac, testVector->message, testVector->messageSize);
+    }
+    
+    if (status == 0) {
+        status = wc_CmacFinal((Cmac*) &cmac, (uint8_t*) &macResult, &testVector->macSize);
+    }
+    
+    benchmarkingEnd();
+    
+    if (status == 0)
+    {
+        resultVerify(testVector, (uint8_t*) &macResult);
+    }
+    else
+    {
+        (void) printf(RED"\r\n wolfCrypt MAC - Error Code: %d"RESET_COLOR, status);
+    }
+    
+    benchmarkingDataPrint(microsecondsToProcess);
 }
+
+#ifdef AES_128
+extern MAC_TEST_VECTOR aes_128_cmac_generation_vector;
+static void AES128_CmacGenerate(void)
+{
+    MAC_CmacGenerate((MAC_TEST_VECTOR*) &aes_128_cmac_generation_vector);
+}
+#endif
+
+#ifdef AES_192
+extern MAC_TEST_VECTOR aes_192_cmac_generation_vector;
+static void AES192_CmacGenerate(void)
+{
+    MAC_CmacGenerate((MAC_TEST_VECTOR*) &aes_192_cmac_generation_vector);
+}
+#endif
+
+#ifdef AES_256
+extern MAC_TEST_VECTOR aes_256_cmac_generation_vector;
+static void AES256_CmacGenerate(void)
+{
+    MAC_CmacGenerate((MAC_TEST_VECTOR*) &aes_256_cmac_generation_vector);
+}
+#endif
 
 void MAC_CmacExample(void)
 {
