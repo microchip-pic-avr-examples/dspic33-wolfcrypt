@@ -41,7 +41,7 @@ void hexArrayPrint(const char* label, uint8_t* data, uint32_t size)
     {
         if (((index % 8U) == 0U) && (index != 0U))
         {
-            (void) printf("\r\n                          ");
+            (void) printf("\r\n                   ");
         }
         (void) printf(" 0x%02X", ldata[index]);
     }
@@ -85,38 +85,27 @@ void benchmarkingDataPrint(uint32_t microseconds)
 void headerInformationPrint(const MAC_TEST_VECTOR *testVector)
 {
     (void) printf(MAG"\r\n\r\n *************************************************************************************");
-    (void) printf(CYAN"\r\n *************************** AES TEST - %s **************************", testVector->vectorInformation);
+    (void) printf(CYAN"\r\n ************************* MAC TEST - %s ************************", testVector->vectorInformation);
     (void) printf(MAG"\r\n *************************************************************************************"RESET_COLOR);
 }
 
-void resultVerify(int direction, const MAC_TEST_VECTOR *testVector, uint8_t *result)
+void resultVerify(const MAC_TEST_VECTOR *testVector, uint8_t *result)
 {
     const char* description = "";
     bool areArraysEqual = false;
 
-    if(direction == AES_ENCRYPTION)
-    {
-        description = "Encrypt";
-        hexArrayPrint("Expected (mac)", testVector->mac, testVector->macSize);
-        hexArrayPrint("Result (mac)  ", result, testVector->macSize);
+    description = "Generation";
+    hexArrayPrint("Expected (mac)", testVector->mac, testVector->macSize);
+    hexArrayPrint("Result (mac)  ", result, testVector->macSize);
 
-        areArraysEqual = arrayEqualityCheck(testVector->mac, result, testVector->macSize);
-    }
-    else
-    {
-        description = "Decrypt";
-        hexArrayPrint("Expected (plaintext) ", testVector->message, testVector->messageSize);
-        hexArrayPrint("Result (plaintext)   ", result, testVector->messageSize);
-
-        areArraysEqual = arrayEqualityCheck(testVector->plaintext, result, testVector->messageSize);
-    }
+    areArraysEqual = arrayEqualityCheck(testVector->mac, result, testVector->macSize);
 
     if(areArraysEqual)
     {
-        (void) printf(GREEN" \r\n\r\n wolfCrypt AES %s Success "RESET_COLOR, description);
+        (void) printf(GREEN" \r\n\r\n wolfCrypt MAC %s Success "RESET_COLOR, description);
     }
     else
     {
-        (void) printf(RED"\r\n\r\n wolfCrypt AES %s Failure"RESET_COLOR, description);
+        (void) printf(RED"\r\n\r\n wolfCrypt MAC %s Failure"RESET_COLOR, description);
     }
 }

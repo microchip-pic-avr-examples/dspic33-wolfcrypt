@@ -51,7 +51,7 @@ void PINS_Initialize(void)
     LATA = 0x0000U;
     LATB = 0x0000U;
     LATC = 0x0000U;
-    LATD = 0x0008U;
+    LATD = 0x0010U;
     LATE = 0x0000U;
 
     /****************************************************************************
@@ -60,7 +60,7 @@ void PINS_Initialize(void)
     TRISA = 0x001FU;
     TRISB = 0xFFFFU;
     TRISC = 0xFFFFU;
-    TRISD = 0xFFF7U;
+    TRISD = 0xFFEFU;
     TRISE = 0xFFBFU;
 
 
@@ -93,7 +93,7 @@ void PINS_Initialize(void)
      * Setting the Analog/Digital Configuration SFR(s)
      ***************************************************************************/
     ANSELA = 0x001FU;
-    ANSELB = 0x009FU;
+    ANSELB = 0x039FU;
     ANSELC = 0x00CFU;
     ANSELD = 0x2C00U;
     ANSELE = 0x000FU;
@@ -103,8 +103,8 @@ void PINS_Initialize(void)
      ***************************************************************************/
      __builtin_write_RPCON(0x0000); // unlock PPS
 
-        RPINR18bits.U1RXR = 0x0042U; //RD2->UART1:U1RX;
-        RPOR17bits.RP67R = 0x0001U;  //RD3->UART1:U1TX;
+        RPINR18bits.U1RXR = 0x0043U; //RD3->UART1:U1RX;
+        RPOR18bits.RP68R = 0x0001U;  //RD4->UART1:U1TX;
 
      __builtin_write_RPCON(0x0800); // lock PPS
 

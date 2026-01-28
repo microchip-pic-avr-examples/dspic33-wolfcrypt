@@ -19,6 +19,8 @@
     THIS SOFTWARE.
 */
 #include "mcc_generated_files/system/system.h"
+#include "app/app_mac_cmac.h"
+#include "app/app_config.h"
 
 /*
     Main application
@@ -27,6 +29,10 @@
 int main(void)
 {
     SYSTEM_Initialize();
+    
+    #ifdef AES_CMAC
+        MAC_CmacExample();
+    #endif
 
     while(1)
     {

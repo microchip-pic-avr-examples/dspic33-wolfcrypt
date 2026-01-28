@@ -26,13 +26,13 @@
 extern "C" {
 #endif
 
+#include "wolfssl/wolfcrypt/aes.h"
 #include "wolfssl/wolfcrypt/cmac.h"
 #include "wolfssl/wolfcrypt/types.h"
 
 typedef struct
 {
     const char* vectorInformation;
-    int direction;
     byte* key;
     word32 keySize;
     byte* message;

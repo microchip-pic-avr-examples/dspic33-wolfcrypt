@@ -50,7 +50,7 @@ void benchmarkingDataPrint(uint32_t microseconds);
 
 void headerInformationPrint(const MAC_TEST_VECTOR *testVector);
 
-void resultVerify(int direction, const MAC_TEST_VECTOR *testVector, uint8_t *result);
+void resultVerify(const MAC_TEST_VECTOR *testVector, uint8_t *result);
 
 #ifdef	__cplusplus
 }
