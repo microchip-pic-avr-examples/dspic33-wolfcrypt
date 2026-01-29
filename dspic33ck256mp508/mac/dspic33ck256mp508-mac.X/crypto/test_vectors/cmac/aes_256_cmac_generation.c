@@ -20,7 +20,6 @@
 */
 
 #include <stdint.h>
-#include "wolfssl/wolfcrypt/aes.h"
 #include "wolfssl/wolfcrypt/cmac.h"
 #include "test_vectors/test_vector.h"
 #include "app_config.h"
