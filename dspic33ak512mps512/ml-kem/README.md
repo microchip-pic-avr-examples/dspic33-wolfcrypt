@@ -8,7 +8,7 @@
 
 ## Summary
 
-This MPLAB® X project demonstrates ML-KEM decapsulation processing by using wolfCrypt APIs.
+This MPLAB® X project demonstrates ML-KEM decapsulation by using wolfCrypt APIs.
 
 ## Software Used
 
@@ -34,7 +34,7 @@ This MPLAB® X project demonstrates ML-KEM decapsulation processing by using wol
 
 #### wolfCrypt Source
 
-The wolfCrypt files in this project use wolfssl v5.8.4-stable release with edits to support the dsPIC33A device.
+The wolfCrypt files in this project use wolfssl v5.8.4-stable release to support the dsPIC33A device.
 
 ## Running the Demo
 
@@ -59,7 +59,7 @@ The decapsulated shared secret will be compared to the expected result. The fina
 
 ## Licensing
 
-This project is for evaluation purposes only. The project is governed under an End User License Agreement (EULA) found at the root folder of dsPIC33-wolfCrypt repo. 
+The project is governed under an End User License Agreement (EULA) found at the root folder of dspic33-wolfCrypt repo. 
 
 ## Benchmarking for ML-KEM Decapsulation
 
