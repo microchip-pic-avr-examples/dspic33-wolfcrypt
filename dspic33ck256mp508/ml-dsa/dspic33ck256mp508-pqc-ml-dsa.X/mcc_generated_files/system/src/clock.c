@@ -7,7 +7,7 @@
  *            
  * @brief     This is the generated source file for CLOCK driver
  *
- * @skipline @version   PLIB Version 1.4.4
+ * @skipline @version   PLIB Version 1.4.6
  *
  * @skipline  Device : dsPIC33CK256MP508
 */
@@ -53,7 +53,6 @@ void CLOCK_Initialize(void)
         __builtin_write_OSCCONL((uint8_t) (0x01));
         // Wait for Clock switch to occur
         while (OSCCONbits.OSWEN != 0){}
-        while (OSCCONbits.LOCK != 1){}
     }
     // RCDIV FRC/1; PLLPRE 1:1; DOZE 1:8; DOZEN disabled; ROI disabled; 
    CLKDIV = 0x3001U;

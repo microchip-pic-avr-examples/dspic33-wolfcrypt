@@ -17,7 +17,7 @@ This MPLAB® X project demonstrates ML-DSA Verify using dilithium wolfCrypt APIs
 
 ## Hardware Used
 
-- dsPIC33AK512MPS512 Curiosity GP DIM (https://www.microchip.com/en-us/development-tool/EV80L65A)
+- dsPIC33AK512MPS512 Curiosity GP DIM (https://www.microchip.com/EV80L65A)
 - Curiosity Platform Development Board (https://www.microchip.com/EV74H48A)
 
 ## Set Up
@@ -33,7 +33,7 @@ This MPLAB® X project demonstrates ML-DSA Verify using dilithium wolfCrypt APIs
 
 #### wolfCrypt Source
 
-The wolfCrypt files in this project use wolfssl v5.8.4-stable release
+The wolfCrypt files in this project use wolfssl v5.8.4-stable release to support the dsPIC33A device.
 
 ## Running the Demo
 
@@ -68,6 +68,10 @@ If another tool is used to generate a signature it may encode the message by def
         dilithium_key* key
     );
     ```
+
+## Licensing
+
+The project is governed under an End User License Agreement (EULA) found at the root folder of dspic33-wolfCrypt repo. 
 
 ### Benchmarking for ML-DSA Verification
 

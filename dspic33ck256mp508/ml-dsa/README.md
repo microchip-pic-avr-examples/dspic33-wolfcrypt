@@ -11,8 +11,9 @@
 This MPLAB® X project demonstrates ML-DSA Verify using dilithium wolfCrypt APIs to verify an input signature and message.
 
 ## Software Used 
-- MPLAB® X IDE **v6.25** or newer (https://www.microchip.com/mplabx)
-- MPLAB® XC-DSC Compiler **v3.21** or a newer compiler (https://www.microchip.com/xcdsc)
+- dsPIC33CK-MP_DFP **1.15.423**
+- MPLAB® X IDE **v6.30** (https://www.microchip.com/mplabx)
+- MPLAB® XC-DSC Compiler **v3.21** (https://www.microchip.com/xcdsc)
 
 ## Hardware Used
 
@@ -155,9 +156,9 @@ If another tool is used to generate a signature it may encode the message by def
     );
     ```
     
-#### Licensing
+## Licensing
 
-This project is for evaluation purposes only. The project is governed under an End User License Agreement (EULA) found at the root folder of dsPIC33-wolfCrypt repo. 
+The project is governed under an End User License Agreement (EULA) found at the root folder of dspic33-wolfCrypt repo. 
 
 ### Benchmarking for ML-DSA Verification
 

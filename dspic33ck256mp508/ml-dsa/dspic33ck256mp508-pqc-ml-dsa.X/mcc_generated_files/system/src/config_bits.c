@@ -9,7 +9,7 @@
  *
  * @version   Firmware Driver Version 1.0.1
  *
- * @version   PLIB Version 1.2.4
+ * @version   PLIB Version 1.2.5
  *
  * @skipline  Device : dsPIC33CK256MP508
 */
