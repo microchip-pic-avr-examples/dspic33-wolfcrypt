@@ -8,7 +8,7 @@
 
 ## Summary
 
-This MPLAB® X project demonstrates LMS signature verification by using wolfCrypt APIs and the precompiled Crypto Accelerator Module (CAM) library.
+This MPLAB® X project demonstrates LMS signature verification by using wolfCrypt APIs and the pre-compiled Crypto Accelerator Module (CAM) Hardware Driver.
 
 ## Software Used
 
@@ -146,6 +146,10 @@ The input vector signatures are aligned to 4-byte boundaries. This is required t
 ### Demo Output
 
 The device will process the configured test vector using the wolfCrypt `wc_LmsKey_Verify` API. The test parameters and verification status will be printed to the terminal listening at a baud rate of 115200.
+
+## Licensing
+
+The project is governed under an End User License Agreement (EULA) found at the root folder of dspic33-wolfCrypt repo.
 
 ## Benchmarking for LMS Verification
 
