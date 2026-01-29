@@ -28,7 +28,8 @@ extern "C" {
 
 #include <stdint.h>
 #include <stdbool.h>
-
+#include "../crypto/test_vectors/test_vector.h"
+    
 #define RESET_COLOR "\x1B""[0m"
 #define RED "\x1B""[1;31m"
 #define GREEN "\x1B""[1;32m"
@@ -46,6 +47,10 @@ void benchmarkingDataPrint(uint32_t microseconds);
 void benchmarkingStart(void);
 
 void benchmarkingEnd(void);
+
+void headerInformationPrint(LMS_TEST_VECTOR *testVector);
+
+void parametersPrint(LMS_TEST_VECTOR *testVector);
 
 #ifdef	__cplusplus
 }
