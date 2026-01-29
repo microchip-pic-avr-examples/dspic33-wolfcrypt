@@ -32,9 +32,9 @@ This MPLAB® X project demonstrates LMS processing by using wolfCrypt APIs and a
 
 #### wolfCrypt Source
 
-The wolfCrypt files in this project use wolfssl v5.8.4-stable release with edits to support the dsPIC33C device.
+The wolfCrypt files in this project use wolfssl v5.8.4-stable release to support the dsPIC33C device.
 
-#### Edits that were required for dsPIC33A support
+#### Edits that were required for dsPIC33C support
 
 1. `crypto\wolfssl\wolfcrypt\src\sha256.c`
 
@@ -73,6 +73,10 @@ The `app_config.h` file is used to configure the project. Due to device memory c
 ### Demo Output
 
 The device will process the configured test vector using the wolfCrypt `wc_LmsKey_Verify` API. The test parameters and verification status will be printed to the terminal listening at a baud rate of 115200.
+
+## Licensing
+
+The project is governed under an End User License Agreement (EULA) found at the root folder of dspic33-wolfCrypt repo. 
 
 ## Benchmarking for LMS Verification
 
