@@ -1,5 +1,5 @@
 /*
-� [2025] Microchip Technology Inc. and its subsidiaries.
+Copyright (c) [2026] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip
     software and any derivatives exclusively with Microchip products.
@@ -26,8 +26,9 @@
 extern "C" {
 #endif
 
- #define LMS_N24
- #define LMS_N32
+// NOTE: Run one vector group at a time.
+#define LMS_N24
+#define LMS_N32
 
 #ifdef	__cplusplus
 }

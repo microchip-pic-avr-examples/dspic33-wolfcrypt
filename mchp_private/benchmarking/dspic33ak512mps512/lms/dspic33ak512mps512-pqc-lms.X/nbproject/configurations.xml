@@ -23,7 +23,6 @@
                     <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/microchip/dspic33a/common_crypto/crypto_common.h</itemPath>
                     <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/microchip/dspic33a/common_crypto/crypto_config.h</itemPath>
                     <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/microchip/dspic33a/common_crypto/crypto_hash.h</itemPath>
-                    <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/microchip/dspic33a/common_crypto/device.h</itemPath>
                   </logicalFolder>
                   <logicalFolder name="f2" displayName="drivers" projectFiles="true">
                     <logicalFolder name="f1" displayName="library" projectFiles="true">
