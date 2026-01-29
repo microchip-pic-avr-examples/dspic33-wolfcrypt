@@ -28,8 +28,11 @@ This MPLAB® X project demonstrates ECDSA verification by using wolfCrypt APIs o
 
     <img src="../../images/hardware_setup.jpg" height="400" alt="Hardware Setup"/>
 
-### wolfCrypt Library Set Up
-The configuration of the wolfCrypt library is controlled by macros specified in the `user_settings.h` file. This file enables ECC APIs, sets up 16-bit support, and includes additional configuration options. More information about the options can be found within the `user_settings.h` file.
+### Project Set Up
+
+#### wolfCrypt Source
+
+The wolfCrypt files in this project use wolfssl v5.8.4-stable release to support the dsPIC33C device.
 
 ## Running the Demo
 
@@ -74,7 +77,7 @@ The NIST test vectors used in this project are found in the following [repo](htt
 
 ## Licensing
 
-This project is for evaluation purposes only. The project is governed under an End User License Agreement (EULA) found at the root folder of dsPIC33-wolfCrypt repo. 
+The project is governed under an End User License Agreement (EULA) found at the root folder of dspic33-wolfCrypt repo. 
 
 ## Benchmarking for ECDSA Verification
 
