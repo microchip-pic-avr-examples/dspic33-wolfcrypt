@@ -28,8 +28,7 @@ This MPLAB® X project demonstrates ML-DSA Verify using dilithium wolfCrypt APIs
 
     <img src="../../../images/hardware_setup_curiosity.jpg" height="400" alt="Hardware Setup"/>
 
-### wolfCrypt Library Set Up
-The configuration of the wolfCrypt library is controlled by macros specified in the `user_settings.h` file. This file enables ECC APIs, sets up 16-bit support, and includes additional configuration options. More information about the options can be found within the `user_settings.h` file.
+### Project Set Up
 
 #### wolfCrypt Source
 

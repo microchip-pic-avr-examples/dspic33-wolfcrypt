@@ -12,7 +12,7 @@ This MPLAB® X project demonstrates ML-DSA Verify using dilithium wolfCrypt APIs
 
 ## Software Used
 - dsPIC33AK-MP_DFP v1.2.135
-- MPLAB® X IDE **v6.30** (https://www.microchip.com/mplab-x-ide)
+- MPLAB® X IDE **v6.30** (https://www.microchip.com/mplabx)
 - MPLAB® XC-DSC Compiler **v3.21** (https://www.microchip.com/xcdsc)
 
 ## Hardware Used
