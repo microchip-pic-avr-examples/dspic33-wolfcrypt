@@ -32,7 +32,7 @@ This MPLAB® X project demonstrates LMS processing by using wolfCrypt APIs and a
 
 #### wolfCrypt Source
 
-The wolfCrypt files in this project use wolfssl v5.8.4-stable release to support the dsPIC33C device.
+The wolfCrypt files in this project use wolfssl v5.8.4-stable release with edits to support the dsPIC33C device.
 
 #### Edits that were required for dsPIC33C support
 
