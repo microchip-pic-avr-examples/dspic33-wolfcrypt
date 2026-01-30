@@ -26,7 +26,7 @@ This MPLAB® X project demonstrates ECDSA verification by using wolfCrypt APIs o
 
 1. Connect the board to the computer using a USB cable, connecting to the PICkit™ On-Board (PKOB) programmer/debugger.
 
-    <img src="../../images/hardware_setup.jpg" height="400" alt="Hardware Setup"/>
+    <img src="../../images/hardware_setup_curiosity.jpg" height="400" alt="Hardware Setup"/>
 
 ### Project Set Up
 
