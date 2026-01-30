@@ -77,7 +77,7 @@ The NIST test vectors used in this project are found in the following [repo](htt
 
 ## Licensing
 
-The project is governed under an End User License Agreement (EULA) found at the root folder of dspic33-wolfCrypt repo. 
+The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found at the root folder of dspic33-wolfCrypt repo. 
 
 ## Benchmarking for ECDSA Verification
 
