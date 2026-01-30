@@ -157,7 +157,7 @@ If another tool is used to generate a signature it may encode the message by def
     
 ## Licensing
 
-The project is governed under an End User License Agreement (EULA) found at the root folder of dspic33-wolfCrypt repo. 
+The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found at the root folder of dspic33-wolfCrypt repo. 
 
 ### Benchmarking for ML-DSA Verification
 
