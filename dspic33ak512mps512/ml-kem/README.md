@@ -59,7 +59,7 @@ The decapsulated shared secret will be compared to the expected result. The fina
 
 ## Licensing
 
-The project is governed under an End User License Agreement (EULA) found at the root folder of dspic33-wolfCrypt repo. 
+The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found at the root folder of dspic33-wolfCrypt repo. 
 
 ## Benchmarking for ML-KEM Decapsulation
 
