@@ -4,7 +4,7 @@
     <img alt="Microchip Logo." src="images/microchip_logo_black_red.png">
 </picture>
 
-## dspic33 wolfcrypt
+## dsPIC33 wolfcrypt
 
 Board Image if any.
 
