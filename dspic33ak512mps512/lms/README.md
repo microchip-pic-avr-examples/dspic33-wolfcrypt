@@ -149,7 +149,7 @@ The device will process the configured test vector using the wolfCrypt `wc_LmsKe
 
 ## Licensing
 
-The project is governed under an End User License Agreement (EULA) found at the root folder of dspic33-wolfCrypt repo.
+The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found at the root folder of dspic33-wolfCrypt repo. 
 
 ## Benchmarking for LMS Verification
 
