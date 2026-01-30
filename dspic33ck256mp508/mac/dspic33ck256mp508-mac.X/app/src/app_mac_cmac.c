@@ -68,14 +68,14 @@ static void MAC_CmacGenerate(MAC_TEST_VECTOR *testVector)
     }
     
     if (status == 0) {
-        status = wc_CmacFinal((Cmac*) &cmac, (uint8_t*) &macResult, &testVector->macSize);
+        status = wc_CmacFinal((Cmac*) &cmac, macResult, &testVector->macSize);
     }
     
     benchmarkingEnd();
     
     if (status == 0)
     {
-        resultVerify(testVector, (uint8_t*) &macResult);
+        resultVerify(testVector, macResult);
     }
     else
     {
