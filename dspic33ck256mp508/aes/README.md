@@ -16,7 +16,6 @@ This MPLAB® X project demonstrates AES processing by using wolfCrypt APIs on a 
 - dsPIC33CK-MP_DFP v1.15.423
 - MPLAB® X IDE [v6.30](https://www.microchip.com/mplab-x-ide)
 - MPLAB® XC-DSC Compiler [v3.30](https://www.microchip.com/xcdsc)
-- wolfCrypt library [5.8.4](./dspic33ck256mp508-aes.X/crypto/wolfssl/)
 
 ## Hardware Used
 
@@ -52,6 +51,8 @@ Example output:
 
 ## wolfCrypt APIs
 
+The wolfCrypt files in this project use wolfssl v5.8.4-stable release.
+
 ### AES-ECB
 
 * `wc_AesInit` - Initializes the AES structure.
@@ -65,6 +66,10 @@ Example output:
 * `wc_AesSetKey` - Further initializes the AES structure with the key and initialization vector information.
 * `wc_AesCbcEncrypt` - Encrypts the given plaintext using CBC mode.
 * `wc_AesCbcDecrypt` - Decrypts the given ciphertext using CBC mode.
+
+## Licensing
+
+The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found at the root folder of dspic33-wolfCrypt repo.
 
 ## Benchmarking
 
@@ -99,7 +104,7 @@ The following benchmarking results were obtained with the device clock speed set
 |32|16|80|0.000674|
 
 ### Memory Size Benchmarking
-The following results include usage of ECB, CTR, GCM, XTS, and CMAC APIs. Flash size will vary based on size of the stored data inputs used with the library.
+The following results include usage of ECB and CBC APIs. Flash size will vary based on size of the stored data inputs used with the library.
 
 |AES Mode|Direction|FLASH (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
 |----|----|----|----|----|
