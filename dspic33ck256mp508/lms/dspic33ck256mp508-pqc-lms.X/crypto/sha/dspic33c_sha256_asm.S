@@ -1,5 +1,5 @@
 /*
-Copyright (c) [2012-2025] Microchip Technology Inc.  
+Copyright (C) [2012-2025] Microchip Technology Inc.  
 
     All rights reserved.
 
