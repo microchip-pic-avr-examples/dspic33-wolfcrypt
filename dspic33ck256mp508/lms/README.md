@@ -38,7 +38,7 @@ The wolfCrypt files in this project use wolfssl v5.8.4-stable release with edits
 
 1. `crypto\wolfssl\wolfcrypt\src\sha256.c`
 
-    Line 1860: Call the dsPIC33C assembly hash routine. 
+    Line 1863: Call the dsPIC33C assembly hash routine. 
     ```
     Before:
     ret = XTRANSFORM(sha256, data);
