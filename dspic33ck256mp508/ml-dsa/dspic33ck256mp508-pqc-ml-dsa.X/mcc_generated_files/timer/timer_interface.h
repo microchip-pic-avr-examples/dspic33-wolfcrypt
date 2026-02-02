@@ -43,6 +43,8 @@
 #include <stdbool.h>
 #include "../system/interrupt_types.h"
 
+// Section: Data Type Definitions
+
 /** 
  * @ingroup  timerdriver
  * @brief    Defines the deprecated SCCPx_Timer_PeriodCountSet or TMRx_PeriodCountSet API. 

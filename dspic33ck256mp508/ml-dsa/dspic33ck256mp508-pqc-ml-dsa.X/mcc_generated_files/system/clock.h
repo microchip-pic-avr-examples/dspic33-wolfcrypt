@@ -7,7 +7,7 @@
  *            
  * @brief     Clock configurator driver for System and Peripheral Clock using dsPIC MCUs.
  *
- * @skipline @version   PLIB Version 1.4.4
+ * @skipline @version   PLIB Version 1.4.6
  *
  * @skipline  Device : dsPIC33CK256MP508
 */
