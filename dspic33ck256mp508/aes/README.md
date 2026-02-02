@@ -14,7 +14,7 @@ This MPLAB® X project demonstrates AES processing by using wolfCrypt APIs on a 
 
 ## Software Used 
 - dsPIC33CK-MP_DFP v1.15.423
-- MPLAB® X IDE [v6.30](https://www.microchip.com/mplab-x-ide)
+- MPLAB® X IDE [v6.30](https://www.microchip.com/mplabx)
 - MPLAB® XC-DSC Compiler [v3.30](https://www.microchip.com/xcdsc)
 
 ## Hardware Used
@@ -26,7 +26,7 @@ This MPLAB® X project demonstrates AES processing by using wolfCrypt APIs on a 
 
 1. Connect the board to the computer using a USB cable, connecting to the PICkit™ On-Board (PKOB) programmer/debugger.
 
-    <img src="../../images/hardware_setup.jpg" height="400" alt="Hardware Setup"/>
+    <img src="../../images/hardware_setup_curiosity.jpg" height="400" alt="Hardware Setup"/>
 
 ## Running the Application
 
@@ -51,7 +51,7 @@ Example output:
 
 ## wolfCrypt APIs
 
-The wolfCrypt files in this project use wolfssl v5.8.4-stable release.
+The wolfCrypt files in this project use wolfssl v5.8.4-stable release to support the dsPIC33C device.
 
 ### AES-ECB
 
@@ -80,36 +80,36 @@ The following benchmarking results were obtained with the device clock speed set
 
 |Key Size (bytes)|Plaintext Size (bytes)|Encryption Performance (seconds)|
 |----|----|----|
-|16|80|0.000386|
-|24|80|0.000455|
-|32|80|0.000539|
+|16|80|0.000404|
+|24|80|0.000472|
+|32|80|0.000550|
 
 |Key Size (bytes)|Plaintext Size (bytes)|Decryption Performance (seconds)|
 |----|----|----|
-|16|80|0.000464|
-|24|80|0.000551|
-|32|80|0.000655|
+|16|80|0.000492|
+|24|80|0.000578|
+|32|80|0.000673|
 
 #### AES-CBC
 |Key Size (bytes)|Initialization Vector Size (bytes)|Plaintext Size (bytes)|Encryption Performance (seconds)|
 |----|----|----|----|
-|16|16|80|0.000393|
-|24|16|80|0.000465|
-|32|16|80|0.000549|
+|16|16|80|0.000417|
+|24|16|80|0.000483|
+|32|16|80|0.000560|
 
 |Key Size (bytes)|Initialization Vector Size (bytes)|Ciphertext Size (bytes)|Decryption Performance (seconds)|
 |----|----|----|----|
-|16|16|80|0.000484|
-|24|16|80|0.000572|
-|32|16|80|0.000674|
+|16|16|80|0.000513|
+|24|16|80|0.000601|
+|32|16|80|0.000694|
 
 ### Memory Size Benchmarking
 The following results include usage of ECB and CBC APIs. Flash size will vary based on size of the stored data inputs used with the library.
 
 |AES Mode|Direction|FLASH (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
 |----|----|----|----|----|
-|ECB              |Encrypt            |10,313|404|102|
-|ECB              |Decrypt            |10,228|404|98|
-|CBC              |Encrypt            |10,910|404|354|
-|CBC              |Decrypt            |10,771|404|180|
-|All Modes Enabled|Encrypt and Decrypt|13,979|404|166|
+|ECB              |Encrypt            |7,997|480|116|
+|ECB              |Decrypt            |7,975|480|116|
+|CBC              |Encrypt            |8,356|480|170|
+|CBC              |Decrypt            |8,092|480|116|
+|All Modes Enabled|Encrypt and Decrypt|10,639|480|116|
