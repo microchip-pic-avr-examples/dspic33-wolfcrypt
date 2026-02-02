@@ -35,8 +35,6 @@
 #include "../clock.h"
 #include "../pins.h"
 #include "../dmt.h"
-#include "../../timer/tmr1.h"
-#include "../../uart/uart1.h"
 #include "../interrupt.h"
 
 
@@ -45,8 +43,6 @@ void SYSTEM_Initialize(void)
     CLOCK_Initialize();
     PINS_Initialize();
     DMT_Initialize();
-    TMR1_Initialize();
-    UART1_Initialize();
     INTERRUPT_GlobalEnable();
     INTERRUPT_Initialize();
 }

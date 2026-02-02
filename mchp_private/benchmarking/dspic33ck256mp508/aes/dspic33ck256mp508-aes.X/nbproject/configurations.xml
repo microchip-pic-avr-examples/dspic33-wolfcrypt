@@ -42,15 +42,6 @@
           <itemPath>mcc_generated_files/system/traps.h</itemPath>
           <itemPath>mcc_generated_files/system/watchdog.h</itemPath>
         </logicalFolder>
-        <logicalFolder name="timer" displayName="timer" projectFiles="true">
-          <itemPath>mcc_generated_files/timer/tmr1.h</itemPath>
-          <itemPath>mcc_generated_files/timer/timer_interface.h</itemPath>
-        </logicalFolder>
-        <logicalFolder name="uart" displayName="uart" projectFiles="true">
-          <itemPath>mcc_generated_files/uart/uart1.h</itemPath>
-          <itemPath>mcc_generated_files/uart/uart_types.h</itemPath>
-          <itemPath>mcc_generated_files/uart/uart_interface.h</itemPath>
-        </logicalFolder>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -94,16 +85,6 @@
             <itemPath>mcc_generated_files/system/src/where_was_i.s</itemPath>
           </logicalFolder>
         </logicalFolder>
-        <logicalFolder name="timer" displayName="timer" projectFiles="true">
-          <logicalFolder name="src" displayName="src" projectFiles="true">
-            <itemPath>mcc_generated_files/timer/src/tmr1.c</itemPath>
-          </logicalFolder>
-        </logicalFolder>
-        <logicalFolder name="uart" displayName="uart" projectFiles="true">
-          <logicalFolder name="src" displayName="src" projectFiles="true">
-            <itemPath>mcc_generated_files/uart/src/uart1.c</itemPath>
-          </logicalFolder>
-        </logicalFolder>
       </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>
@@ -124,7 +105,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>pkob4hybrid</platformTool>
         <languageToolchain>XCDSC</languageToolchain>
-        <languageToolchainVersion>3.21</languageToolchainVersion>
+        <languageToolchainVersion>3.30</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -191,7 +172,7 @@
         <property key="oXC16gcc-sfr-warn" value="false"/>
         <property key="oXC16gcc-smar-io-lvl" value="1"/>
         <property key="oXC16gcc-smart-io-fmt" value=""/>
-        <property key="optimization-level" value="3"/>
+        <property key="optimization-level" value="s"/>
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
         <property key="preprocessor-macros" value=""/>
@@ -231,11 +212,14 @@
         <property key="boot-flash" value="no_flash"/>
         <property key="boot-ram" value="no_ram"/>
         <property key="boot-write-protect" value="no_write_protect"/>
+        <property key="create-vtable" value="true"/>
         <property key="enable-check-sections" value="false"/>
         <property key="enable-data-init" value="true"/>
-        <property key="enable-default-isr" value="true"/>
         <property key="enable-handles" value="true"/>
         <property key="enable-pack-data" value="true"/>
+        <property key="enable-vtable-1" value="false"/>
+        <property key="enable-vtable-2" value="false"/>
+        <property key="enable-vtable-3" value="false"/>
         <property key="extra-lib-directories" value=""/>
         <property key="fill-flash-options-addr" value=""/>
         <property key="fill-flash-options-const" value=""/>
@@ -244,6 +228,7 @@
         <property key="fill-flash-options-increment" value=""/>
         <property key="fill-flash-options-seq" value=""/>
         <property key="fill-flash-options-what" value="0"/>
+        <property key="fill-vtable" value="true"/>
         <property key="general-code-protect" value="no_code_protect"/>
         <property key="general-write-protect" value="no_write_protect"/>
         <property key="generate-cross-reference-file" value="false"/>
@@ -270,6 +255,15 @@
         <property key="stack-size" value="16"/>
         <property key="symbol-stripping" value=""/>
         <property key="trace-symbols" value=""/>
+        <property key="vtable-address-1" value=""/>
+        <property key="vtable-address-2" value=""/>
+        <property key="vtable-address-3" value=""/>
+        <property key="vtable-number-1" value="1"/>
+        <property key="vtable-number-2" value="0"/>
+        <property key="vtable-number-3" value="0"/>
+        <property key="vtable-type-1" value="--ivt="/>
+        <property key="vtable-type-2" value="--ivt="/>
+        <property key="vtable-type-3" value="--ivt="/>
         <property key="warn-section-align" value="false"/>
       </C30-LD>
       <C30Global>
@@ -1420,6 +1414,8 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-2beff"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/C69672/crypto/wolfcrypt/dspic33-wolfcrypt/mchp_private/benchmarking/dspic33ck256mp508/aes/dspic33ck256mp508-aes.X/debug/default/dspic33ck256mp508-aes_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>

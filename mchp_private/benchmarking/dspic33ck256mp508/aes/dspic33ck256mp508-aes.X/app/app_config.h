@@ -33,13 +33,13 @@ extern "C" {
 #if defined(AES_128) || defined(AES_192) || defined(AES_256)
 
     #define AES_ENCRYPT
-    #define AES_DECRYPT
+//    #define AES_DECRYPT
 
 #endif
 
 #if defined(AES_ENCRYPT) || defined(AES_DECRYPT)
 
-    #define AES_ECB
+//    #define AES_ECB
     #define AES_CBC
 
 #endif
