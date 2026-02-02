@@ -201,7 +201,8 @@
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="expand-pragma-config" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="app;crypto\test_vectors;crypto\wolfssl;crypto;mcc_generated_files"/>
         <property key="isolate-each-function" value="true"/>
         <property key="keep-inline" value="false"/>
         <property key="oXC16gcc-cnsts-mauxflash" value="false"/>
@@ -220,7 +221,7 @@
         <property key="optimization-level" value="3"/>
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
-        <property key="preprocessor-macros" value=""/>
+        <property key="preprocessor-macros" value="WOLFSSL_USER_SETTINGS"/>
         <property key="scalar-model" value="default"/>
         <property key="use-cci" value="false"/>
         <property key="use-iar" value="false"/>
@@ -257,11 +258,14 @@
         <property key="boot-flash" value="no_flash"/>
         <property key="boot-ram" value="no_ram"/>
         <property key="boot-write-protect" value="no_write_protect"/>
+        <property key="create-vtable" value="true"/>
         <property key="enable-check-sections" value="false"/>
         <property key="enable-data-init" value="true"/>
-        <property key="enable-default-isr" value="true"/>
         <property key="enable-handles" value="true"/>
         <property key="enable-pack-data" value="true"/>
+        <property key="enable-vtable-1" value="false"/>
+        <property key="enable-vtable-2" value="false"/>
+        <property key="enable-vtable-3" value="false"/>
         <property key="extra-lib-directories" value=""/>
         <property key="fill-flash-options-addr" value=""/>
         <property key="fill-flash-options-const" value=""/>
@@ -270,6 +274,7 @@
         <property key="fill-flash-options-increment" value=""/>
         <property key="fill-flash-options-seq" value=""/>
         <property key="fill-flash-options-what" value="0"/>
+        <property key="fill-vtable" value="true"/>
         <property key="general-code-protect" value="no_code_protect"/>
         <property key="general-write-protect" value="no_write_protect"/>
         <property key="generate-cross-reference-file" value="false"/>
@@ -296,8 +301,33 @@
         <property key="stack-size" value="16"/>
         <property key="symbol-stripping" value=""/>
         <property key="trace-symbols" value=""/>
+        <property key="vtable-address-1" value=""/>
+        <property key="vtable-address-2" value=""/>
+        <property key="vtable-address-3" value=""/>
+        <property key="vtable-number-1" value="1"/>
+        <property key="vtable-number-2" value="0"/>
+        <property key="vtable-number-3" value="0"/>
+        <property key="vtable-type-1" value="--ivt="/>
+        <property key="vtable-type-2" value="--ivt="/>
+        <property key="vtable-type-3" value="--ivt="/>
         <property key="warn-section-align" value="false"/>
       </C30-LD>
+      <C30Global>
+        <property key="combine-sourcefiles" value="false"/>
+        <property key="common-include-directories" value=""/>
+        <property key="dual-boot-partition" value="0"/>
+        <property key="fast-math" value="false"/>
+        <property key="generic-16-bit" value="false"/>
+        <property key="legacy-libc" value="true"/>
+        <property key="mpreserve-all" value="false"/>
+        <property key="oXC16glb-macros" value=""/>
+        <property key="omit-pack-options" value="1"/>
+        <property key="output-file-format" value="elf"/>
+        <property key="preserve-all" value="false"/>
+        <property key="preserve-file" value=""/>
+        <property key="relaxed-math" value="false"/>
+        <property key="save-temps" value="false"/>
+      </C30Global>
       <PK5Tool>
         <property key="ADC" value="true"/>
         <property key="AutoSelectMemRanges" value="auto"/>
