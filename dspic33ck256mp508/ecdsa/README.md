@@ -4,7 +4,7 @@
     <img alt="Microchip Logo." src="../../images/microchip_logo_black_red.png">
 </picture>
 
-# dsPIC33C ECDSA (Elliptic Curve Digital Signature Algorithm) Example
+# dsPIC33C ECDSA (Elliptic Curve Digital Signature Algorithm) Verification Example
 
 ## Summary
 
