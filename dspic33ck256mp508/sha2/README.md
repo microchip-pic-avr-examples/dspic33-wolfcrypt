@@ -70,11 +70,11 @@ The device will process the configured test vector using the following APIs:
 
 * `wc_InitSha224_ex, wc_InitSha256_ex, wc_InitSha384_ex, wc_InitSha512_ex` - Initializes the SHA structure.
 * `wc_Sha224Update, wc_Sha256Update, wc_Sha384Update, wc_Sha512Update` - Runs the SHA digest generation.
-* `wc_Sha224Final, wc_Sha256Final, wc_Sha384Final, wc_Sha512Final` - Retrieves the Final digest calculated by SHA.
+* `wc_Sha224Final, wc_Sha256Final, wc_Sha384Final, wc_Sha512Final` - Retrieves the final digest calculated by SHA.
 
 ### Test Vectors
 
-The NIST test vectors used in this project are found in the following repo's [SHA2 folders](https://github.com/usnistgov/ACVP-Server/tree/v1.1.0.40/gen-val/json-files).
+The NIST test vectors used in this project are found in the the NIST ACVP Server's [SHA2 folders](https://github.com/usnistgov/ACVP-Server/tree/v1.1.0.40/gen-val/json-files).
 
 ## Licensing
 
