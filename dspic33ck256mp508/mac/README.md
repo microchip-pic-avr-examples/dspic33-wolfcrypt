@@ -67,4 +67,4 @@ The following results include usage of AES-CMAC APIs. Flash size will vary based
 
 |Mode|FLASH (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
 |----|----|----|----|
-|AES-CMAC|11,905|182|624|
+|AES-CMAC|9,239|528|164|
