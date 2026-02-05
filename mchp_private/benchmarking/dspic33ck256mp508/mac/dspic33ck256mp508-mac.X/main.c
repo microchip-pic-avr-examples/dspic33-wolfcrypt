@@ -24,6 +24,8 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
 #include "crypto/test_vectors/test_vector.h"
 #include "app/app_config.h"
 
+Cmac cmac;
+
 /*
     Main application
 */
@@ -39,7 +41,6 @@ static void MAC_CmacGenerate(MAC_TEST_VECTOR *testVector)
     *                adjusted independent of the application code.
     */
     uint8_t macResult[testVector->macSize];
-    Cmac cmac;
     
     (void)wc_InitCmac((Cmac*) &cmac, testVector->key, testVector->keySize, WC_CMAC_AES, NULL);
     (void)wc_CmacUpdate((Cmac*) &cmac, testVector->message, testVector->messageSize);

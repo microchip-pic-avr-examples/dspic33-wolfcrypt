@@ -32,7 +32,6 @@ extern "C" {
 
 typedef struct
 {
-    const char* vectorInformation;
     byte* key;
     word32 keySize;
     byte* message;
