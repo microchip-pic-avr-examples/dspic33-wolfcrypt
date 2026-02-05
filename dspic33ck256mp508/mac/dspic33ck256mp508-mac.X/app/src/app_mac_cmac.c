@@ -63,11 +63,13 @@ static void MAC_CmacGenerate(MAC_TEST_VECTOR *testVector)
     
     status = wc_InitCmac((Cmac*) &cmac, testVector->key, testVector->keySize, WC_CMAC_AES, NULL);
     
-    if (status == 0) {
+    if (status == 0) 
+    {
         status = wc_CmacUpdate((Cmac*) &cmac, testVector->message, testVector->messageSize);
     }
     
-    if (status == 0) {
+    if (status == 0) 
+    {
         status = wc_CmacFinal((Cmac*) &cmac, macResult, &testVector->macSize);
     }
     

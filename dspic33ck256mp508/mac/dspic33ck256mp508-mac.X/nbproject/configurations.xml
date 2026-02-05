@@ -632,8 +632,6 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-2beff"/>
-        <property key="programmerToGoFilePath"
-                  value="C:/Users/C69672/crypto/wolfcrypt/dspic33-wolfcrypt/dspic33ck256mp508/mac/dspic33ck256mp508-mac.X/debug/default/dspic33ck256mp508-mac_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
