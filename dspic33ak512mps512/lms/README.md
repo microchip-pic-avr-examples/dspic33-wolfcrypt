@@ -49,7 +49,7 @@ The wolfCrypt files in this project use wolfssl v5.8.4-stable release with edits
     Line 160: Insert a new `#ifdef` dsPIC33A_CAM_ENABLE check. This will add the include for the Common Crypto hash header file.
     ``` 
     #ifdef dsPIC33A_CAM_ENABLE
-        #include "wolfssl/wolfcrypt/port/microchip/dspic33a/common_crypto/crypto_hash.h"
+        #include "common_crypto/crypto_hash.h"
     #endif
     ```
 
@@ -156,11 +156,11 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 ### Verification Time
 |Hash|Width|Height|Verfication time (Seconds)|
 |---|---|---|---|
-|SHA-256_192 (N24)|8|25|0.049388|
-|SHA-256 (N32)|8|25|0.057216|
+|SHA-256_192 (N24)|8|25|0.059941|
+|SHA-256 (N32)|8|25|0.068453|
 
 ### Verification Size
 |Hash|Width|Height|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
 |---|---|---|---|---|---|
-|SHA-256_192 (N24)|8|25|13,124|292|1660|
-|SHA-256 (N32)|8|25|13,796|292|1660|
+|SHA-256_192 (N24)|8|25|14,008|78|1,852|
+|SHA-256 (N32)|8|25|14,680|78|1,852|

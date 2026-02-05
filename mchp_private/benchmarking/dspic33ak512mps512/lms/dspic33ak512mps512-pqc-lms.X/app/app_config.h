@@ -27,7 +27,7 @@ extern "C" {
 #endif
 
 // NOTE: Run one vector group at a time.
-#define LMS_N24
+//#define LMS_N24
 #define LMS_N32
 
 #ifdef	__cplusplus

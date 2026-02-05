@@ -9,6 +9,27 @@
         <itemPath>app/app_config.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f4" displayName="crypto" projectFiles="true">
+        <logicalFolder name="common_crypto"
+                       displayName="common_crypto"
+                       projectFiles="true">
+          <logicalFolder name="src" displayName="src" projectFiles="true">
+          </logicalFolder>
+          <itemPath>crypto/common_crypto/crypto_common.h</itemPath>
+          <itemPath>crypto/common_crypto/crypto_hash.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="drivers" displayName="drivers" projectFiles="true">
+          <logicalFolder name="library" displayName="library" projectFiles="true">
+            <itemPath>crypto/drivers/library/cam_device.h</itemPath>
+            <itemPath>crypto/drivers/library/cam_hash.h</itemPath>
+            <itemPath>crypto/drivers/library/cam_version.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="wrapper" displayName="wrapper" projectFiles="true">
+            <logicalFolder name="src" displayName="src" projectFiles="true">
+            </logicalFolder>
+            <itemPath>crypto/drivers/wrapper/crypto_cam05346_wrapper.h</itemPath>
+            <itemPath>crypto/drivers/wrapper/crypto_hash_cam05346_wrapper.h</itemPath>
+          </logicalFolder>
+        </logicalFolder>
         <logicalFolder name="test_vectors"
                        displayName="test_vectors"
                        projectFiles="true">
@@ -16,27 +37,6 @@
         </logicalFolder>
         <logicalFolder name="f1" displayName="wolfssl" projectFiles="true">
           <logicalFolder name="f1" displayName="wolfcrypt" projectFiles="true">
-            <logicalFolder name="f1" displayName="port" projectFiles="true">
-              <logicalFolder name="f1" displayName="microchip" projectFiles="true">
-                <logicalFolder name="f1" displayName="dspic33a" projectFiles="true">
-                  <logicalFolder name="f1" displayName="common_crypto" projectFiles="true">
-                    <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/microchip/dspic33a/common_crypto/crypto_common.h</itemPath>
-                    <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/microchip/dspic33a/common_crypto/crypto_config.h</itemPath>
-                    <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/microchip/dspic33a/common_crypto/crypto_hash.h</itemPath>
-                  </logicalFolder>
-                  <logicalFolder name="f2" displayName="drivers" projectFiles="true">
-                    <logicalFolder name="f1" displayName="library" projectFiles="true">
-                      <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/microchip/dspic33a/drivers/library/cam_hash.h</itemPath>
-                      <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/microchip/dspic33a/drivers/library/cam_version.h</itemPath>
-                    </logicalFolder>
-                    <logicalFolder name="f2" displayName="wrapper" projectFiles="true">
-                      <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/microchip/dspic33a/drivers/wrapper/crypto_cam05346_wrapper.h</itemPath>
-                      <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/port/microchip/dspic33a/drivers/wrapper/crypto_hash_cam05346_wrapper.h</itemPath>
-                    </logicalFolder>
-                  </logicalFolder>
-                </logicalFolder>
-              </logicalFolder>
-            </logicalFolder>
             <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/cpuid.h</itemPath>
             <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/cryptocb.h</itemPath>
             <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/error-crypt.h</itemPath>
@@ -91,6 +91,21 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="f1" displayName="crypto" projectFiles="true">
+        <logicalFolder name="common_crypto"
+                       displayName="common_crypto"
+                       projectFiles="true">
+          <logicalFolder name="src" displayName="src" projectFiles="true">
+            <itemPath>crypto/common_crypto/src/crypto_hash.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="drivers" displayName="drivers" projectFiles="true">
+          <logicalFolder name="wrapper" displayName="wrapper" projectFiles="true">
+            <logicalFolder name="src" displayName="src" projectFiles="true">
+              <itemPath>crypto/drivers/wrapper/src/crypto_cam05346_wrapper.c</itemPath>
+              <itemPath>crypto/drivers/wrapper/src/crypto_hash_cam05346_wrapper.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+        </logicalFolder>
         <logicalFolder name="test_vectors"
                        displayName="test_vectors"
                        projectFiles="true">
@@ -109,22 +124,6 @@
         </logicalFolder>
         <logicalFolder name="f2" displayName="wolfssl" projectFiles="true">
           <logicalFolder name="f1" displayName="wolfcrypt" projectFiles="true">
-            <logicalFolder name="f1" displayName="port" projectFiles="true">
-              <logicalFolder name="f1" displayName="microchip" projectFiles="true">
-                <logicalFolder name="f1" displayName="dspic33a" projectFiles="true">
-                  <logicalFolder name="f1" displayName="common_crypto" projectFiles="true">
-                    <itemPath>crypto/wolfssl/wolfcrypt/src/port/microchip/dspic33a/common_crypto/crypto_hash.c</itemPath>
-                  </logicalFolder>
-                  <logicalFolder name="f2" displayName="drivers" projectFiles="true">
-                    <logicalFolder name="f2" displayName="wrapper" projectFiles="true">
-                      <itemPath>crypto/wolfssl/wolfcrypt/src/port/microchip/dspic33a/drivers/wrapper/crypto_cam05346_wrapper.c</itemPath>
-                      <itemPath>crypto/wolfssl/wolfcrypt/src/port/microchip/dspic33a/drivers/wrapper/crypto_hash_cam05346_wrapper.c</itemPath>
-                    </logicalFolder>
-                  </logicalFolder>
-                  <itemPath>crypto/wolfssl/wolfcrypt/src/port/microchip/dspic33a/dspic33a_cam_hash.c</itemPath>
-                </logicalFolder>
-              </logicalFolder>
-            </logicalFolder>
             <itemPath>crypto/wolfssl/wolfcrypt/src/hash.c</itemPath>
             <itemPath>crypto/wolfssl/wolfcrypt/src/memory.c</itemPath>
             <itemPath>crypto/wolfssl/wolfcrypt/src/sha256.c</itemPath>
@@ -133,6 +132,7 @@
             <itemPath>crypto/wolfssl/wolfcrypt/src/misc.c</itemPath>
           </logicalFolder>
         </logicalFolder>
+        <itemPath>crypto/dspic33a_cam_hash.c</itemPath>
       </logicalFolder>
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
@@ -162,18 +162,9 @@
     <Elem>test_vectors/sha256</Elem>
     <Elem>hal/src</Elem>
     <Elem>app</Elem>
-    <Elem>crypto/wolfssl/wolfcrypt</Elem>
-    <Elem>crypto/test_vectors</Elem>
     <Elem>test_vectors/sha</Elem>
     <Elem>test_vectors/lms/src</Elem>
-    <Elem>crypto/sha</Elem>
-    <Elem>crypto/wolfssl/wolfssl/wolfcrypt</Elem>
-    <Elem>crypto/cam/common_crypto</Elem>
-    <Elem>crypto/cam/drivers/wrapper</Elem>
-    <Elem>crypto/cam/drivers/library</Elem>
-    <Elem>crypto/common_crypto</Elem>
-    <Elem>crypto/drivers/library</Elem>
-    <Elem>crypto/drivers/wrapper</Elem>
+    <Elem>crypto</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -196,7 +187,7 @@
       <compileType>
         <linkerTool>
           <linkerLibItems>
-            <linkerLibFileItem>crypto/wolfssl/wolfcrypt/src/port/microchip/dspic33a/drivers/library/libcam05346-dspic33a.a</linkerLibFileItem>
+            <linkerLibFileItem>crypto/drivers/library/libcam05346-dspic33a.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>
@@ -237,7 +228,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="expand-pragma-config" value="false"/>
         <property key="extra-include-directories"
-                  value="crypto;app;mcc_generated_files;crypto\wolfssl;crypto\wolfssl\wolfssl\wolfcrypt\port\microchip\dspic33a"/>
+                  value="crypto;app;mcc_generated_files;crypto\wolfssl;."/>
         <property key="isolate-each-function" value="true"/>
         <property key="keep-inline" value="false"/>
         <property key="oXC16gcc-cnsts-mauxflash" value="false"/>
