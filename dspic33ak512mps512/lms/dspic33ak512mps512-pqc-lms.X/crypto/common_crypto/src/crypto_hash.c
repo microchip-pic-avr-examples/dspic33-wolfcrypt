@@ -50,9 +50,9 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#include "common_crypto/crypto_common.h"
-#include "common_crypto/crypto_hash.h"
-#include "drivers/wrapper/crypto_hash_cam05346_wrapper.h"
+#include "crypto/common_crypto/crypto_common.h"
+#include "crypto/common_crypto/crypto_hash.h"
+#include "crypto/drivers/wrapper/crypto_hash_cam05346_wrapper.h"
 
 // *****************************************************************************
 // *****************************************************************************
