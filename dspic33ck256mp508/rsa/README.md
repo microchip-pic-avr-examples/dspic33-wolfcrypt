@@ -70,7 +70,7 @@ The device will process the configured test vector using the following APIs:
 * `mp_set_int` - Initializes the RSA key structure with the public exponent.
 * `wc_RsaSSL_Verify` - Processes the signature and returns the decrypted output.
 
-<img src="../../images/rsa_3072_pkcs_sig_ver_output.jpg" height="250" alt="RSA 3072 PKCS#1 v1.5 Signature Verification Output"/>
+<img src="../../images/rsa_3072_pkcs_sig_ver_output.jpg" height="350" alt="RSA 3072 PKCS#1 v1.5 Signature Verification Output"/>
 
 ### Test Vectors
 
