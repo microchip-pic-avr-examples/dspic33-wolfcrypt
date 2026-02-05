@@ -1,0 +1,131 @@
+/*
+Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
+
+    Subject to your compliance with these terms, you may use Microchip
+    software and any derivatives exclusively with Microchip products.
+    You are responsible for complying with 3rd party license terms
+    applicable to your use of 3rd party software (including open source
+    software) that may accompany Microchip software. SOFTWARE IS ?AS IS.?
+    NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS
+    SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT,
+    MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT
+    WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
+    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY
+    KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF
+    MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE
+    FORESEEABLE. TO THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP?S
+    TOTAL LIABILITY ON ALL CLAIMS RELATED TO THE SOFTWARE WILL NOT
+    EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR
+    THIS SOFTWARE.
+*/
+
+/* cppcheck-suppress misra-c2012-21.6
+*
+*  (Rule 21.6) REQUIRED: The standard library input/output functions shall not be used
+*
+*  Reasoning: This demo uses printf to print out information to a terminal.
+*/
+#include <stdio.h>
+#include "app_utils.h"
+#include "timer/tmr1.h"
+#include "system/clock.h"
+#include "system/pins.h"
+
+void benchmarkingStart(void)
+{
+    TMR1 = 0;
+    BENCHMARKING_P28_SetHigh();
+}
+
+void benchmarkingEnd(int* ticksToProcess)
+{
+    BENCHMARKING_P28_SetLow();
+    *ticksToProcess = TMR1;
+}
+
+void benchmarkingDataPrint(int ticksToProcess)
+{
+    double seconds = (double) ticksToProcess / (double) 100000000;
+    uint32_t cycles = seconds * CLOCK_InstructionFrequencyGet();
+
+    (void) printf("\r\n Cycles spent: %lu", cycles);
+    (void) printf("\r\n Seconds spent: %lf", seconds);
+}
+
+void ledPassSet(void)
+{
+    LED_RED_SetLow();
+    LED_GREEN_SetHigh();
+}
+
+void ledFailSet(void)
+{
+    LED_GREEN_SetLow();
+    LED_RED_SetHigh();
+}
+
+void headerOutputPrint(int algorithm, const char* vectorInformation)
+{
+    const char* algorithmType = "";
+
+    switch(algorithm)
+    {
+        case 0:
+            algorithmType = "SHA2-224";
+            break;
+        case 1:
+            algorithmType = "SHA2-256";
+            break;
+        case 2:
+            algorithmType = "SHA2-384";
+            break;
+        case 3:
+            algorithmType = "SHA2-512";
+            break;
+        default:
+            algorithmType = "Unsupported";
+            break;
+    }
+
+    (void) printf(MAG"\r\n\r\n ***************************************************************************************************");
+    (void) printf(CYAN"\r\n ********************************* %s TEST - %s *********************************", algorithmType, vectorInformation);
+    (void) printf(MAG"\r\n ***************************************************************************************************"RESET_COLOR);
+}
+
+void printHexArray(const char* label, const uint8_t* data, uint32_t size)
+{
+    (void) printf(BLUE"\r\n ---------------------------------------------------------------------------------------------------"RESET_COLOR);
+    (void) printf("\r\n %s  : ", label);
+
+    for (uint32_t index = 0U; index < size; index++)
+    {
+        if (((index % 16U) == 0U) && (index != 0U))
+        {
+            (void) printf("\r\n                    ");
+        }
+        (void) printf(" 0x%02X", data[index]);
+    }
+}
+
+void arrayEqualityCheck(const uint8_t *a, const uint8_t *b, size_t size)
+{
+	const uint8_t *tempa = a;
+	const uint8_t *tempb = b;
+	uint8_t result = 0;
+
+	for (unsigned int i = 0; i < size; i++)
+    {
+		result |= tempa[i] ^ tempb[i];
+	}
+
+    if(result == 0U)
+    {
+        (void) printf(GREEN" \r\n PASS "RESET_COLOR);
+        ledPassSet();
+    }
+    else
+    {
+        (void) printf(RED" \r\n FAIL - Data Mismatch"RESET_COLOR);
+        ledFailSet();
+    }
+}
