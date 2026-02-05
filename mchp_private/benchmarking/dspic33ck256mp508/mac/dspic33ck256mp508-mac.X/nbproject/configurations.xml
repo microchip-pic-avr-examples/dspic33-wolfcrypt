@@ -495,8 +495,6 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-2beff"/>
         <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmerToGoFilePath"
-                  value="C:/Users/C69672/crypto/wolfcrypt/dspic33-wolfcrypt/dspic33ck256mp508/mac/dspic33ck256mp508-mac.X/debug/default/dspic33ck256mp508-mac_ptg"/>
         <property key="programmerToGoImageName" value="dspic33ck256mp508-mac_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
