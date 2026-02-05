@@ -58,9 +58,9 @@ The following benchmarking results were obtained with the device clock speed set
 #### AES-CMAC
 |Key Size (bytes)|Plaintext Size (bytes)|MAC Size (bytes)|Generation Performance (seconds)|
 |----|----|----|----|
-|16|532|16|0.009555|
-|24|532|16|0.010223|
-|32|532|16|0.010897|
+|16|532|16|0.002837|
+|24|532|16|0.003277|
+|32|532|16|0.003717|
 
 ### Memory Size Benchmarking
 The following results include usage of AES-CMAC APIs. Flash size will vary based on size of the stored data inputs used with the library.
