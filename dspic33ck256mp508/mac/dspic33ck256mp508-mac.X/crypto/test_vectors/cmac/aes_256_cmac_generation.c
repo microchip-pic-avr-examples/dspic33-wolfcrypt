@@ -26,7 +26,7 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
 
 #if defined(AES_256) && defined(AES_CMAC)
 
-//NOTE: This is from https://github.com/usnistgov/ACVP-Server/blob/v1.1.0.41/gen-val/json-files/CMAC-AES-1.0/internalProjection.json, tgId 24, tcId 185
+//NOTE: This is from https://github.com/usnistgov/ACVP-Server/blob/v1.1.0.41/gen-val/json-files/CMAC-AES-1.0/internalProjection.json - tgId 24, tcId 185
 static const uint8_t key[] = {
     0xBB, 0x2E, 0xD8, 0x64, 0xAE, 0xA7, 0xD3, 0xEA, 
     0x26, 0x9A, 0x19, 0xDA, 0x45, 0x93, 0x32, 0xFF,
