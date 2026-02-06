@@ -43,7 +43,7 @@ Open the project in MPLAB® X IDE. Build the project and program the device.
 
 The `app_config.h` file is used to configure the project. The following options are available:
 
-| ECC Curve       | Application                  |
+| SHA Type Enable | Application                  |
 | --------------- | -----------                  |
 | SHA2_224_ENABLE | SHA-224 digest generation    | 
 | SHA2_256_ENABLE | SHA-256 digest generation    |

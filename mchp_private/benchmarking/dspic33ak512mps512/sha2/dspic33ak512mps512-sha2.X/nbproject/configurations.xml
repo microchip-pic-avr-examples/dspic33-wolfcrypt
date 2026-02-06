@@ -426,8 +426,6 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="800000-87ffff"/>
-        <property key="programmerToGoFilePath"
-                  value="C:/Users/c68547/Development/crypto/dspic33a-wolfcrypt/mchp_private/dspic33ak512mps512/sha2/dspic33ak512mps512-sha2.X/debug/default/dspic33ak512mps512-sha2_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
