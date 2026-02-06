@@ -4,7 +4,7 @@
     <img alt="Microchip Logo." src="../../images/microchip_logo_black_red.png">
 </picture>
 
-# WolfCrypt Message Authentication Code (MAC) Example Application
+# dsPIC33C Message Authentication Code (MAC) Example
 
 ## Description
 This example application utilizes the wolfCrypt library to perform MAC operations using different sized input vectors. The following MAC algorithms are supported:
