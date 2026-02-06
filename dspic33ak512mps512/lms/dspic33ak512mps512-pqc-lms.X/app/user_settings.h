@@ -23,29 +23,29 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
 #define _WOLFCRYPT_USER_SETTINGS_H
 
     // wolfCrypt Configuration Options
-    #define NO_MD5
-    #define NO_SHA
-    #define NO_MD4
-    #define NO_DSA
-    #define NO_OLD_TLS
-    #define NO_ASN
-    #define WC_NO_HARDEN
-    #define NO_FILESYSTEM
-    #define WOLFSSL_IGNORE_FILE_WARN
+    #define NO_MD5                      // Disable MD5 related APIs
+    #define NO_SHA                      // Disable SHA related APIs
+    #define NO_MD4                      // Disable MD4 related APIs
+    #define NO_DSA                      // Disable DSA related APIs
+    #define NO_OLD_TLS                  // Disable TLS related APIs
+    #define NO_ASN                      // Disable ASN related APIs
+    #define WC_NO_HARDEN                // Disable Harden option
+    #define NO_FILESYSTEM               // Specify device does not use a filesystem
+    #define WOLFSSL_IGNORE_FILE_WARN    // Disable warning regarding inlined misc.c functions
 
     // wolfCrypt LMS Configuration Options
-    #define WOLFSSL_HAVE_LMS
-    #define WOLFSSL_WC_LMS
-    #define WOLFSSL_LMS_SHA256_192
-    #define WOLFSSL_LMS_VERIFY_ONLY
-    #define WOLFSSL_WC_LMS_SMALL
-    #define WC_LMS_FULL_HASH
+    #define WOLFSSL_HAVE_LMS            // Enable LMS specific APIS
+    #define WOLFSSL_WC_LMS              // Enable LMS WC specific APIS
+    #define WOLFSSL_LMS_SHA256_192      // Enables LMS SHA 256 and 192 APIs
+    #define WOLFSSL_LMS_VERIFY_ONLY     // Enable LMS verify only
+    #define WOLFSSL_WC_LMS_SMALL        // Reduce the code size
+    #define WC_LMS_FULL_HASH            // Enable Full Hash for LMS SHA 256
 
     // dsPIC33A Support
     #ifdef __dsPIC33A__
-        #define SIZEOF_LONG_LONG 8
-        #define SINGLE_THREADED
-        #define dsPIC33A_CAM_ENABLE
+        #define SIZEOF_LONG_LONG 8      // Define long value as 4 bytes
+        #define SINGLE_THREADED         // Specify device is single threaded
+        #define dsPIC33A_CAM_ENABLE     // Enables CAM Hardware usage with the dsPIC33A
     #endif
 
 #endif
