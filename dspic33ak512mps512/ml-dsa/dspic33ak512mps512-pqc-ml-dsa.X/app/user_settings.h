@@ -57,7 +57,7 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
     
     // dsPIC33A Support
     #ifdef __dsPIC33A__
-        #define SIZEOF_LONG_LONG 8              // Define long value as 4 bytes
+        #define SIZEOF_LONG_LONG 8              // Define long value as 8 bytes
         #define SINGLE_THREADED                 // Specify device is single threaded
     #endif  
 
