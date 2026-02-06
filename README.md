@@ -4,26 +4,32 @@
     <img alt="Microchip Logo." src="images/microchip_logo_black_red.png">
 </picture>
 
-## dsPIC33 wolfcrypt
+## dsPIC33 wolfCrypt Demos
 
 Board Image if any.
 
-## Summary
+# Description
+dsPIC33 wolfCrypt Demos are a collection of MPLAB® X IDE projects to demonstrate the following cryptographic operations:
+-  
+
+# Prerequisites
+
+## Software Tool Versions Used
+-  
+
+## Hardware Tools
+-  
+
+# Contents Summary
 
 
-## Related Documentation
+# wolfCrypt APIs
 
+# MISRA
 
-## Software Used 
+# Benchmarking
+## Benchmarking Setup
 
+### Performance Benchmarking
 
-## Hardware Used
-
-
-## Setup
-
-
-## Operation
-
-
-
+### Memory Size Benchmarking
