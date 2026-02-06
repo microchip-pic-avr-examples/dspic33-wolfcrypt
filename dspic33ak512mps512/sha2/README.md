@@ -12,7 +12,7 @@ This MPLAB® X project demonstrates SHA2 hash operations by using wolfCrypt APIs
 
 ## Software Used 
 
-- dsPIC33AK-MP_DFP v1.2.135
+- dsPIC33AK-MP_DFP v1.3.185
 - MPLAB® X IDE **v6.30** (https://www.microchip.com/mplabx)
 - MPLAB® XC-DSC Compiler **v3.30** (https://www.microchip.com/xcdsc)
 
