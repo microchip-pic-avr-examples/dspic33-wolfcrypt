@@ -27,28 +27,28 @@ extern "C" {
 #endif
 
     // wolfCrypt Configuration Options
-    #define NO_MD5
-    #define NO_SHA
-    #define NO_MD4
-    #define NO_DSA
-    #define NO_OLD_TLS
-    #define NO_ASN
-    #define WC_NO_HARDEN
-    #define NO_FILESYSTEM
-    #define WOLFSSL_IGNORE_FILE_WARN
+    #define NO_MD5                      // Disable MD5 related APIs
+    #define NO_SHA                      // Disable SHA related APIs
+    #define NO_MD4                      // Disable MD4 related APIs
+    #define NO_DSA                      // Disable DSA related APIs
+    #define NO_OLD_TLS                  // Disable TLS related APIs
+    #define NO_ASN                      // Disable ASN related APIs
+    #define WC_NO_HARDEN                // Disable Harden option
+    #define NO_FILESYSTEM               // Specify device does not use a filesystem
+    #define WOLFSSL_IGNORE_FILE_WARN    // Disable warning regarding inlined misc.c functions
 
     // wolfCrypt SHA2 Configuration Options
-    #define WOLFSSL_SHA224
-    #define WOLFSSL_SHA384
-    #define WOLFSSL_SHA512
+    #define WOLFSSL_SHA224              // Enables SHA 224 APIs
+    #define WOLFSSL_SHA384              // Enables SHA 384 APIs
+    #define WOLFSSL_SHA512              // Enables SHA 512 APIs
 
     // dsPIC33C Support
     #ifdef __dsPIC33C__
-        #define WC_16BIT_CPU
-        #define SIZEOF_LONG_LONG 4
-        #define SINGLE_THREADED
-        #define FAST_ROTATE
-        #define MICROCHIP_PIC24
+        #define WC_16BIT_CPU            // Specify 16-bit integer sizes
+        #define SIZEOF_LONG_LONG 4      // Define long value as 4 bytes
+        #define SINGLE_THREADED         // Specify device is single threaded
+        #define FAST_ROTATE             // Enable fast Rotate operations
+        #define MICROCHIP_PIC24         // Enable Microchip PIC24 options
     #endif
 
 #ifdef	__cplusplus
