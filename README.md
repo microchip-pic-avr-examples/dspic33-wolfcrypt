@@ -14,7 +14,10 @@ dsPIC33 wolfCrypt Demos are a collection of MPLAB® X IDE projects to demonstrat
 - MAC
   - AES-CMAC
 - ECDSA
-- SHA2
+- SHA
+  - SHA2
+  - SHA3
+  - SHAKE
 - RSA (Rivest–Shamir–Adleman)
 - LMS (Leighton–Micali Signatures)
 - ML-DSA (Module-Lattice-Based Digital Signature Algorithm)
