@@ -27,28 +27,28 @@ extern "C" {
 #endif
 
     // wolfCrypt Configuration Options
-    #define NO_MD5
-    #define NO_SHA
-    #define NO_SHA256
-    #define NO_MD4
-    #define NO_DSA
-    #define NO_OLD_TLS
-    #define NO_ASN
-    #define WC_NO_HARDEN
-    #define NO_FILESYSTEM
-    #define WOLFSSL_IGNORE_FILE_WARN
-    #define NO_SESSION_CACHE
+    #define NO_MD5                      // Disable MD5 related APIs
+    #define NO_SHA                      // Disable SHA related APIs
+    #define NO_SHA256                   // Disable SHA256 related APIs
+    #define NO_MD4                      // Disable MD4 related APIs
+    #define NO_DSA                      // Disable DSA related APIs
+    #define NO_OLD_TLS                  // Disable TLS related APIs
+    #define NO_ASN                      // Disable ASN related APIs
+    #define WC_NO_HARDEN                // Disable Harden option
+    #define NO_FILESYSTEM               // Specify device does not use a filesystem
+    #define WOLFSSL_IGNORE_FILE_WARN    // Disable warning regarding inlined misc.c functions
+    #define NO_SESSION_CACHE            // Disable Cache usage
 
     // wolfCrypt SHA3/SHAKE Configuration Options
-    #define WOLFSSL_SHA3
-    #define WOLFSSL_SHAKE128
-    #define WOLFSSL_SHAKE256
-    #define WOLFSSL_SHA3_SMALL
+    #define WOLFSSL_SHA3                // Enable SHA3 APIs
+    #define WOLFSSL_SHAKE128            // Enable SHAKE 128 APIs
+    #define WOLFSSL_SHAKE256            // Enable SHAKE 256 APIs
+    #define WOLFSSL_SHA3_SMALL          // Enable smaller memory usage for SHA3
 
     // dsPIC33A Support
     #ifdef __dsPIC33A__
-        #define SIZEOF_LONG_LONG 8
-        #define SINGLE_THREADED
+        #define SIZEOF_LONG_LONG 8      // Define long value as 8 bytes
+        #define SINGLE_THREADED         // Specify device is single threaded
     #endif
 
 #ifdef	__cplusplus
