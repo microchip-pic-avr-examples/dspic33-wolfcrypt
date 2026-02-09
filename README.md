@@ -8,30 +8,17 @@
 
 # Description
 dsPIC33 wolfCrypt Demos are a collection of MPLAB® X IDE projects to demonstrate the following cryptographic operations using wolfSSL's wolfCrypt software library:
-- AES (Advanced Encryption Standard)
-  - ECB (Electronic codebook)
-    - Encryption and Decryption
-  - CBC (Cipher block chaining)
-    - Encryption and Decryption
-- MAC (Message Authentication Code)
-  - AES-CMAC (Cipher-based MAC)
-- ECDSA (Elliptic Curve Digital Signature Algorithm)
-  - Signature Verification
-- SHA (Secure Hash Algorithm)
-  - SHA2
-    - Digest Generation
-  - SHA3
-    - Digest Generation
-  - SHAKE (Secure Hash Algorithm KECCAK)
-    - Digest Generation
-- RSA (Rivest–Shamir–Adleman)
-  - Signature Verification
-- LMS (Leighton–Micali Signatures)
-  - Verification
-- ML-DSA (Module-Lattice-Based Digital Signature Algorithm)
-  - Verification
-- ML-KEM (Module-Lattice-Based Key-Encapsulation Mechanism)
-  - Decapsulation
+
+|Algorithm|Options|Modes|Supported Actions|
+|---|---|---|---|
+|AES|Key Size (bits): 128, 192, 256|ECB, CBC|Encryption and Decryption|
+|MAC|Key Size (bits): 128, 192, 256|CMAC|Generation|
+|ECDSA|ECC Curve: P256, P384|N/A|Signature Verification|
+|SHA|Digest Size (bits): 224, 256, 384, 512|SHA2, SHA3, SHAKE|N/A|
+|RSA|Key Size (bits): 3072|N/A|Signature Verification|
+|LMS|Width: 1, 2, 4, 8; Height: 5, 10, 15, 20, 25|SHA-256_192, SHA-256|Signature Verification|
+|ML-DSA|ML-DSA type: Dilithium 44, 65, 87|N/A|Signature Verification|
+|ML-KEM|Key Type: ML-KEM 512, 768, 1024|N/A|Decapsulation|
 
 # Contents Summary
 - dspic33ck256mp508
