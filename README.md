@@ -10,15 +10,22 @@
 dsPIC33 wolfCrypt Demos are a collection of MPLAB® X IDE projects to demonstrate the following cryptographic operations using wolfSSL's wolfCrypt software library:
 - AES (Advanced Encryption Standard)
   - ECB (Electronic codebook)
+    - Encryption and Decryption
   - CBC (Cipher block chaining)
+    - Encryption and Decryption
 - MAC (Message Authentication Code)
   - AES-CMAC (Cipher-based MAC)
 - ECDSA (Elliptic Curve Digital Signature Algorithm)
+  - Signature Verification
 - SHA (Secure Hash Algorithm)
   - SHA2
+    - Digest Generation
   - SHA3
+    - Digest Generation
   - SHAKE (Secure Hash Algorithm KECCAK)
+    - Digest Generation
 - RSA (Rivest–Shamir–Adleman)
+  - Signature Verification
 - LMS (Leighton–Micali Signatures)
   - Verification
 - ML-DSA (Module-Lattice-Based Digital Signature Algorithm)
