@@ -1,0 +1,95 @@
+/*
+Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
+
+    Subject to your compliance with these terms, you may use Microchip 
+    software and any derivatives exclusively with Microchip products. 
+    You are responsible for complying with 3rd party license terms  
+    applicable to your use of 3rd party software (including open source  
+    software) that may accompany Microchip software. SOFTWARE IS ?AS IS.? 
+    NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS 
+    SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT,  
+    MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT 
+    WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
+    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY 
+    KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF 
+    MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE 
+    FORESEEABLE. TO THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP?S 
+    TOTAL LIABILITY ON ALL CLAIMS RELATED TO THE SOFTWARE WILL NOT 
+    EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
+    THIS SOFTWARE.
+*/
+#include "mcc_generated_files/system/system.h"
+#include "mcc_generated_files/system/pins.h"
+#include "crypto/wolfssl/wolfssl/wolfcrypt/cmac.h"
+#include "crypto/test_vectors/test_vector.h"
+#include "app/app_config.h"
+
+Cmac cmac;
+
+/*
+    Main application
+*/
+
+static void MAC_CmacGenerate(MAC_TEST_VECTOR *testVector)
+{
+    /* cppcheck-suppress misra-c2012-18.8
+    *
+    *  (Rule 18.8) REQUIRED: Variable-length array types shall not be used
+    *
+    *  Reasoning: The result array size must be the same as the input data array size.
+    *                Using a variable-length array allows the demo test vectors to be
+    *                adjusted independent of the application code.
+    */
+    uint8_t macResult[testVector->macSize];
+    
+    (void)wc_InitCmac((Cmac*) &cmac, testVector->key, testVector->keySize, WC_CMAC_AES, NULL);
+    (void)wc_CmacUpdate((Cmac*) &cmac, testVector->message, testVector->messageSize);
+    (void)wc_CmacFinal((Cmac*) &cmac, macResult, &testVector->macSize);
+}
+
+#ifdef AES_128
+extern MAC_TEST_VECTOR aes_128_cmac_generation_vector;
+static void AES128_CmacGenerate(void)
+{
+    MAC_CmacGenerate((MAC_TEST_VECTOR*) &aes_128_cmac_generation_vector);
+}
+#endif
+
+#ifdef AES_192
+extern MAC_TEST_VECTOR aes_192_cmac_generation_vector;
+static void AES192_CmacGenerate(void)
+{
+    MAC_CmacGenerate((MAC_TEST_VECTOR*) &aes_192_cmac_generation_vector);
+}
+#endif
+
+#ifdef AES_256
+extern MAC_TEST_VECTOR aes_256_cmac_generation_vector;
+static void AES256_CmacGenerate(void)
+{
+    MAC_CmacGenerate((MAC_TEST_VECTOR*) &aes_256_cmac_generation_vector);
+}
+#endif
+
+int main(void)
+{
+    SYSTEM_Initialize();
+    
+    #ifdef AES_CMAC
+        #ifdef AES_128
+        AES128_CmacGenerate();
+        #endif
+
+        #ifdef AES_192
+        AES192_CmacGenerate();
+        #endif
+
+        #ifdef AES_256
+        AES256_CmacGenerate();
+        #endif
+    #endif
+
+    while(1)
+    {
+    }    
+}
