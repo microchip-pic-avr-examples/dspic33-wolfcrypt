@@ -30,11 +30,13 @@ build/
 dist/
 private/
 disassembly/
+report/
 *.zip
 !code-templates.zip
 *.mk
 *.bash
 *.dump
+*.c.ctu-info
 Makefile-genesis.properties
 
 # Excluding MPLAB X® Trace files
