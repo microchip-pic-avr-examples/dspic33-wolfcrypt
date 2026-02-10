@@ -23,4 +23,5 @@ dsPIC33CK256MP508
 - ECDSA: Digest Generation
 - RSA: Digest Generation
 - SHA2: Digest Generation
-- CMAC: MAC generation
+- MAC
+    - CMAC: MAC Generation
