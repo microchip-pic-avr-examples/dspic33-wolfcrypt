@@ -4,7 +4,7 @@
     <img alt="Microchip Logo." src="../../images/microchip_logo_black_red.png">
 </picture>
 
-# dsPIC33A PQC ML-DSA (Module-Lattice-Based Digital Signature) Verification
+# dsPIC33A ML-DSA (Module-Lattice-Based Digital Signature) Verification
 
 ## Summary
 
