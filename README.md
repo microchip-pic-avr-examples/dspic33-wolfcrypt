@@ -9,33 +9,19 @@
 # Description
 dsPIC33 wolfCrypt Demos are a collection of MPLAB® X IDE projects to demonstrate the following cryptographic operations using wolfSSL's wolfCrypt software library:
 
-|Algorithm|Options|Modes|Supported Actions|
-|---|---|---|---|
-|AES|Key Size (bits): 128, 192, 256|ECB, CBC|Encryption and Decryption|
-|MAC|Key Size (bits): 128, 192, 256|CMAC|Generation|
-|ECDSA|ECC Curve: P256, P384|N/A|Signature Verification|
-|SHA|Digest Size (bits): 224, 256, 384, 512|SHA2, SHA3, SHAKE|N/A|
-|RSA|Key Size (bits): 3072|N/A|Signature Verification|
-|LMS|Width: 1, 2, 4, 8; Height: 5, 10, 15, 20, 25|SHA-256_192, SHA-256|Signature Verification|
-|ML-DSA|ML-DSA type: Dilithium 44, 65, 87|N/A|Signature Verification|
-|ML-KEM|Key Type: ML-KEM 512, 768, 1024|N/A|Decapsulation|
+|Algorithm|Options|Modes|Supported Actions|dsPIC33CK256MP508|dsPIC33A CAM v2|dsPIC33A CAM v3|dsPIC33A Software|
+|---|---|---|---|---|---|---|---|
+|AES|Key Size (bits): 128, 192, 256|ECB, CBC|Encryption and Decryption|[✅](./dspic33ck256mp508/aes/)|[❌*](https://github.com/microchip-pic-avr-examples/dspic33a-crypto-accelerator-module/tree/main/dspic33ak512mps512/aes)|❌|❌|
+|MAC|Key Size (bits): 128, 192, 256|CMAC|Generation|[✅](./dspic33ck256mp508/mac/)|[❌*](https://github.com/microchip-pic-avr-examples/dspic33a-crypto-accelerator-module/tree/main/dspic33ak512mps512/mac)|❌|❌|
+|ECDSA|ECC Curve: P256, P384|N/A|Signature Verification|[✅](./dspic33ck256mp508/ecdsa/)|[❌*](https://github.com/microchip-pic-avr-examples/dspic33a-crypto-accelerator-module/tree/main/dspic33ak512mps512/dsa)|❌|❌|
+|SHA|Digest Size (bits): 224, 256, 384, 512|SHA2, SHA3, SHAKE|N/A|[✅](./dspic33ck256mp508/sha2/)|[✅](https://github.com/microchip-pic-avr-examples/dspic33a-crypto-accelerator-module/tree/main/dspic33ak512mps512/hash)|❌|❌|
+|RSA|Key Size (bits): 3072|N/A|Signature Verification|[✅](./dspic33ck256mp508/rsa/)|❌|❌|❌|
+|LMS|Width: 1, 2, 4, 8; Height: 5, 10, 15, 20, 25|SHA-256_192, SHA-256|Signature Verification|[✅](./dspic33ck256mp508/lms/)|❌|❌|[✅](./dspic33ak512mps512/lms/)|
+|ML-DSA|ML-DSA type: Dilithium 44, 65, 87|N/A|Signature Verification|[✅](./dspic33ck256mp508/ml-dsa/)|❌|❌|[✅](./dspic33ak512mps512/ml-dsa/)|
+|ML-KEM|Key Type: ML-KEM 512, 768, 1024|N/A|Decapsulation|❌|❌|❌|[✅](./dspic33ak512mps512/ml-kem/)|
 
-# Contents Summary
-- dspic33ck256mp508
-  - aes
-  - ecdsa
-  - lms
-  - mac
-  - ml-dsa
-  - rsa
-  - sha2
-- dspic33ak512mps512
-  - lms
-  - ml-dsa
-  - ml-kem
-  - sha2
-  - sha3
-  - shake
+*Supported by the CAM v2 alone. See [here](https://github.com/microchip-pic-avr-examples/dspic33a-crypto-accelerator-module/tree/main/dspic33ak512mps512) for demo projects.
+**Supported by the CAM v3 alone. See [here](https://github.com/microchip-pic-avr-examples/dspic33a-crypto-accelerator-module/tree/main/dspic33ak256mps306) for demo projects.
 
 # wolfCrypt APIs
 
