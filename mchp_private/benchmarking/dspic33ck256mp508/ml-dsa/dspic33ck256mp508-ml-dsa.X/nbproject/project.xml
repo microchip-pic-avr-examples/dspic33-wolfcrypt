@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>dspic33ck256mp508-pqc-ml-dsa</name>
+            <name>dspic33ck256mp508-ml-dsa</name>
             <creation-uuid>5cfbde80-7c47-4fb1-8775-cf1d53632ab9</creation-uuid>
             <make-project-type>0</make-project-type>
             <sourceEncoding>ISO-8859-1</sourceEncoding>

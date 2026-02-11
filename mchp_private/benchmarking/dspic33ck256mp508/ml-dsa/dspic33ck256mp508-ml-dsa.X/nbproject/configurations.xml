@@ -7,8 +7,6 @@
       <logicalFolder name="f2" displayName="app" projectFiles="true">
         <itemPath>app/user_settings.h</itemPath>
         <itemPath>app/app_config.h</itemPath>
-        <itemPath>app/app_ml_dsa.h</itemPath>
-        <itemPath>app/app_utils.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="crypto" projectFiles="true">
         <logicalFolder name="test_vectors"
@@ -54,22 +52,13 @@
           <itemPath>mcc_generated_files/system/reset.h</itemPath>
           <itemPath>mcc_generated_files/system/system_types.h</itemPath>
         </logicalFolder>
-        <logicalFolder name="timer" displayName="timer" projectFiles="true">
-          <itemPath>mcc_generated_files/timer/timer_interface.h</itemPath>
-          <itemPath>mcc_generated_files/timer/tmr1.h</itemPath>
-        </logicalFolder>
-        <logicalFolder name="uart" displayName="uart" projectFiles="true">
-          <itemPath>mcc_generated_files/uart/uart_types.h</itemPath>
-          <itemPath>mcc_generated_files/uart/uart_interface.h</itemPath>
-          <itemPath>mcc_generated_files/uart/uart1.h</itemPath>
-        </logicalFolder>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
       <itemPath>Makefile</itemPath>
-      <itemPath>dspic33ck256mp508-pqc-ml-dsa.mc3</itemPath>
+      <itemPath>dspic33ck256mp508-ml-dsa.mc3</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -78,22 +67,14 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <logicalFolder name="app" displayName="app" projectFiles="true">
-        <logicalFolder name="src" displayName="src" projectFiles="true">
-          <itemPath>app/src/app_ml_dsa.c</itemPath>
-          <itemPath>app/src/app_utils.c</itemPath>
-        </logicalFolder>
-      </logicalFolder>
       <logicalFolder name="f1" displayName="crypto" projectFiles="true">
         <logicalFolder name="test_vectors"
                        displayName="test_vectors"
                        projectFiles="true">
-          <logicalFolder name="dsa" displayName="dsa" projectFiles="true">
-            <logicalFolder name="sig_ver" displayName="sig_ver" projectFiles="true">
-              <itemPath>crypto/test_vectors/dsa/sig_ver/ml_dsa_verification_87.c</itemPath>
-              <itemPath>crypto/test_vectors/dsa/sig_ver/ml_dsa_verification_44.c</itemPath>
-              <itemPath>crypto/test_vectors/dsa/sig_ver/ml_dsa_verification_65.c</itemPath>
-            </logicalFolder>
+          <logicalFolder name="src" displayName="src" projectFiles="true">
+            <itemPath>crypto/test_vectors/src/ml_dsa_verification_44.c</itemPath>
+            <itemPath>crypto/test_vectors/src/ml_dsa_verification_65.c</itemPath>
+            <itemPath>crypto/test_vectors/src/ml_dsa_verification_87.c</itemPath>
           </logicalFolder>
         </logicalFolder>
         <logicalFolder name="f1" displayName="wolfssl" projectFiles="true">
@@ -129,16 +110,6 @@
             <itemPath>mcc_generated_files/system/src/dmt_asm.s</itemPath>
           </logicalFolder>
         </logicalFolder>
-        <logicalFolder name="timer" displayName="timer" projectFiles="true">
-          <logicalFolder name="src" displayName="src" projectFiles="true">
-            <itemPath>mcc_generated_files/timer/src/tmr1.c</itemPath>
-          </logicalFolder>
-        </logicalFolder>
-        <logicalFolder name="uart" displayName="uart" projectFiles="true">
-          <logicalFolder name="src" displayName="src" projectFiles="true">
-            <itemPath>mcc_generated_files/uart/src/uart1.c</itemPath>
-          </logicalFolder>
-        </logicalFolder>
       </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>
@@ -154,7 +125,7 @@
         <targetDevice>dsPIC33CK256MP508</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>pkob4hybrid</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XCDSC</languageToolchain>
         <languageToolchainVersion>3.30</languageToolchainVersion>
         <platform>3</platform>
