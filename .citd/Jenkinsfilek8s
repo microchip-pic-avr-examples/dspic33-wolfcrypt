@@ -318,7 +318,6 @@ def getMisraIncludeFlags() {
             if(hasCamSupport) {
                 flags << "-I ${deviceName}/${rootFolder}/${projectName}.X/crypto/common_crypto"
             }
-
         }
     }
 
@@ -345,7 +344,6 @@ def getMisraExcludeFlags() {
                 flags << "-i ${deviceName}/${rootFolder}/${projectName}.X/crypto/common_crypto"
                 flags << "-i ${deviceName}/${rootFolder}/${projectName}.X/crypto/drivers"
             }
-
         }
     }
 
