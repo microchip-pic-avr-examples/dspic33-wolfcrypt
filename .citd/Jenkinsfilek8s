@@ -332,8 +332,8 @@ def getMisraExcludeFlags() {
 
             flags << "-i ${deviceName}/${rootFolder}/${projectName}.X/mcc_generated_files"
             flags << "-i ${deviceName}/${rootFolder}/${projectName}.X/crypto/wolfssl"
-            flags << "-I ${deviceName}/${rootFolder}/${projectName}.X/crypto/common_crypto"
-            flags << "-I ${deviceName}/${rootFolder}/${projectName}.X/crypto/drivers"
+            flags << "-i ${deviceName}/${rootFolder}/${projectName}.X/crypto/common_crypto"
+            flags << "-i ${deviceName}/${rootFolder}/${projectName}.X/crypto/drivers"
         }
     }
 
