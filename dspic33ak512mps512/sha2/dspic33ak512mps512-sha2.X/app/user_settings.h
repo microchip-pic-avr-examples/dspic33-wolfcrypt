@@ -33,7 +33,7 @@ extern "C" {
     #define NO_DSA                      // Disable DSA related APIs
     #define NO_OLD_TLS                  // Disable TLS related APIs
     #define NO_ASN                      // Disable ASN related APIs
-    #define WC_NO_HARDEN                // Disable Harden option
+    #define WC_NO_HARDEN                // Disable harden option
     #define NO_FILESYSTEM               // Specify device does not use a filesystem
     #define WOLFSSL_IGNORE_FILE_WARN    // Disable warning regarding inlined misc.c functions
 
