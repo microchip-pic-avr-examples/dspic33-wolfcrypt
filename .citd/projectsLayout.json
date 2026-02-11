@@ -42,6 +42,18 @@
         "ml-kem": {
             "rootFolder": "ml-kem",
             "projectName": "dspic33ak512mps512-ml-kem"
+        },
+        "sha2": {
+            "rootFolder": "sha2",
+            "projectName": "dspic33ak512mps512-sha2"
+        },
+        "sha3": {
+            "rootFolder": "sha3",
+            "projectName": "dspic33ak512mps512-sha3"
+        },
+        "shake": {
+            "rootFolder": "shake",
+            "projectName": "dspic33ak512mps512-shake"
         }
     }
 }
