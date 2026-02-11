@@ -69,7 +69,7 @@
                    displayName="Important Files"
                    projectFiles="true">
       <itemPath>Makefile</itemPath>
-      <itemPath>dspic33ak512mps512-pqc-ml-kem.mc3</itemPath>
+      <itemPath>dspic33ak512mps512-ml-kem.mc3</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
