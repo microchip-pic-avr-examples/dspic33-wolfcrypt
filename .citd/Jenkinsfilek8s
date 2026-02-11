@@ -129,7 +129,9 @@ pipeline {
               script {
                     validateMetaDataContentVersion(
                         bitbucketUrl: "${env.BITBUCKET_SOURCE_URL}",
-                        githubOrganization: "${env.GITHUB_PRODUCTION_ORGANIZATION}"
+                        githubOrganization: "${env.GITHUB_PRODUCTION_ORGANIZATION}",
+                        ignoreInvalidKeyword: "${getInvalidKeywordsToIgnore()}",
+                        unapprovedSpellCheckOverrideList: "${getUnapprovedSpellCheckOverrideList()}"
                     )
                 }
             }
@@ -338,4 +340,39 @@ def getMisraExcludeFlags() {
     }
 
     return flags.join(', ')
+}
+
+def getInvalidKeywordsToIgnore() {
+    return [
+                "dspic33", 
+                "dspic33c", 
+                "dspic33a", 
+                "dspic33ck256mp508", 
+                "dspic33ak512mps512"
+        ].join(',')
+}
+
+def getUnapprovedSpellCheckOverrideList() {
+    return [
+                "wolfCrypt",
+                "wolfSSL",
+                "Crypto",
+                "Dilithium",
+                "Decapsulation",
+                "Decapsulated",
+                "MlKemKey",
+                "Baudrate",
+                "Plaintext",
+                "Ciphertext",
+                "Cmac",
+                "On-Board",
+                "High-Performance",
+                "API",
+                "Uncomment",
+                "Repo",
+                "Pre-compiled",
+                "Struct",
+                "AES",
+                "App"
+        ].join(',')
 }
