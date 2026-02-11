@@ -32,8 +32,8 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
     #define NO_AES                          // Disable AES related APIs
     #define NO_DES3                         // Disable DES3 related APIs
     #define NO_ASN                          // Disable ASN related APIs
-    #define WOLFSSL_SHA3                    // Enable SHA 3 APIs              
-    #define WOLFSSL_SHAKE128                // Enable SHAKE 128 APIs
+    #define WOLFSSL_SHA3                    // Enable SHA3 APIs              
+    #define WOLFSSL_SHAKE128                // Enable SHAKE128 APIs
     #define WOLFSSL_SHAKE256                // Enable SHAKE 256 APIs
     #define NO_FILESYSTEM                   // Specify device does not use a filesystem
     #define WOLFSSL_IGNORE_FILE_WARN        // Disable warning regarding inlined misc.c functions
@@ -43,8 +43,8 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
     #define WOLFCRYPT_ONLY                  // Specify using wolfCrypt APIs only
 
     // wolfCrypt ML-KEM Configuration Options
-    #define WOLFSSL_HAVE_MLKEM              // Enable ML-KEM specific APIS
-    #define WOLFSSL_WC_MLKEM                // Enable ML-KEM specific WC APIS
+    #define WOLFSSL_HAVE_MLKEM              // Enable ML-KEM specific APIs
+    #define WOLFSSL_WC_MLKEM                // Enable ML-KEM specific WC APIs
     #define WOLFSSL_MLKEM_NO_LARGE_CODE     // Reduce the code size and increase speed
     #define WOLFSSL_MLKEM_NO_MAKE_KEY       // Disable key creation APIs
     #define WOLFSSL_MLKEM_NO_ENCAPSULATE    // Disable Encapsulate APIs
@@ -55,7 +55,7 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
 
     // dsPIC33A Support
     #ifdef __dsPIC33A__
-        #define SIZEOF_LONG_LONG 8          // Define long value as 8 bytes
+        #define SIZEOF_LONG_LONG 8          // Define long long value size as 8 bytes
         #define SINGLE_THREADED             // Specify device is single threaded
     #endif
 
