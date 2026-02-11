@@ -18,7 +18,7 @@ This MPLAB® X project demonstrates SHA2 hash operations by using wolfCrypt APIs
 
 ## Hardware Used
 
-- dsPIC33AK512MPS512 Curiosity GP DIM (https://www.microchip.com/en-us/development-tool/EV80L65A)
+- dsPIC33AK512MPS512 Curiosity GP DIM (https://www.microchip.com/EV80L65A)
 - Curiosity Platform Development Board (https://www.microchip.com/EV74H48A)
 
 ## Set up
