@@ -310,10 +310,15 @@ def getMisraIncludeFlags() {
         deviceObject.each { algorithm, projectObject -> 
             def rootFolder = projectObject.rootFolder
             def projectName = projectObject.projectName
+            def hasCamSupport = projectObject.hasCamSupport
 
             flags << "-I ${deviceName}/${rootFolder}/${projectName}.X/app"
             flags << "-I ${deviceName}/${rootFolder}/${projectName}.X/crypto"
-            flags << "-I ${deviceName}/${rootFolder}/${projectName}.X/crypto/common_crypto"
+
+            if(hasCamSupport) {
+                flags << "-I ${deviceName}/${rootFolder}/${projectName}.X/crypto/common_crypto"
+            }
+
         }
     }
 
@@ -331,11 +336,16 @@ def getMisraExcludeFlags() {
         deviceObject.each { algorithm, projectObject -> 
             def rootFolder = projectObject.rootFolder
             def projectName = projectObject.projectName
+            def hasCamSupport = projectObject.hasCamSupport
 
             flags << "-i ${deviceName}/${rootFolder}/${projectName}.X/mcc_generated_files"
             flags << "-i ${deviceName}/${rootFolder}/${projectName}.X/crypto/wolfssl"
-            flags << "-i ${deviceName}/${rootFolder}/${projectName}.X/crypto/common_crypto"
-            flags << "-i ${deviceName}/${rootFolder}/${projectName}.X/crypto/drivers"
+
+            if(hasCamSupport) {
+                flags << "-i ${deviceName}/${rootFolder}/${projectName}.X/crypto/common_crypto"
+                flags << "-i ${deviceName}/${rootFolder}/${projectName}.X/crypto/drivers"
+            }
+
         }
     }
 
