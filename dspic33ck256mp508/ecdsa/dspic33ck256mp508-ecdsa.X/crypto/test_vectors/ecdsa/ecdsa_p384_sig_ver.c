@@ -84,7 +84,7 @@ ECDSA_TEST_VECTOR ecdsa_p384_sig_ver_vector = {
     (byte *) &signature,
     sizeof(signature),
     ECC_SECP384R1,
-    sizeof(publicKey)/2
+    (word32) sizeof(publicKey)/2
 };
 
 extern ECDSA_TEST_VECTOR ecdsa_p384_sig_ver_vector;
