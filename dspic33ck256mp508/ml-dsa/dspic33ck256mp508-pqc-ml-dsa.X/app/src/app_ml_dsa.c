@@ -19,6 +19,12 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
     THIS SOFTWARE.
 */
 
+/* cppcheck-suppress misra-c2012-21.6
+*
+*  (Rule 21.6) REQUIRED: The standard library input/output functions shall not be used
+*
+*  Reasoning: printf is required for printing to the terminal in this code example
+*/
 #include <stdio.h>
 #include "app_utils.h"
 #include "app_config.h"
