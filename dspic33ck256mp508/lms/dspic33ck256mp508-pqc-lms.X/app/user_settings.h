@@ -34,14 +34,14 @@ extern "C" {
     #define NO_OLD_TLS                          // Disable TLS related APIs
     #define NO_ASN                              // Disable ASN related APIs
     #define WOLFSSL_OLD_OID_SUM                 // Use smaller OID values
-    #define WC_NO_HARDEN                        // Disable Harden option
+    #define WC_NO_HARDEN                        // Disable harden option
     #define NO_FILESYSTEM                       // Specify device does not use a filesystem
     #define WOLFSSL_IGNORE_FILE_WARN            // Disable warning regarding inlined misc.c functions
 
     // wolfCrypt LMS Configuration Options
     #define WOLFSSL_HAVE_LMS                    // Enable LMS specific APIS
     #define WOLFSSL_WC_LMS                      // Enable LMS WC specific APIS
-    #define WOLFSSL_LMS_SHA256_192              // Enables LMS SHA 256 and 192 APIs
+    #define WOLFSSL_LMS_SHA256_192              // Enable LMS SHA 256 and 192 APIs
     #define WOLFSSL_LMS_VERIFY_ONLY             // Enable LMS verify only
     #define WOLFSSL_WC_LMS_SMALL                // Reduce the code size
 
@@ -52,8 +52,8 @@ extern "C" {
         #define SINGLE_THREADED                 // Specify device is single threaded
         #define WOLFSSL_GENERAL_ALIGNMENT 0     // Set byte alignment to 0
         #define WOLFSSL_USE_ALIGN               // Enable alignment usage
-        #define FAST_ROTATE                     // Enable fast Rotate operations
-        #define MICROCHIP_DSPIC33C_LMS_HASH     // Enable Microchip hash assembly usage
+        #define FAST_ROTATE                     // Enable fast rotate operations
+        #define MICROCHIP_DSPIC33C_LMS_HASH     // Enable Microchip's optimized assembly hash usage
     #endif
 
 #ifdef	__cplusplus

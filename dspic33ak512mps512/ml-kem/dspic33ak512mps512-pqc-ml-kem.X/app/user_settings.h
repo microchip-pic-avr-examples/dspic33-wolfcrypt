@@ -32,9 +32,9 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
     #define NO_AES                          // Disable AES related APIs
     #define NO_DES3                         // Disable DES3 related APIs
     #define NO_ASN                          // Disable ASN related APIs
-    #define WOLFSSL_SHA3                    // Enables SHA 3 APIs              
-    #define WOLFSSL_SHAKE128                // Enables SHAKE 128 APIs
-    #define WOLFSSL_SHAKE256                // Enables SHAKE 256 APIs
+    #define WOLFSSL_SHA3                    // Enable SHA 3 APIs              
+    #define WOLFSSL_SHAKE128                // Enable SHAKE 128 APIs
+    #define WOLFSSL_SHAKE256                // Enable SHAKE 256 APIs
     #define NO_FILESYSTEM                   // Specify device does not use a filesystem
     #define WOLFSSL_IGNORE_FILE_WARN        // Disable warning regarding inlined misc.c functions
     #define WC_NO_HASHDRBG                  // Disable HASH DRBG usage
@@ -46,12 +46,12 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
     #define WOLFSSL_HAVE_MLKEM              // Enable ML-KEM specific APIS
     #define WOLFSSL_WC_MLKEM                // Enable ML-KEM specific WC APIS
     #define WOLFSSL_MLKEM_NO_LARGE_CODE     // Reduce the code size and increase speed
-    #define WOLFSSL_MLKEM_NO_MAKE_KEY       // Disable Key creation APIs
+    #define WOLFSSL_MLKEM_NO_MAKE_KEY       // Disable key creation APIs
     #define WOLFSSL_MLKEM_NO_ENCAPSULATE    // Disable Encapsulate APIs
 
-    #define WOLFSSL_WC_ML_KEM_512           // Enable ML-KEM size 512 
-    #define WOLFSSL_WC_ML_KEM_768           // Enable ML-KEM size 768 
-    #define WOLFSSL_WC_ML_KEM_1024          // Enable ML-KEM size 1024 
+    #define WOLFSSL_WC_ML_KEM_512           // Enable ML-KEM parameter 512 
+    #define WOLFSSL_WC_ML_KEM_768           // Enable ML-KEM parameter 768 
+    #define WOLFSSL_WC_ML_KEM_1024          // Enable ML-KEM parameter 1024 
 
     // dsPIC33A Support
     #ifdef __dsPIC33A__

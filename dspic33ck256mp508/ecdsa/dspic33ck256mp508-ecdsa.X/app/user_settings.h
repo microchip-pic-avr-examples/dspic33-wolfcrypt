@@ -47,7 +47,7 @@ extern "C" {
 
 
     // wolfCrypt Random Configuration Options
-    #define NO_DEV_RANDOM             // Disables the inclusion of wolfCrypt's RNG header file (verify APIs do not need it)
+    #define NO_DEV_RANDOM             // Disable the inclusion of wolfCrypt's RNG header file (verify APIs do not need it)
 
     // wolfCrypt SP Configuration Options
     #define WOLFSSL_SP_SMALL          // Reduce SP library code size
