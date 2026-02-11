@@ -4,36 +4,37 @@
     <img alt="Microchip Logo." src="../../images/microchip_logo_black_red.png">
 </picture>
 
-# dsPIC33C SHA2 Example
+# dsPIC33A SHA2 Example
 
 ## Summary
 
-This MPLAB® X project demonstrates SHA2 hash operations by using wolfCrypt APIs on a dsPIC33CK256MP508 device.
+This MPLAB® X project demonstrates SHA2 hash operations by using wolfCrypt APIs.
 
 ## Software Used 
-- dsPIC33CK-MP_DFP **1.15.423**
+
+- dsPIC33AK-MP_DFP v1.3.185
 - MPLAB® X IDE **v6.30** (https://www.microchip.com/mplabx)
 - MPLAB® XC-DSC Compiler **v3.30** (https://www.microchip.com/xcdsc)
-    - Optimization 3 is used for this demo and benchmarking.
 
 ## Hardware Used
 
-- dsPIC33CK Curiosity Development Board (https://www.microchip.com/dm330030)
-- dsPIC33CK256MP508 High-Performance DSC (https://www.microchip.com/dspic33ck256mp508)
+- dsPIC33AK512MPS512 Curiosity GP DIM (https://www.microchip.com/EV80L65A)
+- Curiosity Platform Development Board (https://www.microchip.com/EV74H48A)
 
 ## Set up
 
 ### Hardware Set up
 
-1. Connect the board to the computer using a USB cable, connecting to the PICkit™ On-Board (PKOB) programmer/debugger.
+1. Insert the dsPIC33AK512MPS512 DIM into the DIM J1 slot on the Curiosity Platform Development Board.
+2. Connect the board from the J24 USB-C PKoB4 (PICKit™ On-Board 4) to the computer.
 
-    <img src="../../images/hardware_setup_curiosity.jpg" height="400" alt="Hardware Setup"/>
+    <img src="../../images/hardware_setup.jpg" height="400" alt="Hardware Setup"/>
 
 ### Project Set Up
 
 #### wolfCrypt Source
 
-The wolfCrypt files in this project use wolfssl v5.8.4-stable release to support the dsPIC33C device.
+The wolfCrypt files in this project use wolfssl v5.8.4-stable release to support the dsPIC33A device.
 
 ## Running the Demo
 
@@ -84,18 +85,18 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 
 ### Verification Time
 
-| SHA Type     | Cycles        | Time (seconds) |
-| ------------ | ------------- | -------------- |
-| SHA-224      | 118,500       | 0.001185       |
-| SHA-256      | 119,200       | 0.001192       |
-| SHA-334      | 1,383,800     | 0.013838       |
-| SHA-512      | 1,384,000     | 0.013840       |
+| SHA Type     | Time (seconds) |
+| ------------ | -------------- |
+| SHA-224      | 0.000027       |
+| SHA-256      | 0.000027       |
+| SHA-334      | 0.000087       |
+| SHA-512      | 0.000089       |
 
 ### Verification Size
 
 | SHA Type | Flash (bytes) | RAM Static (bytes) | RAM Stack (bytes) |
 | -------- | ------------- | ------------------ | ----------------- |
-| SHA-224  | 37,855        | 42                 |  1,122            |
-| SHA-256  | 37,857        | 42                 |  1,122            |
-| SHA-384  | 37,865        | 42                 |  1,122            |
-| SHA-512  | 37,873        | 42                 |  1,122            |
+| SHA-224  | 21,172        | 32                 |  1,476            |
+| SHA-256  | 21,176        | 32                 |  1,476            |
+| SHA-384  | 21,192        | 32                 |  1,476            |
+| SHA-512  | 21,208        | 32                 |  1,476            |
