@@ -6,6 +6,14 @@
 */
 @Library(['shared-library-mcu16ce@master', 'shared-library-common@master']) _
 
+/*
+    Class Imports
+*/
+import groovy.json.JsonSlurper
+
+/*
+    Pipeline
+*/
 pipeline {
     agent {
         kubernetes {
@@ -60,7 +68,7 @@ pipeline {
 
     options {
         timestamps()
-        timeout(time: 90, unit: 'MINUTES')
+        timeout(time: 45, unit: 'MINUTES')
     }
 
     stages {
@@ -98,7 +106,8 @@ pipeline {
             steps {
                 script {
 				    misraCheck(
-                        sourceProjectPath: "${env.MPLABX_PROJECT_SOURCE}"
+                        sourceProjectPath: "${env.MPLABX_PROJECT_SOURCE}",
+                        cppAdditionalArgs: "${getMisraIncludeFlags()}, ${getMisraExcludeFlags()}"
                     )
                 }
             }
@@ -286,4 +295,47 @@ pipeline {
             }
         }
     }
+}
+
+def getMisraIncludeFlags() {
+    def flags = ["--suppress=missingIncludeSystem", "--suppress=missingInclude"]
+
+    def projectsLayout = readFile('.citd/projectsLayout.json')
+    def projectsLayoutJson = new JsonSlurper().parseText(projectsLayout)
+
+    projectsLayoutJson.each { deviceName, deviceObject ->
+
+        deviceObject.each { algorithm, projectObject -> 
+            def rootFolder = projectObject.rootFolder
+            def projectName = projectObject.projectName
+
+            flags << "-I ${deviceName}/${rootFolder}/${projectName}.X/app"
+            flags << "-I ${deviceName}/${rootFolder}/${projectName}.X/crypto"
+            flags << "-I ${deviceName}/${rootFolder}/${projectName}.X/crypto/common_crypto"
+        }
+    }
+
+    return flags.join(', ')
+}
+
+def getMisraExcludeFlags() {
+    def flags = []
+
+    def projectsLayout = readFile('.citd/projectsLayout.json')
+    def projectsLayoutJson = new JsonSlurper().parseText(projectsLayout)
+
+    projectsLayoutJson.each { deviceName, deviceObject ->
+
+        deviceObject.each { algorithm, projectObject -> 
+            def rootFolder = projectObject.rootFolder
+            def projectName = projectObject.projectName
+
+            flags << "-i ${deviceName}/${rootFolder}/${projectName}.X/mcc_generated_files"
+            flags << "-i ${deviceName}/${rootFolder}/${projectName}.X/crypto/wolfssl"
+            flags << "-i ${deviceName}/${rootFolder}/${projectName}.X/crypto/common_crypto"
+            flags << "-i ${deviceName}/${rootFolder}/${projectName}.X/crypto/drivers"
+        }
+    }
+
+    return flags.join(', ')
 }
