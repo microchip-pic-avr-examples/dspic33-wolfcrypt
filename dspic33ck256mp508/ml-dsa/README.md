@@ -13,7 +13,8 @@ This MPLAB® X project demonstrates ML-DSA Verify using dilithium wolfCrypt APIs
 ## Software Used 
 - dsPIC33CK-MP_DFP **1.15.423**
 - MPLAB® X IDE **v6.30** (https://www.microchip.com/mplabx)
-- MPLAB® XC-DSC Compiler **v3.21** (https://www.microchip.com/xcdsc)
+- MPLAB® XC-DSC Compiler **v3.30** (https://www.microchip.com/xcdsc)
+    - Optimization level 3 is required for this demo.
 
 ## Hardware Used
 
@@ -160,6 +161,7 @@ If another tool is used to generate a signature it may encode the message by def
 The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found at the root folder of dspic33-wolfCrypt repo. 
 
 ### Benchmarking for ML-DSA Verification
+- Optimization level 3 is used for benchmarking
 
 #### Verification Time
 |ML-DSA type |Verfication time (Seconds)|
@@ -171,6 +173,6 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 #### Verification Size
 |ML-DSA type|Message Size (bytes)|Signature Size (bytes)|Key Size (bytes)|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
 |---|---|---|---|---|---|---|
-|Dilithium 44|4,553|2,420|1,312|18,047|58|964|
-|Dilithium 65|7,465|3,309|1,952|20,268|58|964|
-|Dilithium 87|4,616|4,627|2,592|19,822|58|964|
+|Dilithium 44|4,553|2,420|1,312|23,717|58|976|
+|Dilithium 65|7,465|3,309|1,952|25,938|58|976|
+|Dilithium 87|4,616|4,627|2,592|25,492|58|976|
