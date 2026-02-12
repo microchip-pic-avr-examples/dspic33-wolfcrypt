@@ -52,7 +52,7 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
     #define WOLFSSL_DILITHIUM_NO_SIGN           // Disable ML-DSA signing
 
     #define WOLFSSL_SHAKE128                    // Enable SHAKE128 APIs
-    #define WOLFSSL_SHAKE256                    // Enable SHAKE 256 APIs
+    #define WOLFSSL_SHAKE256                    // Enable SHAKE256 APIs
     #define WOLFSSL_SHA3                        // Enable SHA3 APIs
 
     #ifdef __dsPIC33C__

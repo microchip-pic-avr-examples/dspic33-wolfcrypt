@@ -34,7 +34,7 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
     #define NO_ASN                          // Disable ASN related APIs
     #define WOLFSSL_SHA3                    // Enable SHA3 APIs              
     #define WOLFSSL_SHAKE128                // Enable SHAKE128 APIs
-    #define WOLFSSL_SHAKE256                // Enable SHAKE 256 APIs
+    #define WOLFSSL_SHAKE256                // Enable SHAKE256 APIs
     #define NO_FILESYSTEM                   // Specify device does not use a filesystem
     #define WOLFSSL_IGNORE_FILE_WARN        // Disable warning regarding inlined misc.c functions
     #define WC_NO_HASHDRBG                  // Disable HASH DRBG usage
@@ -49,9 +49,9 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
     #define WOLFSSL_MLKEM_NO_MAKE_KEY       // Disable key creation APIs
     #define WOLFSSL_MLKEM_NO_ENCAPSULATE    // Disable Encapsulate APIs
 
-    #define WOLFSSL_WC_ML_KEM_512           // Enable ML-KEM parameter 512 
-    #define WOLFSSL_WC_ML_KEM_768           // Enable ML-KEM parameter 768 
-    #define WOLFSSL_WC_ML_KEM_1024          // Enable ML-KEM parameter 1024 
+    #define WOLFSSL_WC_ML_KEM_512           // Enable ML-KEM-512 security level
+    #define WOLFSSL_WC_ML_KEM_768           // Enable ML-KEM-768 security level 
+    #define WOLFSSL_WC_ML_KEM_1024          // Enable ML-KEM-1024 security level 
 
     // dsPIC33A Support
     #ifdef __dsPIC33A__
