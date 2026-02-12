@@ -67,7 +67,7 @@ The device will process the configured test vector using the following APIs:
 
 * `wc_ecc_init` - Initializes the ECC key structure.
 * `wc_ecc_import_unsigned` - Further initializes the ECC key structure with the key information.
-* `wc_ecc_verify_hash` - Veifies the hash and signature against the selected curve.
+* `wc_ecc_verify_hash` - Verifies the hash and signature against the selected curve.
 
 <img src="../../images/ecdsa_ecc_verify_output.jpg" alt="ECDSA ECC Verify output"/>
 

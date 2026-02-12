@@ -154,7 +154,7 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 ## Benchmarking for LMS Verification
 
 ### Verification Time
-|Hash|Width|Height|Verfication time (Seconds)|
+|Hash|Width|Height|Verification time (Seconds)|
 |---|---|---|---|
 |SHA-256_192 (N24)|8|25|0.049388|
 |SHA-256 (N32)|8|25|0.057216|
