@@ -38,9 +38,9 @@ extern "C" {
     #define WOLFSSL_IGNORE_FILE_WARN    // Disable warning regarding inlined misc.c functions
 
     // wolfCrypt SHA2 Configuration Options
-    #define WOLFSSL_SHA224              // Enable SHA 224 APIs
-    #define WOLFSSL_SHA384              // Enable SHA 384 APIs
-    #define WOLFSSL_SHA512              // Enable SHA 512 APIs
+    #define WOLFSSL_SHA224              // Enable SHA-224  APIs
+    #define WOLFSSL_SHA384              // Enable SHA-384  APIs
+    #define WOLFSSL_SHA512              // Enable SHA-512 APIs
 
     // dsPIC33C Support
     #ifdef __dsPIC33C__
