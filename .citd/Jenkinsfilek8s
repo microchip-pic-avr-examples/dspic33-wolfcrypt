@@ -299,7 +299,14 @@ pipeline {
 }
 
 def getMisraFlags() {
-    def flags = ["--suppress=missingIncludeSystem", "--suppress=missingInclude", "-i mchp_private/benchmarking"]
+    // NOTE: Due to duplicate projects for different devices, cppcheck can flag false positive issues due to all projects source included in a single scan.
+
+    def flags = ["--suppress=missingIncludeSystem",  // Suppress warnings for missing system headers
+                    "--suppress=missingInclude",     // Suppress warnings for missing application headers
+                    "--suppress=misra-c2012-8.5",    // Suppress warnings for 'An external object or function shall be declared once in one and only one file'
+                    "--suppress=misra-c2012-8.6",    // Suppress warnings for 'An identifier with external linkage shall have exactly one external definition'
+                    "-i mchp_private/benchmarking"   // Remove benchmarking projects from MISRA scan
+                ]
 
     def projectsLayout = readFile('.citd/projectsLayout.json')
     def projectsLayoutJson = new JsonSlurper().parseText(projectsLayout)
@@ -319,6 +326,7 @@ def getMisraFlags() {
     return flags.join(', ')
 }
 
+// Excluded files may continue to be scanned if the header is included by a source file being scanned. Build flags to suppress warnings from these excluded header files.
 def getMisraSuppressionFlags(deviceName, rootFolder, projectName) {
     def flags = []
 
@@ -328,6 +336,7 @@ def getMisraSuppressionFlags(deviceName, rootFolder, projectName) {
     return flags
 }
 
+// Build flags for header includes used in cppcheck scan.
 def getMisraIncludeFlags(deviceName, rootFolder, projectName, hasCamSupport) {
     def flags = []
 
@@ -341,6 +350,7 @@ def getMisraIncludeFlags(deviceName, rootFolder, projectName, hasCamSupport) {
     return flags
 }
 
+// Build flags for source/header excludes used in cppcheck scan.
 def getMisraExcludeFlags(deviceName, rootFolder, projectName, hasCamSupport) {
     def flags = []
 
