@@ -41,7 +41,7 @@ The benchmarking projects are configured to use the following:
 ### Performance Benchmarking
 The following benchmarking results were obtained while testing the wolfCrypt APIs.
 
-Benchmarking parameters: Device clock speed set to 200 MHz
+Benchmarking parameters: Device clock speed set to 100 MHz for dsPIC33C devices and 200 MHz for dsPIC33A devices.
 
 |Algorithm|Performance|Parameters (sizes are in bytes)|
 |----|----|----|
