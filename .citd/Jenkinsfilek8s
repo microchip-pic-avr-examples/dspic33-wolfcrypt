@@ -100,13 +100,13 @@ pipeline {
             }
         }
 		
-		
 		//MisraCheck code analysis 
         stage('MISRA Check') {
             steps {
                 script {
 				    misraCheck(
                         sourceProjectPath: "${env.MPLABX_PROJECT_SOURCE}",
+                        moduleNames: "${getMisraModuleNames()}",
                         cppAdditionalArgs: "${getMisraIncludeFlags()}, ${getMisraExcludeFlags()}"
                     )
                 }
@@ -348,6 +348,25 @@ def getMisraExcludeFlags() {
     }
 
     return flags.join(', ')
+}
+
+def getMisraModuleNames() {
+    def moduleNames = []
+
+    def projectsLayout = readFile('.citd/projectsLayout.json')
+    def projectsLayoutJson = new JsonSlurper().parseText(projectsLayout)
+
+    projectsLayoutJson.each { deviceName, deviceObject ->
+
+        deviceObject.each { algorithm, projectObject -> 
+            def rootFolder = projectObject.rootFolder
+            def projectName = projectObject.projectName
+
+            moduleNames << "${deviceName}/${rootFolder}/${projectName}.X/"
+        }
+    }
+
+    return moduleNames.join(', ')
 }
 
 def getInvalidKeywordsToIgnore() {
