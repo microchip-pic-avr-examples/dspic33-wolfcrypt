@@ -17,15 +17,15 @@ dsPIC33 wolfCrypt Demos are a collection of MPLAB® X IDE projects to demonstrat
 |SHA|Digest Size (bits): 224, 256, 384, 512|SHA2, SHA3, SHAKE|N/A|[✅](./dspic33ck256mp508/sha2/)|[✅](https://github.com/microchip-pic-avr-examples/dspic33a-crypto-accelerator-module/tree/main/dspic33ak512mps512/hash)|❌|❌|
 |RSA|Key Size (bits): 3072|N/A|Signature Verification|[✅](./dspic33ck256mp508/rsa/)|❌|❌|❌|
 |LMS|Width: 1, 2, 4, 8; Height: 5, 10, 15, 20, 25|SHA-256_192, SHA-256|Signature Verification|[✅](./dspic33ck256mp508/lms/)|❌|❌|[✅](./dspic33ak512mps512/lms/)|
-|ML-DSA|ML-DSA type: Dilithium 44, 65, 87|N/A|Signature Verification|[✅](./dspic33ck256mp508/ml-dsa/)|❌|❌|[✅](./dspic33ak512mps512/ml-dsa/)|
-|ML-KEM|Key Type: ML-KEM 512, 768, 1024|N/A|Decapsulation|❌|❌|❌|[✅](./dspic33ak512mps512/ml-kem/)|
+|ML-DSA|Parameter Set: ML-DSA-44, ML-DSA-65, ML-DSA-87|N/A|Signature Verification|[✅](./dspic33ck256mp508/ml-dsa/)|❌|❌|[✅](./dspic33ak512mps512/ml-dsa/)|
+|ML-KEM|Security Level: ML-KEM-512, ML-KEM-768, ML-KEM-1024|N/A|Decapsulation|❌|❌|❌|[✅](./dspic33ak512mps512/ml-kem/)|
 
 *Supported by the CAM v2 alone. See [here](https://github.com/microchip-pic-avr-examples/dspic33a-crypto-accelerator-module/tree/main/dspic33ak512mps512) for demo projects.
 **Supported by the CAM v3 alone. See [here](https://github.com/microchip-pic-avr-examples/dspic33a-crypto-accelerator-module/tree/main/dspic33ak256mps306) for demo projects.
 
 # wolfCrypt APIs
 
-These demos use the wolfCrypt library to perform the algorithms. The wolfCrypt library provides APIs that are used by the demos to access the library's functionality.
+These demos use the wolfCrypt library to perform the algorithms. The wolfCrypt library provides APIs that are used by the demos to access the library's functionality. The wolfSSL API documentation can be found [here](https://www.wolfssl.com/documentation/manuals/wolfssl/group__TLS.html). 
 
 # Benchmarking
 ## Benchmarking Setup
