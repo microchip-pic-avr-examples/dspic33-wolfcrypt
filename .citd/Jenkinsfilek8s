@@ -78,27 +78,27 @@ pipeline {
             }
         }
         
-        // stage('project config update') {
-        //     steps {
-        //         script {                    
-        //             mplabxProjectConfigUpdate(
-        //                 sourceFilePath: "${env.MPLABX_PROJECT_SOURCE}",
-		// 				dfpUpdate: false,
-		// 				dfpInternal: false
-        //             )
-        //         }
-        //     }
-        // }
+        stage('project config update') {
+            steps {
+                script {                    
+                    mplabxProjectConfigUpdate(
+                        sourceFilePath: "${env.MPLABX_PROJECT_SOURCE}",
+						dfpUpdate: false,
+						dfpInternal: false
+                    )
+                }
+            }
+        }
         
-        // stage('Build') {
-        //     steps {
-        //         script {  
-        //             mplabxProjectBuild(
-        //                 sourceFilePath: "${env.MPLABX_PROJECT_SOURCE}"
-        //             )
-        //        }
-        //     }
-        // }
+        stage('Build') {
+            steps {
+                script {  
+                    mplabxProjectBuild(
+                        sourceFilePath: "${env.MPLABX_PROJECT_SOURCE}"
+                    )
+               }
+            }
+        }
 		
 		//MisraCheck code analysis 
         stage('MISRA Check') {
@@ -299,7 +299,7 @@ pipeline {
 }
 
 def getMisraFlags() {
-    def flags = ["--inline-suppr, --suppress=missingIncludeSystem", "--suppress=missingInclude"]
+    def flags = ["--suppress=missingIncludeSystem", "--suppress=missingInclude", "-i mchp_private/benchmarking"]
 
     def projectsLayout = readFile('.citd/projectsLayout.json')
     def projectsLayoutJson = new JsonSlurper().parseText(projectsLayout)
@@ -310,6 +310,7 @@ def getMisraFlags() {
             def projectName = projectObject.projectName
             def hasCamSupport = projectObject.hasCamSupport
 
+            flags.addAll(getMisraSuppressionFlags(deviceName, rootFolder, projectName))
             flags.addAll(getMisraIncludeFlags(deviceName, rootFolder, projectName, hasCamSupport))
             flags.addAll(getMisraExcludeFlags(deviceName, rootFolder, projectName, hasCamSupport))
         }
@@ -318,14 +319,14 @@ def getMisraFlags() {
     return flags.join(', ')
 }
 
-// def getMisraSuppressionFlags(deviceName, rootFolder, projectName) {
-//     def flags = ["--inline-suppr, --suppress=missingIncludeSystem", "--suppress=missingInclude"]
+def getMisraSuppressionFlags(deviceName, rootFolder, projectName) {
+    def flags = []
 
-//     flags << "--suppress=*:${deviceName}/${rootFolder}/${projectName}.X/mcc_generated_files"
-//     flags << "--suppress=*:${deviceName}/${rootFolder}/${projectName}.X/crypto/wolfssl"
+    flags << "--suppress=*:${deviceName}/${rootFolder}/${projectName}.X/mcc_generated_files/*"
+    flags << "--suppress=*:${deviceName}/${rootFolder}/${projectName}.X/crypto/wolfssl/*"
 
-//     return flags.join(', ')
-// }
+    return flags
+}
 
 def getMisraIncludeFlags(deviceName, rootFolder, projectName, hasCamSupport) {
     def flags = []
