@@ -300,7 +300,7 @@ pipeline {
 }
 
 def getMisraIncludeFlags() {
-    def flags = ["--suppress=missingIncludeSystem", "--suppress=missingInclude"]
+    def flags = ["--inline-suppr, --suppress=missingIncludeSystem", "--suppress=missingInclude"]
 
     def projectsLayout = readFile('.citd/projectsLayout.json')
     def projectsLayoutJson = new JsonSlurper().parseText(projectsLayout)
