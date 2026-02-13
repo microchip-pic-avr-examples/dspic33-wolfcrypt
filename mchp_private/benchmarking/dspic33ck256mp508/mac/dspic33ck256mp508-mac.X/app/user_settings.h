@@ -32,7 +32,7 @@ extern "C" {
     #define WOLFSSL_IGNORE_FILE_WARN  // Disable warning regarding inlined misc.c functions
     #define WC_NO_RNG                 // Disable RNG related APIs
     #define WOLFCRYPT_ONLY            // Specify using wolfCrypt APIs only
-    #define WOLFSSL_AES_DIRECT        // Enables AES-related operations
+    #define WOLFSSL_AES_DIRECT        // Enable AES-related operations
 
     // wolfCrypt MAC Configuration Options
     #define WOLFSSL_CMAC              // Enable AES CMAC APIs
@@ -40,7 +40,7 @@ extern "C" {
     // dsPIC33C Support
     #ifdef __dsPIC33C__
         #define WC_16BIT_CPU          // Specify 16-bit integer sizes
-        #define SIZEOF_LONG_LONG 4    // Define long value as 4 bytes
+        #define SIZEOF_LONG_LONG 4    // Define long long value size as 4 bytes
         #define SINGLE_THREADED       // Specify device is single threaded
     #endif
 
