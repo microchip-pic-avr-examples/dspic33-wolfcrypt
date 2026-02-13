@@ -32,15 +32,15 @@ extern "C" {
 
 #if defined(LMS_N24) || defined(LMS_N32)
 
-     #define LMS_WIDTH_1
-     #define LMS_WIDTH_2
-     #define LMS_WIDTH_4
+    // #define LMS_WIDTH_1
+    // #define LMS_WIDTH_2
+    // #define LMS_WIDTH_4
     #define LMS_WIDTH_8
 
-     #define LMS_HEIGHT_5
-     #define LMS_HEIGHT_10
-     #define LMS_HEIGHT_15
-     #define LMS_HEIGHT_20
+    // #define LMS_HEIGHT_5
+    // #define LMS_HEIGHT_10
+    // #define LMS_HEIGHT_15
+    // #define LMS_HEIGHT_20
     #define LMS_HEIGHT_25
 
 #endif
