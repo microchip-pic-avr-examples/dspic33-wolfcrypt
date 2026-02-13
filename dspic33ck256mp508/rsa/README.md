@@ -78,7 +78,7 @@ The NIST test vectors used in this project are found at the following [repo](htt
 
 ## Licensing
 
-This project is for evaluation purposes only. The project is governed under an End User License Agreement (EULA) with wolfSSL. More information can be found within the included `WolfSSL_EULicense_Microchip.md` file.
+The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ck256mp508-rsa.X/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt). 
 
 ## Benchmarking for RSA Verification
 

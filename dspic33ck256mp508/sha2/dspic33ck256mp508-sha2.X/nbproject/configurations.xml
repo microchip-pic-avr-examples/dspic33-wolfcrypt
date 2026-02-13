@@ -133,9 +133,11 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>main.c</itemPath>
+      <itemPath>LICENSE_WOLFSSL_MICROCHIP_v12052025.txt</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
+    <Elem>.</Elem>
     <Elem>crypto/wolfssl/wolfcrypt/src</Elem>
     <Elem>crypto/wolfssl/wolfssl/wolfcrypt</Elem>
     <Elem>crypto/test_vectors</Elem>

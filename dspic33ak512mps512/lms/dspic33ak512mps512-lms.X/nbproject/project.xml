@@ -9,6 +9,7 @@
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList>
+                <sourceRootElem>.</sourceRootElem>
                 <sourceRootElem>wolfcrypt</sourceRootElem>
                 <sourceRootElem>wolfssl/wolfcrypt</sourceRootElem>
                 <sourceRootElem>wolfssl/wrapper</sourceRootElem>

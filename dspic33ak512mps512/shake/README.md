@@ -78,7 +78,7 @@ The NIST test vectors used in this project are found in the the NIST ACVP Server
 
 ## Licensing
 
-The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found at the root folder of dspic33-wolfCrypt repo. 
+The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ak512mps512-shake.X/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt).
 
 ## Benchmarking for SHAKE Digest Generation
 
