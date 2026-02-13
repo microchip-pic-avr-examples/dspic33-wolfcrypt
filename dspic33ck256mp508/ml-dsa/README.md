@@ -164,7 +164,7 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 - Optimization level 3 is used for benchmarking
 
 #### Verification Time
-|ML-DSA type |Verfication time (Seconds)|
+|ML-DSA type |Verification time (Seconds)|
 |------------|------|
 |Dilithium 44|0.2602|
 |Dilithium 65|0.4250|
