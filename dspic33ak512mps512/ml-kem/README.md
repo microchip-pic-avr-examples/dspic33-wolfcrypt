@@ -64,7 +64,7 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 ## Benchmarking for ML-KEM Decapsulation
 
 ### Decapsulation Time
-|Key Type|Verfication time (Seconds)|
+|Key Type|Verification time (Seconds)|
 |---|---|---|---|
 |ML-KEM 512|0.004676|
 |ML-KEM 768|0.007521|
