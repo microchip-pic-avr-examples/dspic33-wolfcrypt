@@ -34,7 +34,7 @@ extern "C" {
     #define NO_OLD_TLS                          // Disable settings for TLS protocol versions less than 1.2
     #define NO_ASN                              // Disable ASN related APIs
     #define WOLFSSL_OLD_OID_SUM                 // Use smaller OID values
-    #define WC_NO_HARDEN                        // Disables security countermeasures in wolfCrypt related to protecting against side-channel attacks
+    #define WC_NO_HARDEN                        // Disable security countermeasures in wolfCrypt related to protecting against side-channel attacks
     #define NO_FILESYSTEM                       // Specify device does not use a filesystem
     #define WOLFSSL_IGNORE_FILE_WARN            // Disable warning regarding inlined misc.c functions
 
