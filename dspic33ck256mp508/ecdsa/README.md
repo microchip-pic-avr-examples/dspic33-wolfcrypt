@@ -77,7 +77,7 @@ The NIST test vectors used in this project are found in the following [repo](htt
 
 ## Licensing
 
-The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found at the root folder of dspic33-wolfCrypt repo. 
+The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ck256mp508-ecdsa.X/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt).
 
 ## Benchmarking for ECDSA Verification
 
@@ -92,5 +92,5 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 
 |ECC Curve | Flash (bytes) | RAM Static (bytes) | RAM Stack (bytes) |
 | -------- | ------------- | ------------------ | ----------------- |
-| P-256    | 19,635        | 124                |  6,150            |
-| P-384    | 19,675        | 124                |  6,150            |
+| P256    | 19,635        | 124                |  6,150            |
+| P384    | 19,675        | 124                |  6,150            |

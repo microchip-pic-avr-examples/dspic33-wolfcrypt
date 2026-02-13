@@ -50,10 +50,14 @@ The following information will be printed on the COM port for AES-CMAC algorithm
 * `wc_CmacUpdate` - Processes input data for a CMAC operation and updates the CMAC context.
 * `wc_CmacFinal` - Retrieves the final CMAC value.
 
+## Licensing
+
+The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ck256mp508-mac.X/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt). 
+
 ## Benchmarking
 
 ### Performance Benchmarking
-The following benchmarking results were obtained with the device clock speed set to 200MHz.
+The following benchmarking results were obtained with the device clock speed set to 100MHz.
 
 #### AES-CMAC
 |Key Size (bytes)|Plaintext Size (bytes)|MAC Size (bytes)|Generation Performance (seconds)|

@@ -71,7 +71,7 @@ If another tool is used to generate a signature it may encode the message by def
 
 ## Licensing
 
-The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found at the root folder of dspic33-wolfCrypt repo.
+The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ak512mps512-ml-dsa.X/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt).
 
 ### Benchmarking for ML-DSA Verification
 

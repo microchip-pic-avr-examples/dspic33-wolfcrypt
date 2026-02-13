@@ -24,20 +24,3 @@
 1. Connect the board to the computer using a USB cable, connecting to the PICkit™ On-Board (PKOB) programmer/debugger.
 
     <img src="../images/hardware_setup_curiosity.jpg" height="400" alt="Hardware Setup"/>
-
-### wolfCrypt Source
-
-The wolfCrypt files in this project use wolfssl [v5.8.4-commercial](https://github.com/wolfSSL/Microchip/tree/main/wolfssl-5.8.4-commercial) release to support the dsPIC33C device.
-
-API documentation for wolfcrypt files used in the demo can be found at [wolfssl's website](https://www.wolfssl.com/documentation/manuals/wolfssl/group__wolfCrypt.html)
-
-### wolfCrypt Library Set Up
-
-For each demo project the custom user settings is enabled by defining a common macro `WOLFSSL_USER_SETTINGS` within the project properties. 
-This allows the wolfCrypt library to be configured by macros specified within the `user_settings.h` file found under the app folder of each demo. 
-These files enable specific APIs, device support, and includes additional configuration options. 
-More information about the options can be found within the `user_settings.h` file.
-
-## Licensing
-
-The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found at the root folder of dspic33-wolfCrypt repo. 
