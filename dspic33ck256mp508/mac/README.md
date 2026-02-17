@@ -10,11 +10,6 @@
 This example application utilizes the wolfCrypt library to perform MAC operations using different sized input vectors. The following MAC algorithms are supported:
 - AES-CMAC
 
-## Software Tool Versions Used
-- dsPIC33CK-MP_DFP v1.15.423
-- MPLAB® X IDE [v6.30](https://www.microchip.com/mplabx)
-- MPLAB® XC-DSC Compiler [v3.30](https://www.microchip.com/xcdsc)
-
 ## Setting Up The Hardware
 - dsPIC33CK Curiosity Development Board ([DM330030](https://www.microchip.com/dm330030))
 - dsPIC33CK256MP508 High-Performance DSC (https://www.microchip.com/dspic33ck256mp508)

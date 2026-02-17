@@ -10,11 +10,6 @@
 
 This MPLAB® X project demonstrates ECDSA verification by using wolfCrypt APIs on a dsPIC33CK256MP508 device.
 
-## Software Used 
-- dsPIC33CK-MP_DFP **1.15.423**
-- MPLAB® X IDE **v6.30** (https://www.microchip.com/mplabx)
-- MPLAB® XC-DSC Compiler **v3.30** (https://www.microchip.com/xcdsc)
-
 ## Hardware Used
 
 - dsPIC33CK Curiosity Development Board (https://www.microchip.com/dm330030)
@@ -92,5 +87,5 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 
 |ECC Curve | Flash (bytes) | RAM Static (bytes) | RAM Stack (bytes) |
 | -------- | ------------- | ------------------ | ----------------- |
-| P256    | 19,635        | 124                |  6,150            |
-| P384    | 19,675        | 124                |  6,150            |
+| P256     | 19,635        | 124                |  6,150            |
+| P384     | 19,675        | 124                |  6,150            |
