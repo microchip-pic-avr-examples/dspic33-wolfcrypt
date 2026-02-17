@@ -62,4 +62,4 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
         #define SINGLE_THREADED       // Specify device is single threaded
     #endif
 
-#endif
+#endif /* WOLFCRYPT_USER_SETTINGS_H */
