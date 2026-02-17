@@ -62,7 +62,7 @@ static void microsecondIncrement(void)
             status = wc_ecc_import_unsigned(
                 &keyData, 
                 testVector->publicKey, 
-                testVector->publicKey + testVector->curveSize,   
+                &testVector->publicKey[testVector->curveSize],   
                 NULL, testVector->curveId
             );
         }
