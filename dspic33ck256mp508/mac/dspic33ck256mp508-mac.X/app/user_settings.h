@@ -60,4 +60,4 @@ extern "C" {
 }
 #endif
 
-#endif /* USER_SETTINGS_H */
+#endif /* WOLFCRYPT_USER_SETTINGS_H */
