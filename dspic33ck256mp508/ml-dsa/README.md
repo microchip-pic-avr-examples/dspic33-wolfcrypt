@@ -11,8 +11,6 @@
 This MPLAB® X project demonstrates ML-DSA Verify using dilithium wolfCrypt APIs to verify an input signature and message.
 
 ## Software Used 
-- dsPIC33CK-MP_DFP **1.15.423**
-- MPLAB® X IDE **v6.30** (https://www.microchip.com/mplabx)
 - MPLAB® XC-DSC Compiler **v3.30** (https://www.microchip.com/xcdsc)
     - Optimization level 3 is required for this demo.
 

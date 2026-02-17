@@ -10,12 +10,6 @@
 
 This MPLAB® X project demonstrates LMS signature verification by using wolfCrypt APIs and the pre-compiled Crypto Accelerator Module (CAM) Hardware Driver.
 
-## Software Used
-
-- dsPIC33AK-MP_DFP v1.3.185
-- MPLAB® X IDE **v6.30** (https://www.microchip.com/mplabx)
-- MPLAB® XC-DSC Compiler **v3.30** (https://www.microchip.com/xcdsc)
-
 ## Hardware Used
 
 - dsPIC33AK512MPS512 Curiosity GP DIM (https://www.microchip.com/en-us/development-tool/EV80L65A)

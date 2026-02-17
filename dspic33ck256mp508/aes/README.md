@@ -12,11 +12,6 @@ This MPLAB® X project demonstrates AES processing by using wolfCrypt APIs on a 
 - ECB
 - CBC
 
-## Software Used 
-- dsPIC33CK-MP_DFP v1.15.423
-- MPLAB® X IDE [v6.30](https://www.microchip.com/mplabx)
-- MPLAB® XC-DSC Compiler [v3.30](https://www.microchip.com/xcdsc)
-
 ## Hardware Used
 
 - dsPIC33CK Curiosity Development Board ([DM330030](https://www.microchip.com/dm330030))

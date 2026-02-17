@@ -4,11 +4,11 @@
     <img alt="Microchip Logo." src="../images/microchip_logo_black_red.png">
 </picture>
 
-# dsPIC33AK512MPS512 Wolfcrypt Demo setup
+# dsPIC33AK512MPS512 wolfCrypt Demo Setup
 
 ## Software Used
 
-- dsPIC33AK-MP_DFP v1.2.135
+- dsPIC33AK-MP_DFP **v1.2.135**
 - MPLAB® X IDE **v6.30** (https://www.microchip.com/mplabx)
 - MPLAB® XC-DSC Compiler **v3.30** (https://www.microchip.com/xcdsc)
 

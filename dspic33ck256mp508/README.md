@@ -4,7 +4,7 @@
     <img alt="Microchip Logo." src="../images/microchip_logo_black_red.png">
 </picture>
 
-# dsPIC33CK256MP508 Wolfcrypt Demo setup
+# dsPIC33CK256MP508 wolfCrypt Demo Setup
 
 ## Software Used 
 
