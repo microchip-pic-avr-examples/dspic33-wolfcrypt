@@ -37,6 +37,7 @@ report/
 *.bash
 *.dump
 *.c.ctu-info
+*.h.ctu-info
 Makefile-genesis.properties
 
 # Excluding MPLAB X® Trace files
