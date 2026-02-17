@@ -23,38 +23,37 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
 #define WOLFCRYPT_USER_SETTINGS_H
 
     // WolfCrypt Configuration Options
-    #define NO_MD5
-    #define NO_SHA256
-    #define NO_MD4
-    #define NO_DSA
-    #define NO_OLD_TLS
-    #define NO_ASN
-    #define WC_NO_HARDEN
-    #define NO_FILESYSTEM
-    #define WOLFSSL_IGNORE_FILE_WARN
-    #define WOLFSSL_NO_MALLOC
-    #define WOLFSSL_STATIC_MEMORY
-    #define WOLFSSL_STATIC_MEMORY_LEAN
+    #define NO_MD5                              // Disable MD5 related APIs
+    #define NO_SHA256                           // Disable SHA256 related APIs
+    #define NO_MD4                              // Disable MD4 related APIs
+    #define NO_DSA                              // Disable DSA related APIs
+    #define NO_OLD_TLS                          // Disable settings for TLS protocol versions less than 1.2
+    #define NO_ASN                              // Disable ASN related APIs
+    #define WC_NO_HARDEN                        // Disable security countermeasures in wolfCrypt related to protecting against side-channel attacks
+    #define NO_FILESYSTEM                       // Specify device does not use a filesystem
+    #define WOLFSSL_IGNORE_FILE_WARN            // Disable warning regarding inlined misc.c functions
+    #define WOLFSSL_NO_MALLOC                   // Disable usage of dynamic memory allocation
+    #define WOLFSSL_STATIC_MEMORY               // Enable static memory usage
+    #define WOLFSSL_STATIC_MEMORY_LEAN          // Enable reduced static memory usage
 
     // WolfCrypt ML-DSA Configuration Options
-    #define HAVE_DILITHIUM
-    #define WOLFSSL_WC_DILITHIUM
-    #define WOLFSSL_DILITHIUM_NO_ASN1
-    #define WOLFSSL_DILITHIUM_NO_LARGE_CODE
-    #define WOLFSSL_DILITHIUM_SMALL
-    #define WOLFSSL_DILITHIUM_NO_ASN1
+    #define HAVE_DILITHIUM                      // Enable ML-DSA specific APIs
+    #define WOLFSSL_WC_DILITHIUM                // Enable ML-DSA specific APIs
+    #define WOLFSSL_DILITHIUM_NO_ASN1           // Disable ASN1 standard usage
+    #define WOLFSSL_DILITHIUM_NO_LARGE_CODE     // Reduce the code size and increase speed
+    #define WOLFSSL_DILITHIUM_SMALL             // Reduce the code size
     
-    #define WOLFSSL_DILITHIUM_ASSIGN_KEY
+    #define WOLFSSL_DILITHIUM_ASSIGN_KEY        // Enable key structure usage
 
-    #define WOLFSSL_DILITHIUM_VERIFY_SMALL_MEM
-    #define WOLFSSL_DILITHIUM_VERIFY_NO_MALLOC
+    #define WOLFSSL_DILITHIUM_VERIFY_SMALL_MEM  // Reduce memory usage for verify APIs
+    #define WOLFSSL_DILITHIUM_VERIFY_NO_MALLOC  // Disable heap usage for verify
 
-    #define WOLFSSL_DILITHIUM_VERIFY_ONLY
-    #define WOLFSSL_DILITHIUM_NO_SIGN
+    #define WOLFSSL_DILITHIUM_VERIFY_ONLY       // Enable ML-DSA verify only
+    #define WOLFSSL_DILITHIUM_NO_SIGN           // Disable ML-DSA signing
 
-    #define WOLFSSL_SHAKE128
-    #define WOLFSSL_SHAKE256
-    #define WOLFSSL_SHA3
+    #define WOLFSSL_SHAKE128                    // Enable SHAKE128 APIs
+    #define WOLFSSL_SHAKE256                    // Enable SHAKE256 APIs
+    #define WOLFSSL_SHA3                        // Enable SHA3 APIs
 
     #ifdef __dsPIC33C__
         #define WC_16BIT_CPU          // Specify 16-bit integer sizes
