@@ -80,7 +80,7 @@ static void microsecondIncrement(void)
         if(status == 0)
         {
             hexArrayPrint("Signature ", testVector->signature, testVector->signatureLength);
-            if(result)
+            if(result == 1)
             {
                 (void) printf(GREEN"\r\n\r\n wolfCrypt ECDSA Signature Verify Success"RESET_COLOR);
             }
@@ -92,7 +92,7 @@ static void microsecondIncrement(void)
         }
         else
         {
-            printf("\r\nError Occured: %s", wc_GetErrorString(status));
+            (void) printf("\r\nError Occured: %s", wc_GetErrorString(status));
         }
     }
 

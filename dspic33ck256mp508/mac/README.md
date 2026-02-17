@@ -46,8 +46,8 @@ The following information will be printed on the COM port for AES-CMAC algorithm
 
 ### AES-CMAC APIs
 
-* `wc_InitCmac` - Initializes the Cmac structure.
-* `wc_CmacUpdate` - Processes input data for a CMAC operation and updates the Cmac context.
+* `wc_InitCmac` - Initializes the CMAC structure.
+* `wc_CmacUpdate` - Processes input data for a CMAC operation and updates the CMAC context.
 * `wc_CmacFinal` - Retrieves the final CMAC value.
 
 ## Benchmarking
