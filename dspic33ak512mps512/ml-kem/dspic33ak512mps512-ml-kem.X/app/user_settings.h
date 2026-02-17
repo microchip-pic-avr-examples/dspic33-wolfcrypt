@@ -59,4 +59,4 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
         #define SINGLE_THREADED
     #endif
 
-#endif
+#endif /* WOLFCRYPT_USER_SETTINGS_H */
