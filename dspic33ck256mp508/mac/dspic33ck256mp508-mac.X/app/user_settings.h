@@ -19,23 +19,35 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
     THIS SOFTWARE.
 */
 
-#ifndef USER_SETTINGS_H
-#define USER_SETTINGS_H
+#ifndef WOLFCRYPT_USER_SETTINGS_H
+#define WOLFCRYPT_USER_SETTINGS_H
 
 #ifdef	__cplusplus
 extern "C" {
 #endif
 
     // wolfCrypt Configuration Options
-    #define WOLFSSL_OLD_OID_SUM       // Use smaller OID sum values for 16-bit device
-    #define NO_FILESYSTEM             // Specify device does not use a filesystem
-    #define WOLFSSL_IGNORE_FILE_WARN  // Disable warning regarding inlined misc.c functions
-    #define WC_NO_RNG                 // Disable RNG related APIs
-    #define WOLFCRYPT_ONLY            // Specify using wolfCrypt APIs only
-    #define WOLFSSL_AES_DIRECT        // Enable AES-related operations
+    #define NO_MD5
+    #define NO_SHA
+    #define NO_SHA256
+    #define NO_MD4
+    #define NO_RSA
+    #define NO_DSA
+    #define NO_DES3
+    #define NO_ASN
+    #define WOLFSSL_SHA3
+    #define WOLFSSL_SHAKE128
+    #define WOLFSSL_SHAKE256
+    #define NO_FILESYSTEM
+    #define WOLFSSL_IGNORE_FILE_WARN
+    #define WC_NO_HASHDRBG
+    #define WC_NO_RNG
+    #define WOLFSSL_NO_MALLOC
+    #define WOLFCRYPT_ONLY
 
     // wolfCrypt MAC Configuration Options
     #define WOLFSSL_CMAC              // Enable AES CMAC APIs
+    #define WOLFSSL_AES_DIRECT        // Enable AES-related operations
 
     // dsPIC33C Support
     #ifdef __dsPIC33C__
