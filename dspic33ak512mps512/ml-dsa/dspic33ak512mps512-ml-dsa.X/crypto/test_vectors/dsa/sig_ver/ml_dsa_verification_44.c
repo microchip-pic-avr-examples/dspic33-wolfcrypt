@@ -1068,7 +1068,7 @@ static const uint8_t publicKey[] = {
     0x0B, 0x08, 0xF4, 0xC9, 0xA2, 0x9C, 0xEC, 0x37, 
     0x1E, 0xED, 0xFB, 0x38, 0x31, 0xC7, 0x4B, 0x87
 };
-static char vectorInformation[] = "Signature Verification Dilithium 44";
+static const char vectorInformation[] = "Signature Verification Dilithium 44";
 
 ML_DSA_SIG_VER_TEST_VECTOR ml_dsa_dilithium_44 = {
     (const byte*)&publicKey,
