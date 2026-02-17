@@ -51,7 +51,7 @@ static void SHAKE_Digest(const TEST_VECTOR* vector)
 
     headerOutputPrint(vector->algorithm, vector->vectorInformation);
 
-    if(vector->algorithm == SHAKE128_ALGO)
+    if(vector->algorithm == (int)SHAKE128_ALGO)
     {
         benchmarkingStart();
 
@@ -69,7 +69,7 @@ static void SHAKE_Digest(const TEST_VECTOR* vector)
 
         benchmarkingEnd(&ticksToProcess);
     }
-    else if(vector->algorithm == SHAKE256_ALGO)
+    else if(vector->algorithm == (int)SHAKE256_ALGO)
     {
         benchmarkingStart();
 
@@ -92,7 +92,7 @@ static void SHAKE_Digest(const TEST_VECTOR* vector)
         (void) printf(RED"\r\n Unsupported SHAKE Test Vector");
     }
 
-    if((vector->algorithm == SHAKE128_ALGO) || (vector->algorithm == SHAKE256_ALGO))
+    if((vector->algorithm == (int)SHAKE128_ALGO) || (vector->algorithm == (int)SHAKE256_ALGO))
     {
         printHexArray("Expected:      ", vector->digest, vector->digestSize);
         printHexArray("Result:        ", resultDigest, vector->digestSize);

@@ -21,6 +21,7 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
 
 #include <stdint.h>
 #include "test_vectors/test_vector.h"
+#include "test_vectors/shake_test_vectors.h"
 #include "app_config.h"
 
 #ifdef SHAKE256_ENABLE
@@ -46,7 +47,7 @@ static const TEST_VECTOR shake256_16_bytes_vector = {
     sizeof(shake256_16_bytes_digest),
 };
 
-TEST_VECTOR shake256_test_vectors[] = {
+static const TEST_VECTOR shake256_test_vectors[] = {
     shake256_16_bytes_vector,
 };
 

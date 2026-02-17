@@ -43,7 +43,7 @@ static void SHA3_Digest(const TEST_VECTOR* vector)
 
     headerOutputPrint(vector->algorithm, vector->vectorInformation);
 
-    if(vector->algorithm == SHA3_224_ALGO)
+    if(vector->algorithm == (int)SHA3_224_ALGO)
     {
         benchmarkingStart();
 
@@ -61,7 +61,7 @@ static void SHA3_Digest(const TEST_VECTOR* vector)
 
         benchmarkingEnd(&ticksToProcess);
     }
-    else if(vector->algorithm == SHA3_256_ALGO)
+    else if(vector->algorithm == (int)SHA3_256_ALGO)
     {
         benchmarkingStart();
 
@@ -79,7 +79,7 @@ static void SHA3_Digest(const TEST_VECTOR* vector)
 
         benchmarkingEnd(&ticksToProcess);
     }
-    else if(vector->algorithm == SHA3_384_ALGO)
+    else if(vector->algorithm == (int)SHA3_384_ALGO)
     {
         benchmarkingStart();
 
@@ -97,7 +97,7 @@ static void SHA3_Digest(const TEST_VECTOR* vector)
 
         benchmarkingEnd(&ticksToProcess);
     }
-    else if(vector->algorithm == SHA3_512_ALGO)
+    else if(vector->algorithm == (int)SHA3_512_ALGO)
     {
         benchmarkingStart();
 
@@ -120,8 +120,8 @@ static void SHA3_Digest(const TEST_VECTOR* vector)
         (void) printf(RED"\r\n Unsupported SHA3 Test Vector");
     }
 
-    if((vector->algorithm == SHA3_224_ALGO) || (vector->algorithm == SHA3_256_ALGO)
-            || (vector->algorithm == SHA3_384_ALGO) || (vector->algorithm == SHA3_512_ALGO))
+    if((vector->algorithm == (int)SHA3_224_ALGO) || (vector->algorithm == (int)SHA3_256_ALGO)
+            || (vector->algorithm == (int)SHA3_384_ALGO) || (vector->algorithm == (int)SHA3_512_ALGO))
     {
         printHexArray("Expected:      ", vector->digest, vector->digestSize);
         printHexArray("Result:        ", resultDigest, vector->digestSize);

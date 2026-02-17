@@ -54,7 +54,7 @@ static void SHA2_Digest(const TEST_VECTOR* vector)
     Timer1.TimeoutCallbackRegister(microsecondIncrement);
     microsecondsToProcess = 0;
 
-    if(vector->algorithm == SHA2_224_ALGO)
+    if(vector->algorithm == (int)SHA2_224_ALGO)
     {
         benchmarkingStart();
 
@@ -72,7 +72,7 @@ static void SHA2_Digest(const TEST_VECTOR* vector)
 
         benchmarkingEnd();
     }
-    else if(vector->algorithm == SHA2_256_ALGO)
+    else if(vector->algorithm == (int)SHA2_256_ALGO)
     {
         benchmarkingStart();
 
@@ -90,7 +90,7 @@ static void SHA2_Digest(const TEST_VECTOR* vector)
 
         benchmarkingEnd();
     }
-    else if(vector->algorithm == SHA2_384_ALGO)
+    else if(vector->algorithm == (int)SHA2_384_ALGO)
     {
         benchmarkingStart();
 
@@ -108,7 +108,7 @@ static void SHA2_Digest(const TEST_VECTOR* vector)
 
         benchmarkingEnd();
     }
-    else if(vector->algorithm == SHA2_512_ALGO)
+    else if(vector->algorithm == (int)SHA2_512_ALGO)
     {
         benchmarkingStart();
 
@@ -131,8 +131,8 @@ static void SHA2_Digest(const TEST_VECTOR* vector)
         (void) printf(RED"\r\n Unsupported SHA2 Test Vector");
     }
 
-    if((vector->algorithm == SHA2_224_ALGO) || (vector->algorithm == SHA2_256_ALGO)
-            || (vector->algorithm == SHA2_384_ALGO) || (vector->algorithm == SHA2_512_ALGO))
+    if((vector->algorithm == (int)SHA2_224_ALGO) || (vector->algorithm == (int)SHA2_256_ALGO)
+            || (vector->algorithm == (int)SHA2_384_ALGO) || (vector->algorithm == (int)SHA2_512_ALGO))
     {
         printHexArray("Expected:      ", vector->digest, vector->digestSize);
         printHexArray("Result:        ", resultDigest, vector->digestSize);
