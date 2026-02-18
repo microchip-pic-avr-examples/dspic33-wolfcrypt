@@ -19,8 +19,8 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
     THIS SOFTWARE.
 */
 
-#ifndef _USER_SETTINGS_H
-#define _USER_SETTINGS_H
+#ifndef USER_SETTINGS_H
+#define USER_SETTINGS_H
 
     // WolfCrypt Configuration Options
     #define NO_MD5                              // Disable MD5 related APIs
@@ -61,4 +61,4 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
         #define SINGLE_THREADED       // Specify device is single threaded
     #endif
 
-#endif
+#endif /* USER_SETTINGS_H */
