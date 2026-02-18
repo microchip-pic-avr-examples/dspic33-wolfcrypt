@@ -19,8 +19,8 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
     THIS SOFTWARE.
 */
 
-#ifndef WOLFCRYPT_USER_SETTINGS_H
-#define WOLFCRYPT_USER_SETTINGS_H
+#ifndef USER_SETTINGS_H
+#define USER_SETTINGS_H
 
 #ifdef	__cplusplus
 extern "C" {
@@ -60,4 +60,4 @@ extern "C" {
 }
 #endif
 
-#endif /* WOLFCRYPT_USER_SETTINGS_H */
+#endif /* USER_SETTINGS_H */
