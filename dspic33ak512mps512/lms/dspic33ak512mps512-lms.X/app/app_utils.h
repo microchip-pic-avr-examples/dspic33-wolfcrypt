@@ -38,10 +38,6 @@ extern "C" {
 #define MAG "\x1B""[1;35m"
 #define CYAN "\x1B""[1;36m"
 
-void hexArrayPrint(const char* label, uint8_t* data, uint32_t size);
-
-bool arrayEqualityCheck(const uint8_t *a, const uint8_t *b, size_t size);
-
 void benchmarkingDataPrint(int ticksToProcess);
 
 void benchmarkingStart(void);
