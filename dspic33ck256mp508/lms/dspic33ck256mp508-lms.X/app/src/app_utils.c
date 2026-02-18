@@ -31,37 +31,6 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
 #include "system/clock.h"
 #include "system/pins.h"
 
-void hexArrayPrint(const char* label, uint8_t* data, uint32_t size)
-{
-    const uint8_t *ldata = data;
-
-    (void) printf(BLUE"\r\n -------------------------------------------------------------------------------------------------"RESET_COLOR);
-    (void) printf("\r\n %s  : ", label);
-
-    for (uint32_t index = 0U; index < size; index++)
-    {
-        if (((index % 16U) == 0U) && (index != 0U))
-        {
-            (void) printf("\r\n                    ");
-        }
-        (void) printf(" 0x%02X", ldata[index]);
-    }
-}
-
-bool arrayEqualityCheck(const uint8_t *a, const uint8_t *b, size_t size)
-{
-	const uint8_t *tempa = a;
-	const uint8_t *tempb = b;
-	uint8_t result = 0;
-
-	for (unsigned int index = 0; index < size; index++)
-    {
-		result |= tempa[index] ^ tempb[index];
-	}
-
-    return result == 0U;
-}
-
 void benchmarkingStart(void)
 {
     T1CONbits.TON = 1;
