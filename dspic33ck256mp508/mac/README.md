@@ -4,19 +4,11 @@
     <img alt="Microchip Logo." src="../../images/microchip_logo_black_red.png">
 </picture>
 
-# dsPIC33C Message Authentication Code (MAC) Example
+# dsPIC33C wolfCrypt Message Authentication Code (MAC) Example
 
 ## Description
 This example application utilizes the wolfCrypt library to perform MAC operations using different sized input vectors. The following MAC algorithms are supported:
 - AES-CMAC
-
-## Setting Up The Hardware
-- dsPIC33CK Curiosity Development Board ([DM330030](https://www.microchip.com/dm330030))
-- dsPIC33CK256MP508 High-Performance DSC (https://www.microchip.com/dspic33ck256mp508)
-
-1. Connect the board to the computer using a USB cable, connecting to the PICkit™ On-Board (PKOB) programmer/debugger.
-
-    <img src="../../images/hardware_setup_curiosity.jpg" height="400" alt="Hardware Setup"/>
 
 ## Running the Application
 1. Within MPLAB® X IDE, open the dspic33ck256mp508-mac.X application project.
@@ -52,7 +44,6 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 ## Benchmarking
 
 ### Performance Benchmarking
-The following benchmarking results were obtained with the device clock speed set to 100MHz.
 
 #### AES-CMAC
 |Key Size (bytes)|Plaintext Size (bytes)|MAC Size (bytes)|Generation Performance (seconds)|

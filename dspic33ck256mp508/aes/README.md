@@ -12,17 +12,6 @@ This MPLAB® X project demonstrates AES processing by using wolfCrypt APIs on a 
 - ECB
 - CBC
 
-## Hardware Used
-
-- dsPIC33CK Curiosity Development Board ([DM330030](https://www.microchip.com/dm330030))
-- dsPIC33CK256MP508 High-Performance DSC (https://www.microchip.com/dspic33ck256mp508)
-- 
-## Setting Up The Hardware
-
-1. Connect the board to the computer using a USB cable, connecting to the PICkit™ On-Board (PKOB) programmer/debugger.
-
-    <img src="../../images/hardware_setup_curiosity.jpg" height="400" alt="Hardware Setup"/>
-
 ## Running the Application
 
 1. Within MPLAB® X IDE, open the dspic33ck256mp508-aes.X application project in dspic33ck256mp508/aes.

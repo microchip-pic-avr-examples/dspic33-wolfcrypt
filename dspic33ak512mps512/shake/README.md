@@ -10,23 +10,9 @@
 
 This MPLAB® X project demonstrates SHAKE Digest Generation by using wolfCrypt APIs.
 
-## Hardware Used
+## Project Set Up
 
-- dsPIC33AK512MPS512 Curiosity GP DIM (https://www.microchip.com/en-us/development-tool/EV80L65A)
-- Curiosity Platform Development Board (https://www.microchip.com/EV74H48A)
-
-## Set up
-
-### Hardware Set up
-
-1. Insert the dsPIC33AK512MPS512 DIM into the DIM J1 slot on the Curiosity Platform Development Board.
-2. Connect the board from the J24 USB-C PKoB4 (PICKit™ On-Board 4) to the computer.
-
-    <img src="../../images/hardware_setup.jpg" height="400" alt="Hardware Setup"/>
-
-### Project Set Up
-
-#### wolfCrypt Source
+### wolfCrypt Source
 
 The wolfCrypt files in this project use wolfssl v5.8.4-stable release to support the dsPIC33A device.
 
