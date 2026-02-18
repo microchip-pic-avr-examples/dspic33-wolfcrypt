@@ -19,8 +19,8 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
     THIS SOFTWARE.
 */
 
-#ifndef USER_SETTINGS_H
-#define USER_SETTINGS_H
+#ifndef WOLFCRYPT_USER_SETTINGS_H
+#define WOLFCRYPT_USER_SETTINGS_H
 
 #ifdef	__cplusplus
 extern "C" {
@@ -44,7 +44,7 @@ extern "C" {
 
     // dsPIC33A Support
     #ifdef __dsPIC33A__
-        #define SIZEOF_LONG_LONG 8      // Define long value as 4 bytes
+        #define SIZEOF_LONG_LONG 8      // Define long value as 8 bytes
         #define SINGLE_THREADED         // Specify device is single threaded
     #endif
 
@@ -52,4 +52,4 @@ extern "C" {
 }
 #endif
 
-#endif /* USER_SETTINGS_H */
+#endif /* WOLFCRYPT_USER_SETTINGS_H */
