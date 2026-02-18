@@ -30,8 +30,8 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
 #include "app_config.h"
 #include "app_ml_dsa.h"
 #include "test_vectors/test_vector.h"
-#include <wolfssl/wolfcrypt/dilithium.h>
-#include <wolfssl/wolfcrypt/error-crypt.h>
+#include "wolfssl/wolfcrypt/dilithium.h"
+#include "wolfssl/wolfcrypt/error-crypt.h"
 
 #ifdef MLDSA_SIGNATURE_VERIFICATION
 
