@@ -31,6 +31,7 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
 #include "wolfssl/wolfcrypt/wc_mlkem.h"
 #include "wolfssl/wolfcrypt/error-crypt.h"
 #include "app_config.h"
+#include "app_ml_kem.h"
 
 #if defined(MLKEM_DECAPSULATE)
 
