@@ -37,7 +37,7 @@ int wc_InitSha256_ex(wc_Sha256* sha256, void* heap, int devId)
 
         status = Crypto_Hash_Sha_Init(&sha256->context, CRYPTO_HASH_SHA2_256, CRYPTO_HANDLER_HW_INTERNAL, 1);
 
-        if(status != CRYPTO_HASH_SUCCESS)
+        if(status != (int) CRYPTO_HASH_SUCCESS)
         {
             status = WC_HW_E;
         }
@@ -56,7 +56,7 @@ int wc_Sha256Update(wc_Sha256* sha256, const byte* data, word32 len)
 
         status = Crypto_Hash_Sha_Update(&sha256->context, localData, len);
 
-        if(status != CRYPTO_HASH_SUCCESS)
+        if(status != (int) CRYPTO_HASH_SUCCESS)
         {
             status = WC_HW_E;
         }
@@ -73,11 +73,11 @@ int wc_Sha256Final(wc_Sha256* sha256, byte* hash)
     {
         status = Crypto_Hash_Sha_Final(&sha256->context, hash);
 
-        if(status == CRYPTO_HASH_SUCCESS)
+        if(status == (int) CRYPTO_HASH_SUCCESS)
         {
             status = wc_InitSha256_ex(sha256, sha256->heap, INVALID_DEVID); /* reset state */
 
-            if(status != CRYPTO_HASH_SUCCESS)
+            if(status != (int) CRYPTO_HASH_SUCCESS)
             {
                 status = WC_HW_E;
             }
