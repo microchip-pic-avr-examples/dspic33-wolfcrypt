@@ -21,6 +21,7 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
 
 #include <stdint.h>
 #include "test_vectors/test_vector.h"
+#include "test_vectors/shake_test_vectors.h"
 #include "app_config.h"
 #include "user_settings.h"
 
