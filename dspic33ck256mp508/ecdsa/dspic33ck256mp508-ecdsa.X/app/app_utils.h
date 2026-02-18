@@ -40,8 +40,6 @@ extern "C" {
 
 void hexArrayPrint(const char* label, uint8_t* data, uint32_t size);
 
-bool arrayEqualityCheck(const uint8_t *a, const uint8_t *b, size_t size);
-
 void benchmarkingStart(void);
 
 void benchmarkingEnd(void);
