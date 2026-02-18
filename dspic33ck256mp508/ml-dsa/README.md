@@ -14,22 +14,9 @@ This MPLAB® X project demonstrates ML-DSA Verify using dilithium wolfCrypt APIs
 - MPLAB® XC-DSC Compiler **v3.30** (https://www.microchip.com/xcdsc)
     - Optimization level 3 is required for this demo.
 
-## Hardware Used
+## Project Set Up
 
-- dsPIC33CK Curiosity Development Board (https://www.microchip.com/dm330030)
-- dsPIC33CK256MP508 High-Performance DSC (https://www.microchip.com/dspic33ck256mp508)
-
-## Set Up
-
-### Hardware Set up
-
-1. Connect the board to the computer using a USB cable, connecting to the Serial port.
-
-    <img src="../../../images/hardware_setup_curiosity.jpg" height="400" alt="Hardware Setup"/>
-
-### Project Set Up
-
-#### wolfCrypt Source
+### wolfCrypt Source
 
 The wolfCrypt files in this project use wolfssl v5.8.4-stable release with edits to support the dsPIC33C device.
 
