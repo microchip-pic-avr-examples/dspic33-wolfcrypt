@@ -33,7 +33,6 @@ extern "C" {
     #define NO_DSA                    // Disable DSA related APIs
     #define NO_RSA                    // Disable RSA related APIs
     #define NO_DH                     // Disable DH related APIs
-    #define NO_AES                    // Disable AES related APIs
     #define NO_ASN                    // Disable ASN related APIs
     #define NO_DES3                   // Disable DES3 related APIs
     #define NO_64BIT                  // Disable 64-bit data types

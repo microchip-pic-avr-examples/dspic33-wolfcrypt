@@ -33,8 +33,6 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
     #define NO_FILESYSTEM                       // Specify device does not use a filesystem
     #define WOLFSSL_IGNORE_FILE_WARN            // Disable warning regarding inlined misc.c functions
     #define WOLFSSL_NO_MALLOC                   // Disable usage of dynamic memory allocation
-    #define WOLFSSL_STATIC_MEMORY               // Enable static memory usage
-    #define WOLFSSL_STATIC_MEMORY_LEAN          // Enable reduced static memory usage
 
     // WolfCrypt ML-DSA Configuration Options
     #define HAVE_DILITHIUM                      // Enable ML-DSA specific APIs

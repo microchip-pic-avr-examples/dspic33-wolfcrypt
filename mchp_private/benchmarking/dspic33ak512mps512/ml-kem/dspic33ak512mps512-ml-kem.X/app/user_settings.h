@@ -27,10 +27,7 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
     #define NO_SHA                          // Disable SHA related APIs
     #define NO_SHA256                       // Disable SHA256 related APIs
     #define NO_MD4                          // Disable MD4 related APIs
-    #define NO_RSA                          // Disable RSA related APIs
     #define NO_DSA                          // Disable DSA related APIs
-    #define NO_AES                          // Disable AES related APIs
-    #define NO_DES3                         // Disable DES3 related APIs
     #define NO_ASN                          // Disable ASN related APIs
     #define WOLFSSL_SHA3                    // Enable SHA3 APIs              
     #define WOLFSSL_SHAKE128                // Enable SHAKE128 APIs
