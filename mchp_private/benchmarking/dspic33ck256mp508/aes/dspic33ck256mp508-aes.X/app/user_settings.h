@@ -1,5 +1,5 @@
 /*
-? [2025] Microchip Technology Inc. and its subsidiaries.
+Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip
     software and any derivatives exclusively with Microchip products.
@@ -22,8 +22,6 @@
 #ifndef USER_SETTINGS_H
 #define USER_SETTINGS_H
 
-#include "app_config.h"
-
 #ifdef	__cplusplus
 extern "C" {
 #endif
@@ -36,13 +34,8 @@ extern "C" {
     #define WOLFCRYPT_ONLY            // Specify using wolfCrypt APIs only
 
     // wolfCrypt AES Configuration Options
-    #ifdef AES_ECB
-        #define HAVE_AES_ECB              // Enable AES ECB APIs
-    #endif
-
-    #ifdef AES_CBC
-        #define HAVE_AES_CBC              // Enable AES CBC APIs
-    #endif
+    #define HAVE_AES_ECB              // Enable AES ECB APIs
+    #define HAVE_AES_CBC              // Enable AES CBC APIs
 
     // dsPIC33C Support
     #ifdef __dsPIC33C__

@@ -19,8 +19,8 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
     THIS SOFTWARE.
 */
 
-#ifndef _WOLFCRYPT_USER_SETTINGS_H
-#define _WOLFCRYPT_USER_SETTINGS_H
+#ifndef USER_SETTINGS_H
+#define USER_SETTINGS_H
 
     // wolfCrypt Configuration Options
     #define NO_MD5                      // Disable MD5 related APIs
@@ -48,4 +48,4 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
         #define dsPIC33A_CAM_ENABLE     // Enable CAM Hardware usage with the dsPIC33A
     #endif
 
-#endif
+#endif /* USER_SETTINGS_H */

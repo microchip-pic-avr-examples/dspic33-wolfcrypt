@@ -19,8 +19,8 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
     THIS SOFTWARE.
 */
 
-#ifndef WOLFCRYPT_USER_SETTINGS_H
-#define WOLFCRYPT_USER_SETTINGS_H
+#ifndef USER_SETTINGS_H
+#define USER_SETTINGS_H
 
 #ifdef	__cplusplus
 extern "C" {
@@ -33,7 +33,6 @@ extern "C" {
     #define NO_DSA                    // Disable DSA related APIs
     #define NO_RSA                    // Disable RSA related APIs
     #define NO_DH                     // Disable DH related APIs
-    #define NO_AES                    // Disable AES related APIs
     #define NO_ASN                    // Disable ASN related APIs
     #define NO_DES3                   // Disable DES3 related APIs
     #define NO_64BIT                  // Disable 64-bit data types
@@ -71,4 +70,4 @@ extern "C" {
 }
 #endif
 
-#endif /* WOLFCRYPT_USER_SETTINGS_H */
+#endif /* USER_SETTINGS_H */

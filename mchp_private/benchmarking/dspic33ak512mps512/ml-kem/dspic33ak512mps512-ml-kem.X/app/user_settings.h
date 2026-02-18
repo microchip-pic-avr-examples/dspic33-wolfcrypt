@@ -19,18 +19,15 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
     THIS SOFTWARE.
 */
 
-#ifndef _WOLFCRYPT_USER_SETTINGS_H
-#define _WOLFCRYPT_USER_SETTINGS_H
+#ifndef USER_SETTINGS_H
+#define USER_SETTINGS_H
 
     // wolfCrypt Configuration Options
     #define NO_MD5                          // Disable MD5 related APIs
     #define NO_SHA                          // Disable SHA related APIs
     #define NO_SHA256                       // Disable SHA256 related APIs
     #define NO_MD4                          // Disable MD4 related APIs
-    #define NO_RSA                          // Disable RSA related APIs
     #define NO_DSA                          // Disable DSA related APIs
-    #define NO_AES                          // Disable AES related APIs
-    #define NO_DES3                         // Disable DES3 related APIs
     #define NO_ASN                          // Disable ASN related APIs
     #define WOLFSSL_SHA3                    // Enable SHA3 APIs              
     #define WOLFSSL_SHAKE128                // Enable SHAKE128 APIs
@@ -59,4 +56,4 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
         #define SINGLE_THREADED             // Specify device is single threaded
     #endif
 
-#endif
+#endif /* USER_SETTINGS_H */

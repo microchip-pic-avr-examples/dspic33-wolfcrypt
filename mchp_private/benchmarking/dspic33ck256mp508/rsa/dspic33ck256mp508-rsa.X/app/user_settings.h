@@ -31,9 +31,7 @@ extern "C" {
     #define NO_MD5                    // Disable MD5 related APIs
     #define NO_SHA                    // Disable SHA1 related APIs
     #define NO_DSA                    // Disable DSA related APIs
-    #define NO_DH                     // Disable DH related APIs
     #define NO_ASN                    // Disable ASN related APIs
-    #define NO_64BIT                  // Disable 64-bit data types
     #define NO_FILESYSTEM             // Specify device does not use a filesystem
     #define WC_NO_RNG                 // Disable RNG related APIs
     #define WOLFSSL_NO_MALLOC         // Disable usage of dynamic memory allocation
