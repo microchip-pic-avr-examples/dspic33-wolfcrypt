@@ -27,15 +27,27 @@ extern "C" {
 #endif
 
     // wolfCrypt Configuration Options
-    #define WOLFSSL_OLD_OID_SUM       // Use smaller OID sum values for 16-bit device
-    #define NO_FILESYSTEM             // Specify device does not use a filesystem
-    #define WOLFSSL_IGNORE_FILE_WARN  // Disable warning regarding inlined misc.c functions
-    #define WC_NO_RNG                 // Disable RNG related APIs
-    #define WOLFCRYPT_ONLY            // Specify using wolfCrypt APIs only
-    #define WOLFSSL_AES_DIRECT        // Enable AES-related operations
+    #define NO_MD5                              // Disable MD5 related APIs
+    #define NO_SHA                              // Disable SHA related APIs
+    #define NO_SHA256                           // Disable SHA256 related APIs
+    #define NO_MD4                              // Disable MD4 related APIs
+    #define NO_RSA                              // Disable RSA related APIs
+    #define NO_DSA                              // Disable DSA related APIs
+    #define NO_DES3                             // Disable DES3 related APIs
+    #define NO_ASN                              // Disable ASN related APIs
+    #define WOLFSSL_SHA3                        // Disable SHA3 related APIs
+    #define WOLFSSL_SHAKE128                    // Disable SHAKE128 related APIs
+    #define WOLFSSL_SHAKE256                    // Disable SHAKE256 related APIs
+    #define NO_FILESYSTEM                       // Specify device does not use a filesystem
+    #define WOLFSSL_IGNORE_FILE_WARN            // Disable warning regarding inlined misc.c functions
+    #define WC_NO_HASHDRBG                      // Disable HASHDRBG related APIs
+    #define WC_NO_RNG                           // Disable RNG related APIs
+    #define WOLFSSL_NO_MALLOC                   // Disable usage of dynamic memory allocation
+    #define WOLFCRYPT_ONLY                      // Specify using wolfCrypt APIs only
 
     // wolfCrypt MAC Configuration Options
     #define WOLFSSL_CMAC              // Enable AES CMAC APIs
+    #define WOLFSSL_AES_DIRECT        // Enable AES-related operations
 
     // dsPIC33C Support
     #ifdef __dsPIC33C__
