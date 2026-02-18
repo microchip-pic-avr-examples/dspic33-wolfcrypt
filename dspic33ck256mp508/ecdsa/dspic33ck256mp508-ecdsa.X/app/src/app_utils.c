@@ -47,20 +47,6 @@ void hexArrayPrint(const char* label, uint8_t* data, uint32_t size)
     }
 }
 
-bool arrayEqualityCheck(const uint8_t *a, const uint8_t *b, size_t size)
-{
-	const uint8_t *tempa = a;
-	const uint8_t *tempb = b;
-	uint8_t result = 0;
-
-	for (unsigned int index = 0; index < size; index++)
-    {
-		result |= tempa[index] ^ tempb[index];
-	}
-
-    return result == 0U;
-}
-
 void benchmarkingStart(void)
 {
     T1CONbits.TON = 1;
