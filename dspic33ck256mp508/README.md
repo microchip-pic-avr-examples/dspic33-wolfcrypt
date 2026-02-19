@@ -10,7 +10,7 @@
 
 - dsPIC33CK-MP_DFP **1.15.423**
 - MPLAB® X IDE **v6.30** (https://www.microchip.com/mplabx)
-- MPLAB® XC-DSC Compiler **v3.30** (https://www.microchip.com/xcdsc)
+- MPLAB® XC-DSC Compiler **v3.31** (https://www.microchip.com/xcdsc)
 
 ## Hardware Used
 
