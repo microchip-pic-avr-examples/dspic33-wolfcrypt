@@ -14,3 +14,4 @@
 *.o binary
 *.jpg binary
 *.png binary
+*.txt binary

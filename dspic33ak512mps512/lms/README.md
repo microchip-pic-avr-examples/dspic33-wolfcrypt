@@ -4,39 +4,19 @@
     <img alt="Microchip Logo." src="../../images/microchip_logo_black_red.png">
 </picture>
 
-# dsPIC33A PQC LMS (Leighton-Micali Hash-Based Signatures) Verification
+# dsPIC33A wolfCrypt PQC LMS (Leighton-Micali Hash-Based Signatures) Verification
 
 ## Summary
 
 This MPLAB® X project demonstrates LMS signature verification by using wolfCrypt APIs and the pre-compiled Crypto Accelerator Module (CAM) Hardware Driver.
 
-## Software Used
+## Project Set Up
 
-- dsPIC33AK-MP_DFP v1.3.185
-- MPLAB® X IDE **v6.30** (https://www.microchip.com/mplabx)
-- MPLAB® XC-DSC Compiler **v3.30** (https://www.microchip.com/xcdsc)
-
-## Hardware Used
-
-- dsPIC33AK512MPS512 Curiosity GP DIM (https://www.microchip.com/en-us/development-tool/EV80L65A)
-- Curiosity Platform Development Board (https://www.microchip.com/EV74H48A)
-
-## Set up
-
-### Hardware Set up
-
-1. Insert the dsPIC33AK512MPS512 DIM into the DIM J1 slot on the Curiosity Platform Development Board.
-2. Connect the board from the J24 USB-C PKoB4 (PICKit™ On-Board 4) to the computer.
-
-    <img src="../../images/hardware_setup.jpg" height="400" alt="Hardware Setup"/>
-
-### Project Set Up
-
-#### wolfCrypt Source
+### wolfCrypt Source
 
 The wolfCrypt files in this project use wolfssl v5.8.4-stable release with edits to support the dsPIC33A device.
 
-#### Edits that were required for dsPIC33A support
+### Edits that were required for dsPIC33A support
 
 1. `crypto\wolfssl\wolfssl\wolfcrypt\sha256.h`
 
@@ -149,7 +129,7 @@ The device will process the configured test vector using the wolfCrypt `wc_LmsKe
 
 ## Licensing
 
-The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found at the root folder of dspic33-wolfCrypt repo. 
+The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ak512mps512-lms.X/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt).
 
 ## Benchmarking for LMS Verification
 

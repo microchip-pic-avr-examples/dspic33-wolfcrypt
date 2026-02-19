@@ -12,22 +12,6 @@ This MPLAB® X project demonstrates AES processing by using wolfCrypt APIs on a 
 - ECB
 - CBC
 
-## Software Used 
-- dsPIC33CK-MP_DFP v1.15.423
-- MPLAB® X IDE [v6.30](https://www.microchip.com/mplabx)
-- MPLAB® XC-DSC Compiler [v3.30](https://www.microchip.com/xcdsc)
-
-## Hardware Used
-
-- dsPIC33CK Curiosity Development Board ([DM330030](https://www.microchip.com/dm330030))
-- dsPIC33CK256MP508 High-Performance DSC (https://www.microchip.com/dspic33ck256mp508)
-- 
-## Setting Up The Hardware
-
-1. Connect the board to the computer using a USB cable, connecting to the PICkit™ On-Board (PKOB) programmer/debugger.
-
-    <img src="../../images/hardware_setup_curiosity.jpg" height="400" alt="Hardware Setup"/>
-
 ## Running the Application
 
 1. Within MPLAB® X IDE, open the dspic33ck256mp508-aes.X application project in dspic33ck256mp508/aes.
@@ -69,7 +53,7 @@ The wolfCrypt files in this project use wolfssl v5.8.4-stable release to support
 
 ## Licensing
 
-The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found at the root folder of dspic33-wolfCrypt repo.
+The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ck256mp508-aes.X/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt).
 
 ## Benchmarking
 
