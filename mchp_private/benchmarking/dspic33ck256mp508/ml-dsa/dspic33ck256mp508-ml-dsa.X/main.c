@@ -30,12 +30,11 @@ dilithium_key key __attribute__((space(prog)));
 static void MLDSA_Verify(ML_DSA_SIG_VER_TEST_VECTOR* vector, byte level)
 {
     int status = 0;
-    int error = WC_FAILURE;
 
     wc_MlDsaKey_SetParams(&key, level);
     wc_MlDsaKey_ImportPubRaw(&key, vector->publicKey, vector->publicKeyLength);  
 
-    error = wc_MlDsaKey_Verify(
+    (void) wc_MlDsaKey_Verify(
             &key,
             (const byte*)vector->signature,
             vector->signatureSize,
