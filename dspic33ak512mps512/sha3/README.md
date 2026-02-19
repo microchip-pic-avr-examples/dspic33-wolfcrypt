@@ -69,7 +69,7 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 | SHA Type     | Time (seconds) |
 | ------------ | -------------- |
 | SHA3-224     | 0.000181       |
-| SHA3-256     | 0.000181       |
+| SHA3-256     | 0.000182       |
 | SHA3-334     | 0.000182       |
 | SHA3-512     | 0.000182       |
 
