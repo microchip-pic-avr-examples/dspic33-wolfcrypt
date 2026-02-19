@@ -85,6 +85,6 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 #### Verification Size
 |ML-DSA type|Message Size (bytes)|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
 |---|---|---|---|---|
-|Dilithium 44|4,553|2,420|1,312|36,520|56|1,188|
-|Dilithium 65|7,465|3,309|1,952|40,964|56|1,188|
-|Dilithium 87|4,616|4,627|2,592|40,068|56|1,188|
+|Dilithium 44|4,553|2,420|1,312|36,972|56|1,188|
+|Dilithium 65|7,465|3,309|1,952|41,416|56|1,188|
+|Dilithium 87|4,616|4,627|2,592|40,520|56|1,188|
