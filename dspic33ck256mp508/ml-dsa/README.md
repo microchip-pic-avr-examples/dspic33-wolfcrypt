@@ -141,9 +141,6 @@ If another tool is used to generate a signature it may encode the message by def
 
 The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ck256mp508-ml-dsa.X/crypto/wolfssl/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt). 
 
-### Benchmarking for ML-DSA Verification
-- Optimization level 3 is used for benchmarking
-
 #### Verification Time
 |ML-DSA type |Verification time (Seconds)|
 |------------|------|
