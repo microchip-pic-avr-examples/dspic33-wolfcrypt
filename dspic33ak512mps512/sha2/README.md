@@ -10,29 +10,9 @@
 
 This MPLAB® X project demonstrates SHA2 hash operations by using wolfCrypt APIs.
 
-## Software Used 
+## Project Set Up
 
-- dsPIC33AK-MP_DFP v1.3.185
-- MPLAB® X IDE **v6.30** (https://www.microchip.com/mplabx)
-- MPLAB® XC-DSC Compiler **v3.30** (https://www.microchip.com/xcdsc)
-
-## Hardware Used
-
-- dsPIC33AK512MPS512 Curiosity GP DIM (https://www.microchip.com/EV80L65A)
-- Curiosity Platform Development Board (https://www.microchip.com/EV74H48A)
-
-## Set up
-
-### Hardware Set up
-
-1. Insert the dsPIC33AK512MPS512 DIM into the DIM J1 slot on the Curiosity Platform Development Board.
-2. Connect the board from the J24 USB-C PKoB4 (PICKit™ On-Board 4) to the computer.
-
-    <img src="../../images/hardware_setup.jpg" height="400" alt="Hardware Setup"/>
-
-### Project Set Up
-
-#### wolfCrypt Source
+### wolfCrypt Source
 
 The wolfCrypt files in this project use wolfssl v5.8.4-stable release to support the dsPIC33A device.
 
@@ -79,7 +59,7 @@ The NIST test vectors used in this project are found in the the NIST ACVP Server
 
 ## Licensing
 
-The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found at the root folder of dspic33-wolfCrypt repo. 
+The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ak512mps512-sha2.X/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt).
 
 ## Benchmarking for SHA2 Generation
 

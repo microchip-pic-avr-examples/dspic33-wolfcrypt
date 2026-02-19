@@ -10,28 +10,9 @@
 
 This MPLAB® X project demonstrates ML-DSA Verify using dilithium wolfCrypt APIs to verify an input signature and message.
 
-## Software Used
-- dsPIC33AK-MP_DFP v1.2.135
-- MPLAB® X IDE **v6.30** (https://www.microchip.com/mplabx)
-- MPLAB® XC-DSC Compiler **v3.21** (https://www.microchip.com/xcdsc)
+## Project Set Up
 
-## Hardware Used
-
-- dsPIC33AK512MPS512 Curiosity GP DIM (https://www.microchip.com/EV80L65A)
-- Curiosity Platform Development Board (https://www.microchip.com/EV74H48A)
-
-## Set Up
-
-### Hardware Set Up
-
-1. Insert the dsPIC33AK512MPS512 DIM into the DIM J1 slot on the Curiosity Platform Development Board.
-2. Connect the board from the J24 USB-C PKoB4 (PICKit™ On-Board 4) to the computer.
-
-    <img src="../../images/hardware_setup.jpg" height="400" alt="Hardware Setup"/>
-
-### Project Set Up
-
-#### wolfCrypt Source
+### wolfCrypt Source
 
 The wolfCrypt files in this project use wolfssl v5.8.4-stable release to support the dsPIC33A device.
 
@@ -71,7 +52,7 @@ If another tool is used to generate a signature it may encode the message by def
 
 ## Licensing
 
-The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found at the root folder of dspic33-wolfCrypt repo.
+The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ak512mps512-ml-dsa.X/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt).
 
 ### Benchmarking for ML-DSA Verification
 

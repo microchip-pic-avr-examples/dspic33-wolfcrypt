@@ -4,24 +4,11 @@
     <img alt="Microchip Logo." src="../../images/microchip_logo_black_red.png">
 </picture>
 
-# dsPIC33C Message Authentication Code (MAC) Example
+# dsPIC33C wolfCrypt Message Authentication Code (MAC) Example
 
 ## Description
 This example application utilizes the wolfCrypt library to perform MAC operations using different sized input vectors. The following MAC algorithms are supported:
 - AES-CMAC
-
-## Software Tool Versions Used
-- dsPIC33CK-MP_DFP v1.15.423
-- MPLAB® X IDE [v6.30](https://www.microchip.com/mplabx)
-- MPLAB® XC-DSC Compiler [v3.30](https://www.microchip.com/xcdsc)
-
-## Setting Up The Hardware
-- dsPIC33CK Curiosity Development Board ([DM330030](https://www.microchip.com/dm330030))
-- dsPIC33CK256MP508 High-Performance DSC (https://www.microchip.com/dspic33ck256mp508)
-
-1. Connect the board to the computer using a USB cable, connecting to the PICkit™ On-Board (PKOB) programmer/debugger.
-
-    <img src="../../images/hardware_setup_curiosity.jpg" height="400" alt="Hardware Setup"/>
 
 ## Running the Application
 1. Within MPLAB® X IDE, open the dspic33ck256mp508-mac.X application project.
@@ -50,10 +37,13 @@ The following information will be printed on the COM port for AES-CMAC algorithm
 * `wc_CmacUpdate` - Processes input data for a CMAC operation and updates the CMAC context.
 * `wc_CmacFinal` - Retrieves the final CMAC value.
 
+## Licensing
+
+The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ck256mp508-mac.X/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt). 
+
 ## Benchmarking
 
 ### Performance Benchmarking
-The following benchmarking results were obtained with the device clock speed set to 200MHz.
 
 #### AES-CMAC
 |Key Size (bytes)|Plaintext Size (bytes)|MAC Size (bytes)|Generation Performance (seconds)|
