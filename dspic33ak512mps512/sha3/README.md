@@ -68,16 +68,16 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 
 | SHA Type     | Time (seconds) |
 | ------------ | -------------- |
-| SHA3-224     | 0.000181       |
-| SHA3-256     | 0.000182       |
-| SHA3-334     | 0.000182       |
-| SHA3-512     | 0.000182       |
+| SHA3-224     | 0.000177       |
+| SHA3-256     | 0.000178       |
+| SHA3-334     | 0.000178       |
+| SHA3-512     | 0.000178       |
 
 ### SHA3 Digest Generation Size
 
 | SHA Type  | Flash (bytes) | RAM Static (bytes) | RAM Stack (bytes) |
 | --------  | ------------- | ------------------ | ----------------- |
-| SHA3-224  | 6,856         | 32                 |  596              |
-| SHA3-256  | 6,860         | 32                 |  596              |
-| SHA3-384  | 6,876         | 32                 |  596              |
-| SHA3-512  | 6,892         | 32                 |  596              |
+| SHA3-224  | 6,852         | 32                 |  592              |
+| SHA3-256  | 6,856         | 32                 |  592              |
+| SHA3-384  | 6,872         | 32                 |  592              |
+| SHA3-512  | 6,888         | 32                 |  592              |
