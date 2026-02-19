@@ -14,27 +14,34 @@
         <logicalFolder name="f1" displayName="test_vectors" projectFiles="true">
           <itemPath>crypto/test_vectors/test_vector.h</itemPath>
         </logicalFolder>
-        <logicalFolder name="f2" displayName="wolfssl" projectFiles="true">
-          <logicalFolder name="f1" displayName="wolfcrypt" projectFiles="true">
-            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/libwolfssl_sources.h</itemPath>
-            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/types.h</itemPath>
-            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/settings.h</itemPath>
-            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/visibility.h</itemPath>
-            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/wc_port.h</itemPath>
-            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/error-crypt.h</itemPath>
-            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/logging.h</itemPath>
-            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/mlkem.h</itemPath>
-            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/wc_mlkem.h</itemPath>
-            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/hash.h</itemPath>
-            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/hmac.h</itemPath>
-            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/misc.h</itemPath>
-            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/cryptocb.h</itemPath>
-            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/ext_mlkem.h</itemPath>
-            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/sha3.h</itemPath>
-            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/cpuid.h</itemPath>
-            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/oid_sum.h</itemPath>
-            <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/random.h</itemPath>
+        <logicalFolder name="wolfssl" displayName="wolfssl" projectFiles="true">
+          <logicalFolder name="wolfssl" displayName="wolfssl" projectFiles="true">
+            <logicalFolder name="wolfcrypt" displayName="wolfcrypt" projectFiles="true">
+              <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/cpuid.h</itemPath>
+              <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/cryptocb.h</itemPath>
+              <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/error-crypt.h</itemPath>
+              <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/ext_mlkem.h</itemPath>
+              <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/hash.h</itemPath>
+              <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/hmac.h</itemPath>
+              <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/libwolfssl_sources.h</itemPath>
+              <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/logging.h</itemPath>
+              <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/memory.h</itemPath>
+              <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/misc.h</itemPath>
+              <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/mlkem.h</itemPath>
+              <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/oid_sum.h</itemPath>
+              <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/random.h</itemPath>
+              <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/settings.h</itemPath>
+              <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/sha3.h</itemPath>
+              <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/types.h</itemPath>
+              <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/visibility.h</itemPath>
+              <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/wc_mlkem.h</itemPath>
+              <itemPath>crypto/wolfssl/wolfssl/wolfcrypt/wc_port.h</itemPath>
+            </logicalFolder>
+            <itemPath>crypto/wolfssl/wolfssl/version.h</itemPath>
           </logicalFolder>
+          <itemPath>crypto/wolfssl/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt</itemPath>
+          <itemPath>crypto/wolfssl/LICENSING</itemPath>
+          <itemPath>crypto/wolfssl/README.md</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="MCC Generated Files"
@@ -92,19 +99,21 @@
             </logicalFolder>
           </logicalFolder>
         </logicalFolder>
-        <logicalFolder name="f1" displayName="wolfssl" projectFiles="true">
-          <logicalFolder name="f1" displayName="wolfcrypt" projectFiles="true">
-            <itemPath>crypto/wolfssl/wolfcrypt/src/wc_mlkem.c</itemPath>
-            <itemPath>crypto/wolfssl/wolfcrypt/src/hash.c</itemPath>
-            <itemPath>crypto/wolfssl/wolfcrypt/src/memory.c</itemPath>
-            <itemPath>crypto/wolfssl/wolfcrypt/src/hmac.c</itemPath>
-            <itemPath>crypto/wolfssl/wolfcrypt/src/misc.c</itemPath>
-            <itemPath>crypto/wolfssl/wolfcrypt/src/cryptocb.c</itemPath>
-            <itemPath>crypto/wolfssl/wolfcrypt/src/ext_mlkem.c</itemPath>
-            <itemPath>crypto/wolfssl/wolfcrypt/src/sha3.c</itemPath>
-            <itemPath>crypto/wolfssl/wolfcrypt/src/cpuid.c</itemPath>
-            <itemPath>crypto/wolfssl/wolfcrypt/src/wc_mlkem_poly.c</itemPath>
-            <itemPath>crypto/wolfssl/wolfcrypt/src/random.c</itemPath>
+        <logicalFolder name="wolfssl" displayName="wolfssl" projectFiles="true">
+          <logicalFolder name="wolfcrypt" displayName="wolfcrypt" projectFiles="true">
+            <logicalFolder name="src" displayName="src" projectFiles="true">
+              <itemPath>crypto/wolfssl/wolfcrypt/src/cpuid.c</itemPath>
+              <itemPath>crypto/wolfssl/wolfcrypt/src/cryptocb.c</itemPath>
+              <itemPath>crypto/wolfssl/wolfcrypt/src/ext_mlkem.c</itemPath>
+              <itemPath>crypto/wolfssl/wolfcrypt/src/hash.c</itemPath>
+              <itemPath>crypto/wolfssl/wolfcrypt/src/hmac.c</itemPath>
+              <itemPath>crypto/wolfssl/wolfcrypt/src/memory.c</itemPath>
+              <itemPath>crypto/wolfssl/wolfcrypt/src/misc.c</itemPath>
+              <itemPath>crypto/wolfssl/wolfcrypt/src/random.c</itemPath>
+              <itemPath>crypto/wolfssl/wolfcrypt/src/sha3.c</itemPath>
+              <itemPath>crypto/wolfssl/wolfcrypt/src/wc_mlkem.c</itemPath>
+              <itemPath>crypto/wolfssl/wolfcrypt/src/wc_mlkem_poly.c</itemPath>
+            </logicalFolder>
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
@@ -137,16 +146,13 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>main.c</itemPath>
-      <itemPath>LICENSE_WOLFSSL_MICROCHIP_v12052025.txt</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>.</Elem>
-    <Elem>crypto/wolfssl/wolfcrypt/src</Elem>
     <Elem>app</Elem>
-    <Elem>crypto/wolfssl/wolfssl/wolfcrypt</Elem>
     <Elem>crypto/test_vectors/ml_kem/encapsulation</Elem>
     <Elem>crypto/test_vectors/ml_kem/decapsulate</Elem>
+    <Elem>.</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

@@ -39,7 +39,7 @@ The decapsulated shared secret will be compared to the expected result. The fina
 
 ## Licensing
 
-The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ak512mps512-ml-kem.X/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt).
+The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ak512mps512-ml-kem.X/crypto/wolfssl/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt).
 
 ## Benchmarking for ML-KEM Decapsulation
 
