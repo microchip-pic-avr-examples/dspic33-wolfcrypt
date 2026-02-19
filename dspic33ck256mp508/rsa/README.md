@@ -71,10 +71,10 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 
 | RSA Key Size (bits) | Padding Type | Application            | Flash (words) |RAM Static (bytes)|RAM Stack (bytes)|
 | ------------------- | ------------ | -----------            | -----------   | -------------    | -------------   |
-| 3072                | PKCS#1 v1.5  | Signature Verification | 10,486        | 60               | 5,558           |
+| 3072                | PKCS#1 v1.5  | Signature Verification | 7,774         | 140               | 5,728           |
 
 ### Performance
 
 | RSA Key Size (bits) | Padding Type | Application            | Cycles      | Time (seconds) |
 | ------------------- | ------------ | -----------            | ------      | -------------- |
-| 3072                | PKCS#1 v1.5  | Signature Verification | 115,757,100 | 1.157571       |
+| 3072                | PKCS#1 v1.5  | Signature Verification | 251,808,600 | 2.518086       |

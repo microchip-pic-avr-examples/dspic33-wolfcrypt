@@ -141,19 +141,16 @@ If another tool is used to generate a signature it may encode the message by def
 
 The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ck256mp508-ml-dsa.X/crypto/wolfssl/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt). 
 
-### Benchmarking for ML-DSA Verification
-- Optimization level 3 is used for benchmarking
-
 #### Verification Time
 |ML-DSA type |Verification time (Seconds)|
 |------------|------|
-|Dilithium 44|0.2602|
-|Dilithium 65|0.4250|
-|Dilithium 87|0.6349|
+|Dilithium 44|0.2963|
+|Dilithium 65|0.4870|
+|Dilithium 87|0.7263|
 
 #### Verification Size
 |ML-DSA type|Message Size (bytes)|Signature Size (bytes)|Key Size (bytes)|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
 |---|---|---|---|---|---|---|
-|Dilithium 44|4,553|2,420|1,312|23,717|58|976|
-|Dilithium 65|7,465|3,309|1,952|25,938|58|976|
-|Dilithium 87|4,616|4,627|2,592|25,492|58|976|
+|Dilithium 44|4,553|2,420|1,312|18,083|138|964|
+|Dilithium 65|7,465|3,309|1,952|20,304|138|964|
+|Dilithium 87|4,616|4,627|2,592|19,858|138|964|
