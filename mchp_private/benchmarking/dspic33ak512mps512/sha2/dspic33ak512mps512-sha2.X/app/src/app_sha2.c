@@ -36,7 +36,6 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
 
 static void SHA2_Digest(const TEST_VECTOR* vector)
 {
-    int ticksToProcess = 0;
     int status = WC_FAILURE;
     byte resultDigest[64];
     wc_Sha256 sha256;
