@@ -46,13 +46,13 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 ### Decapsulation Time
 |Key Type|Verification time (Seconds)|
 |---|---|---|---|
-|ML-KEM 512|0.004668|
-|ML-KEM 768|0.007513|
-|ML-KEM 1024|0.011405|
+|ML-KEM 512|0.004674|
+|ML-KEM 768|0.007522|
+|ML-KEM 1024|0.011420|
 
 ### Decapsulation Size
 |Hash|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
 |---|---|---|---|---|---|
-|ML-KEM 512|29,468|98|20,204|
-|ML-KEM 768|30,940|98|20,204|
-|ML-KEM 1024|32,572|98|20,204|
+|ML-KEM 512|29,472|98|20,204|
+|ML-KEM 768|30,944|98|20,204|
+|ML-KEM 1024|32,576|98|20,204|
