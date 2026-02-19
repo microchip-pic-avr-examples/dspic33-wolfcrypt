@@ -49,12 +49,12 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 |Key Size (bytes)|Plaintext Size (bytes)|MAC Size (bytes)|Generation Performance (seconds)|
 |----|----|----|----|
 |16|532|16|0.002837|
-|24|532|16|0.003277|
-|32|532|16|0.003717|
+|24|532|16|0.003278|
+|32|532|16|0.003734|
 
 ### Memory Size Benchmarking
 The following results include usage of AES-CMAC APIs. Flash size will vary based on size of the stored data inputs used with the library.
 
 |Mode|FLASH (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
 |----|----|----|----|
-|AES-CMAC|9,239|528|164|
+|AES-CMAC|9,247|528|166|

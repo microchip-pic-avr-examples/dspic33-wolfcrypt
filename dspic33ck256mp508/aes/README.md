@@ -92,8 +92,8 @@ The following results include usage of ECB and CBC APIs. Flash size will vary ba
 
 |AES Mode|Direction|FLASH (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
 |----|----|----|----|----|
-|ECB              |Encrypt            |7,997|480|116|
-|ECB              |Decrypt            |7,975|480|116|
-|CBC              |Encrypt            |8,356|480|170|
-|CBC              |Decrypt            |8,092|480|116|
-|All Modes Enabled|Encrypt and Decrypt|10,639|480|116|
+|ECB              |Encrypt            |7,987|480|116|
+|ECB              |Decrypt            |7,965|480|116|
+|CBC              |Encrypt            |8,078|480|116|
+|CBC              |Decrypt            |8,069|480|116|
+|All Modes Enabled|Encrypt and Decrypt|10,644|480|116|

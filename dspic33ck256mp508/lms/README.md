@@ -65,11 +65,11 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 ### Verification Time
 |Hash|Width|Height|Verification time (Seconds)|
 |---|---|---|---|
-|SHA-256_192 (N24)|8|25|0.873507|
-|SHA-256 (N32)|8|25|1.005691|
+|SHA-256_192 (N24)|8|25|1.005986|
+|SHA-256 (N32)|8|25|1.203449|
 
 ### Verification Size
 |Hash|Width|Height|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
 |---|---|---|---|---|---|
-|SHA-256_192 (N24)|8|25|4,752|718|1438|
-|SHA-256 (N32)|8|25|5,088|718|1438|
+|SHA-256_192 (N24)|8|25|4,761|798|1442|
+|SHA-256 (N32)|8|25|5,097|798|1442|
