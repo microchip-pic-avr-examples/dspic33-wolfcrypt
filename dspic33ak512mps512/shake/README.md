@@ -66,12 +66,12 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 
 | SHAKE Type     | Time (seconds) |
 | -------------- | -------------- |
-| SHAKE 128      | 0.000181       |
-| SHAKE 256      | 0.000181       |
+| SHAKE 128      | 0.000177       |
+| SHAKE 256      | 0.000178       |
 
 ### SHAKE Digest Generation Size
 
 | SHAKE Type  | Flash (bytes) | RAM Static (bytes) | RAM Stack (bytes) |
 | ----------- | ------------- | ------------------ | ----------------- |
-| SHAKE 128   | 6,736         | 32                 |  532              |
-| SHAKE 256   | 6,764         | 52                 |  532              |
+| SHAKE 128   | 6,732         | 32                 |  528              |
+| SHAKE 256   | 6,760         | 52                 |  528              |
