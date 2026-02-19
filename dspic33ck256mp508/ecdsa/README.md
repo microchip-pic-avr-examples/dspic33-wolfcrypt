@@ -67,12 +67,12 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 
 | ECC Curve    | Cycles        | Time (seconds) |
 | ------------ | ------------- | -------------- |
-| P256         |   382,190,400 |  3.821904      |
-| P384         | 1,143,803,600 | 11.438036      |
+| P256         |   548,985,500 |  5.489855      |
+| P384         | 1,708,674,700 | 17.086748      |
 
 ### Verification Size
 
 |ECC Curve | Flash (bytes) | RAM Static (bytes) | RAM Stack (bytes) |
 | -------- | ------------- | ------------------ | ----------------- |
-| P256     | 19,635        | 124                |  6,150            |
-| P384     | 19,675        | 124                |  6,150            |
+| P256     | 11,926        | 204                |  6,370            |
+| P384     | 11,966        | 204                |  6,370            |
