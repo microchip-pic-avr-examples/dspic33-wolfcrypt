@@ -59,7 +59,7 @@ The NIST test vectors used in this project are found in the the NIST ACVP Server
 
 ## Licensing
 
-The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ak512mps512-sha2.X/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt).
+The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ak512mps512-sha2.X/crypto/wolfssl/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt).
 
 ## Benchmarking for SHA2 Generation
 
