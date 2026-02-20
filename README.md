@@ -34,7 +34,7 @@ The wolfCrypt files in this project use wolfssl [v5.8.4-commercial](https://gith
 
 API documentation for wolfcrypt files used in the demo can be found at [wolfssl's website](https://www.wolfssl.com/documentation/manuals/wolfssl/group__wolfCrypt.html)
 
-### wolfCrypt Library Set Up
+### wolfCrypt Library Setup
 
 For each demo project the custom user settings is enabled by defining a common macro `WOLFSSL_USER_SETTINGS` within the project properties. 
 This allows the wolfCrypt library to be configured by macros specified within the `user_settings.h` file found under the app folder of each demo. 
