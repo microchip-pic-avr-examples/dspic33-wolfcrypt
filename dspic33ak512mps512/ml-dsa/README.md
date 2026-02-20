@@ -45,7 +45,7 @@ The resulting operations are then printed to the terminal using UART with the fo
 | Flow Control Mode | None   |
 
 ### Input Data Usage
-The test vectors in this demo come from the NIST defined public keys, messages and signature values.
+The test vectors in this example application come from the NIST defined public keys, messages and signature values.
 - These values are raw data inputs with no encoding. 
 
 If another tool is used to generate a signature it may encode the message by default following [FIPS-204](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.204.pdf) (Algorithm 2 Step 10)

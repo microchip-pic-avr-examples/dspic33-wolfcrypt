@@ -26,7 +26,7 @@ The wolfCrypt files in this project use wolfssl v5.8.4-stable release to support
 
 The `app_config.h` file is used to configure the project. The following options are available:
 
-| Demo          | Parameter Set                          |
+| Operation     | Parameter Set                          |
 | ----          | -------------                          |
 | Decapsulation | ML-KEM-512, ML-KEM-768, or ML-KEM-1024 |
 

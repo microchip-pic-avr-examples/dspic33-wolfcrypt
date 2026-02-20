@@ -7,13 +7,13 @@
 # dsPIC33 wolfCrypt Example Applications
 
 ## Description
-dsPIC33 wolfCrypt Demos are a collection of MPLAB® X IDE projects to demonstrate cryptographic operations using wolfSSL's wolfCrypt software library. 
+dsPIC33 wolfCrypt Example Applications are a collection of MPLAB® X IDE projects to demonstrate cryptographic operations using wolfSSL's wolfCrypt software library. 
 
 ## dsPIC33 Cryptographic Algorithms Support Overview
 The following table provides the overview of Cryptographic Algorithms Support on dsPIC33 devices for wolfSSL wolfCrypt APIs. 
-- `Software` means the demo is a pure wolfCrypt demo
-- `CAM 05346` represents and links to the Crypto Accelerator Module demos which is a Microchip implemented hardware accelerator
-- The dsPIC33AK512MPS512 device contains the hardware Crypto Accelerator Module (CAM 05346) which was utilized within the LMS demo for its hash capabilities
+- `Software` means the project is a pure wolfCrypt example application
+- `CAM 05346` represents and links to the Crypto Accelerator Module example applications which is a Microchip implemented hardware accelerator
+- The dsPIC33AK512MPS512 device contains the hardware Crypto Accelerator Module (CAM 05346) which was utilized within the LMS example application for its hash capabilities
 
 |Algorithm|Options|Modes|Supported Actions|dsPIC33CK256MP508|dsPIC33AK512MPS512|
 |---|---|---|---|---|---|
@@ -32,12 +32,12 @@ The following table provides the overview of Cryptographic Algorithms Support on
 
 The wolfCrypt files in this project use wolfssl [v5.8.4-commercial](https://github.com/wolfSSL/Microchip/tree/main/wolfssl-5.8.4-commercial) release to support dsPIC33A and dsPIC33C devices.
 
-API documentation for wolfcrypt files used in the demo can be found at [wolfssl's website](https://www.wolfssl.com/documentation/manuals/wolfssl/group__wolfCrypt.html)
+API documentation for wolfcrypt files used in the example application can be found at [wolfssl's website](https://www.wolfssl.com/documentation/manuals/wolfssl/group__wolfCrypt.html)
 
 ### wolfCrypt Library Setup
 
-For each demo project the custom user settings is enabled by defining a common macro `WOLFSSL_USER_SETTINGS` within the project properties. 
-This allows the wolfCrypt library to be configured by macros specified within the `user_settings.h` file found under the app folder of each demo. 
+For each example application the custom user settings is enabled by defining a common macro `WOLFSSL_USER_SETTINGS` within the project properties. 
+This allows the wolfCrypt library to be configured by macros specified within the `user_settings.h` file found under the app folder of each example application. 
 These files enable specific APIs, device support, and includes additional configuration options. 
 More information about the options can be found within the `user_settings.h` file.
 
@@ -47,7 +47,7 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 
 ## Benchmarking
 ### Benchmarking Setup
-The benchmarking results are obtained by modifying the demo projects to remove overheads such as:
+The benchmarking results are obtained by modifying the example application to remove overheads such as:
 - UART peripheral and print out statements
 - Isolation to use one algorithm at a time
 - Store input data in flash memory to benchmark RAM usage
@@ -70,7 +70,7 @@ Flash size will vary based on size of the stored data inputs used with the libra
 
 All projects have the following compiler options:
 - Isolate each algorithm and input type into separately defined sections
-- Remove demo only print statements and modules not required by the algorithm
+- Remove application only print statements and modules not required by the algorithm
 
 | Algorithm | FLASH (bytes) | RAM Static (bytes) | RAM Stack (bytes)|
 |----|----|----|----|
