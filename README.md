@@ -4,12 +4,12 @@
     <img alt="Microchip Logo." src="images/microchip_logo_black_red.png">
 </picture>
 
-## dsPIC33 wolfCrypt Demos
+# dsPIC33 wolfCrypt Example Applications
 
-# Description
+## Description
 dsPIC33 wolfCrypt Demos are a collection of MPLAB® X IDE projects to demonstrate cryptographic operations using wolfSSL's wolfCrypt software library. 
 
-# dsPIC33 Cryptographic Algorithms Support Overview
+## dsPIC33 Cryptographic Algorithms Support Overview
 The following table provides the overview of Cryptographic Algorithms Support on dsPIC33 devices for wolfSSL wolfCrypt APIs. 
 - `Software` means the demo is a pure wolfCrypt demo
 - `CAM 05346` represents and links to the Crypto Accelerator Module demos which is a Microchip implemented hardware accelerator
@@ -26,27 +26,27 @@ The following table provides the overview of Cryptographic Algorithms Support on
 |ML-DSA|Parameter Set: ML-DSA-44, ML-DSA-65, ML-DSA-87|N/A|Signature Verification|[Software](./dspic33ck256mp508/ml-dsa/)|[Software](./dspic33ak512mps512/ml-dsa/)|
 |ML-KEM|Security Level: ML-KEM-512, ML-KEM-768, ML-KEM-1024|N/A|Decapsulation|Unsupported|[Software](./dspic33ak512mps512/ml-kem/)|
 
-### wolfCrypt Integration
+## wolfCrypt Integration
 
-#### wolfCrypt Source
+### wolfCrypt Source
 
 The wolfCrypt files in this project use wolfssl [v5.8.4-commercial](https://github.com/wolfSSL/Microchip/tree/main/wolfssl-5.8.4-commercial) release to support dsPIC33A and dsPIC33C devices.
 
 API documentation for wolfcrypt files used in the demo can be found at [wolfssl's website](https://www.wolfssl.com/documentation/manuals/wolfssl/group__wolfCrypt.html)
 
-#### wolfCrypt Library Set Up
+### wolfCrypt Library Set Up
 
 For each demo project the custom user settings is enabled by defining a common macro `WOLFSSL_USER_SETTINGS` within the project properties. 
 This allows the wolfCrypt library to be configured by macros specified within the `user_settings.h` file found under the app folder of each demo. 
 These files enable specific APIs, device support, and includes additional configuration options. 
 More information about the options can be found within the `user_settings.h` file.
 
-#### Licensing
+### Licensing
 
 The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found at the root folder of dspic33-wolfCrypt repo called [LICENSE_WOLFSSL_MICROCHIP](./LICENSE_WOLFSSL_MICROCHIP_v12052025.txt). 
 
-# Benchmarking
-## Benchmarking Setup
+## Benchmarking
+### Benchmarking Setup
 The benchmarking results are obtained by modifying the demo projects to remove overheads such as:
 - UART peripheral and print out statements
 - Isolation to use one algorithm at a time

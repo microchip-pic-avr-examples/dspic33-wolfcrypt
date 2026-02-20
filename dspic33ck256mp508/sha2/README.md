@@ -4,23 +4,25 @@
     <img alt="Microchip Logo." src="../../images/microchip_logo_black_red.png">
 </picture>
 
-# dsPIC33C SHA2 Example
+# dsPIC33C Secure Hash Algorithm 2 (SHA2) Digest Generation Example Application
 
-## Summary
+## Description
 
 This MPLAB® X project demonstrates SHA2 hash operations by using wolfCrypt APIs on a dsPIC33CK256MP508 device.
 
-## Project Set Up
+## Licensing
+
+The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ak512mps512-sha2.X/crypto/wolfssl/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt).
+
+## Project Setup
+
+See the [dsPIC33CK256MP508 README](../README.md) for software tools and hardware setup.
 
 ### wolfCrypt Source
 
 The wolfCrypt files in this project use wolfssl v5.8.4-stable release to support the dsPIC33C device.
 
-## Running the Demo
-
-Open the project in MPLAB® X IDE. Build the project and program the device.
-
-### Demo Configuration
+### Project Configuration
 
 The `app_config.h` file is used to configure the project. The following options are available:
 
@@ -31,7 +33,11 @@ The `app_config.h` file is used to configure the project. The following options 
 | SHA2_384_ENABLE | SHA-384 digest generation    |
 | SHA2_512_ENABLE | SHA-512 digest generation    |
 
-### Demo Output
+## Running the Application
+
+Open the project in MPLAB® X IDE. Build the project and program the device.
+
+### Application Output
 
 The resulting verification status is then printed to the terminal using UART with the following settings:
 
@@ -43,11 +49,11 @@ The resulting verification status is then printed to the terminal using UART wit
 | Stop Bits         | 1      |
 | Flow Control Mode | None   |
 
-### Demo Execution
+### Application Execution
 
 The device will process the configured test vector using the following APIs:
 
-#### SHA2 Hash digest API's
+#### SHA2 Hash Digest API's
 
 * `wc_InitSha224_ex, wc_InitSha256_ex, wc_InitSha384_ex, wc_InitSha512_ex` - Initializes the SHA structure.
 * `wc_Sha224Update, wc_Sha256Update, wc_Sha384Update, wc_Sha512Update` - Runs the SHA digest generation.
@@ -57,13 +63,9 @@ The device will process the configured test vector using the following APIs:
 
 The NIST test vectors used in this project are found in the the NIST ACVP Server's [SHA2 folders](https://github.com/usnistgov/ACVP-Server/tree/v1.1.0.40/gen-val/json-files).
 
-## Licensing
+## Benchmarking
 
-The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ck256mp508-sha2.X/crypto/wolfssl/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt). 
-
-## Benchmarking for SHA2 Generation
-
-### Verification Time
+### Performance Benchmarking
 
 | SHA Type     | Cycles        | Time (seconds) |
 | ------------ | ------------- | -------------- |
@@ -72,7 +74,7 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 | SHA-334      | 98,700        | 0.000987       |
 | SHA-512      | 99,900        | 0.000999       |
 
-### Verification Size
+### Memory Size Benchmarking
 
 | SHA Type | Flash (bytes) | RAM Static (bytes) | RAM Stack (bytes) |
 | -------- | ------------- | ------------------ | ----------------- |
