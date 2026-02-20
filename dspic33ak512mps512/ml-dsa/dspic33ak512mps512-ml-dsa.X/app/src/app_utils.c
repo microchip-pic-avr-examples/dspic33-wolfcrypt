@@ -31,26 +31,21 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
 #include "system/clock.h"
 #include "system/pins.h"
 
-static uint32_t microSeconds = 0;
-
-static void microSecondIncrement(void)
-{
-    microSeconds++;
-}
-
 void benchmarkingStart(void)
 {
+    TMR1 = 0;
     BENCHMARKING_P28_SetHigh();
-    Timer1.TimeoutCallbackRegister(microSecondIncrement);
-    microSeconds = 0;
-    T1CONbits.ON = 1;
 }
 
-void benchmarkingEnd(void)
+void benchmarkingEnd(int* ticksToProcess)
 {
-    T1CONbits.ON = 0;
     BENCHMARKING_P28_SetLow();
-    double seconds = (double) microSeconds / (double) 1000000;
+    *ticksToProcess = TMR1;
+}
+
+void benchmarkingDataPrint(int ticksToProcess)
+{
+    double seconds = (double) ticksToProcess / (double) 100000000;
     uint32_t cycles = seconds * CLOCK_InstructionFrequencyGet();
 
     (void) printf("\r\n Cycles spent: %lu", cycles);
