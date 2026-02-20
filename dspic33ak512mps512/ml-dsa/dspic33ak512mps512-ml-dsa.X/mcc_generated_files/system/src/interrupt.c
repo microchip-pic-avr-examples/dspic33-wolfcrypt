@@ -40,34 +40,9 @@
 
 void INTERRUPT_Initialize(void)
 {
-    // T1: Timer 1 interrupt
-    // Priority: 1
-    IPC6bits.T1IP = 1;
-    
-    // U1EVT: UART 1 event interrupt
-    // Priority: 1
-    IPC12bits.U1EVTIP = 1;
-    
-    // U1E: UART 1 error interrupt
-    // Priority: 1
-    IPC12bits.U1EIP = 1;
-    
-    // U1TX: UART 1 TX interrupt
-    // Priority: 1
-    IPC12bits.U1TXIP = 1;
-    
-    // U1RX: UART 1 RX interrupt
-    // Priority: 1
-    IPC12bits.U1RXIP = 1;
-    
 }
 
 void INTERRUPT_Deinitialize(void)
 {
     //POR default value of priority
-    IPC6bits.T1IP = 4;
-    IPC12bits.U1EVTIP = 4;
-    IPC12bits.U1EIP = 4;
-    IPC12bits.U1TXIP = 4;
-    IPC12bits.U1RXIP = 4;
 }

@@ -38,9 +38,11 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
 #define MAG "\x1B""[1;35m"
 #define CYAN "\x1B""[1;36m"
 
+void benchmarkingDataPrint(int ticksToProcess);
+
 void benchmarkingStart(void);
 
-void benchmarkingEnd(void);
+void benchmarkingEnd(int* ticksToProcess);
 
 void outputMessagePrint(int error, dilithium_key* key);
 
