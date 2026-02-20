@@ -81,5 +81,5 @@ The resulting operations are then printed to the terminal using UART with the fo
 ### Memory Size Benchmarking
 |Hash|Width|Height|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
 |---|---|---|---|---|---|
-|SHA-256_192 (N24)|8|25|4,761|798|1442|
-|SHA-256 (N32)|8|25|5,097|798|1442|
+|SHA-256_192 (N24)|8|25|4,761|798|1,442|
+|SHA-256 (N32)|8|25|5,097|798|1,442|
