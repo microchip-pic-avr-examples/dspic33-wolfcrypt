@@ -4,42 +4,65 @@
     <img alt="Microchip Logo." src="../../images/microchip_logo_black_red.png">
 </picture>
 
-# dsPIC33C wolfCrypt Message Authentication Code (MAC) Example
+# dsPIC33C wolfCrypt Message Authentication Code (MAC) Generation Example Application
 
 ## Description
-This example application utilizes the wolfCrypt library to perform MAC operations using different sized input vectors. The following MAC algorithms are supported:
-- AES-CMAC
+
+This MPLAB® X project demonstrates MAC generation by using wolfCrypt APIs on a dsPIC33CK256MP508 device.
+
+## Licensing
+
+The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ck256mp508-aes.X/crypto/wolfssl/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt).
+
+## Project Setup
+
+See the [dsPIC33CK256MP508 README](../README.md) for software tools and hardware setup.
+
+### wolfCrypt Source
+
+The wolfCrypt files in this project use wolfssl v5.8.4-stable release to support the dsPIC33C device.
+
+### Project Configuration
+
+The `app_config.h` file is used to configure the project. The following options are available:
+
+| AES Key Size Enable | Algorithms  |
+| ---------------     | ----------- |
+| AES_128             | CMAC        |
+| AES_192             | CMAC        |
+| AES_256             | CMAC        |
 
 ## Running the Application
-1. Within MPLAB® X IDE, open the dspic33ck256mp508-mac.X application project.
-    - (Optional) To run all added test vectors uncomment the RUN_ALL_VECTORS definition on line 73 in mac/mac.X/app_mac.h
-2. Build and Program the application using MPLAB® X IDE.
-3. The printed information can be found on the serial COM port reading at a speed of 115200.
 
-## Application Results
+Open the project in MPLAB® X IDE. Build the project and program the device.
 
-### AES-CMAC
-The following information will be printed on the COM port for AES-CMAC algorithms:
-1. A header is displayed showing the used AES-CMAC algorithm and input message length.
-2. The expected MAC is printed out. This is the array that the output of the algorithm will be compared against.
-3. The result obtained from the operation is printed out.
-4. Success or Failure is printed out depending on the comparison between the two arrays.
-5. The number of cycles spent running the operation is printed out. This is obtained using the Timer module.
-6. The number of seconds spent running the operation is printed out. This value is obtained from the cycles spent running the operation.
+### Application Output
+
+The resulting operations are then printed to the terminal using UART with the following settings:
+
+| Setting           | Value  
+| -------           | -----  |
+| Baudrate          | 115200 |
+| Parity            | None   |
+| Data Size         | 8      |
+| Stop Bits         | 1      |
+| Flow Control Mode | None   |
 
 <img src="../../images/cmac_generation_output.jpg" alt="AES CMAC Output" width="750"/>
 
-## wolfCrypt APIs
+### Application Execution
 
-### AES-CMAC APIs
+The device will process the input vectors using the following APIs:
+
+#### AES-CMAC APIs
 
 * `wc_InitCmac` - Initializes the CMAC structure.
 * `wc_CmacUpdate` - Processes input data for a CMAC operation and updates the CMAC context.
 * `wc_CmacFinal` - Retrieves the final CMAC value.
 
-## Licensing
+### Test Vectors
 
-The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ck256mp508-mac.X/crypto/wolfssl/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt). 
+The NIST test vectors used in this project are found in the following [repo](https://github.com/usnistgov/ACVP-Server/tree/v1.1.0.40/gen-val/json-files/CMAC-AES-1.0).
 
 ## Benchmarking
 
