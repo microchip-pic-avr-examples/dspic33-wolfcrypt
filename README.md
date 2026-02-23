@@ -25,9 +25,9 @@ The following table provides the overview of Cryptographic Algorithms Support on
 
 ## dsPIC33 Cryptographic Algorithms Support Overview
 The following table provides the overview of Cryptographic Algorithms Support on dsPIC33 devices.
-- `Software` means the project is a pure wolfCrypt example application
-- `CAM 05346` represents and links to the Crypto Accelerator Module example applications which is a Microchip implemented hardware accelerator
-- The dsPIC33AK512MPS512 device contains the hardware Crypto Accelerator Module (CAM 05346) which was utilized within the LMS example application for its hash capabilities
+- `Software` represents projects that use wolfCrypt software implementations for cryptographic functions in the example applications
+- `CAM 05346` represents and links projects that use Microchip's hardware Crypto Accelerator Module integrated into the dsPIC33A device family
+- The LMS example application uses CAM hardware for its hash capabilities on dsPIC33A devices
 
 |Algorithm|Supported Actions|dsPIC33CK Family|dsPIC33AK Family|
 |---|---|---|---|
@@ -69,7 +69,6 @@ The benchmarking results are obtained by modifying the example application to re
 
 The benchmarking projects are configured to use the following:
 - Optimization level -Os
-  - Note: The example applications can run faster if using -O3, but lose the benefit of the size optimization.
 - Tools and versions as listed in the Software Tools section above
 
 ### Performance Benchmarking
@@ -77,7 +76,7 @@ The following benchmarking results were obtained while testing the wolfCrypt API
 
 Benchmarking parameters: Device clock speed set to maximum, i.e. 100 MHz for dsPIC33C devices and 200 MHz for dsPIC33A devices.
 
-|Algorithm|Parameters (sizes are in bytes)|dsPIC33CK Family (s)|dsPIC33AK Family (s)|
+|Algorithm|Parameters (sizes are in bytes)|dsPIC33CK256MP508 (time in s)|dsPIC33AK512MPS512 (time in s)|
 |----|----|----|----|
 |AES-CBC|Key Size: 32 bytes, IV Size: 16 bytes, Plaintext: 80 bytes, Direction: Encryption||0.000560|
 |AES-ECB|Key Size: 32 bytes, Plaintext: 80 bytes, Direction: Encryption||0.000550|
@@ -96,7 +95,7 @@ Flash size will vary based on size of the stored data inputs used with the libra
 
 All projects have the following compiler options:
 - Isolate each algorithm and input type into separately defined sections
-- Remove application only print statements and modules not required by the algorithm
+- Remove print statements and modules not required by the algorithm
 
 | Algorithm | Parameters | dsPIC33CK Family FLASH/RAM Static/RAM Stack (bytes) | dsPIC33AK Family FLASH/RAM Static/RAM Stack (bytes) 
 |----|----|----|----|
