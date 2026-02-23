@@ -69,6 +69,7 @@ The benchmarking results are obtained by modifying the example application to re
 
 The benchmarking projects are configured to use the following:
 - Optimization level -Os
+  - Note: The example applications can run faster if using -O3, but lose the benefit of the size optimization.
 - Tools and versions as listed in the Software Tools section above
 
 ### Performance Benchmarking
