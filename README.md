@@ -10,9 +10,9 @@
 dsPIC33 wolfCrypt Example Applications are a collection of MPLAB® X IDE projects to demonstrate cryptographic operations using wolfSSL's wolfCrypt software library. 
 
 ## dsPIC33 wolfCrypt Support
-The following table provides the overview of Cryptographic Algorithms Support on dsPIC33 devices for wolfSSL wolfCrypt APIs. Note: The dsPIC33AK512MPS512 device contains the hardware Crypto Accelerator Module (CAM 05346) which was utilized within the LMS example application for its hash capabilities.
+The following table provides the overview of Cryptographic Algorithms Support on dsPIC33 devices for wolfSSL wolfCrypt APIs. Note: The dsPIC33AK device family contains the hardware Crypto Accelerator Module (CAM 05346) which was utilized within the LMS example application for its hash capabilities.
 
-|Algorithm|Options|Modes|Supported Actions|dsPIC33CK|dsPIC33AK|
+|Algorithm|Options|Modes|Supported Actions|dsPIC33CK Family|dsPIC33AK Family|
 |---|---|---|---|---|---|
 |AES|Key Size (bits): 128, 192, 256|ECB, CBC|Encryption and Decryption|[Supported](./dspic33ck256mp508/aes/)||
 |MAC|Key Size (bits): 128, 192, 256|CMAC|Generation|[Supported](./dspic33ck256mp508/mac/)||
@@ -29,7 +29,7 @@ The following table provides the overview of Cryptographic Algorithms Support on
 - `CAM 05346` represents and links to the Crypto Accelerator Module example applications which is a Microchip implemented hardware accelerator
 - The dsPIC33AK512MPS512 device contains the hardware Crypto Accelerator Module (CAM 05346) which was utilized within the LMS example application for its hash capabilities
 
-|Algorithm|Supported Actions|dsPIC33CK|dsPIC33AK|
+|Algorithm|Supported Actions|dsPIC33CK Family|dsPIC33AK Family|
 |---|---|---|---|
 |AES|Encryption and Decryption|[Software](./dspic33ck256mp508/aes/)|[CAM 05346](https://github.com/microchip-pic-avr-examples/dspic33a-crypto-accelerator-module/tree/main/dspic33ak512mps512/aes)|
 |MAC|Generation|[Software](./dspic33ck256mp508/mac/)|[CAM 05346](https://github.com/microchip-pic-avr-examples/dspic33a-crypto-accelerator-module/tree/main/dspic33ak512mps512/mac)|
@@ -76,14 +76,14 @@ The following benchmarking results were obtained while testing the wolfCrypt API
 
 Benchmarking parameters: Device clock speed set to maximum, i.e. 100 MHz for dsPIC33C devices and 200 MHz for dsPIC33A devices.
 
-|Algorithm|Parameters (sizes are in bytes)|dsPIC33AK512MPS512 Performance (seconds)|dsPIC33CK256MP508 Performance (seconds)|
+|Algorithm|Parameters (sizes are in bytes)|dsPIC33CK Family (s)|dsPIC33AK Family (s)|
 |----|----|----|----|
 |AES-CBC|Key Size: 32 bytes, IV Size: 16 bytes, Plaintext: 80 bytes, Direction: Encryption||0.000560|
 |AES-ECB|Key Size: 32 bytes, Plaintext: 80 bytes, Direction: Encryption||0.000550|
 |ECDSA|Curve: P384||17.086748|
 |LMS|SHA-256, Width: 8, Height: 25|0.081927|1.203449|
 |MAC-CMAC|Key Size: 32 bytes, Plaintext Size: 532 bytes, MAC Size: 16 bytes||0.003734|
-|ML-DSA|Dilithium 87|0.0700|0.7263|
+|ML-DSA|Dilithium 87|0.047319|0.7263|
 |ML-KEM|ML-KEM 1024|0.011420||
 |RSA|Key Size: 3072 bits, Padding types: PKCS#1 v1.5||2.518086|
 |SHA2|SHA Type: SHA-512|0.000091|0.000999|
@@ -97,18 +97,15 @@ All projects have the following compiler options:
 - Isolate each algorithm and input type into separately defined sections
 - Remove application only print statements and modules not required by the algorithm
 
-| Algorithm | Device | Parameters | FLASH (bytes) | RAM Static (bytes) | RAM Stack (bytes)|
-|----|----|----|----|----|----|
-|AES|dsPIC33CK256MP508|All Modes (ECB and CBC), Encrypt and Decrypt Enabled|10,644|480|116|
-|ECDSA|dsPIC33CK256MP508|Curve: P384|11,966|204|6,370|
-|LMS|dsPIC33AK512MPS512|SHA-256, Width: 8, Height: 25|14,688|78|1,852|
-|LMS|dsPIC33CK256MP508|SHA-256, Width: 8, Height: 25|5,097|798|1,442|
-|MAC-CMAC|dsPIC33CK256MP508|Key Size: 32 bytes, Plaintext Size: 532 bytes, MAC Size: 16 bytes|9,247|528|166|
-|ML-DSA|dsPIC33AK512MPS512|Dilithium 87, Message Size: 4,616 bytes|40,536|56|1,192|
-|ML-DSA|dsPIC33CK256MP508|Dilithium 87, Message Size: 4,616 bytes|19,858|138|964|
-|ML-KEM|dsPIC33AK512MPS512|ML-KEM 1024|32,576|98|20,204|
-|RSA|dsPIC33CK256MP508|Key Size: 3072 bits, Padding types: PKCS#1 v1.5|7,774|140|5,728|
-|SHA2|dsPIC33AK512MPS512|SHA Type: SHA-512|21,340|32|1,484|
-|SHA2|dsPIC33CK256MP508|SHA Type: SHA-512|12,665|122|962|
-|SHA3|dsPIC33AK512MPS512|SHA Type: SHA3-512|6,888|32|592|
-|SHAKE|dsPIC33AK512MPS512|SHAKE Type: SHAKE 256|6,760|52|528|
+| Algorithm | Parameters | dsPIC33CK Family FLASH/RAM Static/RAM Stack (bytes) | dsPIC33AK Family FLASH/RAM Static/RAM Stack (bytes) 
+|----|----|----|----|
+|AES|All Modes (ECB and CBC), Encrypt and Decrypt Enabled|10,644 / 480 / 116||
+|ECDSA|Curve: P384|11,966 / 204 / 6,370||
+|LMS|SHA-256, Width: 8, Height: 25|5,097 / 798 / 1,442|14,688 / 78 / 1,852|
+|MAC-CMAC|Key Size: 32 bytes, Plaintext Size: 532 bytes, MAC Size: 16 bytes|9,247 / 528 / 166||
+|ML-DSA|Dilithium 87, Message Size: 4,616 bytes|19,858 / 138 / 964|40,536 / 56 / 1,192|
+|ML-KEM|ML-KEM 1024||32,576 / 98 / 20,204|
+|RSA|Key Size: 3072 bits, Padding types: PKCS#1 v1.5|7,774 / 140 / 5,728||
+|SHA2|SHA Type: SHA-512|12,665 / 122 / 962|21,340 / 32 / 1,484|
+|SHA3|SHA Type: SHA3-512||6,888 / 32 / 592|
+|SHAKE|SHAKE Type: SHAKE 256||6,760 / 52 / 528|

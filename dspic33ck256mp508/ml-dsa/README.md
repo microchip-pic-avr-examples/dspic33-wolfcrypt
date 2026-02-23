@@ -8,7 +8,7 @@
 
 ## Decription
 
-This MPLAB® X project demonstrates ML-DSA Verify using dilithium wolfCrypt APIs on a dsPIC33CK256MP508 device.
+This MPLAB® X project demonstrates ML-DSA Verify using wolfCrypt APIs on a dsPIC33CK256MP508 device.
 
 ## Licensing
 
@@ -18,11 +18,7 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 
 See the [dsPIC33CK256MP508 README](../README.md) for software tools and hardware setup.
 
-### wolfCrypt Source
-
-The wolfCrypt files in this project use wolfssl v5.8.4-stable release with edits to support the dsPIC33C device.
-
-### Edits that were required for dsPIC33C support
+### wolfCrypt Source Edits to support dsPIC33C
 
 1. `crypto\wolfssl\wolfssl\wolfcrypt\dilithium.h`
 
@@ -110,29 +106,7 @@ The wolfCrypt files in this project use wolfssl v5.8.4-stable release with edits
                                    ((sword32)s[9] << 12));
     ```
 
-### Project Configuration
-
-The `app_config.h` file is used to configure the project. Due to device memory constraints, use caution when enabling more than one configuration at a time. The following options using Dilithium are available:
-
-- ML_DSA_44 
-- ML_DSA_65
-- ML_DSA_87
-
-## Running the Application
-
-### Application Output
-
-The resulting operations are then printed to the terminal using UART with the following settings:
-
-| Setting           | Value  
-| -------           | -----  |
-| Baudrate          | 115200 |
-| Parity            | None   |
-| Data Size         | 8      |
-| Stop Bits         | 1      |
-| Flow Control Mode | None   |
-
-### Input Data Usage
+### Input Vector FIPS-204
 
 The test vectors in this example application come from the NIST defined public keys, messages and signature values.
 - These values are raw data inputs with no encoding. 
@@ -152,6 +126,30 @@ If another tool is used to generate a signature it may encode the message by def
         dilithium_key* key
     );
     ```
+
+### Project Configuration
+
+The `app_config.h` file is used to configure the project. Due to device memory constraints, use caution when enabling more than one configuration at a time. The following options using Dilithium are available:
+
+- ML_DSA_44 
+- ML_DSA_65
+- ML_DSA_87
+
+## Running the Application
+
+Open the project in MPLAB® X IDE. Build the project and program the device.
+
+### Application Output
+
+The resulting operations are then printed to the terminal using UART with the following settings:
+
+| Setting           | Value  
+| -------           | -----  |
+| Baudrate          | 115200 |
+| Parity            | None   |
+| Data Size         | 8      |
+| Stop Bits         | 1      |
+| Flow Control Mode | None   |
 
 ## Benchmarking
 

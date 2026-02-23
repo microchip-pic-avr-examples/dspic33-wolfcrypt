@@ -18,9 +18,9 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 
 See the [dsPIC33AK512MPS512 README](../README.md) for software tools and hardware setup.
 
-### wolfCrypt Source
+### Test Vectors
 
-The wolfCrypt files in this project use wolfssl v5.8.4-stable release to support the dsPIC33A device.
+The NIST test vectors used in this project are found in the the NIST ACVP Server's [SHA3 folders](https://github.com/usnistgov/ACVP-Server/tree/v1.1.0.40/gen-val/json-files).
 
 ### Project Configuration
 
@@ -49,20 +49,6 @@ The resulting verification status is then printed to the terminal using UART wit
 | Data Size         | 8      |
 | Stop Bits         | 1      |
 | Flow Control Mode | None   |
-
-### Application Execution
-
-The device will process the configured test vector using the following APIs:
-
-#### SHA3 Hash Digest API's
-
-* `wc_InitSha3_224, wc_InitSha3_256, wc_InitSha3_384, wc_InitSha3_512` - Initializes the SHA structure.
-* `wc_Sha3_224_Update, wc_Sha3_256_Update, wc_Sha3_384_Update, wc_Sha3_512_Update` - Runs the SHA digest generation.
-* `wc_Sha3_224_Final, wc_Sha3_256_Final, wc_Sha3_384_Final, wc_Sha3_512_Final` - Retrieves the final digest calculated by SHA.
-
-### Test Vectors
-
-The NIST test vectors used in this project are found in the the NIST ACVP Server's [SHA3 folders](https://github.com/usnistgov/ACVP-Server/tree/v1.1.0.40/gen-val/json-files).
 
 ## Benchmarking
 

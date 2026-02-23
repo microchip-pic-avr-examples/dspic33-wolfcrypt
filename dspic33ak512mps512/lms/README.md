@@ -18,11 +18,7 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 
 See the [dsPIC33AK512MPS512 README](../README.md) for software tools and hardware setup.
 
-### wolfCrypt Source
-
-The wolfCrypt files in this project use wolfssl v5.8.4-stable release with edits to support the dsPIC33A device.
-
-### Edits that were required for dsPIC33A support
+### wolfCrypt Source Edits to support dsPIC33A
 
 1. `crypto\wolfssl\wolfssl\wolfcrypt\sha256.h`
 
@@ -126,8 +122,7 @@ The `app_config.h` file is used to configure the project. Due to device memory c
 
 ## Running the Application
 
-### Input Vector Alignment
-The input vector signatures are aligned to 4-byte boundaries. This is required to function. Alternatively, the wolfCrypt library can be configured to handle memory alignment. More information can be found within the FAQ README at the top level of this directory.
+Open the project in MPLAB® X IDE. Build the project and program the device.
 
 ### Application Output
 
@@ -147,7 +142,7 @@ The resulting operations are then printed to the terminal using UART with the fo
 |Hash|Width|Height|Verification time (Seconds)|
 |---|---|---|---|
 |SHA-256_192 (N24)|8|25|0.068221|
-|SHA-256 (N32)|8|25|0.081927|
+|SHA-256 (N32)|8|25|0.082419|
 
 ### Memory Size Benchmarking
 |Hash|Width|Height|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|

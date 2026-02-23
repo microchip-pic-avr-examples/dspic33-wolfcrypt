@@ -18,9 +18,9 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 
 See the [dsPIC33CK256MP508 README](../README.md) for software tools and hardware setup.
 
-### wolfCrypt Source
+### Test Vectors
 
-The wolfCrypt files in this project use wolfssl v5.8.4-stable release to support the dsPIC33C device.
+The NIST test vectors used in this project are found at the following [repo](https://github.com/usnistgov/ACVP-Server/blob/v1.1.0.40/gen-val/json-files/RSA-SigVer-FIPS186-5/internalProjection.json).
 
 ### Project Configuration
 
@@ -45,23 +45,6 @@ The result data is compared to expected output. The final status is then printed
 | Data Size         | 8      |
 | Stop Bits         | 1      |
 | Flow Control Mode | None   |
-
-### Application Execution
-
-The device will process the configured test vector using the following APIs:
-
-#### RSA PKCS#1 v1.5 Signature Verification
-
-* `wc_InitRsaKey` - Initializes the RSA key structure.
-* `mp_read_unsigned_bin` - Initializes the RSA key structure with the RSA modulus.
-* `mp_set_int` - Initializes the RSA key structure with the public exponent.
-* `wc_RsaSSL_Verify` - Processes the signature and returns the decrypted output.
-
-<img src="../../images/rsa_3072_pkcs_sig_ver_output.jpg" height="350" alt="RSA 3072 PKCS#1 v1.5 Signature Verification Output"/>
-
-### Test Vectors
-
-The NIST test vectors used in this project are found at the following [repo](https://github.com/usnistgov/ACVP-Server/blob/v1.1.0.40/gen-val/json-files/RSA-SigVer-FIPS186-5/internalProjection.json).
 
 ## Benchmarking
 
