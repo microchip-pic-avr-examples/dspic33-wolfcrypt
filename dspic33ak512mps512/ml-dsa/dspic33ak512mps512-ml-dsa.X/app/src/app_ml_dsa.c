@@ -37,6 +37,8 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
 
     static void MLDSA_Verify(ML_DSA_SIG_VER_TEST_VECTOR* vector, byte level)
     {
+        int ticksToProcess = 0;
+        
         headerOutputPrint(vector->vectorInformation);
 
         int status = 0;
@@ -58,8 +60,8 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
                 &status
             );
 
-        benchmarkingEnd();
-
+        benchmarkingEnd(&ticksToProcess);
+        benchmarkingDataPrint(ticksToProcess);
         
         if(error == 0)
         {
