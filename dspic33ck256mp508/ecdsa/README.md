@@ -18,9 +18,9 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 
 See the [dsPIC33CK256MP508 README](../README.md) for software tools and hardware setup.
 
-### wolfCrypt Source
+### Test Vectors
 
-The wolfCrypt files in this project use wolfssl v5.8.4-stable release to support the dsPIC33C device.
+The NIST test vectors used in this project are found in the following [repo](https://github.com/usnistgov/ACVP-Server/blob/v1.1.0.40/gen-val/json-files/ECDSA-SigVer-1.0/internalProjection.json).
 
 ### Project Configuration
 
@@ -46,22 +46,6 @@ The resulting verification status is then printed to the terminal using UART wit
 | Data Size         | 8      |
 | Stop Bits         | 1      |
 | Flow Control Mode | None   |
-
-<img src="../../images/ecdsa_ecc_verify_output.jpg" alt="ECDSA ECC Verify output"/>
-
-### Application Execution
-
-The device will process the configured test vector using the following APIs:
-
-#### ECDSA Signature Verification
-
-* `wc_ecc_init` - Initializes the ECC key structure.
-* `wc_ecc_import_unsigned` - Further initializes the ECC key structure with the key information.
-* `wc_ecc_verify_hash` - Verifies the hash and signature against the selected curve.
-
-### Test Vectors
-
-The NIST test vectors used in this project are found in the following [repo](https://github.com/usnistgov/ACVP-Server/blob/v1.1.0.40/gen-val/json-files/ECDSA-SigVer-1.0/internalProjection.json).
 
 ## Benchmarking
 

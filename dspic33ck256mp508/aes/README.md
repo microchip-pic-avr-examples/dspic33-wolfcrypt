@@ -4,7 +4,7 @@
     <img alt="Microchip Logo." src="../../images/microchip_logo_black_red.png">
 </picture>
 
-# dsPIC33C Advanced Encryption Standard (AES) Example Application
+# dsPIC33C Advanced Encryption Standard (AES) Encryption/Decryption Example Application
 
 ## Description
 
@@ -18,9 +18,9 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 
 See the [dsPIC33CK256MP508 README](../README.md) for software tools and hardware setup.
 
-### wolfCrypt Source
+### Test Vectors
 
-The wolfCrypt files in this project use wolfssl v5.8.4-stable release to support the dsPIC33C device.
+The NIST test vectors used in this project are found in the following [repo](https://github.com/usnistgov/ACVP-Server/blob/v1.1.0.40/gen-val/json-files/).
 
 ### Project Configuration
 
@@ -47,28 +47,6 @@ The resulting operations are then printed to the terminal using UART with the fo
 | Data Size         | 8      |
 | Stop Bits         | 1      |
 | Flow Control Mode | None   |
-
-### Application Execution
-
-The device will process the input vectors using the following APIs:
-
-#### AES-ECB APIs
-
-* `wc_AesInit` - Initializes the AES structure.
-* `wc_AesSetKey` - Further initializes the AES structure with the key information.
-* `wc_AesEcbEncrypt` - Encrypts the given plaintext using ECB mode.
-* `wc_AesEcbDecrypt` - Decrypts the given ciphertext using ECB mode.
-
-#### AES-CBC APIs
-
-* `wc_AesInit` - Initializes the AES structure.
-* `wc_AesSetKey` - Further initializes the AES structure with the key and initialization vector information.
-* `wc_AesCbcEncrypt` - Encrypts the given plaintext using CBC mode.
-* `wc_AesCbcDecrypt` - Decrypts the given ciphertext using CBC mode.
-
-### Test Vectors
-
-The NIST test vectors used in this project are found in the following [repo](https://github.com/usnistgov/ACVP-Server/blob/v1.1.0.40/gen-val/json-files/).
 
 ## Benchmarking
 

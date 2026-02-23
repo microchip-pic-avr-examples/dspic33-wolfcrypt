@@ -18,9 +18,9 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 
 See the [dsPIC33AK512MPS512 README](../README.md) for software tools and hardware setup.
 
-### wolfCrypt Source
+### Test Vectors
 
-The wolfCrypt files in this project use wolfssl v5.8.4-stable release to support the dsPIC33A device.
+The NIST test vectors used in this project are found in the the NIST ACVP Server's [SHAKE folders](https://github.com/usnistgov/ACVP-Server/tree/v1.1.0.40/gen-val/json-files).
 
 ### Project Configuration
 
@@ -47,20 +47,6 @@ The resulting verification status is then printed to the terminal using UART wit
 | Data Size         | 8      |
 | Stop Bits         | 1      |
 | Flow Control Mode | None   |
-
-### Application Execution
-
-The device will process the configured test vector using the following APIs:
-
-#### SHAKE Hash Digest API's
-
-* `wc_InitShake128, wc_InitShake256` - Initializes the SHAKE structure.
-* `wc_Shake128_Update, wc_Shake256_Update` - Runs the SHAKE digest generation.
-* `wc_Shake128_Final, wc_Shake256_Final` - Retrieves the final digest calculated by SHAKE.
-
-### Test Vectors
-
-The NIST test vectors used in this project are found in the the NIST ACVP Server's [SHAKE folders](https://github.com/usnistgov/ACVP-Server/tree/v1.1.0.40/gen-val/json-files).
 
 ## Benchmarking
 

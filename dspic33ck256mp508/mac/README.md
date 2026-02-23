@@ -18,9 +18,9 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 
 See the [dsPIC33CK256MP508 README](../README.md) for software tools and hardware setup.
 
-### wolfCrypt Source
+### Test Vectors
 
-The wolfCrypt files in this project use wolfssl v5.8.4-stable release to support the dsPIC33C device.
+The NIST test vectors used in this project are found in the following [repo](https://github.com/usnistgov/ACVP-Server/tree/v1.1.0.40/gen-val/json-files/CMAC-AES-1.0).
 
 ### Project Configuration
 
@@ -47,22 +47,6 @@ The resulting operations are then printed to the terminal using UART with the fo
 | Data Size         | 8      |
 | Stop Bits         | 1      |
 | Flow Control Mode | None   |
-
-<img src="../../images/cmac_generation_output.jpg" alt="AES CMAC Output" width="750"/>
-
-### Application Execution
-
-The device will process the input vectors using the following APIs:
-
-#### AES-CMAC APIs
-
-* `wc_InitCmac` - Initializes the CMAC structure.
-* `wc_CmacUpdate` - Processes input data for a CMAC operation and updates the CMAC context.
-* `wc_CmacFinal` - Retrieves the final CMAC value.
-
-### Test Vectors
-
-The NIST test vectors used in this project are found in the following [repo](https://github.com/usnistgov/ACVP-Server/tree/v1.1.0.40/gen-val/json-files/CMAC-AES-1.0).
 
 ## Benchmarking
 
