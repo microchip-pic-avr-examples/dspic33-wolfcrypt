@@ -105,12 +105,12 @@ All projects have the following compiler options:
     <th colspan="3">dsPIC33AK512MPS512</th>
   </tr>
   <tr>
-    <th>FLASH (bytes)</th>
-    <th>RAM Static (bytes)</th>
-    <th>RAM Stack (bytes)</th>
-    <th>FLASH (bytes)</th>
-    <th>RAM Static (bytes)</th>
-    <th>RAM Stack (bytes)</th>
+    <th>FLASH <br>(bytes)</th>
+    <th>RAM Static <br>(bytes)</th>
+    <th>RAM Stack <br>(bytes)</th>
+    <th>FLASH <br>(bytes)</th>
+    <th>RAM Static <br>(bytes)</th>
+    <th>RAM Stack <br>(bytes)</th>
   </tr>
   <tr>
     <td>AES</td>
