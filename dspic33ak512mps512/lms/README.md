@@ -4,19 +4,21 @@
     <img alt="Microchip Logo." src="../../images/microchip_logo_black_red.png">
 </picture>
 
-# dsPIC33A wolfCrypt PQC LMS (Leighton-Micali Hash-Based Signatures) Verification
+# dsPIC33A wolfCrypt Leighton-Micali Hash-Based Signatures (LMS) Verification Example Application
 
-## Summary
+## Description
 
-This MPLAB® X project demonstrates LMS signature verification by using wolfCrypt APIs and the pre-compiled Crypto Accelerator Module (CAM) Hardware Driver.
+This MPLAB® X project demonstrates LMS signature verification using wolfCrypt APIs and the pre-compiled Crypto Accelerator Module (CAM) Hardware Driver on a dsPIC33AK512MPS512 device.
 
-## Project Set Up
+## Licensing
 
-### wolfCrypt Source
+The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ak512mps512-lms.X/crypto/wolfssl/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt).
 
-The wolfCrypt files in this project use wolfssl v5.8.4-stable release with edits to support the dsPIC33A device.
+## Project Setup
 
-### Edits that were required for dsPIC33A support
+See the [dsPIC33AK512MPS512 README](../README.md) for software tools and hardware setup.
+
+### wolfCrypt Source Edits to support dsPIC33A
 
 1. `crypto\wolfssl\wolfssl\wolfcrypt\sha256.h`
 
@@ -109,9 +111,7 @@ The wolfCrypt files in this project use wolfssl v5.8.4-stable release with edits
     #endif /* !WC_LMS_FULL_HASH */
     ```
 
-## Running the Demo
-
-### Demo Configuration
+### Project Configuration
 
 The `app_config.h` file is used to configure the project. Due to device memory constraints, use caution when enabling more than one configuration at a time. The following options are available:
 
@@ -120,26 +120,31 @@ The `app_config.h` file is used to configure the project. Due to device memory c
 |SHA-256_192 (N24) | 1, 2, 4, or 8 | 5, 10, 15, 20, or 25 |
 |SHA-256 (N32)     | 1, 2, 4, or 8 | 5, 10, 15, 20, or 25 |
 
-#### Input Vector Alignment
-The input vector signatures are aligned to 4-byte boundaries. This is required to function. Alternatively, the wolfCrypt library can be configured to handle memory alignment. More information can be found within the FAQ README at the top level of this directory.
+## Running the Application
 
-### Demo Output
+Open the project in MPLAB® X IDE. Build the project and program the device.
 
-The device will process the configured test vector using the wolfCrypt `wc_LmsKey_Verify` API. The test parameters and verification status will be printed to the terminal listening at a baud rate of 115200.
+### Application Output
 
-## Licensing
+The resulting operations are then printed to the terminal using UART with the following settings:
 
-The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ak512mps512-lms.X/crypto/wolfssl/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt).
+| Setting           | Value  
+| -------           | -----  |
+| Baudrate          | 115200 |
+| Parity            | None   |
+| Data Size         | 8      |
+| Stop Bits         | 1      |
+| Flow Control Mode | None   |
 
-## Benchmarking for LMS Verification
+## Benchmarking
 
-### Verification Time
+### Performance Benchmarking
 |Hash|Width|Height|Verification time (Seconds)|
 |---|---|---|---|
 |SHA-256_192 (N24)|8|25|0.068221|
-|SHA-256 (N32)|8|25|0.081927|
+|SHA-256 (N32)|8|25|0.082419|
 
-### Verification Size
+### Memory Size Benchmarking
 |Hash|Width|Height|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
 |---|---|---|---|---|---|
 |SHA-256_192 (N24)|8|25|14,016|78|1,852|

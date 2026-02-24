@@ -4,19 +4,22 @@
     <img alt="Microchip Logo." src="../../../images/microchip_logo_black_red.png">
 </picture>
 
-# dsPIC33C PQC ML-DSA (Module-Lattice-Based Digital Signature) Verification
+# dsPIC33C Module-Lattice-Based Digital Signature (ML-DSA) Verification Example Application
 
-## Summary
+## Decription
 
-This MPLAB® X project demonstrates ML-DSA Verify using dilithium wolfCrypt APIs to verify an input signature and message.
+This MPLAB® X project demonstrates ML-DSA Verify using wolfCrypt APIs on a dsPIC33CK256MP508 device.
 
-## Project Set Up
+## Licensing
 
-### wolfCrypt Source
+The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ak512mps512-ml-dsa.X/crypto/wolfssl/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt).
 
-The wolfCrypt files in this project use wolfssl v5.8.4-stable release with edits to support the dsPIC33C device.
+## Project Setup
 
-##### Edits that were required for dsPIC33C support
+See the [dsPIC33CK256MP508 README](../README.md) for software tools and hardware setup.
+
+### wolfCrypt Source Edits to support dsPIC33C
+
 1. `crypto\wolfssl\wolfssl\wolfcrypt\dilithium.h`
 
     Line 212: Cast the 1 literal to be of type sword32.
@@ -103,22 +106,9 @@ The wolfCrypt files in this project use wolfssl v5.8.4-stable release with edits
                                    ((sword32)s[9] << 12));
     ```
 
-## Running the Demo
+### Input Vector FIPS-204
 
-### Demo Configuration
-
-The `app_config.h` file is used to configure the project. Due to device memory constraints, use caution when enabling more than one configuration at a time. The following options using Dilithium are available:
-
-- ML_DSA_44 
-- ML_DSA_65
-- ML_DSA_87
-
-### Demo Output
-
-The device will process the configured test vector using the wolfCrypt `wc_MlDsaKey_Verify` API. The test parameters and verification status will be printed to the terminal listening at a baud rate of 115200.
-
-## Input Data Usage
-The test vectors in this demo come from the NIST defined public keys, messages and signature values.
+The test vectors in this example application come from the NIST defined public keys, messages and signature values.
 - These values are raw data inputs with no encoding. 
 
 If another tool is used to generate a signature it may encode the message by default following [FIPS-204](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.204.pdf) (Algorithm 2 Step 10)
@@ -136,19 +126,41 @@ If another tool is used to generate a signature it may encode the message by def
         dilithium_key* key
     );
     ```
-    
-## Licensing
 
-The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ck256mp508-ml-dsa.X/crypto/wolfssl/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt). 
+### Project Configuration
 
-#### Verification Time
+The `app_config.h` file is used to configure the project. Due to device memory constraints, use caution when enabling more than one configuration at a time. The following options using Dilithium are available:
+
+- ML_DSA_44 
+- ML_DSA_65
+- ML_DSA_87
+
+## Running the Application
+
+Open the project in MPLAB® X IDE. Build the project and program the device.
+
+### Application Output
+
+The resulting operations are then printed to the terminal using UART with the following settings:
+
+| Setting           | Value  
+| -------           | -----  |
+| Baudrate          | 115200 |
+| Parity            | None   |
+| Data Size         | 8      |
+| Stop Bits         | 1      |
+| Flow Control Mode | None   |
+
+## Benchmarking
+
+### Performance Benchmarking
 |ML-DSA type |Verification time (Seconds)|
 |------------|------|
 |Dilithium 44|0.2963|
 |Dilithium 65|0.4870|
 |Dilithium 87|0.7263|
 
-#### Verification Size
+### Memory Size Benchmarking
 |ML-DSA type|Message Size (bytes)|Signature Size (bytes)|Key Size (bytes)|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
 |---|---|---|---|---|---|---|
 |Dilithium 44|4,553|2,420|1,312|18,083|138|964|
