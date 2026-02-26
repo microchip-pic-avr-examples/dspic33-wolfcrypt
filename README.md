@@ -102,14 +102,12 @@ All projects have the following compiler options:
     <th rowspan="2">Algorithm</th>
     <th rowspan="2">Parameters</th>
     <th colspan="3">dsPIC33CK256MP508</th>
-    <th></th>
     <th colspan="3">dsPIC33AK512MPS512</th>
   </tr>
   <tr>
     <th>FLASH <br>(bytes)</th>
     <th>RAM <br>Static <br>(bytes)</th>
     <th>RAM <br>Stack <br>(bytes)</th>
-    <th></th>
     <th>FLASH <br>(bytes)</th>
     <th>RAM <br>Static <br>(bytes)</th>
     <th>RAM <br>Stack <br>(bytes)</th>
@@ -118,70 +116,60 @@ All projects have the following compiler options:
     <td>AES</td>
     <td>All Modes (ECB and CBC), Encrypt and Decrypt Enabled</td>
     <td>10,644</td><td>480</td><td>116</td>
-    <td></td>
     <td></td><td></td><td></td>
   </tr>
   <tr>
     <td>ECDSA</td>
     <td>Curve: P384</td>
     <td>11,966</td><td>204</td><td>6,370</td>
-    <td></td>
     <td></td><td></td><td></td>
   </tr>
   <tr>
     <td>LMS</td>
     <td>SHA-256, Width: 8, Height: 25</td>
     <td>5,097</td><td>798</td><td>1,442</td>
-    <td></td>
     <td>14,688</td><td>78</td><td>1,852</td>
   </tr>
   <tr>
     <td>MAC-CMAC</td>
     <td>Key Size: 32 bytes, Plaintext Size: 532 bytes, MAC Size: 16 bytes</td>
     <td>9,247</td><td>528</td><td>166</td>
-    <td></td>
     <td></td><td></td><td></td>
   </tr>
   <tr>
     <td>ML-DSA</td>
     <td>Dilithium 87, Message Size: 4,616 bytes</td>
     <td>19,858</td><td>138</td><td>964</td>
-    <td></td>
     <td>40,536</td><td>56</td><td>1,192</td>
   </tr>
   <tr>
     <td>ML-KEM</td>
     <td>ML-KEM 1024</td>
     <td></td><td></td><td></td>
-    <td></td>
     <td>32,576</td><td>98</td><td>20,204</td>
   </tr>
   <tr>
     <td>RSA</td>
     <td>Key Size: 3072 bits, Padding types: PKCS#1 v1.5</td>
     <td>7,774</td><td>140</td><td>5,728</td>
-    <td></td>
     <td></td><td></td><td></td>
   </tr>
   <tr>
     <td>SHA2</td>
     <td>SHA Type: SHA-512</td>
     <td>12,665</td><td>122</td><td>962</td>
-    <td></td>
     <td>21,340</td><td>32</td><td>1,484</td>
   </tr>
   <tr>
     <td>SHA3</td>
     <td>SHA Type: SHA3-512</td>
     <td></td><td></td><td></td>
-    <td></td>
     <td>6,888</td><td>32</td><td>592</td>
   </tr>
   <tr>
     <td>SHAKE</td>
     <td>SHAKE Type: SHAKE 256</td>
     <td></td><td></td><td></td>
-    <td></td>
     <td>6,760</td><td>52</td><td>528</td>
   </tr>
 </table>
