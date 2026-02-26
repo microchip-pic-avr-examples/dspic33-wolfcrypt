@@ -58,10 +58,7 @@
          "LMS",
          "ML-DSA",
          "ML-KEM",
-         "SHA-224",
-         "SHA-256",
-         "SHA-384",
-         "SHA-512",
+         "SHA",
          "RSA",
          "ECDSA",
          "AES"
