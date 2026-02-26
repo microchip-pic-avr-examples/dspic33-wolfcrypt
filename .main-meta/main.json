@@ -54,27 +54,14 @@
       ],
       "keywords":[
          "Cryptography",
-         "Cryptographic Standard",
-         "ECC",
          "PQC",
          "LMS",
          "ML-DSA",
-         "Dilithium",
-         "Digital Signature",
          "ML-KEM",
-         "KEM",
-         "Kyber",
-         "SHA-224",
-         "SHA-256",
-         "SHA-384",
-         "SHA-512",
+         "SHA",
          "RSA",
          "ECDSA",
-         "DSA",
-         "AES",
-         "AES-128",
-         "AES-192",
-         "AES-256"
+         "AES"
       ]
    }
 }
