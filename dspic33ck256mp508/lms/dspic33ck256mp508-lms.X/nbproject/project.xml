@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>com.microchip.mplab.nbide.embedded.makeproject</type>
+    <configuration>
+        <data xmlns="http://www.netbeans.org/ns/make-project/1">
+            <name>dspic33ck256mp508-lms</name>
+            <creation-uuid>5ce40053-f98e-4733-adb8-ee226537239e</creation-uuid>
+            <make-project-type>0</make-project-type>
+            <sourceEncoding>ISO-8859-1</sourceEncoding>
+            <make-dep-projects/>
+            <sourceRootList>
+                <sourceRootElem>.</sourceRootElem>
+                <sourceRootElem>wolfcrypt</sourceRootElem>
+                <sourceRootElem>wolfssl/wolfcrypt</sourceRootElem>
+                <sourceRootElem>wolfssl/wrapper</sourceRootElem>
+                <sourceRootElem>test_vectors/sha256</sourceRootElem>
+                <sourceRootElem>hal/src</sourceRootElem>
+                <sourceRootElem>app</sourceRootElem>
+                <sourceRootElem>crypto/wolfssl/wolfcrypt</sourceRootElem>
+                <sourceRootElem>crypto/test_vectors</sourceRootElem>
+                <sourceRootElem>test_vectors/sha</sourceRootElem>
+                <sourceRootElem>test_vectors/lms/src</sourceRootElem>
+                <sourceRootElem>crypto/sha</sourceRootElem>
+                <sourceRootElem>crypto/wolfssl/wolfssl/wolfcrypt</sourceRootElem>
+            </sourceRootList>
+            <confList>
+                <confElem>
+                    <name>default</name>
+                    <type>2</type>
+                </confElem>
+            </confList>
+            <formatting>
+                <project-formatting-style>false</project-formatting-style>
+            </formatting>
+        </data>
+    </configuration>
+</project>

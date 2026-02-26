@@ -1,0 +1,59 @@
+{
+    "dspic33ck256mp508": {
+        "aes": {
+            "rootFolder": "aes",
+            "projectName": "dspic33ck256mp508-aes"
+        },
+        "ecdsa": {
+            "rootFolder": "ecdsa",
+            "projectName": "dspic33ck256mp508-ecdsa"
+        },
+        "lms": {
+            "rootFolder": "lms",
+            "projectName": "dspic33ck256mp508-lms"
+        },
+        "mac": {
+            "rootFolder": "mac",
+            "projectName": "dspic33ck256mp508-mac"
+        },
+        "ml-dsa": {
+            "rootFolder": "ml-dsa",
+            "projectName": "dspic33ck256mp508-ml-dsa"
+        },
+        "rsa": {
+            "rootFolder": "rsa",
+            "projectName": "dspic33ck256mp508-rsa"
+        },
+        "sha2": {
+            "rootFolder": "sha2",
+            "projectName": "dspic33ck256mp508-sha2"
+        }
+    },
+    "dspic33ak512mps512": {
+        "lms": {
+            "rootFolder": "lms",
+            "projectName": "dspic33ak512mps512-lms",
+            "hasCamSupport": true
+        },
+        "ml-dsa": {
+            "rootFolder": "ml-dsa",
+            "projectName": "dspic33ak512mps512-ml-dsa"
+        },
+        "ml-kem": {
+            "rootFolder": "ml-kem",
+            "projectName": "dspic33ak512mps512-ml-kem"
+        },
+        "sha2": {
+            "rootFolder": "sha2",
+            "projectName": "dspic33ak512mps512-sha2"
+        },
+        "sha3": {
+            "rootFolder": "sha3",
+            "projectName": "dspic33ak512mps512-sha3"
+        },
+        "shake": {
+            "rootFolder": "shake",
+            "projectName": "dspic33ak512mps512-shake"
+        }
+    }
+}
