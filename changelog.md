@@ -1,6 +1,6 @@
 # dspic33-wolfcrypt v1.0.1
 ### Release Highlights
-Hotfix for tables and images within the README documentation
+Hotfix to correct benchmarking numbers and table/image rendering within the README documentation
 
 # dspic33-wolfcrypt v1.0.0
 ### Release Highlights
