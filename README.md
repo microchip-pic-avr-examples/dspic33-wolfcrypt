@@ -4,10 +4,10 @@
     <img alt="Microchip Logo." src="images/microchip_logo_black_red.png">
 </picture>
 
-# dsPIC33 wolfCrypt Example Applications
+# dsPIC33 Post-Quantum Cryptography (PQC) and Classical Cryptography Example Applications
 
 ## Description
-dsPIC33 wolfCrypt Example Applications are a collection of MPLAB® X IDE projects to demonstrate cryptographic operations using wolfSSL's wolfCrypt software library. 
+Post-Quantum Cryptography (PQC) and Classical Cryptography example applications to showcase the wolfCrypt Crypto algorithms running on the dsPIC33A and dsPIC33C devices. 
 
 ## dsPIC33 wolfCrypt Support
 The following table provides the overview of Cryptographic Algorithms Support on dsPIC33 devices for wolfSSL wolfCrypt APIs. Note: The dsPIC33AK device family contains the hardware Crypto Accelerator Module (CAM 05346) which was utilized within the LMS example application for its hash capabilities.
