@@ -6,7 +6,7 @@
       "name":"com.microchip.mplabx.project.dspic33-wolfcrypt",
       "version":"1.0.1",
       "displayName":"dsPIC33 Post-Quantum Cryptography (PQC) and Classical Cryptography Example Applications",
-      "projectName":"dspic33-pqc-and-classical-cryptography-example-applications",
+      "projectName":"dspic33-wolfcrypt",
       "shortDescription":"Post-Quantum Cryptography (PQC) and Classical Cryptography example applications to showcase the wolfCrypt Crypto algorithms running on the dsPIC33A and dsPIC33C devices.",
       "ide":{
          "name":"MPLABX",
