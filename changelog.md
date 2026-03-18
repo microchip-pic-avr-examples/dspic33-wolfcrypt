@@ -1,7 +1,7 @@
 # dspic33-wolfcrypt v1.0.1
 ### Release Highlights
 Hotfix to correct benchmarking numbers and table/image rendering within the README documentation
-Updated naming in the main.json and overall README to include the phrase Post-Quantum Cryptography
+Updated the overall name and description
 
 # dspic33-wolfcrypt v1.0.0
 ### Release Highlights
