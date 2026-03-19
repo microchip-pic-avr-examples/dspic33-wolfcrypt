@@ -1,3 +1,8 @@
+# dspic33-wolfcrypt v1.0.1
+### Release Highlights
+Hotfix to correct benchmarking numbers and table/image rendering within the README documentation
+Updated the overall name and description
+
 # dspic33-wolfcrypt v1.0.0
 ### Release Highlights
 Initial Release of the dsPIC33 wolfCrypt demo applications

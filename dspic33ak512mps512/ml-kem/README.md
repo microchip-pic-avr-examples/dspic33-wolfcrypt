@@ -46,14 +46,14 @@ The resulting operations are then printed to the terminal using UART with the fo
 
 ### Performance Benchmarking
 |Key Type|Verification time (Seconds)|
-|---|---|---|---|
+|---|---|
 |ML-KEM 512|0.004674|
 |ML-KEM 768|0.007522|
 |ML-KEM 1024|0.011420|
 
 ### Memory Size Benchmarking
 |Hash|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
-|---|---|---|---|---|---|
+|---|---|---|---|
 |ML-KEM 512|29,472|98|20,204|
 |ML-KEM 768|30,944|98|20,204|
 |ML-KEM 1024|32,576|98|20,204|

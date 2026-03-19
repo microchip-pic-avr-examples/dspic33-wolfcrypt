@@ -57,7 +57,7 @@ The resulting verification status is then printed to the terminal using UART wit
 | ------------ | -------------- |
 | SHA-224      | 0.000027       |
 | SHA-256      | 0.000027       |
-| SHA-334      | 0.000090       |
+| SHA-384      | 0.000090       |
 | SHA-512      | 0.000091       |
 
 ### Memory Size Benchmarking
