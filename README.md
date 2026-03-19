@@ -4,10 +4,10 @@
     <img alt="Microchip Logo." src="images/microchip_logo_black_red.png">
 </picture>
 
-# dsPIC33 wolfCrypt Example Applications
+# dsPIC33 Post-Quantum Cryptography (PQC) and Classical Cryptography Example Applications
 
 ## Description
-dsPIC33 wolfCrypt Example Applications are a collection of MPLAB® X IDE projects to demonstrate cryptographic operations using wolfSSL's wolfCrypt software library. 
+Post-Quantum Cryptography (PQC) and Classical Cryptography example applications to showcase the wolfCrypt Crypto algorithms running on the dsPIC33A and dsPIC33C devices. 
 
 ## dsPIC33 wolfCrypt Support
 The following table provides the overview of Cryptographic Algorithms Support on dsPIC33 devices for wolfSSL wolfCrypt APIs. Note: The dsPIC33AK device family contains the hardware Crypto Accelerator Module (CAM 05346) which was utilized within the LMS example application for its hash capabilities.
@@ -76,19 +76,19 @@ The following benchmarking results were obtained while testing the wolfCrypt API
 
 Benchmarking parameters: Device clock speed set to maximum, i.e. 100 MHz for dsPIC33C devices and 200 MHz for dsPIC33A devices.
 
-|Algorithm|Parameters (sizes are in bytes)|dsPIC33CK256MP508 (time in s)|dsPIC33AK512MPS512 (time in s)|
-|----|----|----|----|
-|AES-CBC|Key Size: 32 bytes, IV Size: 16 bytes, Plaintext: 80 bytes, Direction: Encryption||0.000560|
-|AES-ECB|Key Size: 32 bytes, Plaintext: 80 bytes, Direction: Encryption||0.000550|
-|ECDSA|Curve: P384||17.086748|
-|LMS|SHA-256, Width: 8, Height: 25|0.081927|1.203449|
-|MAC-CMAC|Key Size: 32 bytes, Plaintext Size: 532 bytes, MAC Size: 16 bytes||0.003734|
-|ML-DSA|Dilithium 87|0.047319|0.7263|
-|ML-KEM|ML-KEM 1024|0.011420||
-|RSA|Key Size: 3072 bits, Padding types: PKCS#1 v1.5||2.518086|
-|SHA2|SHA Type: SHA-512|0.000091|0.000999|
-|SHA3|SHA Type: SHA3-512|0.000178||
-|SHAKE|SHAKE Type: SHAKE 256|0.000178||
+|Algorithm|Parameters (sizes are in bytes)                                                  |dsPIC33CK256MP508 (s)|dsPIC33AK512MPS512 (s)|
+|---------|---------------------------------------------------------------------------------|---------------------|----------------------|
+|AES-CBC  |Key Size: 32 bytes, IV Size: 16 bytes, Plaintext: 80 bytes, Direction: Encryption|0.000560             |                      |
+|AES-ECB  |Key Size: 32 bytes, Plaintext: 80 bytes, Direction: Encryption                   |0.000550             |                      |
+|ECDSA    |Curve: P384                                                                      |17.086748            |                      |
+|LMS      |SHA-256, Width: 8, Height: 25                                                    |1.203449             |0.082419              |
+|MAC-CMAC |Key Size: 32 bytes, Plaintext Size: 532 bytes, MAC Size: 16 bytes                |0.003734             |                      |
+|ML-DSA   |Dilithium 87                                                                     |0.7263               |0.047319              |
+|ML-KEM   |ML-KEM 1024                                                                      |                     |0.011420              |
+|RSA      |Key Size: 3072 bits, Padding types: PKCS#1 v1.5                                  |2.518086             |                      |
+|SHA2     |SHA Type: SHA-512                                                                |0.000999             |0.000091              |
+|SHA3     |SHA Type: SHA3-512                                                               |                     |0.000178              |
+|SHAKE    |SHAKE Type: SHAKE 256                                                            |                     |0.000178              |
 
 ### Memory Size Benchmarking
 Flash size will vary based on size of the stored data inputs used with the library.
