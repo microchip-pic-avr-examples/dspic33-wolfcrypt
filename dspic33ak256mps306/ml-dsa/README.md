@@ -20,11 +20,9 @@ See the [dsPIC33AK512MPS512 README](../README.md) for software tools and hardwar
 
 ### Input Vector FIPS-204
 
-The test vectors in this example application come from the NIST defined public keys, messages and signature values.
-- These values are raw data inputs with no encoding. 
+Openssl is used to generate a public key, private key and signature following [FIPS-204](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.204.pdf)
 
-If another tool is used to generate a signature it may encode the message by default following [FIPS-204](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.204.pdf) (Algorithm 2 Step 10)
-- If this is the case the following wolfCrypt verification API can be used to handle signatures generated with FIPS-204 encoding:
+The following wolfCrypt verification API is used to handle signature verification with FIPS-204 encoding:
 
     ```c
     int wc_dilithium_verify_ctx_msg(
@@ -68,13 +66,13 @@ The resulting operations are then printed to the terminal using UART with the fo
 ### Performance Benchmarking
 |ML-DSA type |Verification time (Seconds)|
 |------------|------|
-|Dilithium 44|0.018628|
-|Dilithium 65|0.031421|
-|Dilithium 87|0.047319|
+|Dilithium 44| |
+|Dilithium 65| |
+|Dilithium 87| |
 
 ### Memory Size Benchmarking
 |ML-DSA type|Message Size (bytes)|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
 |---|---|---|---|---|
-|Dilithium 44|4,553|2,420|1,312|36,988|56|1,192|
-|Dilithium 65|7,465|3,309|1,952|41,432|56|1,192|
-|Dilithium 87|4,616|4,627|2,592|40,536|56|1,192|
+|Dilithium 44| | | | | | |
+|Dilithium 65| | | | | | |
+|Dilithium 87| | | | | | |
