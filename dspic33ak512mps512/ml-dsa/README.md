@@ -73,8 +73,8 @@ The resulting operations are then printed to the terminal using UART with the fo
 |Dilithium 87|0.047319|
 
 ### Memory Size Benchmarking
-|ML-DSA type|Message Size (bytes)|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
-|---|---|---|---|---|
+|ML-DSA type|Message Size (bytes)|Signature Size (bytes)|Key Size (bytes)|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
+|---|---|---|---|---|---|---|
 |Dilithium 44|4,553|2,420|1,312|36,988|56|1,192|
 |Dilithium 65|7,465|3,309|1,952|41,432|56|1,192|
 |Dilithium 87|4,616|4,627|2,592|40,536|56|1,192|
