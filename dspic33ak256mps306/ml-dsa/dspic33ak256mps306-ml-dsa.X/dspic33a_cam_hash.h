@@ -20,12 +20,12 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
 */
 
 #ifndef DSPIC33A_CAM_HASH_H
-#define	DSPIC33A_CAM_HASH_H
+#define DSPIC33A_CAM_HASH_H
 
-#ifdef	__cplusplus
+#ifdef __cplusplus
 extern "C" {
 #endif
-    
+
 #include "common_crypto/crypto_hash.h"
 #include "wolfssl/wolfssl/wolfcrypt/error-crypt.h"
 #include <wolfssl/wolfcrypt/sha3.h>
@@ -37,16 +37,16 @@ extern "C" {
  *   SHAKE-256 ExpandS/ExpandMask: 5 initial + up to 2 extra = 7 blocks x 136 = 952 bytes
  * Increase these if BUFFER_E errors occur during squeeze operations.
  */
-#define CAM_SHAKE128_MAX_SQUEEZE_BLOCKS  10U
-#define CAM_SHAKE256_MAX_SQUEEZE_BLOCKS  7U
-#define CAM_SHAKE128_BLOCK_SIZE          (WC_SHA3_128_COUNT * 8U)  /* 168 */
-#define CAM_SHAKE256_BLOCK_SIZE          (WC_SHA3_256_COUNT * 8U)  /* 136 */
+#define CAM_SHAKE128_MAX_SQUEEZE_BLOCKS  (10U)
+#define CAM_SHAKE256_MAX_SQUEEZE_BLOCKS  (7U)
+#define CAM_SHAKE128_BLOCK_SIZE          (WC_SHA3_128_COUNT * 8U)
+#define CAM_SHAKE256_BLOCK_SIZE          (WC_SHA3_256_COUNT * 8U)
 #define CAM_SHAKE128_MAX_SQUEEZE_BYTES   (CAM_SHAKE128_MAX_SQUEEZE_BLOCKS * CAM_SHAKE128_BLOCK_SIZE)
 #define CAM_SHAKE256_MAX_SQUEEZE_BYTES   (CAM_SHAKE256_MAX_SQUEEZE_BLOCKS * CAM_SHAKE256_BLOCK_SIZE)
 
-#ifdef	__cplusplus
+#ifdef __cplusplus
 }
 #endif
 
-#endif	/* DSPIC33A_CAM_HASH_H */
+#endif // DSPIC33A_CAM_HASH_H
 

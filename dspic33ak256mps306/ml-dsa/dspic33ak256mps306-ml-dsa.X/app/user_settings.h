@@ -41,7 +41,7 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
     #define WOLFSSL_DILITHIUM_SMALL             // Reduce the code size
     
     #define WOLFSSL_DILITHIUM_ASSIGN_KEY        // Enable key structure usage
-    #define WOLFSSL_DILITHIUM_ALIGNMENT 4
+    #define WOLFSSL_DILITHIUM_ALIGNMENT 4       // Set the data alignment to a 4 byte boundary
     #define WOLFSSL_DILITHIUM_VERIFY_SMALL_MEM  // Reduce memory usage for verify APIs
     #define WOLFSSL_DILITHIUM_VERIFY_NO_MALLOC  // Disable heap usage for verify
 
@@ -54,7 +54,7 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
     
     // dsPIC33A Support
     #ifdef __dsPIC33A__
-        #define dsPIC33A_CAM_ENABLE
+        #define dsPIC33A_CAM_ENABLE             // Enable CAM Hardware usage with the dsPIC33A
         #define SIZEOF_LONG_LONG 8              // Define long long value size as 8 bytes
         #define SINGLE_THREADED                 // Specify device is single threaded
     #endif  
