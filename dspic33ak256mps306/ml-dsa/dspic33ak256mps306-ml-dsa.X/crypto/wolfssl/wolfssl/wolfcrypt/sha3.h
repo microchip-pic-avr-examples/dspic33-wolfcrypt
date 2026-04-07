@@ -135,26 +135,30 @@ struct wc_Sha3 {
     byte   i;
 
     void*  heap;
-    
+
 #if defined(dsPIC33A_CAM_ENABLE)
     st_Crypto_Hash_Shake_Ctx context;
-    
-    /* CAM squeeze buffer for Absorb/SqueezeBlocks pattern.
+
+    /*
+     * CAM squeeze buffer for Absorb/SqueezeBlocks pattern.
      * The CAM hardware requires knowing digestLength at Init time,
      * so we pre-compute the full SHAKE output at Absorb time and
-     * serve SqueezeBlocks from this buffer. */
-    byte*  squeezeBuf;       /* Pointer to pre-computed squeeze output */
-    word32 squeezeBufLen;    /* Total bytes available in squeezeBuf    */
-    word32 squeezeBufOffset; /* Current read offset into squeezeBuf    */
-    
-    /* Deferred absorb data — stored so we can call CAM with full
-     * digestLength once the first SqueezeBlocks call arrives. */
-    byte   absorbData[68];   /* Max seed: 66 bytes, rounded up         */
-    word32 absorbDataLen;    /* Length of stored absorb data            */
-    byte   absorbReady;      /* 1 if Absorb was called, awaiting squeeze */
-#endif
+     * serve SqueezeBlocks from this buffer.
+     */
+    byte*  squeezeBuffer;       // Pre-computed squeeze output
+    word32 squeezeBufferLength; // Total bytes available in squeezeBuffer
+    word32 squeezeBufferOffset; // Current read offset into squeezeBuffer
+
+    /*
+     * Deferred absorb data — stored so we can call CAM with full
+     * digestLength once the first SqueezeBlocks call arrives.
+     */
+    byte   absorbData[68];      // Max seed: 66 bytes, rounded up
+    word32 absorbDataLength;    // Length of stored absorb data
+    byte   absorbReady;         // 1 if Absorb was called, awaiting squeeze
     word32 digestLength;
-    
+#endif
+
 #ifdef WOLF_CRYPTO_CB
     int    devId;
     void*  devCtx;
