@@ -64,15 +64,17 @@ The resulting operations are then printed to the terminal using UART with the fo
 ## Benchmarking
 
 ### Performance Benchmarking
-|ML-DSA type |Verification time (Seconds)|
-|------------|------|
-|Dilithium 44| |
-|Dilithium 65| |
-|Dilithium 87| |
+
+| ML-DSA Type   | Verification Time (Seconds) |
+| ------------- | --------------------------- |
+| Dilithium 44  | 0.004853                    |
+| Dilithium 65  | 0.007473                    |
+| Dilithium 87  | 0.011683                    |
 
 ### Memory Size Benchmarking
-|ML-DSA type|Message Size (bytes)|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
-|---|---|---|---|---|
-|Dilithium 44| | | | | | |
-|Dilithium 65| | | | | | |
-|Dilithium 87| | | | | | |
+
+| ML-DSA Type  | Message Size (bytes) | Signature Size (bytes) | Key Size (bytes)  | Flash (bytes) | RAM Static (bytes)  | RAM Stack (bytes) |
+| ------------ | -------------------- | ---------------------- | ----------------- | ------------- | ------------------- | ----------------- |
+| Dilithium 44 | 3200                 | 2420                   | 1312              | 24,640        | 2,718               | 13,200            |
+| Dilithium 65 | 3200                 | 3309                   | 1952              | 26,172        | 2,718               | 13,200            |
+| Dilithium 87 | 3200                 | 4627                   | 2592              | 28,128        | 2,718               | 13,200            |
