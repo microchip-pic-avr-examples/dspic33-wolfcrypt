@@ -8,15 +8,60 @@
 
 ## Description
 
-This MPLAB® X project demonstrates ML-DSA Verify using wolfCrypt APIs on a dsPIC33AK512MPS512 device.
+This MPLAB® X project demonstrates ML-DSA Verify using wolfCrypt APIs on a dsPIC33AK256MPS306 device utilizing SHAKE128 and SHAKE256 hardware acceleration.
 
 ## Licensing
 
-The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ak512mps512-ml-dsa.X/crypto/wolfssl/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt).
+The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ak256MPS306-ml-dsa.X/crypto/wolfssl/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt).
 
 ## Project Setup
 
-See the [dsPIC33AK512MPS512 README](../README.md) for software tools and hardware setup.
+See the [dsPIC33AK256MPS306 README](../README.md) for software tools and hardware setup.
+
+### wolfCrypt Source Edits to support dsPIC33A
+
+1. `crypto\wolfssl\wolfssl\wolfcrypt\sha3.h`
+
+    Line 118: Insert a new `#ifdef` check for the dsPIC33A_CAM_ENABLE macro. This will add the Common Crypto hash include.
+    ``` 
+    #ifdef dsPIC33A_CAM_ENABLE
+        #include "common_crypto/crypto_hash.h"
+    #endif
+    ```
+
+    Line 138: Insert a new `#if defined` check for the dsPIC33A_CAM_ENABLE macro. This will add the Common Crypto hash context and other supporting buffers within the struct.
+    ``` 
+    #if defined(dsPIC33A_CAM_ENABLE)
+        st_Crypto_Hash_Shake_Ctx context;
+        byte*  squeezeBuffer;       // Pre-computed squeeze output
+        word32 squeezeBufferLength; // Total bytes available in squeezeBuffer
+        word32 squeezeBufferOffset; // Current read offset into squeezeBuffer
+        byte   absorbData[68];      // Max seed: 66 bytes, rounded up
+        word32 absorbDataLength;    // Length of stored absorb data
+        byte   absorbReady;         // 1 if Absorb was called, awaiting squeeze
+        word32 digestLength;
+    #endif
+    ```
+
+2. `crypto\wolfssl\wolfcrypt\src\sha3.c`
+
+    Line 25-26: Add `&& !defined(dsPIC33A_CAM_ENABLE)` to the specified `#if defined` checks. This will allow for the disabling and enabling of the wolfcrypt software APIs.
+    ``` 
+    Before:
+    #if defined(WOLFSSL_SHA3) && !defined(WOLFSSL_XILINX_CRYPT) && \
+    !defined(WOLFSSL_AFALG_XILINX_SHA3)
+
+    After:
+    #if defined(WOLFSSL_SHA3) && !defined(WOLFSSL_XILINX_CRYPT) && \
+    !defined(WOLFSSL_AFALG_XILINX_SHA3) && !defined(dsPIC33A_CAM_ENABLE)
+    ```
+
+
+3. `crypto\wolfssl\wolfcrypt\src\dilithium.c`
+
+    Line 454: Add a `shake256->digestLength = hashLen;` before ret = wc_InitShake256(shake256, NULL, INVALID_DEVID); is called in order to pass the digest length into the Common crypto APIs
+
+    Line 579: Add a `shake256->digestLength = hashLen;` before ret = wc_InitShake256(shake256, NULL, INVALID_DEVID); is called in order to pass the digest length into the Common crypto APIs
 
 ### Input Vector FIPS-204
 
@@ -44,6 +89,11 @@ The `app_config.h` file is used to configure the project. Due to device memory c
 - ML_DSA_44 
 - ML_DSA_65
 - ML_DSA_87
+
+This project also allows for swapping from the CAM Hardware drivers SHAKE implementation with the wolfCrypt software implementation. 
+- Within the `user_settings.h` file on line : `57` commenting out the following will disable the CAM hardware Driver usage and re-enable the wolfCrypt software implementation:
+       
+        #define dsPIC33A_CAM_ENABLE
 
 ## Running the Application
 
