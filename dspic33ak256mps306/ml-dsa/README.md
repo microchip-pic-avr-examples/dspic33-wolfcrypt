@@ -8,15 +8,15 @@
 
 ## Description
 
-This MPLAB® X project demonstrates ML-DSA Verify using wolfCrypt APIs on a dsPIC33AK512MPS512 device.
+This MPLAB® X project demonstrates ML-DSA Verify using wolfCrypt APIs on a dsPIC33AK256MPS306 device.
 
 ## Licensing
 
-The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ak512mps512-ml-dsa.X/crypto/wolfssl/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt).
+The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ak256mps306-ml-dsa.X/crypto/wolfssl/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt).
 
 ## Project Setup
 
-See the [dsPIC33AK512MPS512 README](../README.md) for software tools and hardware setup.
+See the [dsPIC33AK256MPS306 README](../README.md) for software tools and hardware setup.
 
 ### Input Vector FIPS-204
 
