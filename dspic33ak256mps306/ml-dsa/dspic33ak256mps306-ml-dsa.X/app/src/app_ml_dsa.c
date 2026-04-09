@@ -35,16 +35,14 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
 
 #ifdef MLDSA_SIGNATURE_VERIFICATION
 
-    dilithium_key key __attribute__((aligned(4)));
     static void MLDSA_Verify(ML_DSA_SIG_VER_TEST_VECTOR* vector, byte level)
     {
         uint32_t ticksToProcess = 0;
-        
-        headerOutputPrint(vector->vectorInformation);
-
         int status = 0;
         int error = WC_FAILURE;
-
+        dilithium_key key __attribute__((aligned(4)));
+        
+        headerOutputPrint(vector->vectorInformation);
 
         wc_MlDsaKey_SetParams(&key, level);
         wc_MlDsaKey_ImportPubRaw(&key, vector->publicKey, vector->publicKeyLength);  
