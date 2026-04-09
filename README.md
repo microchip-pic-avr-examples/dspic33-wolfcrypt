@@ -15,7 +15,7 @@ Note:
 - The dsPIC33AK512MPS512 device family contains the hardware Crypto Accelerator Module (CAM 05346) which was utilized within the LMS example application for its hash capabilities.
 - The dsPIC33AK256MPS306 device family contains the hardware Crypto Accelerator Module (CAM 06048) which was utilized within the ML-DSA example application for its hash SHAKE capabilities.
 
-|Algorithm|Options|Modes|Supported Actions|dsPIC33CK Family|dsPIC33A Family|
+|Algorithm|Options|Modes|Supported Actions|dsPIC33CK Family|dsPIC33AK Family|
 |---|---|---|---|---|---|
 |AES|Key Size (bits): 128, 192, 256|ECB, CBC|Encryption and Decryption|[Software](./dspic33ck256mp508/aes/)||
 |MAC|Key Size (bits): 128, 192, 256|CMAC|Generation|[Software](./dspic33ck256mp508/mac/)||
@@ -33,7 +33,7 @@ The following table provides the overview of Cryptographic Algorithms Support on
 - `CAM 06048` represents and links projects that use Microchip's hardware Crypto Accelerator Module integrated into the dsPIC33AK256MPS306 device family
 - The LMS example application uses CAM hardware for its hash capabilities on dsPIC33A devices
 
-|Algorithm|Supported Actions|dsPIC33CK Family|dsPIC33A Family|
+|Algorithm|Supported Actions|dsPIC33CK Family|dsPIC33AK Family|
 |---|---|---|---|
 |AES|Encryption and Decryption|[Software](./dspic33ck256mp508/aes/)|[CAM 05346](https://github.com/microchip-pic-avr-examples/dspic33a-crypto-accelerator-module/tree/main/dspic33ak512mps512/aes)|
 |MAC|Generation|[Software](./dspic33ck256mp508/mac/)|[CAM 05346](https://github.com/microchip-pic-avr-examples/dspic33a-crypto-accelerator-module/tree/main/dspic33ak512mps512/mac)|
@@ -85,14 +85,16 @@ Benchmarking parameters: Device clock speed set to maximum, i.e. 100 MHz for dsP
 |AES-CBC  |Key Size: 32 bytes, IV Size: 16 bytes, Plaintext: 80 bytes, Direction: Encryption|0.000560             |                      |                      |
 |AES-ECB  |Key Size: 32 bytes, Plaintext: 80 bytes, Direction: Encryption                   |0.000550             |                      |                      |
 |ECDSA    |Curve: P384                                                                      |17.086748            |                      |                      |
-|LMS      |SHA-256, Width: 8, Height: 25                                                    |1.203449             |0.082419              |                      |
+|LMS      |SHA-256, Width: 8, Height: 25                                                    |1.203449             |0.082419*             |                      |
 |MAC-CMAC |Key Size: 32 bytes, Plaintext Size: 532 bytes, MAC Size: 16 bytes                |0.003734             |                      |                      |
-|ML-DSA   |Dilithium 87                                                                     |0.7263               |0.047319              |0.009329              |
+|ML-DSA   |Dilithium 87                                                                     |0.7263               |0.047319              |0.009329*             |
 |ML-KEM   |ML-KEM 1024                                                                      |                     |0.011420              |                      |
 |RSA      |Key Size: 3072 bits, Padding types: PKCS#1 v1.5                                  |2.518086             |                      |                      |
 |SHA2     |SHA Type: SHA-512                                                                |0.000999             |0.000091              |                      |
 |SHA3     |SHA Type: SHA3-512                                                               |                     |0.000178              |                      |
 |SHAKE    |SHAKE Type: SHAKE 256                                                            |                     |0.000178              |                      |
+
+#### * Note: These values are from projects that utilize CAM hardware driver SHA/SHAKE implementations. 
 
 ### Memory Size Benchmarking
 Flash size will vary based on size of the stored data inputs used with the library.
