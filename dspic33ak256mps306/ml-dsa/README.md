@@ -59,9 +59,19 @@ See the [dsPIC33AK256MPS306 README](../README.md) for software tools and hardwar
 
 3. `crypto\wolfssl\wolfcrypt\src\dilithium.c`
 
-    Line 454: Add a `shake256->digestLength = hashLen;` before ret = wc_InitShake256(shake256, NULL, INVALID_DEVID); is called in order to pass the digest length into the Common crypto APIs
+    Line 454: Insert the following before `ret = wc_InitShake256(shake256, NULL, INVALID_DEVID);` is called in order to pass the digest length into the Common crypto APIs
+    ```
+    #ifdef dsPIC33A_CAM_ENABLE
+    shake256->digestLength = hashLen;
+    #endif` 
+    ```
 
-    Line 579: Add a `shake256->digestLength = hashLen;` before ret = wc_InitShake256(shake256, NULL, INVALID_DEVID); is called in order to pass the digest length into the Common crypto APIs
+    Line 581: Insert the following before `ret = wc_InitShake256(shake256, NULL, INVALID_DEVID);` is called in order to pass the digest length into the Common crypto APIs
+    ```
+    #ifdef dsPIC33A_CAM_ENABLE
+    shake256->digestLength = hashLen;
+    #endif` 
+    ```
 
 ### Input Vector FIPS-204
 
@@ -90,10 +100,8 @@ The `app_config.h` file is used to configure the project. Due to device memory c
 - ML_DSA_65
 - ML_DSA_87
 
-This project also allows for swapping from the CAM Hardware drivers SHAKE implementation with the wolfCrypt software implementation. 
-- Within the `user_settings.h` file on line : `57` commenting out the following will disable the CAM hardware Driver usage and re-enable the wolfCrypt software implementation:
-       
-        #define dsPIC33A_CAM_ENABLE
+This project also allows for swapping the CAM Hardware drivers SHAKE implementation with the wolfCrypt software implementation. 
+- Within the `user_settings.h` file on line : `57` commenting out `#define dsPIC33A_CAM_ENABLE` will disable the CAM hardware Driver usage and re-enable the wolfCrypt software implementation:
 
 ## Running the Application
 
@@ -112,14 +120,18 @@ The resulting operations are then printed to the terminal using UART with the fo
 | Flow Control Mode | None   |
 
 ## Benchmarking
+The test vectors used for this benchmarking data is generated using Openssl to generate a public key, private key and signature following [FIPS-204](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.204.pdf)
 
 ### Performance Benchmarking
+Software + Hardware (CAM 06048) takes 75% less time than Software alone. 
 
-| ML-DSA Type   | Verification Time (Seconds) |
-| ------------- | --------------------------- |
-| Dilithium 44  | 0.004853                    |
-| Dilithium 65  | 0.007473                    |
-| Dilithium 87  | 0.011683                    |
+Note: The larger the data being verified, the larger the benefit with Software + Hardware (CAM 06048).
+
+| ML-DSA Type   | Verification Time Software + Hardware (CAM 06048)  (Seconds) | Verification Time Software (Seconds) |
+| ------------- | ------------------------------------------------------------ | ------------------------------------ |
+| Dilithium 44  | 0.004853                                                     | 0.017728                             |
+| Dilithium 65  | 0.007473                                                     | 0.028071                             |
+| Dilithium 87  | 0.011683                                                     | 0.046378                             |
 
 ### Memory Size Benchmarking
 
