@@ -1,0 +1,78 @@
+<picture>
+    <source media="(prefers-color-scheme: dark)" srcset="../../images/microchip_logo_white_red.png">
+	<source media="(prefers-color-scheme: light)" srcset="../../images/microchip_logo_black_red.png">
+    <img alt="Microchip Logo." src="../../images/microchip_logo_black_red.png">
+</picture>
+
+# dsPIC33A Module-Lattice-Based Digital Signature (ML-DSA) Verification Example Application
+
+## Description
+
+This MPLAB® X project demonstrates ML-DSA Verify using wolfCrypt APIs on a dsPIC33AK256MPS306 device.
+
+## Licensing
+
+The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ak256mps306-ml-dsa.X/crypto/wolfssl/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt).
+
+## Project Setup
+
+See the [dsPIC33AK256MPS306 README](../README.md) for software tools and hardware setup.
+
+### Input Vector FIPS-204
+
+Openssl is used to generate a public key, private key and signature following [FIPS-204](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.204.pdf)
+
+The following wolfCrypt verification API is used to handle signature verification with FIPS-204 encoding:
+
+    ```c
+    int wc_dilithium_verify_ctx_msg(
+        const byte* sig, 
+        word32 sigLen,
+        const byte* ctx, // Set to NULL (unless additional encoding is required)
+        word32 ctxLen,   // Set to 0 (or length of the ctx)
+        const byte* msg, 
+        word32 msgLen, 
+        int* res,
+        dilithium_key* key
+    );
+    ```
+
+### Project Configuration
+
+The `app_config.h` file is used to configure the project. Due to device memory constraints, use caution when enabling more than one configuration at a time. The following options using Dilithium are available:
+
+- ML_DSA_44 
+- ML_DSA_65
+- ML_DSA_87
+
+## Running the Application
+
+Open the project in MPLAB® X IDE. Build the project and program the device.
+
+### Application Output
+
+The resulting operations are then printed to the terminal using UART with the following settings:
+
+| Setting           | Value  
+| -------           | -----  |
+| Baudrate          | 115200 |
+| Parity            | None   |
+| Data Size         | 8      |
+| Stop Bits         | 1      |
+| Flow Control Mode | None   |
+
+## Benchmarking
+
+### Performance Benchmarking
+|ML-DSA type |Verification time (Seconds)|
+|------------|------|
+|Dilithium 44| |
+|Dilithium 65| |
+|Dilithium 87| |
+
+### Memory Size Benchmarking
+|ML-DSA type|Message Size (bytes)|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
+|---|---|---|---|---|
+|Dilithium 44| | | | | | |
+|Dilithium 65| | | | | | |
+|Dilithium 87| | | | | | |
