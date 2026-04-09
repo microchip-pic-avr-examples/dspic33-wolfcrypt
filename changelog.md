@@ -1,6 +1,6 @@
 # dspic33-wolfcrypt v1.1.0
 ### Release Highlights
-Added support for dsPIC33AK256MPS306 ML_DSA wolfCrypt demo that utilizes the CAM Hardware Driver
+Added support for wolfCrypt ML-DSA demo on dsPIC33AK256MPS306 device utilizing hardware SHAKE via CAM Hardware Driver
 
 ### Features Added\Updated
 dsPIC33 wolfCrypt demos added in this release:
