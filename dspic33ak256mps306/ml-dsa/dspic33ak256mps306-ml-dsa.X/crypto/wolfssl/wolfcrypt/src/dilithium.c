@@ -451,7 +451,9 @@ static int dilithium_shake256(wc_Shake* shake256, const byte* data,
     }
     ret = 0;
 #else
+    #ifdef dsPIC33A_CAM_ENABLE
     shake256->digestLength = hashLen;
+    #endif
     /* Initialize SHAKE-256 operation. */
     ret = wc_InitShake256(shake256, NULL, INVALID_DEVID);
     if (ret == 0) {
@@ -576,7 +578,9 @@ static int dilithium_hash256(wc_Shake* shake256, const byte* data1,
     XMEMCPY(hash, shake256->s, hashLen);
     ret = 0;
 #else
+    #ifdef dsPIC33A_CAM_ENABLE
     shake256->digestLength = hashLen;
+    #endif
     /* Initialize SHAKE-256 operation. */
     ret = wc_InitShake256(shake256, NULL, INVALID_DEVID);
     if (ret == 0) {
