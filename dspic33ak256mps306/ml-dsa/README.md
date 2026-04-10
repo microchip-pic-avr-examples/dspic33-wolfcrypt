@@ -123,15 +123,17 @@ The resulting operations are then printed to the terminal using UART with the fo
 The test vectors used for this benchmarking data is generated using Openssl to generate a public key, private key and signature following [FIPS-204](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.204.pdf)
 
 ### Performance Benchmarking
-Software + Hardware (CAM 06048) takes 75% less time than Software alone. 
+Software + Hardware (CAM 06048) takes at least 75% less time than Software alone. 
 
 Note: The larger the data being verified, the larger the benefit with Software + Hardware (CAM 06048).
 
-| ML-DSA Type   | Verification Time Software + Hardware (CAM 06048)  (Seconds) | Verification Time Software (Seconds) |
-| ------------- | ------------------------------------------------------------ | ------------------------------------ |
-| Dilithium 44  | 0.004853                                                     | 0.017728                             |
-| Dilithium 65  | 0.007473                                                     | 0.028071                             |
-| Dilithium 87  | 0.011683                                                     | 0.046378                             |
+#### ML-DSA Verification Time
+
+| ML-DSA Type   | Software + Hardware (CAM 06048) (s)  | Software (s)  |
+| ------------- | ------------------------------------ | ------------- |
+| Dilithium 44  | 0.004853                             | 0.017728      |
+| Dilithium 65  | 0.007473                             | 0.028071      |
+| Dilithium 87  | 0.011683                             | 0.046378      |
 
 ### Memory Size Benchmarking
 
