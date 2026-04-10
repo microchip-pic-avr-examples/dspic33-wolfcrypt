@@ -156,7 +156,7 @@ All projects have the following compiler options:
     <td>Dilithium 87, Message Size: 4,616 bytes</td>
     <td>19,858</td><td>138</td><td>964</td>
     <td>40,536</td><td>56</td><td>1,192</td>
-    <td>29,540</td><td>2,718</td><td>13,200</td>
+    <td>29,536</td><td>2,718</td><td>13,200</td>
   </tr>
   <tr>
     <td>ML-KEM</td>

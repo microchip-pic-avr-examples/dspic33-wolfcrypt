@@ -18,6 +18,12 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 
 See the [dsPIC33AK256MPS306 README](../README.md) for software tools and hardware setup.
 
+**The following files and folders are required to enable CAM hardware usage within wolfCrypt**
+- `crypto/dspic33a_cam_hash.h`
+- `crypto/dspic33a_cam_hash.c`
+- `crypto/common_crypto/**`
+- `crypto/drivers/**`
+
 ### wolfCrypt Source Edits to support dsPIC33A
 
 1. `crypto\wolfssl\wolfssl\wolfcrypt\sha3.h`
@@ -94,6 +100,16 @@ The following wolfCrypt verification API is used to handle signature verificatio
 
 ### Project Configuration
 
+**The ML-DSA project requres specific project configurations within MPLAB® X.** To check these configurations right click the project and select "Properties".
+
+Under the XC-DSC subsection the following must be configured in order to get ML-DSA to build and run:
+- Isolate each function in a section: `enabled`
+- Removed unused sections: `enabled`
+- Define common macros
+    - `WOLFSSL_USER_SETTINGS`
+    - `GENERIC_TARGET_CAM_06048`
+    - `ENABLE_CAM_06048_SHAKE`
+
 The `app_config.h` file is used to configure the project. Due to device memory constraints, use caution when enabling more than one configuration at a time. The following options using Dilithium are available:
 
 - ML_DSA_44 
@@ -139,6 +155,6 @@ Note: The larger the data being verified, the larger the benefit with Software +
 
 | ML-DSA Type  | Message Size (bytes) | Signature Size (bytes) | Key Size (bytes)  | Flash (bytes) | RAM Static (bytes)  | RAM Stack (bytes) |
 | ------------ | -------------------- | ---------------------- | ----------------- | ------------- | ------------------- | ----------------- |
-| Dilithium 44 | 3200                 | 2420                   | 1312              | 24,640        | 2,718               | 13,200            |
-| Dilithium 65 | 3200                 | 3309                   | 1952              | 26,172        | 2,718               | 13,200            |
-| Dilithium 87 | 3200                 | 4627                   | 2592              | 28,128        | 2,718               | 13,200            |
+| Dilithium 44 | 3200                 | 2420                   | 1312              | 24,636        | 2,718               | 13,200            |
+| Dilithium 65 | 3200                 | 3309                   | 1952              | 26,168        | 2,718               | 13,200            |
+| Dilithium 87 | 3200                 | 4627                   | 2592              | 28,124        | 2,718               | 13,200            |
