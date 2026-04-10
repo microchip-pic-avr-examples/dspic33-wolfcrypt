@@ -31,7 +31,8 @@ The following table provides the overview of Cryptographic Algorithms Support on
 - `Software` represents projects that use wolfCrypt software implementations for cryptographic functions in the example applications
 - `CAM 05346` represents and links projects that use Microchip's hardware Crypto Accelerator Module integrated into the dsPIC33AK512MPS512 device family
 - `CAM 06048` represents and links projects that use Microchip's hardware Crypto Accelerator Module integrated into the dsPIC33AK256MPS306 device family
-- The LMS example application uses CAM hardware for its hash capabilities on dsPIC33A devices
+- The LMS example application uses CAM 05346 hardware for its hash capabilities on dsPIC33A devices
+- The ML-DSA example application uses CAM 06048 hardware for its hash SHAKE capabilities on dsPIC33A devices
 
 |Algorithm|Supported Actions|dsPIC33CK Family|dsPIC33AK Family|
 |---|---|---|---|
@@ -94,7 +95,7 @@ Benchmarking parameters: Device clock speed set to maximum, i.e. 100 MHz for dsP
 |SHA3     |SHA Type: SHA3-512                                                               |                     |0.000178              |                      |
 |SHAKE    |SHAKE Type: SHAKE 256                                                            |                     |0.000178              |                      |
 
-#### * Note: These values are from projects that utilize CAM hardware driver SHA/SHAKE implementations. 
+#### * Note: These values are from projects that utilize hardware SHA/SHAKE engines on devices with Crypto Accelerator Module. 
 
 ### Memory Size Benchmarking
 Flash size will vary based on size of the stored data inputs used with the library.
