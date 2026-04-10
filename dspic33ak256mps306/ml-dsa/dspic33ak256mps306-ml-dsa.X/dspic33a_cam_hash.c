@@ -28,8 +28,6 @@ Copyright (C) [2026] Microchip Technology Inc. and its subsidiaries.
 
 /*
  * Static squeeze output buffers.
- * One per SHAKE variant, shared across calls (only one active at a
- * time since dilithium uses a single shake object sequentially).
  */
 static byte shake128SqueezeBuffer[CAM_SHAKE128_MAX_SQUEEZE_BYTES] __attribute__((aligned(4)));
 static byte shake256SqueezeBuffer[CAM_SHAKE256_MAX_SQUEEZE_BYTES] __attribute__((aligned(4)));
@@ -40,10 +38,10 @@ static byte shake256SqueezeBuffer[CAM_SHAKE256_MAX_SQUEEZE_BYTES] __attribute__(
  *
  * @param shake           SHAKE context (128 or 256)
  * @param algoType        CRYPTO_HASH_SHA3_SHAKE128 or CRYPTO_HASH_SHA3_SHAKE256
- * @param data            Input data (seed) to absorb
+ * @param data            Input data to absorb
  * @param dataLength      Length of input data
  * @param squeezeBuffer   Static buffer to receive the full squeeze output
- * @param squeezeLength   Total bytes to squeeze (must be <= buffer capacity)
+ * @param squeezeLength   Total bytes to squeeze 
  * @return 0 on success, negative on error
  */
 static int CAM_ShakeSqueezeFull(wc_Shake* shake,
@@ -84,8 +82,6 @@ static int CAM_ShakeSqueezeFull(wc_Shake* shake,
     return 0;
 }
 
-// SHAKE-256 API
-
 int wc_InitShake256(wc_Shake* shake, void* heap, int devId)
 {
     int status = BAD_FUNC_ARG;
@@ -122,7 +118,7 @@ int wc_Shake256_Update(wc_Shake* shake, const byte* data, word32 dataLength)
     }
     if ((data == NULL) || (dataLength == 0U))
     {
-        return 0; // Zero-length update is a no-op (matches standard wolfCrypt behavior)
+        return 0; // Zero-length update is a no-op
     }
     status = Crypto_Hash_Shake_Update(&shake->context,
                                       (byte*)data, dataLength);
@@ -154,11 +150,7 @@ int wc_Shake256_Final(wc_Shake* shake, byte* hash, word32 hashLength)
 }
 
 /**
- * @brief Absorb data for subsequent SqueezeBlocks calls (SHAKE-256).
- *
- * Strategy 1: Store the seed and defer the CAM call until the first
- * SqueezeBlocks invocation. At that point we execute a single CAM SHAKE
- * operation with the maximum output length and buffer the result.
+ * @brief Absorb data for subsequent SqueezeBlocks calls SHAKE-256.
  */
 int wc_Shake256_Absorb(wc_Shake* shake, const byte* data, word32 length)
 {
@@ -185,10 +177,6 @@ int wc_Shake256_Absorb(wc_Shake* shake, const byte* data, word32 length)
 
 /**
  * @brief Squeeze output blocks from the SHAKE-256 sponge state.
- *
- * On the first call after Absorb, this executes the full CAM SHAKE
- * operation with the maximum squeeze output length and buffers the
- * result. Subsequent calls serve data from the buffer.
  */
 int wc_Shake256_SqueezeBlocks(wc_Shake* shake, byte* out, word32 blockCount)
 {
@@ -217,7 +205,6 @@ int wc_Shake256_SqueezeBlocks(wc_Shake* shake, byte* out, word32 blockCount)
         {
             return result;
         }
-        // absorbReady cleared by CAM_ShakeSqueezeFull
     }
 
     bytesNeeded = blockCount * CAM_SHAKE256_BLOCK_SIZE;
@@ -233,8 +220,6 @@ int wc_Shake256_SqueezeBlocks(wc_Shake* shake, byte* out, word32 blockCount)
 
     return 0;
 }
-
-// SHAKE-128 API
 
 int wc_InitShake128(wc_Shake* shake, void* heap, int devId)
 {
@@ -271,7 +256,7 @@ int wc_Shake128_Update(wc_Shake* shake, const byte* data, word32 dataLength)
     }
     if ((data == NULL) || (dataLength == 0U))
     {
-        return 0; // Zero-length update is a no-op (matches standard wolfCrypt behavior)
+        return 0; // Zero-length update is a no-op
     }
     status = Crypto_Hash_Shake_Update(&shake->context,
                                       (byte*)data, dataLength);
@@ -302,7 +287,7 @@ int wc_Shake128_Final(wc_Shake* shake, byte* hash, word32 hashLength)
 }
 
 /**
- * @brief Absorb data for subsequent SqueezeBlocks calls (SHAKE-128).
+ * @brief Absorb data for subsequent SqueezeBlocks calls SHAKE-128
  */
 int wc_Shake128_Absorb(wc_Shake* shake, const byte* data, word32 length)
 {
