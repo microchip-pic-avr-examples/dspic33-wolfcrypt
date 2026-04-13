@@ -7,7 +7,7 @@
       "version":"1.1.0",
       "displayName":"dsPIC33 Post-Quantum Cryptography (PQC) and Classical Cryptography Example Applications",
       "projectName":"dspic33-wolfcrypt",
-      "shortDescription":"Post-Quantum Cryptography (PQC) and Classical Cryptography example applications to showcase the wolfCrypt Crypto algorithms running on the dsPIC33A and dsPIC33C devices.",
+      "shortDescription":"Post-Quantum Cryptography (PQC) and Classical Cryptography example applications to showcase the wolfCrypt Crypto algorithms running on dsPIC33A and dsPIC33C devices.",
       "ide":{
          "name":"MPLABX",
          "semverRange":">=6.25"
