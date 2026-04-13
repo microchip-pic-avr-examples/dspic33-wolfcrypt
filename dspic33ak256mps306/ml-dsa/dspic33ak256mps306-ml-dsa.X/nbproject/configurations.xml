@@ -61,6 +61,7 @@
           <itemPath>crypto/wolfssl/LICENSING</itemPath>
           <itemPath>crypto/wolfssl/README.md</itemPath>
         </logicalFolder>
+        <itemPath>crypto/dspic33a_cam_hash.h</itemPath>
       </logicalFolder>
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
@@ -89,7 +90,6 @@
           <itemPath>mcc_generated_files/uart/uart1.h</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <itemPath>dspic33a_cam_hash.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -155,6 +155,7 @@
             </logicalFolder>
           </logicalFolder>
         </logicalFolder>
+        <itemPath>crypto/dspic33a_cam_hash.c</itemPath>
       </logicalFolder>
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
@@ -185,7 +186,6 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>main.c</itemPath>
-      <itemPath>dspic33a_cam_hash.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -372,7 +372,7 @@
         <property key="legacy-libc" value="true"/>
         <property key="mpreserve-all" value="false"/>
         <property key="oXC16glb-macros"
-                  value="WOLFSSL_USER_SETTINGS;GENERIC_TARGET_CAM_06048"/>
+                  value="WOLFSSL_USER_SETTINGS;ENABLE_CAM_06048_SHAKE"/>
         <property key="omit-pack-options" value="1"/>
         <property key="output-file-format" value="elf"/>
         <property key="preserve-all" value="false"/>

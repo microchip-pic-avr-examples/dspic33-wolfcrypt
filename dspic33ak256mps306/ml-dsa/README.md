@@ -8,7 +8,7 @@
 
 ## Description
 
-This MPLAB® X project demonstrates ML-DSA Verify using wolfCrypt APIs on a dsPIC33AK256MPS306 device.
+This MPLAB® X project demonstrates ML-DSA Verify using wolfCrypt APIs on a dsPIC33AK256MPS306 device utilizing SHAKE128 and SHAKE256 hardware acceleration.
 
 ## Licensing
 
@@ -17,6 +17,67 @@ The project is governed under the End User License Agreement (EULA) with wolfSSL
 ## Project Setup
 
 See the [dsPIC33AK256MPS306 README](../README.md) for software tools and hardware setup.
+
+**The following files and folders are required to enable CAM hardware usage within wolfCrypt**
+- `crypto/dspic33a_cam_hash.h`
+- `crypto/dspic33a_cam_hash.c`
+- `crypto/common_crypto/**`
+- `crypto/drivers/**`
+
+### wolfCrypt Source Edits to support dsPIC33A
+
+1. `crypto\wolfssl\wolfssl\wolfcrypt\sha3.h`
+
+    Line 118: Insert a new `#ifdef` check for the dsPIC33A_CAM_ENABLE macro. This will add the Common Crypto hash include.
+    ``` 
+    #ifdef dsPIC33A_CAM_ENABLE
+        #include "common_crypto/crypto_hash.h"
+    #endif
+    ```
+
+    Line 138: Insert a new `#if defined` check for the dsPIC33A_CAM_ENABLE macro. This will add the Common Crypto hash context and other supporting buffers within the struct.
+    ``` 
+    #if defined(dsPIC33A_CAM_ENABLE)
+        st_Crypto_Hash_Shake_Ctx context;
+        byte*  squeezeBuffer;       // Pre-computed squeeze output
+        word32 squeezeBufferLength; // Total bytes available in squeezeBuffer
+        word32 squeezeBufferOffset; // Current read offset into squeezeBuffer
+        byte   absorbData[68];      // Max seed: 66 bytes, rounded up
+        word32 absorbDataLength;    // Length of stored absorb data
+        byte   absorbReady;         // 1 if Absorb was called, awaiting squeeze
+        word32 digestLength;
+    #endif
+    ```
+
+2. `crypto\wolfssl\wolfcrypt\src\sha3.c`
+
+    Line 25-26: Add `&& !defined(dsPIC33A_CAM_ENABLE)` to the specified `#if defined` checks. This will allow for the disabling and enabling of the wolfcrypt software APIs.
+    ``` 
+    Before:
+    #if defined(WOLFSSL_SHA3) && !defined(WOLFSSL_XILINX_CRYPT) && \
+    !defined(WOLFSSL_AFALG_XILINX_SHA3)
+
+    After:
+    #if defined(WOLFSSL_SHA3) && !defined(WOLFSSL_XILINX_CRYPT) && \
+    !defined(WOLFSSL_AFALG_XILINX_SHA3) && !defined(dsPIC33A_CAM_ENABLE)
+    ```
+
+
+3. `crypto\wolfssl\wolfcrypt\src\dilithium.c`
+
+    Line 454: Insert the following before `ret = wc_InitShake256(shake256, NULL, INVALID_DEVID);` is called in order to pass the digest length into the Common crypto APIs
+    ```
+    #ifdef dsPIC33A_CAM_ENABLE
+    shake256->digestLength = hashLen;
+    #endif` 
+    ```
+
+    Line 581: Insert the following before `ret = wc_InitShake256(shake256, NULL, INVALID_DEVID);` is called in order to pass the digest length into the Common crypto APIs
+    ```
+    #ifdef dsPIC33A_CAM_ENABLE
+    shake256->digestLength = hashLen;
+    #endif` 
+    ```
 
 ### Input Vector FIPS-204
 
@@ -39,11 +100,23 @@ The following wolfCrypt verification API is used to handle signature verificatio
 
 ### Project Configuration
 
+**The ML-DSA project requres specific project configurations within MPLAB® X.** To check these configurations right click the project and select "Properties".
+
+Under the XC-DSC subsection the following must be configured in order to get ML-DSA to build and run:
+- Isolate each function in a section: `enabled`
+- Removed unused sections: `enabled`
+- Define common macros
+    - `WOLFSSL_USER_SETTINGS`
+    - `ENABLE_CAM_06048_SHAKE`
+
 The `app_config.h` file is used to configure the project. Due to device memory constraints, use caution when enabling more than one configuration at a time. The following options using Dilithium are available:
 
 - ML_DSA_44 
 - ML_DSA_65
 - ML_DSA_87
+
+This project also allows for swapping the CAM Hardware drivers SHAKE implementation with the wolfCrypt software implementation. 
+- Within the `user_settings.h` file on line : `57` commenting out `#define dsPIC33A_CAM_ENABLE` will disable the CAM hardware Driver usage and re-enable the wolfCrypt software implementation:
 
 ## Running the Application
 
@@ -62,17 +135,25 @@ The resulting operations are then printed to the terminal using UART with the fo
 | Flow Control Mode | None   |
 
 ## Benchmarking
+The test vectors used for benchmarking are generated using OpenSSL, which produces a public key, private key, and signature in accordance with FIPS-204 (https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.204.pdf).
 
 ### Performance Benchmarking
-|ML-DSA type |Verification time (Seconds)|
-|------------|------|
-|Dilithium 44| |
-|Dilithium 65| |
-|Dilithium 87| |
+Software + Hardware (CAM 06048) takes at least 75% less time than Software alone. 
+
+Note: The larger the data being verified, the larger the benefit with Software + Hardware (CAM 06048).
+
+#### ML-DSA Verification Time
+
+| ML-DSA Type   | SW + HW (CAM 06048) (s)  | SW (s)     |
+| ------------- | ------------------------ | ---------- |
+| Dilithium 44  | 0.004853                 | 0.017728   |
+| Dilithium 65  | 0.007473                 | 0.028071   |
+| Dilithium 87  | 0.011683                 | 0.046378   |
 
 ### Memory Size Benchmarking
-|ML-DSA type|Message Size (bytes)|Flash (bytes)|RAM Static (bytes)|RAM Stack (bytes)|
-|---|---|---|---|---|
-|Dilithium 44| | | | | | |
-|Dilithium 65| | | | | | |
-|Dilithium 87| | | | | | |
+
+| ML-DSA Type  | Message Size (bytes) | Signature Size (bytes) | Key Size (bytes)  | Flash (bytes) | RAM Static (bytes)  | RAM Stack (bytes) |
+| ------------ | -------------------- | ---------------------- | ----------------- | ------------- | ------------------- | ----------------- |
+| Dilithium 44 | 3200                 | 2420                   | 1312              | 24,636        | 2,718               | 13,200            |
+| Dilithium 65 | 3200                 | 3309                   | 1952              | 26,168        | 2,718               | 13,200            |
+| Dilithium 87 | 3200                 | 4627                   | 2592              | 28,124        | 2,718               | 13,200            |
