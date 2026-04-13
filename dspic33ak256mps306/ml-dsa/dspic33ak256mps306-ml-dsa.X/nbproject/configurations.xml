@@ -372,7 +372,7 @@
         <property key="legacy-libc" value="true"/>
         <property key="mpreserve-all" value="false"/>
         <property key="oXC16glb-macros"
-                  value="WOLFSSL_USER_SETTINGS;GENERIC_TARGET_CAM_06048;ENABLE_CAM_06048_SHAKE"/>
+                  value="WOLFSSL_USER_SETTINGS;ENABLE_CAM_06048_SHAKE"/>
         <property key="omit-pack-options" value="1"/>
         <property key="output-file-format" value="elf"/>
         <property key="preserve-all" value="false"/>

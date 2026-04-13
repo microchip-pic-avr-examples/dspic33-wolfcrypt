@@ -12,7 +12,7 @@ This MPLAB® X project demonstrates ML-DSA Verify using wolfCrypt APIs on a dsPI
 
 ## Licensing
 
-The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ak256MPS306-ml-dsa.X/crypto/wolfssl/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt).
+The project is governed under the End User License Agreement (EULA) with wolfSSL. The EULA can be found within the MPLAB® X project folder called [LICENSE_WOLFSSL_MICROCHIP](./dspic33ak256mps306-ml-dsa.X/crypto/wolfssl/LICENSE_WOLFSSL_MICROCHIP_v12052025.txt).
 
 ## Project Setup
 
@@ -107,7 +107,6 @@ Under the XC-DSC subsection the following must be configured in order to get ML-
 - Removed unused sections: `enabled`
 - Define common macros
     - `WOLFSSL_USER_SETTINGS`
-    - `GENERIC_TARGET_CAM_06048`
     - `ENABLE_CAM_06048_SHAKE`
 
 The `app_config.h` file is used to configure the project. Due to device memory constraints, use caution when enabling more than one configuration at a time. The following options using Dilithium are available:
@@ -136,7 +135,7 @@ The resulting operations are then printed to the terminal using UART with the fo
 | Flow Control Mode | None   |
 
 ## Benchmarking
-The test vectors used for this benchmarking data is generated using Openssl to generate a public key, private key and signature following [FIPS-204](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.204.pdf)
+The test vectors used for benchmarking are generated using OpenSSL, which produces a public key, private key, and signature in accordance with FIPS-204 (https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.204.pdf).
 
 ### Performance Benchmarking
 Software + Hardware (CAM 06048) takes at least 75% less time than Software alone. 
