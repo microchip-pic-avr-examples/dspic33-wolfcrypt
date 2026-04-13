@@ -85,18 +85,18 @@ Openssl is used to generate a public key, private key and signature following [F
 
 The following wolfCrypt verification API is used to handle signature verification with FIPS-204 encoding:
 
-    ```c
-    int wc_dilithium_verify_ctx_msg(
-        const byte* sig, 
-        word32 sigLen,
-        const byte* ctx, // Set to NULL (unless additional encoding is required)
-        word32 ctxLen,   // Set to 0 (or length of the ctx)
-        const byte* msg, 
-        word32 msgLen, 
-        int* res,
-        dilithium_key* key
-    );
-    ```
+```c
+int wc_dilithium_verify_ctx_msg(
+    const byte* sig, 
+    word32 sigLen,
+    const byte* ctx, // Set to NULL (unless additional encoding is required)
+    word32 ctxLen,   // Set to 0 (or length of the ctx)
+    const byte* msg, 
+    word32 msgLen, 
+    int* res,
+    dilithium_key* key
+);
+```
 
 ### Project Configuration
 
