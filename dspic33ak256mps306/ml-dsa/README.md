@@ -145,11 +145,11 @@ Note: The larger the data being verified, the larger the benefit with Software +
 
 #### ML-DSA Verification Time
 
-| ML-DSA Type   | Software + Hardware (CAM 06048) (s)  | Software (s)  |
-| ------------- | ------------------------------------ | ------------- |
-| Dilithium 44  | 0.004853                             | 0.017728      |
-| Dilithium 65  | 0.007473                             | 0.028071      |
-| Dilithium 87  | 0.011683                             | 0.046378      |
+| ML-DSA Type   | SW + HW (CAM 06048) (s)  | SW (s)     |
+| ------------- | ------------------------ | ---------- |
+| Dilithium 44  | 0.004853                 | 0.017728   |
+| Dilithium 65  | 0.007473                 | 0.028071   |
+| Dilithium 87  | 0.011683                 | 0.046378   |
 
 ### Memory Size Benchmarking
 
